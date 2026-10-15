@@ -3,6 +3,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, animate, motion, useAnimationControls } from "framer-motion";
 import { Ban, RotateCcw, Sparkles, Target, Trophy, Volume2, VolumeX } from "lucide-react";
+import ChallengeEndActions from "@/components/ChallengeEndActions";
 
 /* ============================================================================
  * 1. LESSON DATA
@@ -554,15 +555,7 @@ const VictoryModal: React.FC<VictoryModalProps> = ({ title, text, elo, badge, st
 
         <p className="mt-4 text-center text-[13px] leading-relaxed text-slate-300">{text}</p>
 
-        <motion.button
-          type="button"
-          onClick={onReplay}
-          whileTap={{ scale: 0.97 }}
-          className="mt-5 flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 py-4 text-base font-extrabold text-slate-950 shadow-[0_8px_30px_rgba(168,85,247,0.4)]"
-        >
-          <RotateCcw className="h-4 w-4" strokeWidth={2.6} />
-          თავიდან გათამაშება (Replay)
-        </motion.button>
+        <ChallengeEndActions onReplay={onReplay} />
       </motion.div>
     </motion.div>
   );

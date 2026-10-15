@@ -21,6 +21,7 @@ import {
   Volume2,
   VolumeX,
 } from "lucide-react";
+import ChallengeEndActions from "@/components/ChallengeEndActions";
 
 /* ============================================================================
  * 1. DATA SCHEMA (types + lesson payload)
@@ -534,14 +535,7 @@ const VictoryModal: React.FC<VictoryModalProps> = ({
 
         <p className="mt-4 text-center text-[13px] leading-relaxed text-slate-300">{explanation}</p>
 
-        <motion.button
-          type="button"
-          onClick={onNext}
-          whileTap={{ scale: 0.97 }}
-          className="mt-5 flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-400 py-4 text-base font-extrabold text-slate-900 shadow-[0_8px_30px_rgba(251,191,36,0.4)]"
-        >
-          შემდეგი დონე
-        </motion.button>
+        <ChallengeEndActions onReplay={onNext} />
       </motion.div>
     </motion.div>
   );

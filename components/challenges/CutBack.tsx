@@ -12,6 +12,7 @@ import {
   Volume2,
   VolumeX,
 } from "lucide-react";
+import ChallengeEndActions from "@/components/ChallengeEndActions";
 
 /* ============================================================================
  * 1. LESSON DATA
@@ -458,15 +459,7 @@ const VictoryModal: React.FC<VictoryModalProps> = ({ title, text, elo, stats, so
 
         <p className="mt-4 text-center text-[13px] leading-relaxed text-slate-300">{text}</p>
 
-        <motion.button
-          type="button"
-          onClick={onReplay}
-          whileTap={{ scale: 0.97 }}
-          className="mt-5 flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-400 py-4 text-base font-extrabold text-slate-900 shadow-[0_8px_30px_rgba(251,191,36,0.4)]"
-        >
-          <RotateCcw className="h-4 w-4" strokeWidth={2.6} />
-          თავიდან გათამაშება (Replay)
-        </motion.button>
+        <ChallengeEndActions onReplay={onReplay} />
       </motion.div>
     </motion.div>
   );

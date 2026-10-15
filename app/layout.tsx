@@ -17,12 +17,16 @@ export const viewport: Viewport = {
   themeColor: "#020617",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }): React.JSX.Element {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}): React.JSX.Element {
   return (
     <html lang="ka">
       <body className="bg-slate-950 text-white antialiased">
         <div className="mx-auto flex h-[100dvh] w-full max-w-[480px] flex-col overflow-hidden">
-          <AppHeader />
+          {/* <AppHeader /> */}
           <main className="relative min-h-0 flex-1">{children}</main>
         </div>
       </body>
