@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "cut-back",
+  "meta": {
+    "title": { "ka": "უკან ჩაწოდება", "en": "Find space for the cut-back" },
+    "topic": "cut-back",
+    "level": "decide",
+    "difficulty": 15,
+    "ageBand": "11-13",
+    "positions": ["ATT"],
+    "tags": ["fixture", "finishing", "box"],
+    "status": "review",
+    "source": "coach"
+  },
+  "scene": {
+    "camera": { "focus": { "x0": 30, "x1": 92, "y0": 78, "y1": 100 } },
+    "players": [
+      { "id": "h7", "team": "home", "number": 7, "role": "RW", "at": { "x": 85, "y": 97 }, "facing": -110 },
+      { "id": "h9", "team": "home", "number": 9, "role": "ST", "at": { "x": 50.5, "y": 95.3 }, "facing": 90, "highlight": true },
+      { "id": "a1", "team": "away", "number": 1, "role": "GK", "at": { "x": 54, "y": 98.5 }, "facing": 120, "isGK": true },
+      { "id": "a5", "team": "away", "number": 5, "role": "CB", "at": { "x": 47.5, "y": 97 }, "facing": 110 },
+      { "id": "a4", "team": "away", "number": 4, "role": "CB", "at": { "x": 58, "y": 96 }, "facing": 100 },
+      { "id": "a3", "team": "away", "number": 3, "role": "LB", "at": { "x": 42, "y": 95.5 }, "facing": 100 },
+      { "id": "a2", "team": "away", "number": 2, "role": "RB", "at": { "x": 83, "y": 99.5 }, "facing": 70 }
+    ],
+    "ball": { "holder": "h7" }
+  },
+  "intro": {
+    "mode": "parallel",
+    "steps": [
+      { "kind": "move", "who": "h7", "to": { "x": 85, "y": 97 }, "ms": 600, "face": -110 },
+      { "kind": "move", "who": "a5", "to": { "x": 47.5, "y": 97 }, "ms": 1200, "face": 110 },
+      { "kind": "move", "who": "a4", "to": { "x": 58, "y": 96 }, "ms": 1200, "face": 100 }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": ["h9"],
+    "bounds": { "landmark": "box.opp" }
+  },
+  "rules": [
+    { "type": "in_zone", "failKey": "zone", "params": { "who": "h9", "zone": { "x0": 44, "x1": 56, "y0": 85, "y1": 92 } } },
+    { "type": "lane_open", "failKey": "lane", "params": { "from": "h7", "to": "h9" } },
+    { "type": "min_distance", "failKey": "marked", "params": { "who": "h9", "from": { "team": "away" }, "m": 3 } }
+  ],
+  "solution": {
+    "moves": { "h9": { "at": { "x": 50, "y": 88.5 } } },
+    "tolerance": { "radiusM": 1.5 }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        { "kind": "pass", "from": "h7", "to": "h9", "ms": 700 },
+        { "kind": "shoot", "from": "h9", "target": "goal", "ms": 600, "result": "goal" }
+      ]
+    },
+    "fail": {
+      "lane": {
+        "mode": "sequential",
+        "steps": [{ "kind": "pass", "from": "h7", "to": "h9", "ms": 700, "interceptedBy": "a4" }]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          { "kind": "pass", "from": "h7", "to": "h9", "ms": 700 },
+          { "kind": "rush", "who": "a5", "at": "h9", "ms": 500 }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": { "ka": "ჩამოდი უკან, სადაც თავისუფალი ადგილია", "en": "Drop back into the free space" },
+    "hint": { "ka": "კარის წინ ძალიან ბევრი მცველია", "en": "It's crowded in front of goal" },
+    "fail": {
+      "zone": { "ka": "ჩამოდი პენალტის წერტილისკენ", "en": "Drop back towards the penalty spot" },
+      "lane": { "ka": "#7-ის პასი ვერ მოგწვდება", "en": "#7's pass can't reach you" },
+      "marked": { "ka": "მცველი ძალიან ახლოსაა", "en": "A defender is too close to you" }
+    },
+    "almost": { "ka": "თითქმის! ცოტა კიდევ უკან", "en": "Almost! A bit further back" },
+    "success": { "ka": "გოოოლი! სწორ დროს ჩამოხვედი", "en": "Goal! You dropped back at the right time" },
+    "lessonLine": { "ka": "როცა ყველა კარისკენ გარბის, ჩამოდი უკან", "en": "When everyone runs at goal, drop back" }
+  },
+  "rewards": { "xp": 25 }
+}

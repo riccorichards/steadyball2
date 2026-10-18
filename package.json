@@ -2,11 +2,15 @@
   "name": "steadyball-tactics",
   "private": true,
   "scripts": {
+    "lessons": "node scripts/build-lesson-index.mjs",
+    "predev": "node scripts/build-lesson-index.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/build-lesson-index.mjs",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
+    "@pss/player": "file:./vendor/pss-player",
     "@supabase/supabase-js": "^2.117.3",
     "framer-motion": "^14.2.0",
     "lucide-react": "^1.57.0",

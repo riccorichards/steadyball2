@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "id": "passing-triangle",
+  "meta": {
+    "title": {
+      "ka": "საპასო სამკუთხედი",
+      "en": "Passing triangle"
+    },
+    "topic": "support-angles",
+    "level": "decide",
+    "difficulty": 12,
+    "ageBand": "11-13",
+    "positions": [
+      "DEF",
+      "MID"
+    ],
+    "tags": [
+      "fixture",
+      "support",
+      "triangle"
+    ],
+    "status": "review",
+    "source": "coach"
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 10,
+        "x1": 74,
+        "y0": 12,
+        "y1": 70
+      }
+    },
+    "players": [
+      {
+        "id": "h6",
+        "team": "home",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 50
+        },
+        "facing": 180,
+        "highlight": true
+      },
+      {
+        "id": "h3",
+        "team": "home",
+        "number": 3,
+        "role": "LB",
+        "at": {
+          "x": 14,
+          "y": 42
+        },
+        "facing": 90
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "RCM",
+        "at": {
+          "x": 67,
+          "y": 66
+        },
+        "facing": 180
+      },
+      {
+        "id": "h4",
+        "team": "home",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 50,
+          "y": 16
+        },
+        "facing": 0
+      },
+      {
+        "id": "h5",
+        "team": "home",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 70,
+          "y": 18
+        },
+        "facing": 0
+      },
+      {
+        "id": "a7",
+        "team": "away",
+        "number": 7,
+        "role": "W",
+        "at": {
+          "x": 38,
+          "y": 62
+        },
+        "facing": 145
+      },
+      {
+        "id": "a11",
+        "team": "away",
+        "number": 11,
+        "role": "W",
+        "at": {
+          "x": 62,
+          "y": 63
+        },
+        "facing": -145
+      }
+    ],
+    "ball": {
+      "holder": "h6"
+    }
+  },
+  "intro": {
+    "mode": "parallel",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "a7",
+        "to": {
+          "x": 42,
+          "y": 57
+        },
+        "ms": 1200,
+        "face": "ball"
+      },
+      {
+        "kind": "move",
+        "who": "a11",
+        "to": {
+          "x": 58.5,
+          "y": 57.5
+        },
+        "ms": 1200,
+        "face": "ball"
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h3",
+      "h8"
+    ],
+    "bounds": {
+      "x0": 5,
+      "x1": 80,
+      "y0": 30,
+      "y1": 70
+    }
+  },
+  "rules": [
+    {
+      "type": "in_zone",
+      "failKey": "zone8",
+      "params": {
+        "who": "h8",
+        "zone": {
+          "x0": 62,
+          "x1": 72,
+          "y0": 38,
+          "y1": 52
+        }
+      }
+    },
+    {
+      "type": "in_zone",
+      "failKey": "zone3",
+      "params": {
+        "who": "h3",
+        "zone": {
+          "x0": 28,
+          "x1": 38,
+          "y0": 38,
+          "y1": 52
+        }
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane8",
+      "params": {
+        "from": "h6",
+        "to": "h8"
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane3",
+      "params": {
+        "from": "h6",
+        "to": "h3"
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h8": {
+        "at": {
+          "x": 67,
+          "y": 45
+        }
+      },
+      "h3": {
+        "at": {
+          "x": 33,
+          "y": 45
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h6",
+          "to": "h8",
+          "ms": 800
+        },
+        {
+          "kind": "move",
+          "who": "h8",
+          "to": {
+            "x": 74,
+            "y": 58
+          },
+          "ms": 900,
+          "face": 0
+        }
+      ]
+    },
+    "fail": {
+      "lane8": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h8",
+            "ms": 800,
+            "interceptedBy": "a11"
+          }
+        ]
+      },
+      "lane3": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h3",
+            "ms": 800,
+            "interceptedBy": "a7"
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "rush",
+            "who": "a7",
+            "at": "h6",
+            "ms": 600
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "შექმენით სამკუთხედი #6-ის დასახმარებლად",
+      "en": "Make a triangle to help #6"
+    },
+    "hint": {
+      "ka": "ორივე მხარეს გაიხსენით, მეტოქეების ხაზს ქვემოთ",
+      "en": "Open up on both sides, below the pressing players"
+    },
+    "fail": {
+      "zone8": {
+        "ka": "#8, ჩამოდი #6-ის მარჯვნივ",
+        "en": "#8, drop to #6's right"
+      },
+      "zone3": {
+        "ka": "#3, შემოდი #6-ის მარცხნივ",
+        "en": "#3, come inside to #6's left"
+      },
+      "lane8": {
+        "ka": "#11 ჭრის პასს #8-ისკენ",
+        "en": "#11 cuts the pass to #8"
+      },
+      "lane3": {
+        "ka": "#7 ჭრის პასს #3-ისკენ",
+        "en": "#7 cuts the pass to #3"
+      }
+    },
+    "almost": {
+      "ka": "თითქმის! სამკუთხედი თითქმის მზადაა",
+      "en": "Almost! The triangle is nearly there"
+    },
+    "success": {
+      "ka": "სამკუთხედი მზადაა — #6-ს ორი პასი აქვს!",
+      "en": "Triangle ready: #6 has two passes!"
+    },
+    "lessonLine": {
+      "ka": "დაეხმარე პარტნიორს: შექმენი ორი ღია პასი",
+      "en": "Help your teammate: make two open passes"
+    }
+  },
+  "rewards": {
+    "xp": 25
+  }
+}

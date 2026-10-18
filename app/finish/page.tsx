@@ -11,7 +11,7 @@ import { Check, Share2, Trophy } from "lucide-react";
 import { CHALLENGES, challengeHref } from "@/lib/challenges";
 import { RATINGS, submitFeedback, useProgress, useRating, type Rating } from "@/lib/player";
 
-const SHARE_TEXT = "SteadyBall-ზე 5 ტაქტიკური გამოწვევა დავასრულე! ⚽ შენც სცადე:";
+const SHARE_TEXT = `SteadyBall-ზე ${CHALLENGES.length} ტაქტიკური გამოწვევა დავასრულე! ⚽ შენც სცადე:`;
 
 export default function FinishPage(): React.JSX.Element {
   const progress = useProgress();

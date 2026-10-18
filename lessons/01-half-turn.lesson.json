@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "id": "half-turn",
+  "meta": {
+    "title": {
+      "ka": "ნახევრად შემობრუნება",
+      "en": "Half-turn in the half-space"
+    },
+    "topic": "half-turn",
+    "level": "execute",
+    "difficulty": 21,
+    "ageBand": "11-13",
+    "positions": [
+      "MID"
+    ],
+    "tags": [
+      "fixture",
+      "receiving",
+      "body-shape"
+    ],
+    "status": "review",
+    "source": "coach"
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 32,
+        "x1": 84,
+        "y0": 18,
+        "y1": 70
+      }
+    },
+    "players": [
+      {
+        "id": "h4",
+        "team": "home",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 42,
+          "y": 20
+        },
+        "facing": 20
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 52,
+          "y": 56
+        },
+        "facing": 180,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 50,
+          "y": 85
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 48
+        },
+        "facing": -170
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 48,
+          "y": 75
+        },
+        "facing": 180
+      }
+    ],
+    "ball": {
+      "holder": "h4"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h4",
+        "to": {
+          "x": 43,
+          "y": 23
+        },
+        "ms": 900,
+        "face": 20
+      },
+      {
+        "kind": "wait",
+        "ms": 400
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h8"
+    ],
+    "allowRotate": true,
+    "bounds": {
+      "x0": 32,
+      "x1": 84,
+      "y0": 30,
+      "y1": 70
+    }
+  },
+  "rules": [
+    {
+      "type": "out_of_shadow",
+      "failKey": "shadow",
+      "params": {
+        "who": "h8",
+        "presser": "a6"
+      }
+    },
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h8",
+        "zone": {
+          "x0": 66,
+          "x1": 78,
+          "y0": 42,
+          "y1": 52
+        }
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h4",
+        "to": "h8"
+      }
+    },
+    {
+      "type": "min_distance",
+      "failKey": "tooClose",
+      "params": {
+        "who": "h8",
+        "from": "a6",
+        "m": 8
+      }
+    },
+    {
+      "type": "sees",
+      "failKey": "body",
+      "params": {
+        "who": "h8",
+        "targets": [
+          "ball",
+          "goal.opp"
+        ]
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h8": {
+        "at": {
+          "x": 72,
+          "y": 47
+        },
+        "facing": -80
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5,
+      "facingDeg": 15
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h4",
+          "to": "h8",
+          "ms": 900
+        },
+        {
+          "kind": "move",
+          "who": "h8",
+          "to": {
+            "x": 70,
+            "y": 60
+          },
+          "ms": 900,
+          "face": 0
+        },
+        {
+          "kind": "pass",
+          "from": "h8",
+          "to": "h9",
+          "ms": 800
+        },
+        {
+          "kind": "shoot",
+          "from": "h9",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "shadow": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h8",
+            "ms": 900,
+            "interceptedBy": "a6"
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h8",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a6",
+            "at": "h8",
+            "ms": 700
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "გაიხსენი და მიიღე ბურთი ნახევრად შემობრუნებით",
+      "en": "Open up and receive on the half-turn"
+    },
+    "hint": {
+      "ka": "იპოვე ადგილი, საიდანაც ბურთიც ჩანს და კარიც",
+      "en": "Find a spot where you can see the ball and the goal"
+    },
+    "fail": {
+      "shadow": {
+        "ka": "#6 გფარავს — #4 ვერ მოგაწვდის ბურთს",
+        "en": "#6 is blocking you, so #4 can't pass to you"
+      },
+      "zone": {
+        "ka": "გადი უფრო ფართოდ, მარჯვენა ნახევარსივრცეში",
+        "en": "Go wider, into the right half-space"
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია",
+        "en": "The passing lane is closed"
+      },
+      "tooClose": {
+        "ka": "#6-თან ძალიან ახლოს ხარ",
+        "en": "You're too close to #6"
+      },
+      "body": {
+        "ka": "გახსენი ტანი: დაინახე ბურთიც და კარიც",
+        "en": "Open your body: see the ball and the goal"
+      }
+    },
+    "almost": {
+      "ka": "თითქმის! ცოტა უფრო ზუსტად",
+      "en": "Almost! A little more precise"
+    },
+    "success": {
+      "ka": "შესანიშნავია! შემობრუნდი და შეუტიე",
+      "en": "Great! Turn and attack"
+    },
+    "lessonLine": {
+      "ka": "ღია ტანი = ბურთიც ჩანს და კარიც",
+      "en": "Open body = you see the ball and the goal"
+    }
+  },
+  "rewards": {
+    "xp": 30
+  }
+}
