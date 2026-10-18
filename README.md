@@ -15,34 +15,39 @@ on a phone connected to the same Wi-Fi.
 
 Production build: `npm run build && npm start`.
 
+## Lessons
+
+Every challenge is a lesson file in `lessons/`, made in **Pitch Scenario Studio** (Export → `.lesson.json`).
+One page, `/lesson/<id>`, plays any of them with the Studio's player (`@pss/player`, in `vendor/pss-player`).
+No component per challenge.
+
+**Add a lesson:** save the exported file as `lessons/NN-name.lesson.json` (NN sets the order) and run
+`npm run dev` or `npm run build`. Both first run `npm run lessons`, which lists the files and stops with
+a clear message if one is broken. The header, home page, progress and finish page pick it up automatically.
+
+**Update the player:** in the Studio repo run `pnpm bundle:player ../steadyball2/vendor/pss-player`,
+then `npm install` here.
+
 ## Structure
 
 ```
 app/
-  layout.tsx                    header + full-height page area (max 480px wide)
-  page.tsx                      redirects to the first challenge
-  challenges/<slug>/page.tsx    one route per challenge
+  layout.tsx                    full-height page area (max 480px wide)
+  page.tsx                      sign-up (position, age), then the first unfinished lesson
+  lesson/[id]/page.tsx          plays any lesson from lessons/
+  challenges/<slug>/page.tsx    the five hand-built pilot pages, kept for comparison (not in the list)
+  finish/page.tsx               after the last lesson: rating + share
 components/
-  AppHeader.tsx                 scrollable challenge chips; active chip follows the route
-  challenges/*.tsx              the five puzzles (each one is self-contained)
+  LessonScreen.tsx              the player, wired to progress (lib/player.ts)
+  AppHeader.tsx                 challenge chips (currently hidden in the layout)
+  challenges/*.tsx              the five pilot puzzles
 lib/
-  challenges.ts                 the list the header is built from (order, number, Georgian title)
+  lessons.ts                    reads and checks lessons/
+  challenges.ts                 the list built from the lessons (order, number, Georgian title)
+  player.ts                     profile, progress, feedback (local first, Supabase sync)
+lessons/                        *.lesson.json + generated index.ts
+vendor/pss-player/              the bundled Studio player (do not edit; rebuild it in the Studio repo)
 ```
-
-| # | Route | Component |
-|---|---|---|
-| 1 | `/challenges/half-turn` | `HalfTurn.tsx` |
-| 2 | `/challenges/triangle` | `PassingTriangle.tsx` |
-| 3 | `/challenges/cut-back` | `CutBack.tsx` |
-| 4 | `/challenges/curved-run` | `CurvedRun.tsx` |
-| 5 | `/challenges/third-man` | `ThirdMan.tsx` |
-
-## Adding a challenge
-
-1. Put the component in `components/challenges/`. Its outer element should be `h-full w-full`:
-   the layout gives it all the space under the header.
-2. Create `app/challenges/<slug>/page.tsx` that renders it (copy any existing one).
-3. Add an entry to `CHALLENGES` in `lib/challenges.ts`. The header picks it up automatically.
 
 ## Camera rule for puzzles with a zoomed pitch
 

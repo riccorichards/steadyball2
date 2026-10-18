@@ -1,0 +1,23 @@
+{
+  "name": "@pss/player",
+  "version": "0.1.0",
+  "description": "Pitch Scenario Studio lesson player (bundled). Plays any lesson JSON exported from the Studio.",
+  "type": "module",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js",
+      "default": "./index.js"
+    }
+  },
+  "sideEffects": false,
+  "peerDependencies": {
+    "react": "^18.3.0 || ^19.0.0",
+    "react-dom": "^18.3.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "zod": "^4"
+  }
+}
