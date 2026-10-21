@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "id": "2v1-puzzle-bend-the-run",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: მოხარე გარბენა",
+      "en": "Puzzle: bend the run"
+    },
+    "topic": "two-v-one",
+    "level": "execute",
+    "difficulty": 25,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "2v1",
+      "puzzle",
+      "offside",
+      "runs-in-behind"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 32,
+        "x1": 80,
+        "y0": 50,
+        "y1": 90
+      }
+    },
+    "players": [
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 50,
+          "y": 52
+        },
+        "facing": 0
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 64,
+          "y": 66
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 46,
+          "y": 70
+        },
+        "facing": 180
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h10"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "run_path",
+        "who": "h10",
+        "path": [
+          {
+            "x": 50,
+            "y": 52
+          },
+          {
+            "x": 50,
+            "y": 58
+          }
+        ],
+        "ms": 1300
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "path",
+    "who": [
+      "h9"
+    ],
+    "path": {
+      "maxLengthM": 30,
+      "runSpeedMps": 7,
+      "passAfterM": 8
+    }
+  },
+  "rules": [
+    {
+      "type": "onside_at_pass",
+      "failKey": "offside",
+      "params": {
+        "who": "h9",
+        "passAfterM": 8
+      }
+    },
+    {
+      "type": "path_clear",
+      "failKey": "blocked",
+      "params": {
+        "who": "h9",
+        "minM": 1
+      }
+    },
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h9",
+        "zone": {
+          "x0": 46,
+          "x1": 60,
+          "y0": 76,
+          "y1": 84
+        }
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h9": {
+        "path": [
+          {
+            "x": 64,
+            "y": 66
+          },
+          {
+            "x": 63,
+            "y": 68
+          },
+          {
+            "x": 55,
+            "y": 68
+          },
+          {
+            "x": 52,
+            "y": 79
+          }
+        ]
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "play_answer"
+        },
+        {
+          "kind": "shoot",
+          "from": "h9",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "offside": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "play_answer"
+          },
+          {
+            "kind": "flag",
+            "reason": "offside"
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "play_answer"
+          },
+          {
+            "kind": "wait",
+            "ms": 600
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "დახატე #9-ის გარბენა კარისკენ",
+      "en": "Draw #9's run to goal"
+    },
+    "fail": {
+      "offside": {
+        "ka": "ოფსაიდი! პასამდე #5-ის დონეზე დარჩი.",
+        "en": "Offside! Stay level with #5 until the pass."
+      },
+      "blocked": {
+        "ka": "მცველს ძალიან ახლოს ჩაურბინე! შემოუარე.",
+        "en": "Too close to the defender! Run round him."
+      },
+      "zone": {
+        "ka": "კარს ვერ მიუახლოვდი! დაასრულე #5-ის უკან, ცენტრში.",
+        "en": "Not near goal! Finish behind #5, in the middle."
+      }
+    },
+    "success": {
+      "ka": "ბრწყინვალე! ჯერ ხაზის გასწვრივ, მერე ზურგს უკან.",
+      "en": "Brilliant! Along the line first, then in behind."
+    },
+    "lessonLine": {
+      "ka": "ჯერ ხაზზე, მერე ზურგს უკან",
+      "en": "First along the line, then in behind"
+    }
+  },
+  "rewards": {
+    "xp": 40
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "თუ პირდაპირ გაიქცევი, ოფსაიდში აღმოჩნდები.",
+        "en": "Run straight and you'll be offside."
+      }
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე გარბენა",
+        "en": "Watch the run"
+      },
+      "ghost": true
+    }
+  ]
+}

@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "id": "3v2-width-in-the-triangle",
+  "meta": {
+    "title": {
+      "ka": "სამკუთხედის სიგანე",
+      "en": "Width in the triangle"
+    },
+    "topic": "three-v-two",
+    "level": "decide",
+    "difficulty": 13,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "3v2",
+      "triangle",
+      "width",
+      "guided"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "full",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 30,
+        "x1": 90,
+        "y0": 32,
+        "y1": 72
+      }
+    },
+    "players": [
+      {
+        "id": "h6",
+        "team": "home",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 40
+        },
+        "facing": 0
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 40,
+          "y": 60
+        },
+        "facing": 180
+      },
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 63,
+          "y": 61
+        },
+        "facing": 180,
+        "highlight": true
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 45,
+          "y": 53
+        },
+        "facing": 180
+      },
+      {
+        "id": "a8",
+        "team": "away",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 60,
+          "y": 54
+        },
+        "facing": 200
+      }
+    ],
+    "ball": {
+      "holder": "h6"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h6",
+        "to": {
+          "x": 50,
+          "y": 40
+        },
+        "ms": 600,
+        "face": 0
+      },
+      {
+        "kind": "pulse",
+        "who": [
+          "h7",
+          "a8"
+        ],
+        "ms": 1000
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h7"
+    ],
+    "bounds": {
+      "x0": 34,
+      "x1": 92,
+      "y0": 36,
+      "y1": 72
+    }
+  },
+  "rules": [
+    {
+      "type": "out_of_shadow",
+      "failKey": "shadow",
+      "params": {
+        "who": "h7",
+        "presser": "a8"
+      }
+    },
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h7",
+        "zone": {
+          "x0": 70,
+          "x1": 86,
+          "y0": 42,
+          "y1": 54
+        }
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h6",
+        "to": "h7"
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h7": {
+        "at": {
+          "x": 78,
+          "y": 48
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h6",
+          "to": "h7",
+          "ms": 900
+        },
+        {
+          "kind": "run_path",
+          "who": "h7",
+          "path": [
+            {
+              "x": 78,
+              "y": 48
+            },
+            {
+              "x": 78,
+              "y": 60
+            }
+          ],
+          "ms": 1800
+        }
+      ]
+    },
+    "fail": {
+      "shadow": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h7",
+            "ms": 800,
+            "interceptedBy": "a8"
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h7",
+            "ms": 800
+          },
+          {
+            "kind": "rush",
+            "who": "a8",
+            "at": "h7",
+            "ms": 700
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "#7, გაგვიფართოვე სამკუთხედი!",
+      "en": "#7, make the triangle wide!"
+    },
+    "fail": {
+      "shadow": {
+        "ka": "#8 გფარავს! გადი ფართოდ, ფლანგზე.",
+        "en": "Their #8 hides you! Go wide, onto the wing."
+      },
+      "zone": {
+        "ka": "ჯერ კიდევ ვიწროდ ხარ! დადექი ფლანგზე, #6-ზე ოდნავ წინ.",
+        "en": "Still too narrow! Stand on the wing, a little ahead of #6."
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! #6-სა და შენ შორის მეტოქე არ უნდა იყოს.",
+        "en": "The lane is closed! No opponent between #6 and you."
+      }
+    },
+    "success": {
+      "ka": "იდეალურია! ფართო სამკუთხედი — მეტოქეები ვეღარ გწვდებიან.",
+      "en": "Perfect! A wide triangle: the opponents can't reach you."
+    },
+    "lessonLine": {
+      "ka": "ფართო სამკუთხედი = ღია პასი",
+      "en": "A wide triangle gives an open pass"
+    }
+  },
+  "rewards": {
+    "xp": 20
+  },
+  "hints": [
+    {
+      "afterWrong": 1,
+      "text": {
+        "ka": "#8-ის უკან დგახარ. ფლანგზე სივრცეა.",
+        "en": "You're behind their #8. There's space on the wing."
+      }
+    },
+    {
+      "afterWrong": 3,
+      "showZones": true,
+      "pulse": [
+        "h7",
+        "a8"
+      ]
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე, სად დადგე",
+        "en": "Watch where to stand"
+      },
+      "ghost": true
+    }
+  ]
+}

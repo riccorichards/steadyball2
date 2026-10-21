@@ -1,0 +1,311 @@
+{
+  "schemaVersion": 1,
+  "id": "3v3-rotate-and-run-in-behind",
+  "meta": {
+    "title": {
+      "ka": "როტაცია და გარბენა ზურგს უკან",
+      "en": "Rotate and run in behind"
+    },
+    "topic": "rotation",
+    "level": "execute",
+    "difficulty": 35,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "3v3",
+      "rotation",
+      "runs-in-behind",
+      "challenge"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "some",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 26,
+        "x1": 74,
+        "y0": 46,
+        "y1": 90
+      }
+    },
+    "players": [
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 54,
+          "y": 52
+        },
+        "facing": 0
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 52,
+          "y": 76
+        },
+        "facing": 180
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 40,
+          "y": 60
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 52,
+          "y": 80
+        },
+        "facing": 180
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 64,
+          "y": 76
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 44,
+          "y": 64
+        },
+        "facing": 180
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h10"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "group",
+        "script": {
+          "mode": "parallel",
+          "steps": [
+            {
+              "kind": "run_path",
+              "who": "h9",
+              "path": [
+                {
+                  "x": 52,
+                  "y": 76
+                },
+                {
+                  "x": 52,
+                  "y": 66
+                }
+              ],
+              "ms": 1700
+            },
+            {
+              "kind": "move",
+              "who": "a4",
+              "to": {
+                "x": 52,
+                "y": 70
+              },
+              "ms": 1700,
+              "face": 180
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "interaction": {
+    "type": "path",
+    "who": [
+      "h8"
+    ],
+    "path": {
+      "maxLengthM": 30,
+      "runSpeedMps": 7,
+      "passAfterM": 12
+    }
+  },
+  "rules": [
+    {
+      "type": "onside_at_pass",
+      "failKey": "offside",
+      "params": {
+        "who": "h8",
+        "passAfterM": 12
+      }
+    },
+    {
+      "type": "path_clear",
+      "failKey": "blocked",
+      "params": {
+        "who": "h8",
+        "minM": 1.5
+      }
+    },
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h8",
+        "zone": {
+          "x0": 44,
+          "x1": 58,
+          "y0": 74,
+          "y1": 84
+        }
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h8": {
+        "path": [
+          {
+            "x": 40,
+            "y": 60
+          },
+          {
+            "x": 40,
+            "y": 66
+          },
+          {
+            "x": 48,
+            "y": 74
+          },
+          {
+            "x": 50,
+            "y": 80
+          }
+        ]
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "play_answer"
+        },
+        {
+          "kind": "shoot",
+          "from": "h8",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "offside": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "play_answer"
+          },
+          {
+            "kind": "flag",
+            "reason": "offside"
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "play_answer"
+          },
+          {
+            "kind": "wait",
+            "ms": 600
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "#9 ჩამოვიდა. #8, გაიქეცი მის ადგილზე!",
+      "en": "#9 dropped. #8, run into his space!"
+    },
+    "fail": {
+      "offside": {
+        "ka": "ოფსაიდი! პასამდე #5-ის დონეზე დარჩი.",
+        "en": "Offside! Stay level with #5 until the pass."
+      },
+      "blocked": {
+        "ka": "#6-ს დაეჯახე! შემოუარე გვერდიდან.",
+        "en": "You ran into #6! Go round him."
+      },
+      "zone": {
+        "ka": "ჯერ არა! დაასრულე ცენტრში, #9-ის ძველ ადგილზე.",
+        "en": "Not yet! Finish in the middle, where #9 was."
+      }
+    },
+    "success": {
+      "ka": "ბრწყინვალე! #9 ჩამოვიდა, #8 გაიჭრა — როტაცია!",
+      "en": "Brilliant! #9 dropped, #8 ran in behind: rotation!"
+    },
+    "lessonLine": {
+      "ka": "ერთი ჩამოდის, მეორე იჭრება",
+      "en": "One drops in, another runs beyond"
+    }
+  },
+  "rewards": {
+    "xp": 35
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "#6-ს გვერდიდან შემოუარე და ცენტრისკენ გაიქეცი.",
+        "en": "Go round #6, then run to the middle."
+      }
+    }
+  ]
+}

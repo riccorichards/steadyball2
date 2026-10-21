@@ -1,0 +1,456 @@
+{
+  "schemaVersion": 1,
+  "id": "3v3-final-puzzle-combine",
+  "meta": {
+    "title": {
+      "ka": "ფინალური თავსატეხი: პასი და გარბენა",
+      "en": "Final puzzle: pass and run"
+    },
+    "topic": "combination",
+    "level": "game-speed",
+    "difficulty": 45,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "3v3",
+      "puzzle",
+      "story",
+      "third-man",
+      "runs-in-behind"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 26,
+        "x1": 80,
+        "y0": 40,
+        "y1": 92
+      }
+    },
+    "players": [
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 44,
+          "y": 46
+        },
+        "facing": 20,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 58,
+          "y": 64
+        },
+        "facing": -150
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 48,
+          "y": 70
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 46,
+          "y": 58
+        },
+        "facing": 180
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 60,
+          "y": 69
+        },
+        "facing": 180
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 40,
+          "y": 78
+        },
+        "facing": 180
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h8"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "run_path",
+        "who": "h8",
+        "path": [
+          {
+            "x": 44,
+            "y": 46
+          },
+          {
+            "x": 44,
+            "y": 50
+          }
+        ],
+        "ms": 900
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "pass_sequence",
+    "who": [
+      "h9",
+      "h10"
+    ]
+  },
+  "rules": [
+    {
+      "type": "sequence",
+      "failKey": "order",
+      "params": {
+        "order": [
+          "h8",
+          "h9",
+          "h10"
+        ]
+      }
+    }
+  ],
+  "solution": {
+    "sequence": [
+      "h8",
+      "h9",
+      "h10"
+    ],
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "play_answer"
+        },
+        {
+          "kind": "move",
+          "who": "h10",
+          "to": {
+            "x": 48,
+            "y": 71
+          },
+          "ms": 500,
+          "face": 0
+        }
+      ]
+    },
+    "fail": {
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h8",
+            "to": "h10",
+            "ms": 800,
+            "interceptedBy": "a6"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "მიიტანე ბურთი #10-მდე",
+      "en": "Get the ball to #10"
+    },
+    "fail": {
+      "order": {
+        "ka": "პასი გადაჭრეს! #6 პირდაპირ გზას კეტავს.",
+        "en": "Cut out! Their #6 blocks the direct way."
+      }
+    },
+    "success": {
+      "ka": "კარგია! #10 შემობრუნდა. ახლა #9...",
+      "en": "Good! #10 has turned. Now #9..."
+    },
+    "lessonLine": {
+      "ka": "ჯერ მესამე მოთამაშე, მერე გარბენა",
+      "en": "Third man first, then the run"
+    }
+  },
+  "rewards": {
+    "xp": 60
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "პირდაპირ ვერ გახვალ. ვინ დაგეხმარება?",
+        "en": "You can't go direct. Who can help?"
+      }
+    },
+    {
+      "afterWrong": 5,
+      "ghost": true,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      }
+    }
+  ],
+  "stages": [
+    {
+      "id": "run-in-behind",
+      "camera": {
+        "focus": {
+          "x0": 28,
+          "x1": 74,
+          "y0": 56,
+          "y1": 94
+        }
+      },
+      "intro": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "camera",
+            "to": {
+              "preset": "focus"
+            },
+            "ms": 700
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      },
+      "interaction": {
+        "type": "path",
+        "who": [
+          "h9"
+        ],
+        "path": {
+          "maxLengthM": 30,
+          "runSpeedMps": 7,
+          "passAfterM": 10
+        }
+      },
+      "rules": [
+        {
+          "type": "onside_at_pass",
+          "failKey": "offside",
+          "params": {
+            "who": "h9",
+            "passAfterM": 10
+          }
+        },
+        {
+          "type": "path_clear",
+          "failKey": "blocked",
+          "params": {
+            "who": "h9",
+            "minM": 2
+          }
+        },
+        {
+          "type": "in_zone",
+          "failKey": "zone",
+          "params": {
+            "who": "h9",
+            "zone": {
+              "x0": 48,
+              "x1": 64,
+              "y0": 80,
+              "y1": 90
+            }
+          }
+        }
+      ],
+      "solution": {
+        "moves": {
+          "h9": {
+            "path": [
+              {
+                "x": 58,
+                "y": 64
+              },
+              {
+                "x": 54,
+                "y": 70
+              },
+              {
+                "x": 56,
+                "y": 84
+              }
+            ]
+          }
+        },
+        "tolerance": {
+          "radiusM": 1.5
+        }
+      },
+      "outcomes": {
+        "success": {
+          "mode": "sequential",
+          "steps": [
+            {
+              "kind": "play_answer"
+            },
+            {
+              "kind": "wait",
+              "ms": 200
+            }
+          ]
+        },
+        "fail": {
+          "offside": {
+            "mode": "sequential",
+            "steps": [
+              {
+                "kind": "play_answer"
+              },
+              {
+                "kind": "flag",
+                "reason": "offside"
+              }
+            ]
+          },
+          "default": {
+            "mode": "sequential",
+            "steps": [
+              {
+                "kind": "play_answer"
+              },
+              {
+                "kind": "wait",
+                "ms": 600
+              }
+            ]
+          }
+        }
+      },
+      "text": {
+        "banner": {
+          "ka": "დახატე #9-ის გარბენა კარისკენ",
+          "en": "Draw #9's run towards goal"
+        },
+        "fail": {
+          "offside": {
+            "ka": "ოფსაიდი! პასამდე #4-ის დონეზე დარჩი.",
+            "en": "Offside! Stay level with #4 until the pass."
+          },
+          "blocked": {
+            "ka": "#4-ს დაეჯახე! შემოუარე მას.",
+            "en": "You ran into #4! Go round him."
+          },
+          "zone": {
+            "ka": "კარს ვერ მიუახლოვდი! დაასრულე საჯარიმოში.",
+            "en": "Not close enough! Finish inside the box."
+          }
+        },
+        "success": {
+          "ka": "ზუსტად! #9 მარტოა მეკარესთან.",
+          "en": "Exactly! #9 is one-on-one with the keeper."
+        }
+      },
+      "hints": [
+        {
+          "afterWrong": 2,
+          "text": {
+            "ka": "#4 #9-ის ზურგს უკან დგას. შემოუარე მას შიგნიდან.",
+            "en": "#4 is right behind #9. Go round him on the inside."
+          }
+        },
+        {
+          "afterWrong": 5,
+          "ghost": true,
+          "text": {
+            "ka": "ნახე გარბენა",
+            "en": "Watch the run"
+          }
+        }
+      ]
+    }
+  ],
+  "finale": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "slowmo",
+        "factor": 0.4,
+        "ms": 1500
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 34,
+          "x1": 74,
+          "y0": 78,
+          "y1": 100
+        },
+        "ms": 800
+      },
+      {
+        "kind": "shoot",
+        "from": "h9",
+        "target": "goal",
+        "ms": 800,
+        "result": "goal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "id": "1v2-escape-the-other-way",
+  "meta": {
+    "title": {
+      "ka": "გაექეცი მეორე მხარეს",
+      "en": "Escape the other way"
+    },
+    "topic": "beat-the-press",
+    "level": "execute",
+    "difficulty": 19,
+    "ageBand": "11-13",
+    "positions": [
+      "MID"
+    ],
+    "tags": [
+      "1v2",
+      "dribble",
+      "press",
+      "challenge"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "some",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 20,
+        "x1": 86,
+        "y0": 22,
+        "y1": 62
+      }
+    },
+    "players": [
+      {
+        "id": "h6",
+        "team": "home",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 36
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h4",
+        "team": "home",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 48,
+          "y": 26
+        },
+        "facing": -10
+      },
+      {
+        "id": "a9",
+        "team": "away",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 53,
+          "y": 54
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "press",
+          "target": "h6",
+          "speedMps": 4.5,
+          "when": "always"
+        }
+      },
+      {
+        "id": "a10",
+        "team": "away",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 40,
+          "y": 52
+        },
+        "facing": -200,
+        "behaviour": {
+          "kind": "press",
+          "target": "h6",
+          "speedMps": 4.5,
+          "when": "always"
+        }
+      }
+    ],
+    "ball": {
+      "holder": "h4"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "pass",
+        "from": "h4",
+        "to": "h6",
+        "ms": 700
+      },
+      {
+        "kind": "wait",
+        "ms": 600
+      }
+    ]
+  },
+  "interaction": {
+    "type": "dribble",
+    "who": [
+      "h6"
+    ],
+    "dribble": {
+      "release": "none",
+      "maxLengthM": 18
+    }
+  },
+  "rules": [
+    {
+      "type": "keeps_ball",
+      "failKey": "tackled",
+      "params": {}
+    },
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h6",
+        "zone": {
+          "x0": 62,
+          "x1": 80,
+          "y0": 36,
+          "y1": 50
+        }
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h6": {
+        "path": [
+          {
+            "x": 50,
+            "y": 36
+          },
+          {
+            "x": 60,
+            "y": 38
+          },
+          {
+            "x": 70,
+            "y": 42
+          }
+        ]
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "run_path",
+          "who": "h6",
+          "path": [
+            {
+              "x": 70,
+              "y": 42
+            },
+            {
+              "x": 72,
+              "y": 52
+            }
+          ],
+          "ms": 1700
+        },
+        {
+          "kind": "wait",
+          "ms": 300
+        }
+      ]
+    },
+    "fail": {
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "wait",
+            "ms": 800
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "ორი გიტევს. იპოვე გამოსავალი!",
+      "en": "Two are pressing. Find the way out!"
+    },
+    "fail": {
+      "tackled": {
+        "ka": "ბურთი წაგართვეს! ნუ წახვალ მათკენ.",
+        "en": "Tackled! Don't carry it towards them."
+      },
+      "zone": {
+        "ka": "ჯერ კიდევ პრესინგშია! სად არის ცარიელი მხარე?",
+        "en": "Still under pressure! Where is the empty side?"
+      }
+    },
+    "success": {
+      "ka": "მშვენიერია! თავისუფალი მხარე იპოვე.",
+      "en": "Lovely! You found the free side."
+    },
+    "lessonLine": {
+      "ka": "ნახე, საიდან მოდიან, წადი მეორე მხარეს",
+      "en": "See where they come from, go the other way"
+    }
+  },
+  "rewards": {
+    "xp": 25
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "საიდან მოდიან მეტოქეები? წადი საპირისპიროდ.",
+        "en": "Where do they come from? Go the opposite way."
+      }
+    }
+  ]
+}

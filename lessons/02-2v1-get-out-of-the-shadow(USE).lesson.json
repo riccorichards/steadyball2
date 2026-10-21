@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "id": "2v1-get-out-of-the-shadow",
+  "meta": {
+    "title": {
+      "ka": "გამოდი ჩრდილიდან",
+      "en": "Get out of the shadow"
+    },
+    "topic": "two-v-one",
+    "level": "decide",
+    "difficulty": 7,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "2v1",
+      "support",
+      "cover-shadow",
+      "guided"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "full",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 28,
+        "x1": 76,
+        "y0": 36,
+        "y1": 76
+      }
+    },
+    "players": [
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 44,
+          "y": 42
+        },
+        "facing": 0
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 49,
+          "y": 66
+        },
+        "facing": 180,
+        "highlight": true
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 47,
+          "y": 58
+        },
+        "facing": 180
+      }
+    ],
+    "ball": {
+      "holder": "h10"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "run_path",
+        "who": "h10",
+        "path": [
+          {
+            "x": 44,
+            "y": 42
+          },
+          {
+            "x": 44,
+            "y": 48
+          }
+        ],
+        "ms": 1300
+      },
+      {
+        "kind": "pulse",
+        "who": [
+          "h9",
+          "a5"
+        ],
+        "ms": 1000
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h9"
+    ],
+    "bounds": {
+      "x0": 30,
+      "x1": 76,
+      "y0": 40,
+      "y1": 74
+    }
+  },
+  "rules": [
+    {
+      "type": "out_of_shadow",
+      "failKey": "shadow",
+      "params": {
+        "who": "h9",
+        "presser": "a5"
+      }
+    },
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h9",
+        "zone": {
+          "x0": 56,
+          "x1": 70,
+          "y0": 47,
+          "y1": 58
+        }
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h10",
+        "to": "h9"
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h9": {
+        "at": {
+          "x": 63,
+          "y": 52
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h10",
+          "to": "h9",
+          "ms": 800
+        },
+        {
+          "kind": "run_path",
+          "who": "h9",
+          "path": [
+            {
+              "x": 63,
+              "y": 52
+            },
+            {
+              "x": 62,
+              "y": 62
+            }
+          ],
+          "ms": 1500
+        }
+      ]
+    },
+    "fail": {
+      "shadow": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h10",
+            "to": "h9",
+            "ms": 800,
+            "interceptedBy": "a5"
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h10",
+            "to": "h9",
+            "ms": 800
+          },
+          {
+            "kind": "rush",
+            "who": "a5",
+            "at": "h9",
+            "ms": 700
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "გაიხსენი, რომ #10-მა პასი მოგცეს",
+      "en": "Get open so #10 can pass to you"
+    },
+    "fail": {
+      "shadow": {
+        "ka": "#5 გფარავს! გამოდი მისი ჩრდილიდან, გვერდზე.",
+        "en": "#5 is blocking you! Step out of his shadow, to the side."
+      },
+      "zone": {
+        "ka": "ძალიან ახლოს ან ძალიან შორს ხარ! გადი ფართოდ, #10-ის დონეზე.",
+        "en": "Not there! Go wide, about level with #10."
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! დადექი ისე, რომ #5 შუაში არ იყოს.",
+        "en": "The lane is closed! Stand where #5 isn't in the way."
+      }
+    },
+    "success": {
+      "ka": "ზუსტად! ახლა #10-ს ორი გზა აქვს: წაიღოს ან მოგცეს.",
+      "en": "Exactly! Now #10 has two choices: carry or pass."
+    },
+    "lessonLine": {
+      "ka": "გამოდი ჩრდილიდან, მიეცი პასის გზა",
+      "en": "Leave the shadow, give a passing line"
+    }
+  },
+  "rewards": {
+    "xp": 20
+  },
+  "hints": [
+    {
+      "afterWrong": 1,
+      "text": {
+        "ka": "#5 დგას #10-სა და შენ შორის. გადი გვერდზე.",
+        "en": "#5 stands between #10 and you. Move to the side."
+      }
+    },
+    {
+      "afterWrong": 3,
+      "showZones": true,
+      "pulse": [
+        "h9",
+        "a5"
+      ]
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე, სად უნდა გახვიდე",
+        "en": "Watch where to go"
+      },
+      "ghost": true
+    }
+  ]
+}

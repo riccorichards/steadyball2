@@ -4,9 +4,19 @@
 /** Lessons in play order: id and titles. */
 export const LESSON_META: { id: string; title_ka: string; title_en: string }[] = [
   {
+    "id": "2v1-where-to-support",
+    "title_ka": "სად დავეხმაროთ?",
+    "title_en": "Where to support?"
+  },
+  {
     "id": "half-turn",
     "title_ka": "ნახევრად შემობრუნება",
     "title_en": "Half-turn in the half-space"
+  },
+  {
+    "id": "2v1-get-out-of-the-shadow",
+    "title_ka": "გამოდი ჩრდილიდან",
+    "title_en": "Get out of the shadow"
   },
   {
     "id": "passing-triangle",
@@ -34,23 +44,113 @@ export const LESSON_META: { id: string; title_ka: string; title_en: string }[] =
     "title_en": "Get open, find the runner"
   },
   {
-    "id": "through-ball",
-    "title_ka": "პასი სივრცეში",
-    "title_en": "Pass into space"
+    "id": "2v1-puzzle-bend-the-run",
+    "title_ka": "თავსატეხი: მოხარე გარბენა",
+    "title_en": "Puzzle: bend the run"
   },
   {
-    "id": "pull-the-cb",
-    "title_ka": "გამოიტყუე მცველი",
-    "title_en": "Pull the centre-back"
-  },
-  {
-    "id": "two-v-one",
-    "title_ka": "2 ერთის წინააღმდეგ",
-    "title_en": "2 against 1"
-  },
-  {
-    "id": "escape-the-press",
+    "id": "1v2-escape-the-press",
     "title_ka": "გაექეცი პრესინგს",
     "title_en": "Escape the press"
+  },
+  {
+    "id": "1v2-escape-the-other-way",
+    "title_ka": "გაექეცი მეორე მხარეს",
+    "title_en": "Escape the other way"
+  },
+  {
+    "id": "3v2-the-third-man",
+    "title_ka": "მესამე მოთამაშე",
+    "title_en": "The third man"
+  },
+  {
+    "id": "3v2-width-in-the-triangle",
+    "title_ka": "სამკუთხედის სიგანე",
+    "title_en": "Width in the triangle"
+  },
+  {
+    "id": "3v2-depth-in-the-triangle",
+    "title_ka": "სამკუთხედის სიღრმე",
+    "title_en": "Depth in the triangle"
+  },
+  {
+    "id": "3v2-spare-man-in-behind",
+    "title_ka": "თავისუფალი გაიჭრა",
+    "title_en": "The spare man runs in behind"
+  },
+  {
+    "id": "3v2-story-wide-then-third-man",
+    "title_ka": "გაფართოვდი, მერე მესამე",
+    "title_en": "Go wide, then the third man"
+  },
+  {
+    "id": "2v2-make-it-two-v-one",
+    "title_ka": "2 ორზე გადააქციე 2 ერთზე",
+    "title_en": "Turn 2v2 into 2v1"
+  },
+  {
+    "id": "2v2-overlap-run",
+    "title_ka": "შემორბენა",
+    "title_en": "The overlap run"
+  },
+  {
+    "id": "2v2-decoy-run",
+    "title_ka": "მატყუარა გარბენა",
+    "title_en": "The decoy run"
+  },
+  {
+    "id": "2v2-give-and-go",
+    "title_ka": "მიეცი და გაიქეცი",
+    "title_en": "Give and go"
+  },
+  {
+    "id": "2v2-story-overlap-and-cut-back",
+    "title_ka": "შემორბენა და უკან ჩაწოდება",
+    "title_en": "Overlap, then the cut-back"
+  },
+  {
+    "id": "2v2-switch-away-from-pressure",
+    "title_ka": "გადაიტანე თამაში პრესინგისგან შორს",
+    "title_en": "Switch away from pressure"
+  },
+  {
+    "id": "2v2-return-pass-into-space",
+    "title_ka": "საპასუხო პასი სივრცეში",
+    "title_en": "Return pass into space"
+  },
+  {
+    "id": "2v3-carry-then-safe-pass",
+    "title_ka": "გაიყვანე და უსაფრთხო პასი",
+    "title_en": "Carry, then the safe pass"
+  },
+  {
+    "id": "3v3-fill-the-space",
+    "title_ka": "შეავსე სივრცე",
+    "title_en": "Fill the space"
+  },
+  {
+    "id": "3v3-rotate-into-the-space",
+    "title_ka": "როტაცია: დაიკავე სივრცე",
+    "title_en": "Rotate into the space"
+  },
+  {
+    "id": "3v3-pull-a-defender",
+    "title_ka": "წაიყვანე მცველი",
+    "title_en": "Pull a defender away"
+  },
+  {
+    "id": "3v3-rotate-and-run-in-behind",
+    "title_ka": "როტაცია და გარბენა ზურგს უკან",
+    "title_en": "Rotate and run in behind"
+  },
+  {
+    "id": "3v3-puzzle-free-the-ten",
+    "title_ka": "თავსატეხი: გაათავისუფლე #10",
+    "title_en": "Puzzle: free the #10"
+  },
+  {
+    "id": "3v3-final-puzzle-combine",
+    "title_ka": "ფინალური თავსატეხი: პასი და გარბენა",
+    "title_en": "Final puzzle: pass and run"
   }
 ];

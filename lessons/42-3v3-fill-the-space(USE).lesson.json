@@ -1,0 +1,329 @@
+{
+  "schemaVersion": 1,
+  "id": "3v3-fill-the-space",
+  "meta": {
+    "title": {
+      "ka": "შეავსე სივრცე",
+      "en": "Fill the space"
+    },
+    "topic": "rotation",
+    "level": "decide",
+    "difficulty": 28,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "3v3",
+      "rotation",
+      "guided"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "full",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 24,
+        "x1": 86,
+        "y0": 46,
+        "y1": 98
+      }
+    },
+    "players": [
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 40,
+          "y": 56
+        },
+        "facing": 0
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 50,
+          "y": 76
+        },
+        "facing": 180
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 64,
+          "y": 64
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 50,
+          "y": 80
+        },
+        "facing": 180
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 66,
+          "y": 70
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 42,
+          "y": 62
+        },
+        "facing": 180
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h8"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "group",
+        "script": {
+          "mode": "parallel",
+          "steps": [
+            {
+              "kind": "run_path",
+              "who": "h9",
+              "path": [
+                {
+                  "x": 50,
+                  "y": 76
+                },
+                {
+                  "x": 50,
+                  "y": 66
+                }
+              ],
+              "ms": 1700
+            },
+            {
+              "kind": "move",
+              "who": "a4",
+              "to": {
+                "x": 50,
+                "y": 70
+              },
+              "ms": 1700,
+              "face": 180
+            }
+          ]
+        }
+      },
+      {
+        "kind": "pulse",
+        "who": [
+          "h10"
+        ],
+        "ms": 900
+      }
+    ]
+  },
+  "interaction": {
+    "type": "choose",
+    "who": [],
+    "options": [
+      {
+        "id": "a",
+        "at": {
+          "x": 52,
+          "y": 80
+        },
+        "label": {
+          "ka": "#9-ის ადგილზე",
+          "en": "Into #9's space"
+        }
+      },
+      {
+        "id": "b",
+        "at": {
+          "x": 57,
+          "y": 64
+        },
+        "label": {
+          "ka": "#9-ის გვერდით",
+          "en": "Next to #9"
+        }
+      },
+      {
+        "id": "c",
+        "at": {
+          "x": 78,
+          "y": 66
+        },
+        "label": {
+          "ka": "ფლანგზე",
+          "en": "Out wide"
+        }
+      }
+    ]
+  },
+  "rules": [
+    {
+      "type": "picks",
+      "failKey": "pick",
+      "params": {
+        "correct": "a"
+      }
+    }
+  ],
+  "solution": {
+    "pick": "a",
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "run_path",
+          "who": "h10",
+          "path": [
+            {
+              "x": 64,
+              "y": 64
+            },
+            {
+              "x": 52,
+              "y": 80
+            }
+          ],
+          "ms": 2900
+        },
+        {
+          "kind": "pass",
+          "from": "h8",
+          "to": "h10",
+          "ms": 900,
+          "lofted": true
+        },
+        {
+          "kind": "shoot",
+          "from": "h10",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h8",
+          "to": "h10",
+          "ms": 800,
+          "interceptedBy": "a6"
+        },
+        {
+          "kind": "wait",
+          "ms": 300
+        }
+      ]
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "#9 ჩამოვიდა და #4 გაჰყვა. #10, საით?",
+      "en": "#9 dropped and #4 followed. #10, where now?"
+    },
+    "hint": {
+      "ka": "როცა მცველი #9-ს გაჰყვება, მის უკან სივრცე იხსნება.",
+      "en": "When a defender follows #9, space opens behind him."
+    },
+    "fail": {
+      "pick": {
+        "ka": "ის სივრცე ცარიელი დარჩა! #10 იქ უნდა გაიქცეს, სადაც #9 იყო.",
+        "en": "That space is left empty! #10 must run where #9 was."
+      }
+    },
+    "success": {
+      "ka": "ზუსტად! #9 ჩამოვიდა, #10 მის ადგილზე გაიქცა — ეს როტაციაა.",
+      "en": "Exactly! #9 dropped and #10 took his place: that's a rotation."
+    },
+    "lessonLine": {
+      "ka": "ერთი ჩამოდის, მეორე მის ადგილს იკავებს",
+      "en": "One drops, another takes his place"
+    }
+  },
+  "rewards": {
+    "xp": 20
+  },
+  "hints": [
+    {
+      "afterWrong": 1,
+      "text": {
+        "ka": "#4 #9-ს გაჰყვა. რა დარჩა მის უკან?",
+        "en": "#4 went with #9. What did he leave behind?"
+      }
+    },
+    {
+      "afterWrong": 3,
+      "pulse": [
+        "a4"
+      ],
+      "spotlight": {
+        "zone": {
+          "x0": 40,
+          "x1": 64,
+          "y0": 72,
+          "y1": 88
+        }
+      }
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე სწორი გარბენა",
+        "en": "Watch the right run"
+      },
+      "ghost": true
+    }
+  ]
+}

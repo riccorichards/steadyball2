@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 1,
+  "id": "2v2-return-pass-into-space",
+  "meta": {
+    "title": {
+      "ka": "საპასუხო პასი სივრცეში",
+      "en": "Return pass into space"
+    },
+    "topic": "two-v-two",
+    "level": "execute",
+    "difficulty": 25,
+    "ageBand": "11-13",
+    "positions": [
+      "ATT"
+    ],
+    "tags": [
+      "2v2",
+      "give-and-go",
+      "pass-into-space",
+      "challenge"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "some",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 26,
+        "x1": 76,
+        "y0": 52,
+        "y1": 94
+      }
+    },
+    "players": [
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 58,
+          "y": 64
+        },
+        "facing": -140,
+        "highlight": true
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 44,
+          "y": 60
+        },
+        "facing": 0
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 47,
+          "y": 62
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h8",
+          "gapM": 2,
+          "speedMps": 5
+        }
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 56,
+          "y": 70
+        },
+        "facing": 180
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h8"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "pass",
+        "from": "h8",
+        "to": "h9",
+        "ms": 700
+      },
+      {
+        "kind": "run_path",
+        "who": "h8",
+        "path": [
+          {
+            "x": 44,
+            "y": 60
+          },
+          {
+            "x": 44,
+            "y": 68
+          }
+        ],
+        "ms": 1300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "pass_space",
+    "who": [
+      "h8"
+    ]
+  },
+  "rules": [
+    {
+      "type": "pass_clear",
+      "failKey": "cut",
+      "params": {}
+    },
+    {
+      "type": "reaches_first",
+      "failKey": "race",
+      "params": {
+        "who": "h8"
+      }
+    }
+  ],
+  "solution": {
+    "passTo": {
+      "x": 42,
+      "y": 80
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "play_answer"
+        },
+        {
+          "kind": "shoot",
+          "from": "h8",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "play_answer"
+          },
+          {
+            "kind": "wait",
+            "ms": 500
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "#8 მიეცი და გაიქცა. დაუბრუნე სივრცეში!",
+      "en": "#8 gave and went. Return it into space!"
+    },
+    "fail": {
+      "cut": {
+        "ka": "პასი გადაჭრეს! #4-ს ბურთი გვერდით გაუშვი.",
+        "en": "Cut out! Play it past #4, not near him."
+      },
+      "race": {
+        "ka": "#8 ვერ მიუსწრო! მიაწოდე მის წინ, არა ფეხებში.",
+        "en": "#8 didn't get there! Play it ahead of him, not to his feet."
+      }
+    },
+    "success": {
+      "ka": "იდეალურია! კედელი გამოვიდა და #8 კარისკენ გარბის.",
+      "en": "Perfect! The one-two worked and #8 is through."
+    },
+    "lessonLine": {
+      "ka": "საპასუხო პასი — გამრბენის წინ",
+      "en": "Return pass goes ahead of the runner"
+    }
+  },
+  "rewards": {
+    "xp": 30
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "#8 უკვე გარბის. სად იქნება ერთ წამში?",
+        "en": "#8 is already running. Where will he be in a second?"
+      }
+    }
+  ]
+}

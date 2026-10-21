@@ -1,0 +1,331 @@
+{
+  "schemaVersion": 1,
+  "id": "3v3-puzzle-free-the-ten",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: გაათავისუფლე #10",
+      "en": "Puzzle: free the #10"
+    },
+    "topic": "creating-space",
+    "level": "decide",
+    "difficulty": 40,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "3v3",
+      "puzzle",
+      "decoy",
+      "creating-space"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 20,
+        "x1": 82,
+        "y0": 48,
+        "y1": 92
+      }
+    },
+    "players": [
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 50,
+          "y": 52
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 50,
+          "y": 76
+        },
+        "facing": 0
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 66,
+          "y": 70
+        },
+        "facing": 0
+      },
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "LW",
+        "at": {
+          "x": 30,
+          "y": 72
+        },
+        "facing": 0
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 50,
+          "y": 80
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h9",
+          "gapM": 1.5
+        }
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 66,
+          "y": 76
+        },
+        "facing": 180
+      },
+      {
+        "id": "a3",
+        "team": "away",
+        "number": 3,
+        "role": "RB",
+        "at": {
+          "x": 30,
+          "y": 76
+        },
+        "facing": 180
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h8"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "run_path",
+        "who": "h8",
+        "path": [
+          {
+            "x": 50,
+            "y": 52
+          },
+          {
+            "x": 50,
+            "y": 53
+          }
+        ],
+        "ms": 400
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h9",
+      "h10",
+      "h7"
+    ],
+    "maxMoves": 2,
+    "bounds": {
+      "x0": 22,
+      "x1": 80,
+      "y0": 56,
+      "y1": 88
+    }
+  },
+  "rules": [
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h10",
+        "zone": {
+          "x0": 43,
+          "x1": 57,
+          "y0": 74,
+          "y1": 84
+        }
+      }
+    },
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h10",
+        "from": {
+          "team": "away"
+        },
+        "m": 4
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h8",
+        "to": "h10"
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h9": {
+        "at": {
+          "x": 38,
+          "y": 66
+        }
+      },
+      "h10": {
+        "at": {
+          "x": 50,
+          "y": 79
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h8",
+          "to": "h10",
+          "ms": 900
+        },
+        {
+          "kind": "shoot",
+          "from": "h10",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "marked": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h8",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a4",
+            "at": "h10",
+            "ms": 500
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h8",
+            "to": "h10",
+            "ms": 900,
+            "interceptedBy": "a4"
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "გაათავისუფლე #10 ცენტრში. გადაადგილე 2",
+      "en": "Free #10 in the middle. Move 2 players"
+    },
+    "fail": {
+      "zone": {
+        "ka": "#10 ცენტრში არ არის! მას მცველების უკან ადგილი სჭირდება.",
+        "en": "#10 isn't in the middle! He needs space behind the defence."
+      },
+      "marked": {
+        "ka": "#10-ს მცველი უდგას! ჯერ ის სადმე წაიყვანე.",
+        "en": "#10 is still marked! Lead that defender away first."
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! #8-ს გზა უნდა ჰქონდეს.",
+        "en": "The lane is blocked! #8 needs a clear line."
+      }
+    },
+    "success": {
+      "ka": "ბრწყინვალე! ერთი გარბენა, ერთი შემოსვლა და #10 თავისუფალია.",
+      "en": "Brilliant! One decoy, one run in, and #10 is free."
+    },
+    "lessonLine": {
+      "ka": "ჯერ გაათავისუფლე სივრცე, მერე დაიკავე",
+      "en": "Empty the space first, then fill it"
+    }
+  },
+  "rewards": {
+    "xp": 50
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "ცენტრში ერთი მცველია. ვის მიჰყვება ის?",
+        "en": "One defender guards the middle. Who does he follow?"
+      }
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ]
+}

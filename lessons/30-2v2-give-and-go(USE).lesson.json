@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "id": "2v2-give-and-go",
+  "meta": {
+    "title": {
+      "ka": "მიეცი და გაიქეცი",
+      "en": "Give and go"
+    },
+    "topic": "two-v-two",
+    "level": "execute",
+    "difficulty": 20,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "2v2",
+      "give-and-go",
+      "combination",
+      "guided"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "full",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 28,
+        "x1": 72,
+        "y0": 44,
+        "y1": 80
+      }
+    },
+    "players": [
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 46,
+          "y": 52
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 56,
+          "y": 62
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 46,
+          "y": 57
+        },
+        "facing": 180
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 56,
+          "y": 66
+        },
+        "facing": 180
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h8"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "pass",
+        "from": "h8",
+        "to": "h9",
+        "ms": 700
+      },
+      {
+        "kind": "pulse",
+        "who": [
+          "h8",
+          "a6"
+        ],
+        "ms": 900
+      }
+    ]
+  },
+  "interaction": {
+    "type": "path",
+    "who": [
+      "h8"
+    ],
+    "path": {
+      "maxLengthM": 25,
+      "runSpeedMps": 7,
+      "passAfterM": 10
+    }
+  },
+  "rules": [
+    {
+      "type": "onside_at_pass",
+      "failKey": "offside",
+      "params": {
+        "who": "h8",
+        "passAfterM": 10
+      }
+    },
+    {
+      "type": "path_clear",
+      "failKey": "blocked",
+      "params": {
+        "who": "h8",
+        "minM": 1.5
+      }
+    },
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h8",
+        "zone": {
+          "x0": 36,
+          "x1": 50,
+          "y0": 61,
+          "y1": 70
+        }
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h8": {
+        "path": [
+          {
+            "x": 46,
+            "y": 52
+          },
+          {
+            "x": 40,
+            "y": 56
+          },
+          {
+            "x": 40,
+            "y": 62
+          },
+          {
+            "x": 44,
+            "y": 66
+          }
+        ]
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "play_answer"
+        },
+        {
+          "kind": "run_path",
+          "who": "h8",
+          "path": [
+            {
+              "x": 44,
+              "y": 66
+            },
+            {
+              "x": 46,
+              "y": 78
+            }
+          ],
+          "ms": 1900
+        }
+      ]
+    },
+    "fail": {
+      "offside": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "play_answer"
+          },
+          {
+            "kind": "flag",
+            "reason": "offside"
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "play_answer"
+          },
+          {
+            "kind": "wait",
+            "ms": 600
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "პასი #9-ს მიეცი. ახლა გაიქეცი #6-ის გვერდით!",
+      "en": "You passed to #9. Now run past #6!"
+    },
+    "hint": {
+      "ka": "#6 ბურთს უყურებს და შენ გავიწყდება.",
+      "en": "Their #6 watches the ball and forgets you."
+    },
+    "fail": {
+      "offside": {
+        "ka": "ოფსაიდი! #4-ზე წინ ნუ გაიქცევი, სანამ პასი მოვა.",
+        "en": "Offside! Don't get past #4 before the pass comes."
+      },
+      "blocked": {
+        "ka": "#6-ს დაეჯახე! შემოურბინე გვერდიდან.",
+        "en": "You ran into #6! Go round him."
+      },
+      "zone": {
+        "ka": "#6-ის უკან უნდა აღმოჩნდე! გაიქეცი წინ.",
+        "en": "You must end up behind #6! Keep running forward."
+      }
+    },
+    "success": {
+      "ka": "ყოჩაღ! მიეცი, გაიქეცი და ბურთი ისევ შენთანაა.",
+      "en": "Well done! Give, go, and the ball is back with you."
+    },
+    "lessonLine": {
+      "ka": "მიეცი და მაშინვე გაიქეცი",
+      "en": "Pass, then run straight away"
+    }
+  },
+  "rewards": {
+    "xp": 25
+  },
+  "hints": [
+    {
+      "afterWrong": 1,
+      "text": {
+        "ka": "#6 პირდაპირ შენ წინაა. შემოუარე.",
+        "en": "#6 is right in front of you. Go round him."
+      }
+    },
+    {
+      "afterWrong": 3,
+      "showZones": true,
+      "pulse": [
+        "a6"
+      ]
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე გარბენა",
+        "en": "Watch the run"
+      },
+      "ghost": true
+    }
+  ]
+}

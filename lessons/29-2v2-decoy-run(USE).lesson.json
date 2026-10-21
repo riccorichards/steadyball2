@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "id": "2v2-decoy-run",
+  "meta": {
+    "title": {
+      "ka": "მატყუარა გარბენა",
+      "en": "The decoy run"
+    },
+    "topic": "two-v-two",
+    "level": "decide",
+    "difficulty": 18,
+    "ageBand": "11-13",
+    "positions": [
+      "ATT"
+    ],
+    "tags": [
+      "2v2",
+      "decoy",
+      "creating-space",
+      "guided"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "full",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 20,
+        "x1": 80,
+        "y0": 54,
+        "y1": 96
+      }
+    },
+    "players": [
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 50,
+          "y": 60
+        },
+        "facing": 0
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 52,
+          "y": 74
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 52,
+          "y": 78
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h9",
+          "gapM": 1.5
+        }
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 60,
+          "y": 79
+        },
+        "facing": 180
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h10"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "run_path",
+        "who": "h10",
+        "path": [
+          {
+            "x": 50,
+            "y": 60
+          },
+          {
+            "x": 50,
+            "y": 62
+          }
+        ],
+        "ms": 500
+      },
+      {
+        "kind": "pulse",
+        "who": [
+          "h9",
+          "a4"
+        ],
+        "ms": 1000
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h9"
+    ],
+    "bounds": {
+      "x0": 22,
+      "x1": 78,
+      "y0": 62,
+      "y1": 84
+    }
+  },
+  "rules": [
+    {
+      "type": "gap_width",
+      "failKey": "gap",
+      "params": {
+        "a": "a4",
+        "b": "a5",
+        "m": 13
+      }
+    },
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h9",
+        "zone": {
+          "x0": 24,
+          "x1": 40,
+          "y0": 69,
+          "y1": 81
+        }
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h9": {
+        "at": {
+          "x": 33,
+          "y": 75
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "run_path",
+          "who": "h10",
+          "path": [
+            {
+              "x": 50,
+              "y": 62
+            },
+            {
+              "x": 49,
+              "y": 78
+            }
+          ],
+          "ms": 2700
+        },
+        {
+          "kind": "shoot",
+          "from": "h10",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "run_path",
+            "who": "h10",
+            "path": [
+              {
+                "x": 50,
+                "y": 62
+              },
+              {
+                "x": 51,
+                "y": 70
+              }
+            ],
+            "ms": 1300
+          },
+          {
+            "kind": "rush",
+            "who": "a4",
+            "at": "h10",
+            "ms": 600
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "#9, წაიყვანე შენი მცველი და #10-ს გზა გაუხსენი",
+      "en": "#9, take your defender away and open a path for #10"
+    },
+    "fail": {
+      "gap": {
+        "ka": "მცველები ჯერ კიდევ ახლოს არიან! გაიქეცი მეორე მცველისგან შორს.",
+        "en": "The defenders are still together! Run away from the other one."
+      },
+      "zone": {
+        "ka": "ძალიან ახლოს ან ძალიან შორს! გადი მარცხნივ, ფართოდ.",
+        "en": "Not that far or that near! Go wide to the left."
+      }
+    },
+    "success": {
+      "ka": "ბრწყინვალე! #4 გამოგყვა და #10-ს ცარიელი გზა აქვს.",
+      "en": "Brilliant! #4 followed you and #10 has a clear path."
+    },
+    "lessonLine": {
+      "ka": "შენი გარბენა თანაგუნდელს უხსნის სივრცეს",
+      "en": "Your run opens space for a teammate"
+    }
+  },
+  "rewards": {
+    "xp": 25
+  },
+  "hints": [
+    {
+      "afterWrong": 1,
+      "text": {
+        "ka": "#4 ყველგან გამოგყვება. საით უნდა წაიყვანო?",
+        "en": "#4 follows you everywhere. Where should you take him?"
+      }
+    },
+    {
+      "afterWrong": 3,
+      "showZones": true,
+      "pulse": [
+        "a4",
+        "a5"
+      ]
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე გარბენა",
+        "en": "Watch the run"
+      },
+      "ghost": true
+    }
+  ]
+}

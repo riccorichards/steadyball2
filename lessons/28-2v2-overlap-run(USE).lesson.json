@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "id": "2v2-overlap-run",
+  "meta": {
+    "title": {
+      "ka": "შემორბენა",
+      "en": "The overlap run"
+    },
+    "topic": "two-v-two",
+    "level": "execute",
+    "difficulty": 17,
+    "ageBand": "11-13",
+    "positions": [
+      "DEF",
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "2v2",
+      "overlap",
+      "offside",
+      "guided"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "full",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 56,
+        "x1": 100,
+        "y0": 40,
+        "y1": 84
+      }
+    },
+    "players": [
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 80,
+          "y": 52
+        },
+        "facing": 0
+      },
+      {
+        "id": "h2",
+        "team": "home",
+        "number": 2,
+        "role": "RB",
+        "at": {
+          "x": 78,
+          "y": 46
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "a3",
+        "team": "away",
+        "number": 3,
+        "role": "LB",
+        "at": {
+          "x": 80,
+          "y": 66
+        },
+        "facing": 180
+      },
+      {
+        "id": "a7",
+        "team": "away",
+        "number": 7,
+        "role": "LW",
+        "at": {
+          "x": 66,
+          "y": 52
+        },
+        "facing": 160
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h7"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "run_path",
+        "who": "h7",
+        "path": [
+          {
+            "x": 80,
+            "y": 52
+          },
+          {
+            "x": 80,
+            "y": 58
+          }
+        ],
+        "ms": 1200
+      },
+      {
+        "kind": "pulse",
+        "who": [
+          "h2"
+        ],
+        "ms": 900
+      }
+    ]
+  },
+  "interaction": {
+    "type": "path",
+    "who": [
+      "h2"
+    ],
+    "path": {
+      "maxLengthM": 35,
+      "runSpeedMps": 7,
+      "passAfterM": 20
+    }
+  },
+  "rules": [
+    {
+      "type": "onside_at_pass",
+      "failKey": "offside",
+      "params": {
+        "who": "h2",
+        "passAfterM": 20
+      }
+    },
+    {
+      "type": "path_clear",
+      "failKey": "blocked",
+      "params": {
+        "who": "h2",
+        "minM": 1.5
+      }
+    },
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h2",
+        "zone": {
+          "x0": 84,
+          "x1": 97,
+          "y0": 68,
+          "y1": 80
+        }
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h2": {
+        "path": [
+          {
+            "x": 78,
+            "y": 46
+          },
+          {
+            "x": 88,
+            "y": 56
+          },
+          {
+            "x": 92,
+            "y": 64
+          },
+          {
+            "x": 92,
+            "y": 74
+          }
+        ]
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "play_answer"
+        },
+        {
+          "kind": "run_path",
+          "who": "h2",
+          "path": [
+            {
+              "x": 92,
+              "y": 74
+            },
+            {
+              "x": 90,
+              "y": 86
+            }
+          ],
+          "ms": 1900
+        }
+      ]
+    },
+    "fail": {
+      "offside": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "play_answer"
+          },
+          {
+            "kind": "flag",
+            "reason": "offside"
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "play_answer"
+          },
+          {
+            "kind": "wait",
+            "ms": 600
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "დახატე #2-ის გარბენა #7-ის გარშემო",
+      "en": "Draw #2's run round the outside of #7"
+    },
+    "hint": {
+      "ka": "ჯერ #7-ის უკნიდან, მერე ხაზის გასწვრივ.",
+      "en": "Behind #7 first, then up the line."
+    },
+    "fail": {
+      "offside": {
+        "ka": "ოფსაიდი! პასის დროს #3-ზე წინ ნუ იქნები.",
+        "en": "Offside! Don't be past their #3 when the pass comes."
+      },
+      "blocked": {
+        "ka": "მეტოქეს დაეჯახე! შემოურბინე #7-ს გარედან.",
+        "en": "You ran into an opponent! Go round #7 on the outside."
+      },
+      "zone": {
+        "ka": "ძალიან ახლოს გაჩერდი! დაასრულე ფლანგზე, #3-ის ზურგს უკან.",
+        "en": "You stopped short! Finish on the wing, behind their #3."
+      }
+    },
+    "success": {
+      "ka": "იდეალური შემორბენა! #2 ფლანგზე თავისუფალია.",
+      "en": "Perfect overlap! #2 is free on the wing."
+    },
+    "lessonLine": {
+      "ka": "შემოურბინე გარედან, დარჩი ოფსაიდის გარეშე",
+      "en": "Overlap outside and stay onside"
+    }
+  },
+  "rewards": {
+    "xp": 25
+  },
+  "hints": [
+    {
+      "afterWrong": 1,
+      "text": {
+        "ka": "გაიქეცი #7-ის უკან და მერე გარედან წინ.",
+        "en": "Run behind #7, then up the outside."
+      }
+    },
+    {
+      "afterWrong": 3,
+      "showZones": true,
+      "pulse": [
+        "h2",
+        "a3"
+      ]
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე გარბენა",
+        "en": "Watch the run"
+      },
+      "ghost": true
+    }
+  ]
+}

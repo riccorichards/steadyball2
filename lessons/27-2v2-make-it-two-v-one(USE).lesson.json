@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 1,
+  "id": "2v2-make-it-two-v-one",
+  "meta": {
+    "title": {
+      "ka": "2 ორზე გადააქციე 2 ერთზე",
+      "en": "Turn 2v2 into 2v1"
+    },
+    "topic": "two-v-two",
+    "level": "recognize",
+    "difficulty": 15,
+    "ageBand": "11-13",
+    "positions": [
+      "DEF",
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "2v2",
+      "overlap",
+      "guided"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "full",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 58,
+        "x1": 100,
+        "y0": 34,
+        "y1": 78
+      }
+    },
+    "players": [
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 80,
+          "y": 52
+        },
+        "facing": 0
+      },
+      {
+        "id": "h2",
+        "team": "home",
+        "number": 2,
+        "role": "RB",
+        "at": {
+          "x": 82,
+          "y": 44
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "a3",
+        "team": "away",
+        "number": 3,
+        "role": "LB",
+        "at": {
+          "x": 80,
+          "y": 64
+        },
+        "facing": 180
+      },
+      {
+        "id": "a7",
+        "team": "away",
+        "number": 7,
+        "role": "LW",
+        "at": {
+          "x": 70,
+          "y": 50
+        },
+        "facing": 150
+      }
+    ],
+    "ball": {
+      "holder": "h7"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "run_path",
+        "who": "h7",
+        "path": [
+          {
+            "x": 80,
+            "y": 52
+          },
+          {
+            "x": 80,
+            "y": 56
+          }
+        ],
+        "ms": 800
+      },
+      {
+        "kind": "pulse",
+        "who": [
+          "h2"
+        ],
+        "ms": 900
+      }
+    ]
+  },
+  "interaction": {
+    "type": "choose",
+    "who": [],
+    "options": [
+      {
+        "id": "a",
+        "at": {
+          "x": 91,
+          "y": 66
+        },
+        "label": {
+          "ka": "გარედან შემოურბინე",
+          "en": "Overlap outside"
+        }
+      },
+      {
+        "id": "b",
+        "at": {
+          "x": 73,
+          "y": 59
+        },
+        "label": {
+          "ka": "#7-ის გვერდით",
+          "en": "Next to #7"
+        }
+      },
+      {
+        "id": "c",
+        "at": {
+          "x": 76,
+          "y": 40
+        },
+        "label": {
+          "ka": "უკან დარჩი",
+          "en": "Stay back"
+        }
+      }
+    ]
+  },
+  "rules": [
+    {
+      "type": "picks",
+      "failKey": "pick",
+      "params": {
+        "correct": "a"
+      }
+    }
+  ],
+  "solution": {
+    "pick": "a",
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "group",
+          "script": {
+            "mode": "parallel",
+            "steps": [
+              {
+                "kind": "run_path",
+                "who": "h2",
+                "path": [
+                  {
+                    "x": 82,
+                    "y": 44
+                  },
+                  {
+                    "x": 90,
+                    "y": 56
+                  },
+                  {
+                    "x": 91,
+                    "y": 66
+                  }
+                ],
+                "ms": 3400
+              },
+              {
+                "kind": "run_path",
+                "who": "h7",
+                "path": [
+                  {
+                    "x": 80,
+                    "y": 56
+                  },
+                  {
+                    "x": 75,
+                    "y": 61
+                  }
+                ],
+                "ms": 1500
+              }
+            ]
+          }
+        },
+        {
+          "kind": "pass",
+          "from": "h7",
+          "to": "h2",
+          "ms": 800
+        },
+        {
+          "kind": "run_path",
+          "who": "h2",
+          "path": [
+            {
+              "x": 91,
+              "y": 66
+            },
+            {
+              "x": 91,
+              "y": 76
+            }
+          ],
+          "ms": 1600
+        }
+      ]
+    },
+    "fail": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "rush",
+          "who": "a3",
+          "at": "h7",
+          "ms": 600
+        },
+        {
+          "kind": "wait",
+          "ms": 400
+        }
+      ]
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "#2, საით გაიქცევი, რომ #7-ს დაეხმარო?",
+      "en": "#2, where do you run to help #7?"
+    },
+    "hint": {
+      "ka": "თუ #7-ს გარედან შემოურბენ, მის მცველს ორი მოთამაშე ეყოლება.",
+      "en": "Run round #7 and his defender has two players to stop."
+    },
+    "fail": {
+      "pick": {
+        "ka": "ასე ისევ 2 ორზეა! შემოურბინე #7-ს გარედან.",
+        "en": "Still 2 against 2! Run round #7 on the outside."
+      }
+    },
+    "success": {
+      "ka": "ყოჩაღ! შემორბენით #3 ორი მოთამაშის წინაშე დარჩა.",
+      "en": "Well done! Your overlap leaves their #3 facing two players."
+    },
+    "lessonLine": {
+      "ka": "შემოურბინე და შექმენი 2 ერთზე",
+      "en": "Overlap to make 2 against 1"
+    }
+  },
+  "rewards": {
+    "xp": 15
+  },
+  "hints": [
+    {
+      "afterWrong": 1,
+      "text": {
+        "ka": "საით არ დგას არც ერთი მეტოქე?",
+        "en": "Where is there no opponent?"
+      }
+    },
+    {
+      "afterWrong": 3,
+      "pulse": [
+        "a3",
+        "h7"
+      ],
+      "spotlight": {
+        "zone": {
+          "x0": 76,
+          "x1": 100,
+          "y0": 52,
+          "y1": 74
+        }
+      }
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე გარბენა",
+        "en": "Watch the run"
+      },
+      "ghost": true
+    }
+  ]
+}

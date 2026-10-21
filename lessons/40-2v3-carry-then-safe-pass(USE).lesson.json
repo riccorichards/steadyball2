@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "id": "2v3-carry-then-safe-pass",
+  "meta": {
+    "title": {
+      "ka": "გაიყვანე და უსაფრთხო პასი",
+      "en": "Carry, then the safe pass"
+    },
+    "topic": "outnumbered",
+    "level": "execute",
+    "difficulty": 27,
+    "ageBand": "11-13",
+    "positions": [
+      "MID"
+    ],
+    "tags": [
+      "2v3",
+      "dribble",
+      "support",
+      "challenge"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "some",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 22,
+        "x1": 84,
+        "y0": 18,
+        "y1": 64
+      }
+    },
+    "players": [
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 50,
+          "y": 44
+        },
+        "facing": 180,
+        "highlight": true
+      },
+      {
+        "id": "h4",
+        "team": "home",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 50,
+          "y": 26
+        },
+        "facing": 0
+      },
+      {
+        "id": "a10",
+        "team": "away",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 50,
+          "y": 35
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 44,
+          "y": 55
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "press",
+          "target": "h8",
+          "speedMps": 4.5,
+          "when": "always"
+        }
+      },
+      {
+        "id": "a8",
+        "team": "away",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 57,
+          "y": 56
+        },
+        "facing": -160,
+        "behaviour": {
+          "kind": "press",
+          "target": "h8",
+          "speedMps": 4.5,
+          "when": "always"
+        }
+      }
+    ],
+    "ball": {
+      "holder": "h8"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "wait",
+        "ms": 500
+      }
+    ]
+  },
+  "interaction": {
+    "type": "dribble",
+    "who": [
+      "h8"
+    ],
+    "dribble": {
+      "release": "player",
+      "to": [
+        "h4"
+      ],
+      "maxLengthM": 15
+    }
+  },
+  "rules": [
+    {
+      "type": "keeps_ball",
+      "failKey": "tackled",
+      "params": {}
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h8",
+        "to": "h4"
+      }
+    },
+    {
+      "type": "pass_clear",
+      "failKey": "cut",
+      "params": {}
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h8": {
+        "path": [
+          {
+            "x": 50,
+            "y": 44
+          },
+          {
+            "x": 58,
+            "y": 42
+          },
+          {
+            "x": 65,
+            "y": 38
+          }
+        ]
+      }
+    },
+    "release": "h4",
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "play_answer"
+        },
+        {
+          "kind": "run_path",
+          "who": "h4",
+          "path": [
+            {
+              "x": 50,
+              "y": 26
+            },
+            {
+              "x": 52,
+              "y": 32
+            }
+          ],
+          "ms": 1000
+        }
+      ]
+    },
+    "fail": {
+      "lane": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "play_answer"
+          },
+          {
+            "kind": "wait",
+            "ms": 500
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "play_answer"
+          },
+          {
+            "kind": "wait",
+            "ms": 600
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "სამნი არიან. გაიყვანე ბურთი და მიაწოდე #4-ს",
+      "en": "They are three. Carry it, then pass to #4"
+    },
+    "fail": {
+      "tackled": {
+        "ka": "ბურთი წაგართვეს! ცოტა ადრე მიაწოდე.",
+        "en": "Tackled! Pass a bit earlier."
+      },
+      "lane": {
+        "ka": "#10 პასის ხაზზე დგას! ჯერ გვერდზე გაიტანე ბურთი.",
+        "en": "Their #10 stands in the lane! Carry it to the side first."
+      },
+      "cut": {
+        "ka": "პასი გადაჭრეს! მიაწოდე, როცა ხაზი სუფთაა.",
+        "en": "Cut out! Pass when the line is clear."
+      }
+    },
+    "success": {
+      "ka": "ყოჩაღ! ნაკლებნი იყავით, მაგრამ ბურთი ისევ ჩვენთანაა.",
+      "en": "Well done! Outnumbered, but we still have the ball."
+    },
+    "lessonLine": {
+      "ka": "ჯერ გახსენი ხაზი, მერე უსაფრთხო პასი",
+      "en": "Open the line, then play safe"
+    }
+  },
+  "rewards": {
+    "xp": 30
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "#10 კეტავს პირდაპირ პასს #4-ისკენ. გვერდზე გადი.",
+        "en": "Their #10 blocks the straight pass to #4. Move to the side."
+      }
+    }
+  ]
+}

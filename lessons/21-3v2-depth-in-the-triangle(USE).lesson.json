@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 1,
+  "id": "3v2-depth-in-the-triangle",
+  "meta": {
+    "title": {
+      "ka": "სამკუთხედის სიღრმე",
+      "en": "Depth in the triangle"
+    },
+    "topic": "three-v-two",
+    "level": "decide",
+    "difficulty": 14,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "3v2",
+      "triangle",
+      "depth",
+      "guided"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "full",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 22,
+        "x1": 82,
+        "y0": 32,
+        "y1": 74
+      }
+    },
+    "players": [
+      {
+        "id": "h6",
+        "team": "home",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 40
+        },
+        "facing": 0
+      },
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 76,
+          "y": 48
+        },
+        "facing": -90
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 38,
+          "y": 43
+        },
+        "facing": 90,
+        "highlight": true
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 48,
+          "y": 52
+        },
+        "facing": 180
+      },
+      {
+        "id": "a8",
+        "team": "away",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 64,
+          "y": 56
+        },
+        "facing": 200
+      }
+    ],
+    "ball": {
+      "holder": "h6"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "pulse",
+        "who": [
+          "h9"
+        ],
+        "ms": 1000
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h9"
+    ],
+    "bounds": {
+      "x0": 24,
+      "x1": 80,
+      "y0": 36,
+      "y1": 72
+    }
+  },
+  "rules": [
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h9",
+        "zone": {
+          "x0": 28,
+          "x1": 42,
+          "y0": 57,
+          "y1": 68
+        }
+      }
+    },
+    {
+      "type": "out_of_shadow",
+      "failKey": "shadow",
+      "params": {
+        "who": "h9",
+        "presser": "a6"
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h6",
+        "to": "h9"
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h9": {
+        "at": {
+          "x": 34,
+          "y": 62
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h6",
+          "to": "h9",
+          "ms": 900
+        },
+        {
+          "kind": "run_path",
+          "who": "h9",
+          "path": [
+            {
+              "x": 34,
+              "y": 62
+            },
+            {
+              "x": 36,
+              "y": 72
+            }
+          ],
+          "ms": 1500
+        }
+      ]
+    },
+    "fail": {
+      "shadow": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h9",
+            "ms": 800,
+            "interceptedBy": "a6"
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h7",
+            "ms": 900
+          },
+          {
+            "kind": "wait",
+            "ms": 400
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "#9, მიეცი სამკუთხედს სიღრმე",
+      "en": "#9, give the triangle depth"
+    },
+    "fail": {
+      "zone": {
+        "ka": "#6-ის დონეზე დგახარ! გაიწიე წინ, მეტოქეების უკან.",
+        "en": "You're level with #6! Move up, behind the opponents."
+      },
+      "shadow": {
+        "ka": "#6 გფარავს! გადი გვერდზე.",
+        "en": "Their #6 hides you! Step to the side."
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! იპოვე ადგილი, სადაც ბურთი მოგწვდება.",
+        "en": "The lane is closed! Find a spot the ball can reach."
+      }
+    },
+    "success": {
+      "ka": "ყოჩაღ! ახლა #6-ს წინ პასიც აქვს და გვერდზეც.",
+      "en": "Well done! Now #6 has a forward pass and a side pass."
+    },
+    "lessonLine": {
+      "ka": "სიღრმე: ერთი წინ, ერთი გვერდზე",
+      "en": "Depth: one ahead, one to the side"
+    }
+  },
+  "rewards": {
+    "xp": 20
+  },
+  "hints": [
+    {
+      "afterWrong": 1,
+      "text": {
+        "ka": "ფართოდ #7 უკვე დგას. ვინ იქნება წინ?",
+        "en": "#7 is already wide. Who will be ahead?"
+      }
+    },
+    {
+      "afterWrong": 3,
+      "showZones": true,
+      "pulse": [
+        "h9",
+        "a6"
+      ]
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე, სად დადგე",
+        "en": "Watch where to stand"
+      },
+      "ghost": true
+    }
+  ]
+}

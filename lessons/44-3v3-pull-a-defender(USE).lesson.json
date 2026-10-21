@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "id": "3v3-pull-a-defender",
+  "meta": {
+    "title": {
+      "ka": "წაიყვანე მცველი",
+      "en": "Pull a defender away"
+    },
+    "topic": "creating-space",
+    "level": "decide",
+    "difficulty": 30,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "3v3",
+      "decoy",
+      "creating-space",
+      "guided"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "full",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 22,
+        "x1": 84,
+        "y0": 50,
+        "y1": 98
+      }
+    },
+    "players": [
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 50,
+          "y": 56
+        },
+        "facing": 0
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 51,
+          "y": 76.5
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 53,
+          "y": 87
+        },
+        "facing": 0
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 52,
+          "y": 79
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h9",
+          "gapM": 1.5
+        }
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 66,
+          "y": 80
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 42,
+          "y": 62
+        },
+        "facing": 180
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h8"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "run_path",
+        "who": "h8",
+        "path": [
+          {
+            "x": 50,
+            "y": 56
+          },
+          {
+            "x": 50,
+            "y": 57
+          }
+        ],
+        "ms": 400
+      },
+      {
+        "kind": "pulse",
+        "who": [
+          "h9",
+          "a4",
+          "h10"
+        ],
+        "ms": 1100
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h9"
+    ],
+    "bounds": {
+      "x0": 24,
+      "x1": 82,
+      "y0": 60,
+      "y1": 86
+    }
+  },
+  "rules": [
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h8",
+        "to": "h10"
+      }
+    },
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h10",
+        "from": {
+          "team": "away"
+        },
+        "m": 4
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h9": {
+        "at": {
+          "x": 34,
+          "y": 72
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h8",
+          "to": "h10",
+          "ms": 900
+        },
+        {
+          "kind": "shoot",
+          "from": "h10",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h8",
+            "to": "h10",
+            "ms": 900,
+            "interceptedBy": "a4"
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "#9, წაიყვანე #4, რომ #10 გათავისუფლდეს",
+      "en": "#9, pull #4 away so #10 is free"
+    },
+    "fail": {
+      "lane": {
+        "ka": "#4 ისევ კეტავს პასს! #9, წაიყვანე ის ცენტრიდან.",
+        "en": "#4 still blocks the pass! #9, take him out of the middle."
+      },
+      "marked": {
+        "ka": "#10-ს ჯერ კიდევ მცველი უდგას! #9 უფრო შორს გაიქეცი.",
+        "en": "#10 is still marked! #9, run further away."
+      }
+    },
+    "success": {
+      "ka": "შესანიშნავია! #4 გამოგყვა და #10 მარტოა.",
+      "en": "Great! #4 followed you and #10 is alone."
+    },
+    "lessonLine": {
+      "ka": "შენი გარბენა თანაგუნდელს ათავისუფლებს",
+      "en": "Your run sets a teammate free"
+    }
+  },
+  "rewards": {
+    "xp": 25
+  },
+  "hints": [
+    {
+      "afterWrong": 1,
+      "text": {
+        "ka": "#4 #9-ს მიჰყვება. თუ #9 ცენტრიდან წავა?",
+        "en": "#4 follows #9. What if #9 leaves the middle?"
+      }
+    },
+    {
+      "afterWrong": 3,
+      "pulse": [
+        "a4",
+        "h9"
+      ],
+      "spotlight": {
+        "zone": {
+          "x0": 24,
+          "x1": 82,
+          "y0": 60,
+          "y1": 92
+        }
+      }
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე გარბენა",
+        "en": "Watch the run"
+      },
+      "ghost": true
+    }
+  ]
+}

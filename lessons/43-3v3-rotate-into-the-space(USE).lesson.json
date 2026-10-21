@@ -1,0 +1,331 @@
+{
+  "schemaVersion": 1,
+  "id": "3v3-rotate-into-the-space",
+  "meta": {
+    "title": {
+      "ka": "როტაცია: დაიკავე სივრცე",
+      "en": "Rotate into the space"
+    },
+    "topic": "rotation",
+    "level": "decide",
+    "difficulty": 29,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "3v3",
+      "rotation",
+      "guided"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "full",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 20,
+        "x1": 84,
+        "y0": 50,
+        "y1": 98
+      }
+    },
+    "players": [
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 30,
+          "y": 58
+        },
+        "facing": 20
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 50,
+          "y": 76
+        },
+        "facing": 180
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 64,
+          "y": 66
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 50,
+          "y": 80
+        },
+        "facing": 180
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 66,
+          "y": 72
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 26,
+          "y": 64
+        },
+        "facing": 160
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h8"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "group",
+        "script": {
+          "mode": "parallel",
+          "steps": [
+            {
+              "kind": "run_path",
+              "who": "h9",
+              "path": [
+                {
+                  "x": 50,
+                  "y": 76
+                },
+                {
+                  "x": 50,
+                  "y": 66
+                }
+              ],
+              "ms": 1700
+            },
+            {
+              "kind": "move",
+              "who": "a4",
+              "to": {
+                "x": 50,
+                "y": 70
+              },
+              "ms": 1700,
+              "face": 180
+            }
+          ]
+        }
+      },
+      {
+        "kind": "pulse",
+        "who": [
+          "h10",
+          "a4"
+        ],
+        "ms": 1000
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h10"
+    ],
+    "bounds": {
+      "x0": 34,
+      "x1": 82,
+      "y0": 56,
+      "y1": 90
+    }
+  },
+  "rules": [
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h10",
+        "zone": {
+          "x0": 44,
+          "x1": 60,
+          "y0": 74,
+          "y1": 86
+        }
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h8",
+        "to": "h10"
+      }
+    },
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h10",
+        "from": {
+          "team": "away"
+        },
+        "m": 4
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h10": {
+        "at": {
+          "x": 52,
+          "y": 80
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h8",
+          "to": "h10",
+          "ms": 900
+        },
+        {
+          "kind": "shoot",
+          "from": "h10",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "lane": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h8",
+            "to": "h10",
+            "ms": 900,
+            "interceptedBy": "a4"
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h8",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a5",
+            "at": "h10",
+            "ms": 600
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "#9 ჩამოვიდა. #10, დაიკავე მისი ადგილი!",
+      "en": "#9 dropped. #10, take his place!"
+    },
+    "fail": {
+      "zone": {
+        "ka": "ეს ის სივრცე არ არის! #10 უნდა გაიქცეს იქ, სადაც #9 იყო.",
+        "en": "Not that space! #10 must go where #9 was."
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! #8-მა უნდა დაგინახოს.",
+        "en": "The lane is closed! #8 must be able to find you."
+      },
+      "marked": {
+        "ka": "მეტოქე ძალიან ახლოსაა! მოძებნე თავისუფალი ადგილი.",
+        "en": "An opponent is too close! Find free space."
+      }
+    },
+    "success": {
+      "ka": "ბრავო! როტაციამ მეტოქეები დააბნია.",
+      "en": "Bravo! The rotation confused them."
+    },
+    "lessonLine": {
+      "ka": "როცა ერთი ჩამოდის, მეორე წინ გარბის",
+      "en": "When one drops, another runs forward"
+    }
+  },
+  "rewards": {
+    "xp": 25
+  },
+  "hints": [
+    {
+      "afterWrong": 1,
+      "text": {
+        "ka": "#4 #9-ს გაჰყვა. სად დარჩა სივრცე?",
+        "en": "#4 followed #9. Where is the space now?"
+      }
+    },
+    {
+      "afterWrong": 3,
+      "showZones": true,
+      "pulse": [
+        "a4"
+      ]
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე, სად გაიქცე",
+        "en": "Watch where to run"
+      },
+      "ghost": true
+    }
+  ]
+}

@@ -1,0 +1,583 @@
+{
+  "schemaVersion": 1,
+  "id": "2v2-story-overlap-and-cut-back",
+  "meta": {
+    "title": {
+      "ka": "შემორბენა და უკან ჩაწოდება",
+      "en": "Overlap, then the cut-back"
+    },
+    "topic": "two-v-two",
+    "level": "execute",
+    "difficulty": 22,
+    "ageBand": "11-13",
+    "positions": [
+      "DEF",
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "2v2",
+      "story",
+      "cinematic",
+      "overlap",
+      "cut-back"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "full",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 56,
+        "x1": 100,
+        "y0": 40,
+        "y1": 84
+      }
+    },
+    "players": [
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 80,
+          "y": 52
+        },
+        "facing": 0
+      },
+      {
+        "id": "h2",
+        "team": "home",
+        "number": 2,
+        "role": "RB",
+        "at": {
+          "x": 78,
+          "y": 46
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "a3",
+        "team": "away",
+        "number": 3,
+        "role": "LB",
+        "at": {
+          "x": 80,
+          "y": 66
+        },
+        "facing": 180
+      },
+      {
+        "id": "a7",
+        "team": "away",
+        "number": 7,
+        "role": "LW",
+        "at": {
+          "x": 66,
+          "y": 52
+        },
+        "facing": 160
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h7"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 30,
+          "x1": 100,
+          "y0": 30,
+          "y1": 100
+        },
+        "ms": 0
+      },
+      {
+        "kind": "run_path",
+        "who": "h7",
+        "path": [
+          {
+            "x": 80,
+            "y": 52
+          },
+          {
+            "x": 80,
+            "y": 58
+          }
+        ],
+        "ms": 1200
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "preset": "focus"
+        },
+        "ms": 800
+      },
+      {
+        "kind": "spotlight",
+        "on": {
+          "zone": {
+            "x0": 70,
+            "x1": 100,
+            "y0": 44,
+            "y1": 82
+          }
+        },
+        "dim": 0.45,
+        "ms": 400
+      },
+      {
+        "kind": "pulse",
+        "who": [
+          "h2",
+          "a3"
+        ],
+        "ms": 1000
+      }
+    ]
+  },
+  "interaction": {
+    "type": "path",
+    "who": [
+      "h2"
+    ],
+    "path": {
+      "maxLengthM": 35,
+      "runSpeedMps": 7,
+      "passAfterM": 20
+    }
+  },
+  "rules": [
+    {
+      "type": "onside_at_pass",
+      "failKey": "offside",
+      "params": {
+        "who": "h2",
+        "passAfterM": 20
+      }
+    },
+    {
+      "type": "path_clear",
+      "failKey": "blocked",
+      "params": {
+        "who": "h2",
+        "minM": 1.5
+      }
+    },
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h2",
+        "zone": {
+          "x0": 84,
+          "x1": 97,
+          "y0": 68,
+          "y1": 80
+        }
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h2": {
+        "path": [
+          {
+            "x": 78,
+            "y": 46
+          },
+          {
+            "x": 88,
+            "y": 56
+          },
+          {
+            "x": 92,
+            "y": 64
+          },
+          {
+            "x": 92,
+            "y": 74
+          }
+        ]
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "play_answer"
+        },
+        {
+          "kind": "group",
+          "script": {
+            "mode": "parallel",
+            "steps": [
+              {
+                "kind": "run_path",
+                "who": "h2",
+                "path": [
+                  {
+                    "x": 92,
+                    "y": 74
+                  },
+                  {
+                    "x": 90,
+                    "y": 88
+                  }
+                ],
+                "ms": 4500
+              },
+              {
+                "kind": "run_path",
+                "who": "h7",
+                "path": [
+                  {
+                    "x": 80,
+                    "y": 58
+                  },
+                  {
+                    "x": 66,
+                    "y": 80
+                  }
+                ],
+                "ms": 4500
+              },
+              {
+                "kind": "move",
+                "who": "a3",
+                "to": {
+                  "x": 60,
+                  "y": 92
+                },
+                "ms": 4500,
+                "face": 160
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "fail": {
+      "offside": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "play_answer"
+          },
+          {
+            "kind": "flag",
+            "reason": "offside"
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "play_answer"
+          },
+          {
+            "kind": "wait",
+            "ms": 600
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "#2, შემოურბინე #7-ს გარედან",
+      "en": "#2, overlap round the outside of #7"
+    },
+    "fail": {
+      "offside": {
+        "ka": "ოფსაიდი! პასამდე #3-ის დონეზე დარჩი.",
+        "en": "Offside! Stay level with their #3 until the pass."
+      },
+      "blocked": {
+        "ka": "მეტოქეს დაეჯახე! გაიქეცი #7-ის უკნიდან, გარედან.",
+        "en": "You ran into an opponent! Go behind #7, then outside."
+      },
+      "zone": {
+        "ka": "ჯერ არა! დაასრულე ფლანგზე, #3-ის ზურგს უკან.",
+        "en": "Not yet! Finish on the wing, behind their #3."
+      }
+    },
+    "success": {
+      "ka": "კარგია! #2 ბურთით ბოლო ხაზთანაა.",
+      "en": "Good! #2 is at the byline with the ball."
+    },
+    "lessonLine": {
+      "ka": "შემოურბინე, მერე იპოვე თავისუფალი",
+      "en": "Overlap, then find the free man"
+    }
+  },
+  "rewards": {
+    "xp": 50
+  },
+  "hints": [
+    {
+      "afterWrong": 1,
+      "text": {
+        "ka": "ჯერ #7-ის უკან, მერე ხაზის გასწვრივ წინ.",
+        "en": "Behind #7 first, then up the line."
+      }
+    },
+    {
+      "afterWrong": 3,
+      "showZones": true,
+      "pulse": [
+        "h2"
+      ]
+    },
+    {
+      "afterWrong": 5,
+      "ghost": true,
+      "text": {
+        "ka": "ნახე გარბენა",
+        "en": "Watch the run"
+      }
+    }
+  ],
+  "stages": [
+    {
+      "id": "cut-back",
+      "camera": {
+        "focus": {
+          "x0": 34,
+          "x1": 98,
+          "y0": 72,
+          "y1": 100
+        }
+      },
+      "intro": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "camera",
+            "to": {
+              "preset": "focus"
+            },
+            "ms": 700
+          },
+          {
+            "kind": "pulse",
+            "who": [
+              "h7",
+              "a3"
+            ],
+            "ms": 1000
+          },
+          {
+            "kind": "caption",
+            "text": {
+              "ka": "იპოვე სივრცე!",
+              "en": "Find the space!"
+            },
+            "ms": 1100
+          }
+        ]
+      },
+      "interaction": {
+        "type": "drag",
+        "who": [
+          "h7"
+        ],
+        "bounds": {
+          "x0": 36,
+          "x1": 80,
+          "y0": 76,
+          "y1": 96
+        }
+      },
+      "rules": [
+        {
+          "type": "in_zone",
+          "failKey": "zone",
+          "params": {
+            "who": "h7",
+            "zone": {
+              "x0": 40,
+              "x1": 56,
+              "y0": 82,
+              "y1": 90
+            }
+          }
+        },
+        {
+          "type": "lane_open",
+          "failKey": "lane",
+          "params": {
+            "from": "h2",
+            "to": "h7"
+          }
+        },
+        {
+          "type": "min_distance",
+          "failKey": "marked",
+          "params": {
+            "who": "h7",
+            "from": {
+              "team": "away"
+            },
+            "m": 3
+          }
+        }
+      ],
+      "solution": {
+        "moves": {
+          "h7": {
+            "at": {
+              "x": 48,
+              "y": 86
+            }
+          }
+        },
+        "tolerance": {
+          "radiusM": 1.5
+        }
+      },
+      "outcomes": {
+        "success": {
+          "mode": "sequential",
+          "steps": [
+            {
+              "kind": "pass",
+              "from": "h2",
+              "to": "h7",
+              "ms": 800
+            }
+          ]
+        },
+        "fail": {
+          "lane": {
+            "mode": "sequential",
+            "steps": [
+              {
+                "kind": "pass",
+                "from": "h2",
+                "to": "h7",
+                "ms": 800,
+                "interceptedBy": "a3"
+              }
+            ]
+          },
+          "default": {
+            "mode": "sequential",
+            "steps": [
+              {
+                "kind": "pass",
+                "from": "h2",
+                "to": "h7",
+                "ms": 800
+              },
+              {
+                "kind": "rush",
+                "who": "a3",
+                "at": "h7",
+                "ms": 600
+              }
+            ]
+          }
+        }
+      },
+      "text": {
+        "banner": {
+          "ka": "#7, დადექი იქ, სადაც #2 უკან ჩაგიწოდებს",
+          "en": "#7, find the spot for #2's cut-back"
+        },
+        "fail": {
+          "zone": {
+            "ka": "ძალიან ახლოს ხარ კართან ან შორს! ჩამოდი პენალტის წერტილისკენ.",
+            "en": "Wrong spot! Drop towards the penalty spot."
+          },
+          "lane": {
+            "ka": "პასის ხაზი დაკეტილია! #3 შუაშია.",
+            "en": "The lane is closed! Their #3 is in the way."
+          },
+          "marked": {
+            "ka": "მეტოქე ძალიან ახლოსაა! მოძებნე თავისუფალი ადგილი.",
+            "en": "An opponent is too close! Find free space."
+          }
+        },
+        "success": {
+          "ka": "ზუსტად! #7 თავისუფალია საჯარიმოში.",
+          "en": "Exactly! #7 is free in the box."
+        }
+      },
+      "hints": [
+        {
+          "afterWrong": 1,
+          "text": {
+            "ka": "როცა ყველა კარისკენ გარბის, ჩამოდი უკან.",
+            "en": "When everyone runs at goal, drop back."
+          }
+        },
+        {
+          "afterWrong": 3,
+          "showZones": true
+        },
+        {
+          "afterWrong": 5,
+          "ghost": true,
+          "text": {
+            "ka": "ნახე, სად დადგე",
+            "en": "Watch where to stand"
+          }
+        }
+      ]
+    }
+  ],
+  "finale": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "slowmo",
+        "factor": 0.4,
+        "ms": 1500
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 32,
+          "x1": 70,
+          "y0": 78,
+          "y1": 100
+        },
+        "ms": 800
+      },
+      {
+        "kind": "shoot",
+        "from": "h7",
+        "target": "goal",
+        "ms": 700,
+        "result": "goal"
+      }
+    ]
+  }
+}

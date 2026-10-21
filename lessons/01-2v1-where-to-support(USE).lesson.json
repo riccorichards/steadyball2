@@ -1,0 +1,325 @@
+{
+  "schemaVersion": 1,
+  "id": "2v1-where-to-support",
+  "meta": {
+    "title": {
+      "ka": "სად დავეხმაროთ?",
+      "en": "Where to support?"
+    },
+    "topic": "two-v-one",
+    "level": "recognize",
+    "difficulty": 4,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "2v1",
+      "support",
+      "guided"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "full",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 26,
+        "x1": 74,
+        "y0": 36,
+        "y1": 80
+      }
+    },
+    "players": [
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 44,
+          "y": 44
+        },
+        "facing": 0
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 50,
+          "y": 41
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 46,
+          "y": 62
+        },
+        "facing": 180
+      }
+    ],
+    "ball": {
+      "holder": "h10"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "group",
+        "script": {
+          "mode": "parallel",
+          "steps": [
+            {
+              "kind": "run_path",
+              "who": "h10",
+              "path": [
+                {
+                  "x": 44,
+                  "y": 44
+                },
+                {
+                  "x": 44,
+                  "y": 50
+                }
+              ],
+              "ms": 1300
+            },
+            {
+              "kind": "run_path",
+              "who": "h9",
+              "path": [
+                {
+                  "x": 50,
+                  "y": 41
+                },
+                {
+                  "x": 50,
+                  "y": 46
+                }
+              ],
+              "ms": 1300
+            }
+          ]
+        }
+      },
+      {
+        "kind": "pulse",
+        "who": [
+          "h9"
+        ],
+        "ms": 900
+      }
+    ]
+  },
+  "interaction": {
+    "type": "choose",
+    "who": [],
+    "options": [
+      {
+        "id": "a",
+        "at": {
+          "x": 47,
+          "y": 71
+        },
+        "label": {
+          "ka": "მცველის უკან",
+          "en": "Behind the defender"
+        }
+      },
+      {
+        "id": "b",
+        "at": {
+          "x": 60,
+          "y": 54
+        },
+        "label": {
+          "ka": "ფართოდ, ოდნავ წინ",
+          "en": "Wide, a bit ahead"
+        }
+      },
+      {
+        "id": "c",
+        "at": {
+          "x": 39,
+          "y": 54
+        },
+        "label": {
+          "ka": "#10-ის გვერდით",
+          "en": "Next to #10"
+        }
+      }
+    ]
+  },
+  "rules": [
+    {
+      "type": "picks",
+      "failKey": "pick",
+      "params": {
+        "correct": "b"
+      }
+    }
+  ],
+  "solution": {
+    "pick": "b",
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "run_path",
+          "who": "h9",
+          "path": [
+            {
+              "x": 50,
+              "y": 46
+            },
+            {
+              "x": 60,
+              "y": 54
+            }
+          ],
+          "ms": 1800
+        },
+        {
+          "kind": "run_path",
+          "who": "h10",
+          "path": [
+            {
+              "x": 44,
+              "y": 50
+            },
+            {
+              "x": 45,
+              "y": 55
+            }
+          ],
+          "ms": 900
+        },
+        {
+          "kind": "pass",
+          "from": "h10",
+          "to": "h9",
+          "ms": 800
+        },
+        {
+          "kind": "run_path",
+          "who": "h9",
+          "path": [
+            {
+              "x": 60,
+              "y": 54
+            },
+            {
+              "x": 60,
+              "y": 64
+            }
+          ],
+          "ms": 1500
+        }
+      ]
+    },
+    "fail": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "run_path",
+          "who": "h10",
+          "path": [
+            {
+              "x": 44,
+              "y": 50
+            },
+            {
+              "x": 45,
+              "y": 55
+            }
+          ],
+          "ms": 900
+        },
+        {
+          "kind": "rush",
+          "who": "a5",
+          "at": "h10",
+          "ms": 700
+        },
+        {
+          "kind": "wait",
+          "ms": 400
+        }
+      ]
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "სად უნდა წავიდეს #9, რომ #10-ს დაეხმაროს?",
+      "en": "Where should #9 go to help #10?"
+    },
+    "hint": {
+      "ka": "ერთ მცველს ერთდროულად ორი მოთამაშის დაფარვა უჭირს.",
+      "en": "One defender can't mark two players far apart."
+    },
+    "fail": {
+      "pick": {
+        "ka": "იქიდან ვერ დაეხმარები! გადი ფართოდ, #10-ზე ოდნავ წინ.",
+        "en": "#9 can't help from there! Go wide and a little ahead of #10."
+      }
+    },
+    "success": {
+      "ka": "ყოჩაღ! #9 ფართოდაა — ერთი მცველი ორს ვერ დაფარავს.",
+      "en": "Well done! #9 is wide, so one defender can't cover two."
+    },
+    "lessonLine": {
+      "ka": "დაეხმარე ფართოდ და ოდნავ წინ",
+      "en": "Support wide and a little ahead"
+    }
+  },
+  "rewards": {
+    "xp": 15
+  },
+  "hints": [
+    {
+      "afterWrong": 1,
+      "text": {
+        "ka": "მცველი ერთია. სად ვერ მიგწვდება ის?",
+        "en": "There is only one defender. Where can't he reach you?"
+      }
+    },
+    {
+      "afterWrong": 3,
+      "pulse": [
+        "a5",
+        "h10"
+      ],
+      "spotlight": {
+        "players": [
+          "h10",
+          "a5",
+          "h9"
+        ]
+      }
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე, სად უნდა დადგეს #9",
+        "en": "Watch where #9 should stand"
+      },
+      "ghost": true
+    }
+  ]
+}

@@ -1,0 +1,472 @@
+{
+  "schemaVersion": 1,
+  "id": "3v2-story-wide-then-third-man",
+  "meta": {
+    "title": {
+      "ka": "გაფართოვდი, მერე მესამე",
+      "en": "Go wide, then the third man"
+    },
+    "topic": "three-v-two",
+    "level": "execute",
+    "difficulty": 26,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "3v2",
+      "story",
+      "cinematic",
+      "third-man",
+      "challenge"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "some",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 28,
+        "x1": 84,
+        "y0": 48,
+        "y1": 92
+      }
+    },
+    "players": [
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 50,
+          "y": 50
+        },
+        "facing": 0
+      },
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 54,
+          "y": 70
+        },
+        "facing": 180,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 36,
+          "y": 66
+        },
+        "facing": 90
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 64
+        },
+        "facing": 180
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 60,
+          "y": 77
+        },
+        "facing": 180
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h8"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 10,
+          "x1": 90,
+          "y0": 30,
+          "y1": 100
+        },
+        "ms": 0
+      },
+      {
+        "kind": "run_path",
+        "who": "h8",
+        "path": [
+          {
+            "x": 50,
+            "y": 50
+          },
+          {
+            "x": 50,
+            "y": 56
+          }
+        ],
+        "ms": 1300
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "preset": "focus"
+        },
+        "ms": 800
+      },
+      {
+        "kind": "spotlight",
+        "on": {
+          "zone": {
+            "x0": 30,
+            "x1": 84,
+            "y0": 52,
+            "y1": 86
+          }
+        },
+        "dim": 0.45,
+        "ms": 400
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h7"
+    ],
+    "bounds": {
+      "x0": 30,
+      "x1": 86,
+      "y0": 52,
+      "y1": 84
+    }
+  },
+  "rules": [
+    {
+      "type": "out_of_shadow",
+      "failKey": "shadow",
+      "params": {
+        "who": "h7",
+        "presser": "a6"
+      }
+    },
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h7",
+        "zone": {
+          "x0": 64,
+          "x1": 78,
+          "y0": 58,
+          "y1": 70
+        }
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h8",
+        "to": "h7"
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h7": {
+        "at": {
+          "x": 71,
+          "y": 64
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h8",
+          "to": "h7",
+          "ms": 900
+        },
+        {
+          "kind": "move",
+          "who": "a5",
+          "to": {
+            "x": 67,
+            "y": 71
+          },
+          "ms": 1300,
+          "face": -140
+        }
+      ]
+    },
+    "fail": {
+      "shadow": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h8",
+            "to": "h7",
+            "ms": 800,
+            "interceptedBy": "a6"
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h8",
+            "to": "h7",
+            "ms": 800
+          },
+          {
+            "kind": "rush",
+            "who": "a5",
+            "at": "h7",
+            "ms": 700
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "#7, გაიხსენი #8-ისთვის",
+      "en": "#7, get open for #8"
+    },
+    "fail": {
+      "shadow": {
+        "ka": "#6 გფარავს! გადი ფართოდ.",
+        "en": "Their #6 hides you! Go wide."
+      },
+      "zone": {
+        "ka": "ჯერ არა! დადექი მარჯვნივ, ფართოდ.",
+        "en": "Not there! Stand wide on the right."
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! #8-ს გზა უნდა ჰქონდეს.",
+        "en": "The lane is closed! #8 needs a clear line."
+      }
+    },
+    "success": {
+      "ka": "კარგია! ბურთი შენთანაა. #5 გიახლოვდება...",
+      "en": "Good! You have it. #5 is coming..."
+    },
+    "lessonLine": {
+      "ka": "სიგანე, მერე მესამე მოთამაშე",
+      "en": "Width first, then the third man"
+    }
+  },
+  "rewards": {
+    "xp": 50
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "#6-ის ჩრდილიდან გამოდი.",
+        "en": "Step out of their #6's shadow."
+      }
+    },
+    {
+      "afterWrong": 4,
+      "showZones": true
+    }
+  ],
+  "stages": [
+    {
+      "id": "third-man",
+      "camera": {
+        "focus": {
+          "x0": 26,
+          "x1": 82,
+          "y0": 46,
+          "y1": 84
+        }
+      },
+      "intro": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "camera",
+            "to": {
+              "preset": "focus"
+            },
+            "ms": 700
+          },
+          {
+            "kind": "pulse",
+            "who": [
+              "a5"
+            ],
+            "ms": 900
+          }
+        ]
+      },
+      "interaction": {
+        "type": "pass_sequence",
+        "who": [
+          "h8",
+          "h9"
+        ]
+      },
+      "rules": [
+        {
+          "type": "sequence",
+          "failKey": "order",
+          "params": {
+            "order": [
+              "h7",
+              "h8",
+              "h9"
+            ]
+          }
+        }
+      ],
+      "solution": {
+        "sequence": [
+          "h7",
+          "h8",
+          "h9"
+        ],
+        "tolerance": {
+          "radiusM": 1.5
+        }
+      },
+      "outcomes": {
+        "success": {
+          "mode": "sequential",
+          "steps": [
+            {
+              "kind": "play_answer"
+            },
+            {
+              "kind": "run_path",
+              "who": "h9",
+              "path": [
+                {
+                  "x": 36,
+                  "y": 66
+                },
+                {
+                  "x": 40,
+                  "y": 80
+                }
+              ],
+              "ms": 2200
+            }
+          ]
+        },
+        "fail": {
+          "default": {
+            "mode": "sequential",
+            "steps": [
+              {
+                "kind": "pass",
+                "from": "h7",
+                "to": "h9",
+                "ms": 800,
+                "interceptedBy": "a6"
+              },
+              {
+                "kind": "wait",
+                "ms": 300
+              }
+            ]
+          }
+        }
+      },
+      "text": {
+        "banner": {
+          "ka": "#5 გიტევს. როგორ მივიდეს ბურთი #9-მდე?",
+          "en": "#5 presses you. How does the ball reach #9?"
+        },
+        "fail": {
+          "order": {
+            "ka": "პასი გადაჭრეს! #6 შუაშია. ჯერ #8-ს დაუბრუნე.",
+            "en": "Cut out! #6 is in the way. Play back to #8 first."
+          }
+        },
+        "success": {
+          "ka": "ზუსტად! #8 მესამე მოთამაშეს — #9-ს — პოულობს.",
+          "en": "Exactly! #8 finds the third man, #9."
+        }
+      },
+      "hints": [
+        {
+          "afterWrong": 2,
+          "text": {
+            "ka": "პირდაპირ პასს #6 კეტავს.",
+            "en": "Their #6 blocks the direct pass."
+          }
+        }
+      ]
+    }
+  ],
+  "finale": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "slowmo",
+        "factor": 0.4,
+        "ms": 1500
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 28,
+          "x1": 70,
+          "y0": 74,
+          "y1": 100
+        },
+        "ms": 800
+      },
+      {
+        "kind": "shoot",
+        "from": "h9",
+        "target": "goal",
+        "ms": 800,
+        "result": "goal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "id": "3v2-the-third-man",
+  "meta": {
+    "title": {
+      "ka": "მესამე მოთამაშე",
+      "en": "The third man"
+    },
+    "topic": "third-man",
+    "level": "decide",
+    "difficulty": 12,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "3v2",
+      "third-man",
+      "combination",
+      "guided"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "full",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 32,
+        "x1": 72,
+        "y0": 28,
+        "y1": 72
+      }
+    },
+    "players": [
+      {
+        "id": "h4",
+        "team": "home",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 44,
+          "y": 35
+        },
+        "facing": 15,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 60,
+          "y": 50
+        },
+        "facing": -140
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 49,
+          "y": 58
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 47.3,
+          "y": 50
+        },
+        "facing": 175
+      },
+      {
+        "id": "a10",
+        "team": "away",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 64,
+          "y": 57
+        },
+        "facing": 180
+      }
+    ],
+    "ball": {
+      "holder": "h4"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "a6",
+        "to": {
+          "x": 47.3,
+          "y": 50
+        },
+        "ms": 800,
+        "face": 175
+      },
+      {
+        "kind": "pulse",
+        "who": [
+          "a6"
+        ],
+        "ms": 900
+      }
+    ]
+  },
+  "interaction": {
+    "type": "pass_sequence",
+    "who": [
+      "h4",
+      "h9",
+      "h8"
+    ]
+  },
+  "rules": [
+    {
+      "type": "sequence",
+      "failKey": "order",
+      "params": {
+        "order": [
+          "h4",
+          "h9",
+          "h8"
+        ]
+      }
+    }
+  ],
+  "solution": {
+    "sequence": [
+      "h4",
+      "h9",
+      "h8"
+    ],
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "play_answer"
+        },
+        {
+          "kind": "move",
+          "who": "h8",
+          "to": {
+            "x": 50,
+            "y": 66
+          },
+          "ms": 1300,
+          "face": 0
+        }
+      ]
+    },
+    "fail": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h4",
+          "to": "h8",
+          "ms": 800,
+          "interceptedBy": "a6"
+        }
+      ]
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "როგორ მივიდეს ბურთი #8-მდე?",
+      "en": "How does the ball get to #8?"
+    },
+    "hint": {
+      "ka": "პირდაპირ გზას #6 კეტავს. ვინ დაგეხმარება?",
+      "en": "#6 blocks the direct way. Who can help?"
+    },
+    "fail": {
+      "order": {
+        "ka": "პასი გადაჭრეს! #6 პირდაპირ გზას კეტავს. ჯერ #9-ს მიეცი.",
+        "en": "Cut out! #6 blocks the direct way. Play #9 first."
+      }
+    },
+    "success": {
+      "ka": "ბრავო! #9-მა ბურთი #8-ს გადასცა — ეს მესამე მოთამაშეა.",
+      "en": "Bravo! #9 set it for #8: that's the third man."
+    },
+    "lessonLine": {
+      "ka": "პირდაპირ დაკეტილია? გამოიყენე მესამე",
+      "en": "Direct blocked? Use the third man"
+    }
+  },
+  "rewards": {
+    "xp": 20
+  },
+  "hints": [
+    {
+      "afterWrong": 1,
+      "text": {
+        "ka": "#6 დგას #4-სა და #8-ს შორის.",
+        "en": "#6 stands between #4 and #8."
+      }
+    },
+    {
+      "afterWrong": 3,
+      "pulse": [
+        "h9"
+      ],
+      "spotlight": {
+        "players": [
+          "h4",
+          "h9",
+          "h8"
+        ]
+      }
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე: #4 → #9 → #8",
+        "en": "Watch: #4 → #9 → #8"
+      },
+      "ghost": true
+    }
+  ]
+}
