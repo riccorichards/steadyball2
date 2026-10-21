@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "id": "pull-the-cb",
+  "meta": {
+    "title": { "ka": "გამოიტყუე მცველი", "en": "Pull the centre-back" },
+    "topic": "creating-space",
+    "level": "decide",
+    "difficulty": 34,
+    "ageBand": "11-13",
+    "positions": ["MID", "ATT"],
+    "tags": ["fixture", "puzzle", "creating-space"],
+    "status": "review",
+    "source": "coach"
+  },
+  "assist": "none",
+  "reaction": { "ms": 2000 },
+  "scene": {
+    "camera": { "focus": { "x0": 19, "x1": 83, "y0": 44, "y1": 90 } },
+    "players": [
+      { "id": "h6", "team": "home", "number": 6, "role": "DM", "at": { "x": 44, "y": 42 }, "facing": 20 },
+      { "id": "h8", "team": "home", "number": 8, "role": "CM", "at": { "x": 50, "y": 50 }, "facing": 0, "highlight": true },
+      { "id": "h9", "team": "home", "number": 9, "role": "ST", "at": { "x": 50, "y": 78 }, "facing": 0 },
+      { "id": "h10", "team": "home", "number": 10, "role": "AM", "at": { "x": 66, "y": 70 }, "facing": 0 },
+      { "id": "h11", "team": "home", "number": 11, "role": "LW", "at": { "x": 24, "y": 72 }, "facing": 0 },
+      { "id": "h7", "team": "home", "number": 7, "role": "RW", "at": { "x": 78, "y": 72 }, "facing": 0 },
+      { "id": "a8", "team": "away", "number": 8, "role": "CM", "at": { "x": 38, "y": 60 }, "facing": 180 },
+      { "id": "a6", "team": "away", "number": 6, "role": "DM", "at": { "x": 57, "y": 61 }, "facing": 180 },
+      { "id": "a3", "team": "away", "number": 3, "role": "CB", "at": { "x": 32, "y": 81 }, "facing": 180 },
+      { "id": "a4", "team": "away", "number": 4, "role": "CB", "at": { "x": 50, "y": 82 }, "facing": 180, "behaviour": { "kind": "follow", "target": "h9", "gapM": 1.5 } },
+      { "id": "a5", "team": "away", "number": 5, "role": "CB", "at": { "x": 66, "y": 81 }, "facing": 180 },
+      { "id": "a1", "team": "away", "number": 1, "role": "GK", "at": { "x": 50, "y": 97 }, "facing": 180, "isGK": true }
+    ],
+    "ball": { "holder": "h6" }
+  },
+  "intro": { "mode": "sequential", "steps": [{ "kind": "pass", "from": "h6", "to": "h8", "ms": 700 }, { "kind": "wait", "ms": 300 }] },
+  "interaction": { "type": "drag", "who": ["h9", "h10", "h11", "h7"], "maxMoves": 2 },
+  "rules": [
+    { "type": "in_zone", "failKey": "zone", "params": { "who": "h10", "zone": { "x0": 43, "x1": 56, "y0": 76, "y1": 85 } } },
+    { "type": "min_distance", "failKey": "marked", "params": { "who": "h10", "from": { "team": "away" }, "m": 4 } },
+    { "type": "lane_open", "failKey": "lane", "params": { "from": "h8", "to": "h10" } }
+  ],
+  "solution": { "moves": { "h9": { "at": { "x": 40, "y": 68 } }, "h10": { "at": { "x": 50, "y": 80 } } }, "tolerance": { "radiusM": 1.5 } },
+  "hints": [
+    { "afterWrong": 2, "text": { "ka": "ვინ იცავს სივრცეს ცენტრში? შეგიძლია ის სადმე წაიყვანო?", "en": "Who guards the space in the middle? Can you lead him away?" } },
+    { "afterWrong": 4, "pulse": ["a4", "h9"] },
+    { "afterWrong": 6, "ghost": true }
+  ],
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        { "kind": "pass", "from": "h8", "to": "h10", "ms": 900 },
+        { "kind": "run_path", "who": "h10", "path": [{ "x": 50, "y": 80 }, { "x": 51, "y": 84 }, { "x": 52, "y": 88 }], "ms": 900 },
+        { "kind": "shoot", "from": "h10", "target": "goal", "ms": 700, "result": "goal" }
+      ]
+    },
+    "fail": {
+      "marked": { "mode": "sequential", "steps": [{ "kind": "pass", "from": "h8", "to": "h10", "ms": 900 }, { "kind": "rush", "who": "a4", "at": "h10", "ms": 500 }] },
+      "default": { "mode": "sequential", "steps": [{ "kind": "pass", "from": "h8", "to": "h10", "ms": 900 }, { "kind": "rush", "who": "a6", "at": "h10", "ms": 700 }] }
+    }
+  },
+  "text": {
+    "banner": { "ka": "გაათავისუფლე #10. გადაადგილე 2 მოთამაშე", "en": "Free #10 in the middle. Move 2 players" },
+    "fail": {
+      "zone": { "ka": "#10 სივრცეში არ არის! ცენტრში, მცველებს შორის.", "en": "#10 isn't in the space! Get him between their centre-backs." },
+      "marked": { "ka": "#10-ს მცველი უდგას! ჯერ ის წაიყვანე.", "en": "#10 is still marked! Pull that defender away first." },
+      "lane": { "ka": "პასის ხაზი დაკეტილია! #8-ს გზა უნდა ჰქონდეს.", "en": "The lane is blocked! #8 needs a clear line." }
+    },
+    "success": { "ka": "ბრწყინვალე! #9-მა მცველი წაიყვანა და #10 თავისუფალია.", "en": "Brilliant! #9 took the centre-back away and #10 is free." },
+    "lessonLine": { "ka": "ერთი მოძრაობა მეორეს ათავისუფლებს", "en": "One run frees another player" }
+  },
+  "rewards": { "xp": 45 }
+}

@@ -32,5 +32,25 @@ export const LESSON_META: { id: string; title_ka: string; title_en: string }[] =
     "id": "story-run-behind",
     "title_ka": "გაიხსენი, მიაწოდე გაჭრილს",
     "title_en": "Get open, find the runner"
+  },
+  {
+    "id": "through-ball",
+    "title_ka": "პასი სივრცეში",
+    "title_en": "Pass into space"
+  },
+  {
+    "id": "pull-the-cb",
+    "title_ka": "გამოიტყუე მცველი",
+    "title_en": "Pull the centre-back"
+  },
+  {
+    "id": "two-v-one",
+    "title_ka": "2 ერთის წინააღმდეგ",
+    "title_en": "2 against 1"
+  },
+  {
+    "id": "escape-the-press",
+    "title_ka": "გაექეცი პრესინგს",
+    "title_en": "Escape the press"
   }
 ];

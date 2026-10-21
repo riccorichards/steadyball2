@@ -7,6 +7,10 @@ import l2 from "./03-cut-back.lesson.json";
 import l3 from "./04-curved-run.lesson.json";
 import l4 from "./05-third-man.lesson.json";
 import l5 from "./06-story-run-behind.lesson.json";
+import l6 from "./07-through-ball.lesson.json";
+import l7 from "./08-pull-the-cb.lesson.json";
+import l8 from "./09-two-v-one.lesson.json";
+import l9 from "./10-escape-the-press.lesson.json";
 
 /** Lesson files in play order (raw JSON; lib/lessons.ts validates them). */
-export const LESSON_FILES: unknown[] = [l0, l1, l2, l3, l4, l5];
+export const LESSON_FILES: unknown[] = [l0, l1, l2, l3, l4, l5, l6, l7, l8, l9];
