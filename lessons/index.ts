@@ -44,9 +44,29 @@ export const LESSON_META: { id: string; title_ka: string; title_en: string }[] =
     "title_en": "Get open, find the runner"
   },
   {
+    "id": "space-into-the-half-space",
+    "title_ka": "ნახევარსივრცეში",
+    "title_en": "Into the half-space"
+  },
+  {
     "id": "2v1-puzzle-bend-the-run",
     "title_ka": "თავსატეხი: მოხარე გარბენა",
     "title_en": "Puzzle: bend the run"
+  },
+  {
+    "id": "space-half-turn-in-space",
+    "title_ka": "სივრცე და ღია ტანი",
+    "title_en": "Space and an open body"
+  },
+  {
+    "id": "space-lose-him-and-turn",
+    "title_ka": "მოშორდი და შებრუნდი",
+    "title_en": "Lose your marker and turn"
+  },
+  {
+    "id": "space-story-between-the-lines",
+    "title_ka": "ხაზებს შორის",
+    "title_en": "Between the lines"
   },
   {
     "id": "1v2-escape-the-press",
@@ -54,9 +74,44 @@ export const LESSON_META: { id: string; title_ka: string; title_en: string }[] =
     "title_en": "Escape the press"
   },
   {
+    "id": "space-who-is-hidden",
+    "title_ka": "თავსატეხი: ვინ იმალება?",
+    "title_en": "Puzzle: who is hidden?"
+  },
+  {
+    "id": "space-who-is-marked",
+    "title_ka": "თავსატეხი: ვინ არის დაფარული?",
+    "title_en": "Puzzle: who is marked?"
+  },
+  {
+    "id": "space-who-moves",
+    "title_ka": "თავსატეხი: ვინ გადაინაცვლოს?",
+    "title_en": "Puzzle: who moves?"
+  },
+  {
     "id": "1v2-escape-the-other-way",
     "title_ka": "გაექეცი მეორე მხარეს",
     "title_en": "Escape the other way"
+  },
+  {
+    "id": "space-two-problems-one-move",
+    "title_ka": "თავსატეხი: ერთი მოძრაობა",
+    "title_en": "Puzzle: one move, two fixes"
+  },
+  {
+    "id": "space-run-into-the-gap",
+    "title_ka": "თავსატეხი: გაიჭერი ხვრელში",
+    "title_en": "Puzzle: run into the gap"
+  },
+  {
+    "id": "space-curve-the-run",
+    "title_ka": "თავსატეხი: რკალისებური გარბენა",
+    "title_en": "Puzzle: curve the run"
+  },
+  {
+    "id": "space-round-the-defender",
+    "title_ka": "თავსატეხი: შემოუარე მცველს",
+    "title_en": "Puzzle: round the defender"
   },
   {
     "id": "3v2-the-third-man",
@@ -64,9 +119,19 @@ export const LESSON_META: { id: string; title_ka: string; title_en: string }[] =
     "title_en": "The third man"
   },
   {
+    "id": "space-time-the-run",
+    "title_ka": "თავსატეხი: გარბენის დრო",
+    "title_en": "Puzzle: time the run"
+  },
+  {
     "id": "3v2-width-in-the-triangle",
     "title_ka": "სამკუთხედის სიგანე",
     "title_en": "Width in the triangle"
+  },
+  {
+    "id": "space-pass-into-the-gap",
+    "title_ka": "თავსატეხი: პასი ხვრელში",
+    "title_en": "Puzzle: pass into the gap"
   },
   {
     "id": "3v2-depth-in-the-triangle",
@@ -74,9 +139,29 @@ export const LESSON_META: { id: string; title_ka: string; title_en: string }[] =
     "title_en": "Depth in the triangle"
   },
   {
+    "id": "space-find-the-right-gap",
+    "title_ka": "თავსატეხი: სწორი ხვრელი",
+    "title_en": "Puzzle: the right gap"
+  },
+  {
+    "id": "space-chip-over-the-line",
+    "title_ka": "თავსატეხი: გადააგდე ხაზზე",
+    "title_en": "Puzzle: chip over the line"
+  },
+  {
+    "id": "space-two-get-free",
+    "title_ka": "თავსატეხი: ორივე გაიხსენი",
+    "title_en": "Puzzle: get both free"
+  },
+  {
     "id": "3v2-spare-man-in-behind",
     "title_ka": "თავისუფალი გაიჭრა",
     "title_en": "The spare man runs in behind"
+  },
+  {
+    "id": "space-width-and-pocket",
+    "title_ka": "თავსატეხი: სიგანე და ჯიბე",
+    "title_en": "Puzzle: width and the pocket"
   },
   {
     "id": "3v2-story-wide-then-third-man",
@@ -84,9 +169,24 @@ export const LESSON_META: { id: string; title_ka: string; title_en: string }[] =
     "title_en": "Go wide, then the third man"
   },
   {
+    "id": "space-free-two-and-turn",
+    "title_ka": "თავსატეხი: ორი სივრცეში",
+    "title_en": "Puzzle: two into space"
+  },
+  {
+    "id": "space-take-the-marker-away",
+    "title_ka": "წაიყვანე მცველი",
+    "title_en": "Take the defender away"
+  },
+  {
     "id": "2v2-make-it-two-v-one",
     "title_ka": "2 ორზე გადააქციე 2 ერთზე",
     "title_en": "Turn 2v2 into 2v1"
+  },
+  {
+    "id": "space-pull-him-off-the-lane",
+    "title_ka": "გაუხსენი ხაზი",
+    "title_en": "Pull him off the lane"
   },
   {
     "id": "2v2-overlap-run",
@@ -94,9 +194,19 @@ export const LESSON_META: { id: string; title_ka: string; title_en: string }[] =
     "title_en": "The overlap run"
   },
   {
+    "id": "space-story-empty-then-fill",
+    "title_ka": "გაათავისუფლე და შეავსე",
+    "title_en": "Empty it, then fill it"
+  },
+  {
     "id": "2v2-decoy-run",
     "title_ka": "მატყუარა გარბენა",
     "title_en": "The decoy run"
+  },
+  {
+    "id": "space-open-the-wing",
+    "title_ka": "გაუხსენი ფლანგი",
+    "title_en": "Open the wing"
   },
   {
     "id": "2v2-give-and-go",
@@ -114,9 +224,49 @@ export const LESSON_META: { id: string; title_ka: string; title_en: string }[] =
     "title_en": "Switch away from pressure"
   },
   {
+    "id": "space-pull-and-fill",
+    "title_ka": "თავსატეხი: წაიყვანე და შეავსე",
+    "title_en": "Puzzle: pull and fill"
+  },
+  {
     "id": "2v2-return-pass-into-space",
     "title_ka": "საპასუხო პასი სივრცეში",
     "title_en": "Return pass into space"
+  },
+  {
+    "id": "space-pull-the-midfielder",
+    "title_ka": "თავსატეხი: წაიყვანე ნახევარმცველი",
+    "title_en": "Puzzle: pull the midfielder"
+  },
+  {
+    "id": "space-split-the-centre-backs",
+    "title_ka": "თავსატეხი: დაშორე მცველები",
+    "title_en": "Puzzle: split the centre-backs"
+  },
+  {
+    "id": "space-two-decoys",
+    "title_ka": "თავსატეხი: ორი მატყუარა გარბენა",
+    "title_en": "Puzzle: two decoys"
+  },
+  {
+    "id": "space-pull-without-blocking",
+    "title_ka": "თავსატეხი: წაიყვანე, ხაზი არ დაკეტო",
+    "title_en": "Puzzle: pull, don't block"
+  },
+  {
+    "id": "space-stretch-it-wide",
+    "title_ka": "თავსატეხი: გაჭიმე სიგანეში",
+    "title_en": "Puzzle: stretch it wide"
+  },
+  {
+    "id": "space-deep-and-wide",
+    "title_ka": "თავსატეხი: სიღრმე და სიგანე",
+    "title_en": "Puzzle: deep and wide"
+  },
+  {
+    "id": "space-stretch-and-fill",
+    "title_ka": "თავსატეხი: გაჭიმე და შეავსე",
+    "title_en": "Puzzle: stretch and fill"
   },
   {
     "id": "2v3-carry-then-safe-pass",
@@ -124,9 +274,24 @@ export const LESSON_META: { id: string; title_ka: string; title_en: string }[] =
     "title_en": "Carry, then the safe pass"
   },
   {
+    "id": "space-story-stretch-then-third-man",
+    "title_ka": "გაჭიმე და მესამე მოთამაშე",
+    "title_en": "Stretch, then the third man"
+  },
+  {
+    "id": "space-open-it-use-it",
+    "title_ka": "თავსატეხი: გახსენი და გამოიყენე",
+    "title_en": "Puzzle: open it, use it"
+  },
+  {
     "id": "3v3-fill-the-space",
     "title_ka": "შეავსე სივრცე",
     "title_en": "Fill the space"
+  },
+  {
+    "id": "space-empty-the-side-then-play",
+    "title_ka": "თავსატეხი: გაათავისუფლე და ითამაშე",
+    "title_en": "Puzzle: empty it, then play"
   },
   {
     "id": "3v3-rotate-into-the-space",
@@ -134,9 +299,24 @@ export const LESSON_META: { id: string; title_ka: string; title_en: string }[] =
     "title_en": "Rotate into the space"
   },
   {
+    "id": "space-open-the-way-then-through",
+    "title_ka": "თავსატეხი: გზა და პასი",
+    "title_en": "Puzzle: open the way, then through"
+  },
+  {
     "id": "3v3-pull-a-defender",
     "title_ka": "წაიყვანე მცველი",
     "title_en": "Pull a defender away"
+  },
+  {
+    "id": "space-drop-and-run",
+    "title_ka": "თავსატეხი: ჩამოდი და გაიჭერი",
+    "title_en": "Puzzle: drop, then run"
+  },
+  {
+    "id": "space-high-line-free-the-ten",
+    "title_ka": "თავსატეხი: მაღალი ხაზი",
+    "title_en": "Puzzle: beat the high line"
   },
   {
     "id": "3v3-rotate-and-run-in-behind",
@@ -144,9 +324,24 @@ export const LESSON_META: { id: string; title_ka: string; title_en: string }[] =
     "title_en": "Rotate and run in behind"
   },
   {
+    "id": "space-empty-the-channel-then-run",
+    "title_ka": "თავსატეხი: გაათავისუფლე და გაიჭერი",
+    "title_en": "Puzzle: empty it, then run"
+  },
+  {
+    "id": "space-break-the-press",
+    "title_ka": "თავსატეხი: გატეხე პრესინგი",
+    "title_en": "Puzzle: break the press"
+  },
+  {
     "id": "3v3-puzzle-free-the-ten",
     "title_ka": "თავსატეხი: გაათავისუფლე #10",
     "title_en": "Puzzle: free the #10"
+  },
+  {
+    "id": "space-split-then-chip",
+    "title_ka": "თავსატეხი: გაყავი და გადააგდე",
+    "title_en": "Puzzle: split it, then chip it"
   },
   {
     "id": "3v3-final-puzzle-combine",

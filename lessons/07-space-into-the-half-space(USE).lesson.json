@@ -1,0 +1,351 @@
+{
+  "schemaVersion": 1,
+  "id": "space-into-the-half-space",
+  "meta": {
+    "title": {
+      "ka": "ნახევარსივრცეში",
+      "en": "Into the half-space"
+    },
+    "topic": "free-space",
+    "level": "decide",
+    "difficulty": 7,
+    "ageBand": "11-13",
+    "positions": [
+      "MID"
+    ],
+    "tags": [
+      "free-space",
+      "half-space",
+      "move-into-space",
+      "guided"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "full",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 30,
+        "x1": 90,
+        "y0": 22,
+        "y1": 70
+      }
+    },
+    "players": [
+      {
+        "id": "h4",
+        "team": "home",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 40,
+          "y": 28
+        },
+        "facing": 20
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 48,
+          "y": 50
+        },
+        "facing": 180,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 50,
+          "y": 76
+        },
+        "facing": 180
+      },
+      {
+        "id": "a10",
+        "team": "away",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 46,
+          "y": 40
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 53,
+          "y": 55
+        },
+        "facing": 180
+      },
+      {
+        "id": "a8",
+        "team": "away",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 40,
+          "y": 55
+        },
+        "facing": 180
+      },
+      {
+        "id": "a7",
+        "team": "away",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 86,
+          "y": 56
+        },
+        "facing": 200
+      }
+    ],
+    "ball": {
+      "holder": "h4"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h4",
+        "to": {
+          "x": 40,
+          "y": 28
+        },
+        "ms": 400,
+        "face": 20
+      },
+      {
+        "kind": "spotlight",
+        "on": {
+          "zone": {
+            "x0": 30,
+            "x1": 86,
+            "y0": 36,
+            "y1": 66
+          }
+        },
+        "dim": 0.5,
+        "ms": 500
+      },
+      {
+        "kind": "pulse",
+        "who": [
+          "h8"
+        ],
+        "ms": 900
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h8"
+    ],
+    "bounds": {
+      "x0": 30,
+      "x1": 86,
+      "y0": 38,
+      "y1": 66
+    }
+  },
+  "rules": [
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h8",
+        "zone": {
+          "x0": 64,
+          "x1": 78,
+          "y0": 46,
+          "y1": 60
+        }
+      }
+    },
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h8",
+        "from": {
+          "team": "away"
+        },
+        "m": 5
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h4",
+        "to": "h8"
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h8": {
+        "at": {
+          "x": 71,
+          "y": 53
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h4",
+          "to": "h8",
+          "ms": 900
+        },
+        {
+          "kind": "move",
+          "who": "h8",
+          "to": {
+            "x": 70,
+            "y": 62
+          },
+          "ms": 1500,
+          "face": 0
+        },
+        {
+          "kind": "pass",
+          "from": "h8",
+          "to": "h9",
+          "ms": 800
+        }
+      ]
+    },
+    "fail": {
+      "zone": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h8",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a6",
+            "at": "h8",
+            "ms": 700
+          }
+        ]
+      },
+      "lane": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h8",
+            "ms": 900,
+            "interceptedBy": "a10"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h8",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a7",
+            "at": "h8",
+            "ms": 700
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "გადი მარჯვენა ნახევარსივრცეში",
+      "en": "Move into the right half-space"
+    },
+    "fail": {
+      "zone": {
+        "ka": "ცენტრში ადგილი არ არის! გადი მარჯვენა ნახევარსივრცეში.",
+        "en": "No room in the middle! Move into the right half-space."
+      },
+      "marked": {
+        "ka": "მეტოქე ახლოსაა! იპოვე ადგილი #6-სა და #7-ს შორის.",
+        "en": "An opponent is too close! Find the spot between #6 and #7."
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! #10 ბურთს ჭრის.",
+        "en": "The lane is closed! #10 cuts the pass."
+      }
+    },
+    "success": {
+      "ka": "შესანიშნავია! ნახევარსივრცეში ბევრი ადგილია.",
+      "en": "Great! There is lots of room in the half-space."
+    },
+    "lessonLine": {
+      "ka": "ცენტრი სავსეა? გადი ნახევარსივრცეში",
+      "en": "Middle crowded? Go to the half-space"
+    }
+  },
+  "rewards": {
+    "xp": 20
+  },
+  "hints": [
+    {
+      "afterWrong": 1,
+      "text": {
+        "ka": "ცენტრში ორი მეტოქეა. მარჯვნივ კი?",
+        "en": "Two opponents in the middle. And to the right?"
+      }
+    },
+    {
+      "afterWrong": 3,
+      "showZones": true,
+      "pulse": [
+        "h8",
+        "a6",
+        "a7"
+      ]
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე, სად უნდა გადახვიდე",
+        "en": "Watch where to go"
+      },
+      "ghost": true
+    }
+  ]
+}

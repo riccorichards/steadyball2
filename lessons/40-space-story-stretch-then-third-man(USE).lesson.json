@@ -1,0 +1,518 @@
+{
+  "schemaVersion": 1,
+  "id": "space-story-stretch-then-third-man",
+  "meta": {
+    "title": {
+      "ka": "გაჭიმე და მესამე მოთამაშე",
+      "en": "Stretch, then the third man"
+    },
+    "topic": "creating-space",
+    "level": "execute",
+    "difficulty": 40,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "create-space",
+      "stretch",
+      "third-man",
+      "story",
+      "puzzle"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 18,
+        "x1": 82,
+        "y0": 40,
+        "y1": 96
+      }
+    },
+    "players": [
+      {
+        "id": "h6",
+        "team": "home",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 50
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 50,
+          "y": 73
+        },
+        "facing": 180
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 40,
+          "y": 64
+        },
+        "facing": 180
+      },
+      {
+        "id": "h11",
+        "team": "home",
+        "number": 11,
+        "role": "LW",
+        "at": {
+          "x": 41,
+          "y": 76
+        },
+        "facing": 0
+      },
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 59,
+          "y": 76
+        },
+        "facing": 0
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 61
+        },
+        "facing": 180
+      },
+      {
+        "id": "a8",
+        "team": "away",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 34,
+          "y": 57
+        },
+        "facing": 180
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 44,
+          "y": 78.5
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h11",
+          "gapM": 3.3
+        }
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 56,
+          "y": 78.5
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h7",
+          "gapM": 3.3
+        }
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h6"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 5,
+          "x1": 95,
+          "y0": 30,
+          "y1": 100
+        },
+        "ms": 0
+      },
+      {
+        "kind": "move",
+        "who": "h6",
+        "to": {
+          "x": 50,
+          "y": 50
+        },
+        "ms": 400,
+        "face": 0
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "preset": "focus"
+        },
+        "ms": 800
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h11",
+      "h7",
+      "h9",
+      "h10"
+    ],
+    "maxMoves": 2,
+    "bounds": {
+      "x0": 20,
+      "x1": 80,
+      "y0": 56,
+      "y1": 90
+    }
+  },
+  "rules": [
+    {
+      "type": "gap_width",
+      "failKey": "gap",
+      "params": {
+        "a": "a4",
+        "b": "a5",
+        "m": 24
+      }
+    },
+    {
+      "type": "count_in_zone",
+      "failKey": "middle",
+      "params": {
+        "zone": {
+          "x0": 40,
+          "x1": 60,
+          "y0": 74,
+          "y1": 86
+        },
+        "team": "away",
+        "max": 0
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h11": {
+        "at": {
+          "x": 22,
+          "y": 74
+        }
+      },
+      "h7": {
+        "at": {
+          "x": 78,
+          "y": 74
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "wait",
+          "ms": 1200
+        },
+        {
+          "kind": "run_path",
+          "who": "h9",
+          "path": [
+            {
+              "x": 50,
+              "y": 73
+            },
+            {
+              "x": 50,
+              "y": 78
+            },
+            {
+              "x": 50,
+              "y": 82
+            }
+          ],
+          "ms": 1600
+        }
+      ]
+    },
+    "fail": {
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "run_path",
+            "who": "h9",
+            "path": [
+              {
+                "x": 50,
+                "y": 73
+              },
+              {
+                "x": 50,
+                "y": 78
+              }
+            ],
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a4",
+            "at": "h9",
+            "ms": 600
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "გაჭიმე მათი ხაზი, რომ ცენტრი გაიხსნას. 2 სვლა",
+      "en": "Stretch their line to open the middle. 2 moves"
+    },
+    "fail": {
+      "gap": {
+        "ka": "მცველები ისევ ახლოს არიან! გაჭიმე მათი ხაზი.",
+        "en": "The defenders are still close! Stretch their line."
+      },
+      "middle": {
+        "ka": "ცენტრში ისევ მცველია! ის იქიდან უნდა წაიყვანო.",
+        "en": "There's still a defender in the middle! Lead him out."
+      }
+    },
+    "success": {
+      "ka": "ცენტრი ღიაა! #9 შიგ შევარდა.",
+      "en": "The middle is open! #9 is running into it."
+    },
+    "lessonLine": {
+      "ka": "გაჭიმე, მერე მესამე მოთამაშე",
+      "en": "Stretch it, then the third man"
+    }
+  },
+  "rewards": {
+    "xp": 55
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "მცველებს ფლანგებზე წაყვანა უნდათ",
+        "en": "The centre-backs need to be pulled wide"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ],
+  "stages": [
+    {
+      "id": "third-man",
+      "camera": {
+        "focus": {
+          "x0": 24,
+          "x1": 76,
+          "y0": 44,
+          "y1": 92
+        }
+      },
+      "intro": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "camera",
+            "to": {
+              "preset": "focus"
+            },
+            "ms": 700
+          },
+          {
+            "kind": "caption",
+            "text": {
+              "ka": "პირდაპირ? თუ...",
+              "en": "Direct? Or..."
+            },
+            "ms": 1000
+          }
+        ]
+      },
+      "interaction": {
+        "type": "pass_sequence",
+        "who": [
+          "h9",
+          "h10"
+        ]
+      },
+      "rules": [
+        {
+          "type": "sequence",
+          "failKey": "order",
+          "params": {
+            "order": [
+              "h6",
+              "h10",
+              "h9"
+            ]
+          }
+        }
+      ],
+      "solution": {
+        "sequence": [
+          "h6",
+          "h10",
+          "h9"
+        ],
+        "tolerance": {
+          "radiusM": 1.5
+        }
+      },
+      "outcomes": {
+        "success": {
+          "mode": "sequential",
+          "steps": [
+            {
+              "kind": "play_answer"
+            },
+            {
+              "kind": "wait",
+              "ms": 300
+            }
+          ]
+        },
+        "fail": {
+          "default": {
+            "mode": "sequential",
+            "steps": [
+              {
+                "kind": "pass",
+                "from": "h6",
+                "to": "h9",
+                "ms": 800,
+                "interceptedBy": "a6"
+              },
+              {
+                "kind": "wait",
+                "ms": 300
+              }
+            ]
+          }
+        }
+      },
+      "text": {
+        "banner": {
+          "ka": "მიიტანე ბურთი #9-მდე. პირდაპირი პასი დაკეტილია",
+          "en": "Get the ball to #9. The direct pass is blocked"
+        },
+        "fail": {
+          "order": {
+            "ka": "#6 პირდაპირ პასს ჭრის! ჯერ #10-ს მიეცი, ის მიაწვდის #9-ს.",
+            "en": "#6 cuts the direct pass! Go via #10, he finds #9."
+          }
+        },
+        "success": {
+          "ka": "მესამე მოთამაშე! #10-მა ბურთი #9-ს ხვრელში მიაწოდა.",
+          "en": "The third man! #10 played #9 into the gap."
+        }
+      },
+      "hints": [
+        {
+          "afterWrong": 2,
+          "text": {
+            "ka": "ვინ შეძლებს ბურთის #9-მდე მიტანას?",
+            "en": "Who could pass it on to #9?"
+          }
+        },
+        {
+          "afterWrong": 4,
+          "text": {
+            "ka": "ნახე ამოხსნა",
+            "en": "Watch the answer"
+          },
+          "ghost": true
+        }
+      ],
+      "assist": "none"
+    }
+  ],
+  "finale": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "slowmo",
+        "factor": 0.4,
+        "ms": 1500
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 30,
+          "x1": 70,
+          "y0": 74,
+          "y1": 100
+        },
+        "ms": 800
+      },
+      {
+        "kind": "shoot",
+        "from": "h9",
+        "target": "goal",
+        "ms": 800,
+        "result": "goal"
+      }
+    ]
+  }
+}

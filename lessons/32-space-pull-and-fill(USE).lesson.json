@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "id": "space-pull-and-fill",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: წაიყვანე და შეავსე",
+      "en": "Puzzle: pull and fill"
+    },
+    "topic": "creating-space",
+    "level": "decide",
+    "difficulty": 32,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "create-space",
+      "decoy-run",
+      "puzzle"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 22,
+        "x1": 82,
+        "y0": 46,
+        "y1": 92
+      }
+    },
+    "players": [
+      {
+        "id": "h6",
+        "team": "home",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 52,
+          "y": 54
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 52,
+          "y": 77
+        },
+        "facing": 180
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 68,
+          "y": 70
+        },
+        "facing": 0
+      },
+      {
+        "id": "h11",
+        "team": "home",
+        "number": 11,
+        "role": "LW",
+        "at": {
+          "x": 32,
+          "y": 72
+        },
+        "facing": 0
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 52,
+          "y": 79
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h9",
+          "gapM": 2
+        }
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 66,
+          "y": 79
+        },
+        "facing": 180
+      },
+      {
+        "id": "a3",
+        "team": "away",
+        "number": 3,
+        "role": "LB",
+        "at": {
+          "x": 36,
+          "y": 79
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 60,
+          "y": 62
+        },
+        "facing": 180
+      }
+    ],
+    "ball": {
+      "holder": "h6"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h6",
+        "to": {
+          "x": 52,
+          "y": 54
+        },
+        "ms": 400,
+        "face": 0
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h9",
+      "h10",
+      "h11"
+    ],
+    "maxMoves": 2,
+    "bounds": {
+      "x0": 24,
+      "x1": 80,
+      "y0": 58,
+      "y1": 88
+    }
+  },
+  "rules": [
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h10",
+        "zone": {
+          "x0": 45,
+          "x1": 59,
+          "y0": 74,
+          "y1": 84
+        }
+      }
+    },
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h10",
+        "from": {
+          "team": "away"
+        },
+        "m": 4
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h6",
+        "to": "h10"
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h9": {
+        "at": {
+          "x": 40,
+          "y": 68
+        }
+      },
+      "h10": {
+        "at": {
+          "x": 52,
+          "y": 79
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h6",
+          "to": "h10",
+          "ms": 900
+        },
+        {
+          "kind": "shoot",
+          "from": "h10",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "marked": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a4",
+            "at": "h10",
+            "ms": 500
+          }
+        ]
+      },
+      "lane": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h10",
+            "ms": 900,
+            "interceptedBy": "a6"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a5",
+            "at": "h10",
+            "ms": 700
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "გაათავისუფლე #10 ცენტრში. გადაადგილე 2",
+      "en": "Free #10 in the middle. Move 2 players"
+    },
+    "fail": {
+      "zone": {
+        "ka": "#10 სივრცეში არ არის! ის იქ უნდა იყოს, საიდანაც მცველი წავიდა.",
+        "en": "#10 isn't in the space! He goes where the defender left."
+      },
+      "marked": {
+        "ka": "#10-ს ისევ მცველი უდგას! ჯერ ის სხვაგან წაიყვანე.",
+        "en": "#10 is still marked! Lead that defender away first."
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! ბურთს #10-მდე ღია გზა სჭირდება.",
+        "en": "The lane is blocked! The ball needs a clear way to #10."
+      }
+    },
+    "success": {
+      "ka": "ბრწყინვალეა! #9-მა მცველი წაიყვანა და #10 მის ადგილას შევიდა.",
+      "en": "Brilliant! #9 took the defender and #10 took his place."
+    },
+    "lessonLine": {
+      "ka": "ერთი წაიყვანს, მეორე შევა",
+      "en": "One pulls, the other fills"
+    }
+  },
+  "rewards": {
+    "xp": 40
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "ვინ იცავს ცენტრს? ვის მისდევს ის?",
+        "en": "Who guards the middle? Whom does he follow?"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ]
+}

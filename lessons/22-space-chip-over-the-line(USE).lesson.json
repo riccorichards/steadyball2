@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "id": "space-chip-over-the-line",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: გადააგდე ხაზზე",
+      "en": "Puzzle: chip over the line"
+    },
+    "topic": "through-ball",
+    "level": "execute",
+    "difficulty": 22,
+    "ageBand": "11-13",
+    "positions": [
+      "MID"
+    ],
+    "tags": [
+      "free-space",
+      "pass-into-space",
+      "lofted",
+      "high-line",
+      "puzzle"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 16,
+        "x1": 82,
+        "y0": 34,
+        "y1": 94
+      }
+    },
+    "players": [
+      {
+        "id": "h6",
+        "team": "home",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 40
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 48,
+          "y": 60
+        },
+        "facing": 0
+      },
+      {
+        "id": "h11",
+        "team": "home",
+        "number": 11,
+        "role": "LW",
+        "at": {
+          "x": 18,
+          "y": 58
+        },
+        "facing": 0
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 48,
+          "y": 50
+        },
+        "facing": 180
+      },
+      {
+        "id": "a8",
+        "team": "away",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 58,
+          "y": 48
+        },
+        "facing": 190
+      },
+      {
+        "id": "a3",
+        "team": "away",
+        "number": 3,
+        "role": "LB",
+        "at": {
+          "x": 22,
+          "y": 62
+        },
+        "facing": 180
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 40,
+          "y": 62
+        },
+        "facing": 180
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 58,
+          "y": 62
+        },
+        "facing": 180
+      },
+      {
+        "id": "a2",
+        "team": "away",
+        "number": 2,
+        "role": "RB",
+        "at": {
+          "x": 78,
+          "y": 62
+        },
+        "facing": 180
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 90
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h6"
+    },
+    "overlays": [
+      {
+        "landmark": "offsideLine.away",
+        "style": "line"
+      }
+    ]
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 10,
+          "x1": 90,
+          "y0": 30,
+          "y1": 100
+        },
+        "ms": 0
+      },
+      {
+        "kind": "move",
+        "who": "h6",
+        "to": {
+          "x": 50,
+          "y": 41
+        },
+        "ms": 500,
+        "face": 0
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "preset": "focus"
+        },
+        "ms": 800
+      }
+    ]
+  },
+  "interaction": {
+    "type": "pass_space",
+    "who": [
+      "h9"
+    ],
+    "pass": {
+      "lofted": true,
+      "maxLengthM": 45
+    }
+  },
+  "rules": [
+    {
+      "type": "pass_clear",
+      "failKey": "cut",
+      "params": {}
+    },
+    {
+      "type": "reaches_first",
+      "failKey": "race",
+      "params": {
+        "who": "h9"
+      }
+    },
+    {
+      "type": "breaks_line",
+      "failKey": "line",
+      "params": {
+        "line": [
+          "a4",
+          "a5"
+        ]
+      }
+    },
+    {
+      "type": "onside_at_pass",
+      "failKey": "offside",
+      "params": {
+        "who": "h9",
+        "passAfterM": 0
+      }
+    }
+  ],
+  "solution": {
+    "passTo": {
+      "x": 51,
+      "y": 76
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "play_answer"
+        },
+        {
+          "kind": "shoot",
+          "from": "h9",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "play_answer"
+          },
+          {
+            "kind": "wait",
+            "ms": 500
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "მათი ხაზი მაღლაა. გადააგდე ბურთი მის უკან",
+      "en": "Their line is high. Chip it in behind"
+    },
+    "fail": {
+      "cut": {
+        "ka": "პასი გადაჭრეს! ბურთი მცველებს გვერდით გაატარე.",
+        "en": "Cut out! Play it past the defenders, not at them."
+      },
+      "race": {
+        "ka": "ვერ მიუსწრო! ბურთი იქ ჩამოაგდე, სადაც #9 პირველი იქნება.",
+        "en": "He didn't get there first! Drop it where #9 wins."
+      },
+      "line": {
+        "ka": "ეს მცველების წინაა! გადააგდე მათ თავზე, ზურგს უკან.",
+        "en": "That's in front of them! Chip it over, into the space behind."
+      },
+      "offside": {
+        "ka": "ოფსაიდი! გარბენა ხაზიდან უნდა დაიწყოს.",
+        "en": "Offside! The runner must start level with the line."
+      }
+    },
+    "success": {
+      "ka": "ზუსტი გადაგდება! #9 ზურგს უკან გაიჭრა.",
+      "en": "A perfect chip! #9 is in behind."
+    },
+    "lessonLine": {
+      "ka": "მაღალი ხაზი? სივრცე მის ზურგს უკანაა",
+      "en": "High line? The space is behind it"
+    }
+  },
+  "rewards": {
+    "xp": 40
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "სივრცე მცველებსა და მეკარეს შორისაა",
+        "en": "The space is between the defenders and the keeper"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ]
+}

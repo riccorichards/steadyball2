@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 1,
+  "id": "space-who-is-marked",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: ვინ არის დაფარული?",
+      "en": "Puzzle: who is marked?"
+    },
+    "topic": "free-space",
+    "level": "decide",
+    "difficulty": 13,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "free-space",
+      "losing-the-marker",
+      "puzzle",
+      "who-moves"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 24,
+        "x1": 88,
+        "y0": 34,
+        "y1": 80
+      }
+    },
+    "players": [
+      {
+        "id": "h6",
+        "team": "home",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 40
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 34,
+          "y": 52
+        },
+        "facing": 160
+      },
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 80,
+          "y": 54
+        },
+        "facing": 200
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 56,
+          "y": 64
+        },
+        "facing": 180
+      },
+      {
+        "id": "a8",
+        "team": "away",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 56,
+          "y": 66.6
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 48,
+          "y": 56
+        },
+        "facing": 180
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 44,
+          "y": 80
+        },
+        "facing": 180
+      }
+    ],
+    "ball": {
+      "holder": "h6"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h6",
+        "to": {
+          "x": 50,
+          "y": 41
+        },
+        "ms": 500,
+        "face": 0
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h8",
+      "h7",
+      "h10"
+    ],
+    "maxMoves": 1,
+    "bounds": {
+      "x0": 20,
+      "x1": 90,
+      "y0": 44,
+      "y1": 76
+    }
+  },
+  "rules": [
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h10",
+        "from": {
+          "team": "away"
+        },
+        "m": 5.5
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h6",
+        "to": "h10"
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h6",
+        "to": "h8"
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h6",
+        "to": "h7"
+      }
+    },
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h8",
+        "from": {
+          "team": "away"
+        },
+        "m": 5
+      }
+    },
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h7",
+        "from": {
+          "team": "away"
+        },
+        "m": 5
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h10": {
+        "at": {
+          "x": 68,
+          "y": 62
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h6",
+          "to": "h10",
+          "ms": 800
+        },
+        {
+          "kind": "move",
+          "who": "h10",
+          "to": {
+            "x": 66,
+            "y": 72
+          },
+          "ms": 1700,
+          "face": 0
+        },
+        {
+          "kind": "shoot",
+          "from": "h10",
+          "target": "goal",
+          "ms": 800,
+          "result": "save"
+        }
+      ]
+    },
+    "fail": {
+      "marked": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h10",
+            "ms": 800
+          },
+          {
+            "kind": "rush",
+            "who": "a8",
+            "at": "h10",
+            "ms": 500
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h10",
+            "ms": 800,
+            "interceptedBy": "a6"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "სამივე თავისუფალი უნდა იყოს. გადაადგილე 1",
+      "en": "All three must be free. Move 1 player"
+    },
+    "fail": {
+      "marked": {
+        "ka": "ერთს ჯერ კიდევ მეტოქე უდგას! ვინ არის დაფარული?",
+        "en": "Someone is still marked! Who has a man on him?"
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! #6-ს ღია გზა სჭირდება.",
+        "en": "A lane is closed! #6 needs an open way."
+      }
+    },
+    "success": {
+      "ka": "სწორია! #10 მეტოქეს მოშორდა და სამივე თავისუფალია.",
+      "en": "Right! #10 lost his man and all three are free."
+    },
+    "lessonLine": {
+      "ka": "დაფარული მოთამაშე უნდა გაიხსნას",
+      "en": "The marked player must get open"
+    }
+  },
+  "rewards": {
+    "xp": 35
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "ვის უდგას მეტოქე ზურგთან ახლოს?",
+        "en": "Who has an opponent right at his back?"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ]
+}

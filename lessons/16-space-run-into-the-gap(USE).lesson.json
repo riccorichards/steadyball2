@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "id": "space-run-into-the-gap",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: გაიჭერი ხვრელში",
+      "en": "Puzzle: run into the gap"
+    },
+    "topic": "runs-in-behind",
+    "level": "execute",
+    "difficulty": 16,
+    "ageBand": "11-13",
+    "positions": [
+      "ATT"
+    ],
+    "tags": [
+      "free-space",
+      "runs-in-behind",
+      "offside",
+      "puzzle"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 30,
+        "x1": 86,
+        "y0": 44,
+        "y1": 94
+      }
+    },
+    "players": [
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 50,
+          "y": 50
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 52,
+          "y": 71
+        },
+        "facing": 0
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 44,
+          "y": 60
+        },
+        "facing": 180
+      },
+      {
+        "id": "a3",
+        "team": "away",
+        "number": 3,
+        "role": "LB",
+        "at": {
+          "x": 22,
+          "y": 74
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "holdLine",
+          "withIds": [
+            "a4",
+            "a5",
+            "a2"
+          ]
+        }
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 42,
+          "y": 74
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "holdLine",
+          "withIds": [
+            "a3",
+            "a5",
+            "a2"
+          ]
+        }
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 58,
+          "y": 74
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "holdLine",
+          "withIds": [
+            "a3",
+            "a4",
+            "a2"
+          ]
+        }
+      },
+      {
+        "id": "a2",
+        "team": "away",
+        "number": 2,
+        "role": "RB",
+        "at": {
+          "x": 78,
+          "y": 74
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "holdLine",
+          "withIds": [
+            "a3",
+            "a4",
+            "a5"
+          ]
+        }
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h8"
+    },
+    "overlays": [
+      {
+        "landmark": "offsideLine.away",
+        "style": "line"
+      }
+    ]
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h8",
+        "to": {
+          "x": 50,
+          "y": 51
+        },
+        "ms": 500,
+        "face": 0
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "path",
+    "who": [
+      "h9"
+    ],
+    "path": {
+      "maxLengthM": 25,
+      "runSpeedMps": 7,
+      "passAfterM": 7
+    }
+  },
+  "rules": [
+    {
+      "type": "onside_at_pass",
+      "failKey": "offside",
+      "params": {
+        "who": "h9",
+        "passAfterM": 7
+      }
+    },
+    {
+      "type": "path_clear",
+      "failKey": "blocked",
+      "params": {
+        "who": "h9",
+        "minM": 1
+      }
+    },
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h9",
+        "zone": {
+          "x0": 62,
+          "x1": 74,
+          "y0": 79,
+          "y1": 88
+        }
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h9": {
+        "path": [
+          {
+            "x": 52,
+            "y": 71
+          },
+          {
+            "x": 62,
+            "y": 72
+          },
+          {
+            "x": 68,
+            "y": 82
+          }
+        ]
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "play_answer"
+        },
+        {
+          "kind": "shoot",
+          "from": "h9",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "offside": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "play_answer"
+          },
+          {
+            "kind": "flag",
+            "reason": "offside"
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "play_answer"
+          },
+          {
+            "kind": "wait",
+            "ms": 600
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "გაიჭერი სივრცეში #5-სა და #2-ს შორის",
+      "en": "Run into the space between #5 and #2"
+    },
+    "fail": {
+      "offside": {
+        "ka": "ოფსაიდი! სანამ პასი მოვა, დარჩი მცველების ხაზზე.",
+        "en": "Offside! Stay level with the line until the pass."
+      },
+      "blocked": {
+        "ka": "მცველს ძალიან ახლოს ჩაურბინე! შემოუარე მას.",
+        "en": "You ran too close to a defender! Go round him."
+      },
+      "zone": {
+        "ka": "გაიჭერი ზურგს უკან, #5-სა და #2-ს შორის.",
+        "en": "Run in behind, into the gap between #5 and #2."
+      }
+    },
+    "success": {
+      "ka": "ზუსტი გარბენა! ჯერ ხაზზე, მერე სივრცეში.",
+      "en": "Perfect run! Along the line first, then into the space."
+    },
+    "lessonLine": {
+      "ka": "ჯერ ხაზზე, მერე სივრცეში",
+      "en": "Along the line, then into the space"
+    }
+  },
+  "rewards": {
+    "xp": 35
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "პასი 7 მეტრის შემდეგ მოდის. მანამდე ხაზზე დარჩი",
+        "en": "The pass comes after 7 m. Stay level until then"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ]
+}

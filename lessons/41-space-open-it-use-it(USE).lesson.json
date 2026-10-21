@@ -1,0 +1,484 @@
+{
+  "schemaVersion": 1,
+  "id": "space-open-it-use-it",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: გახსენი და გამოიყენე",
+      "en": "Puzzle: open it, use it"
+    },
+    "topic": "creating-space",
+    "level": "execute",
+    "difficulty": 41,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "create-space",
+      "decoy-run",
+      "pass-into-space",
+      "puzzle"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 18,
+        "x1": 82,
+        "y0": 50,
+        "y1": 96
+      }
+    },
+    "players": [
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 50,
+          "y": 56
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 44,
+          "y": 75.4
+        },
+        "facing": 180
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 52,
+          "y": 76.5
+        },
+        "facing": 0
+      },
+      {
+        "id": "h11",
+        "team": "home",
+        "number": 11,
+        "role": "LW",
+        "at": {
+          "x": 24,
+          "y": 68
+        },
+        "facing": 0
+      },
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 76,
+          "y": 68
+        },
+        "facing": 0
+      },
+      {
+        "id": "a3",
+        "team": "away",
+        "number": 3,
+        "role": "LB",
+        "at": {
+          "x": 28,
+          "y": 78
+        },
+        "facing": 180
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 44,
+          "y": 78
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h9",
+          "gapM": 2.6
+        }
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 62,
+          "y": 78
+        },
+        "facing": 180
+      },
+      {
+        "id": "a2",
+        "team": "away",
+        "number": 2,
+        "role": "RB",
+        "at": {
+          "x": 76,
+          "y": 78
+        },
+        "facing": 180
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h8"
+    },
+    "overlays": [
+      {
+        "landmark": "offsideLine.away",
+        "style": "line"
+      }
+    ]
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h8",
+        "to": {
+          "x": 50,
+          "y": 56
+        },
+        "ms": 400,
+        "face": 0
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h9",
+      "h11",
+      "h7"
+    ],
+    "maxMoves": 1,
+    "bounds": {
+      "x0": 20,
+      "x1": 80,
+      "y0": 56,
+      "y1": 90
+    }
+  },
+  "rules": [
+    {
+      "type": "gap_width",
+      "failKey": "gap",
+      "params": {
+        "a": "a4",
+        "b": "a5",
+        "m": 16
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h9": {
+        "at": {
+          "x": 30,
+          "y": 68
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "wait",
+          "ms": 2600
+        }
+      ]
+    },
+    "fail": {
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h8",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a4",
+            "at": "h10",
+            "ms": 600
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "ჯერ გახსენი ხვრელი #10-ის წინ. 1 სვლა",
+      "en": "First open a gap in front of #10. 1 move"
+    },
+    "fail": {
+      "gap": {
+        "ka": "მცველები ისევ ერთად არიან! ერთ-ერთი სხვაგან წაიყვანე.",
+        "en": "The defenders are still together! Lead one of them away."
+      }
+    },
+    "success": {
+      "ka": "ხვრელი გაიხსნა! ახლა ბურთი იქ მიაწოდე.",
+      "en": "The gap is open! Now play the ball into it."
+    },
+    "lessonLine": {
+      "ka": "ჯერ შექმენი სივრცე, მერე გამოიყენე",
+      "en": "Create the space, then use it"
+    }
+  },
+  "rewards": {
+    "xp": 50
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "ვის მისდევს #4? სად წაიყვანო?",
+        "en": "Whom does #4 follow? Where could you lead him?"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ],
+  "stages": [
+    {
+      "id": "use-the-gap",
+      "camera": {
+        "focus": {
+          "x0": 20,
+          "x1": 80,
+          "y0": 50,
+          "y1": 96
+        }
+      },
+      "overlays": [
+        {
+          "landmark": "offsideLine.away",
+          "style": "line"
+        }
+      ],
+      "intro": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "camera",
+            "to": {
+              "preset": "focus"
+            },
+            "ms": 700
+          },
+          {
+            "kind": "caption",
+            "text": {
+              "ka": "ახლა გამოიყენე!",
+              "en": "Now use it!"
+            },
+            "ms": 1000
+          }
+        ]
+      },
+      "interaction": {
+        "type": "pass_space",
+        "who": [
+          "h10",
+          "h9"
+        ]
+      },
+      "rules": [
+        {
+          "type": "pass_clear",
+          "failKey": "cut",
+          "params": {}
+        },
+        {
+          "type": "reaches_first",
+          "failKey": "race",
+          "params": {
+            "who": "h10"
+          }
+        },
+        {
+          "type": "breaks_line",
+          "failKey": "line",
+          "params": {
+            "line": [
+              "a4",
+              "a5"
+            ]
+          }
+        },
+        {
+          "type": "onside_at_pass",
+          "failKey": "offside",
+          "params": {
+            "who": "h10",
+            "passAfterM": 0
+          }
+        }
+      ],
+      "solution": {
+        "passTo": {
+          "x": 51,
+          "y": 84
+        },
+        "tolerance": {
+          "radiusM": 1.5
+        }
+      },
+      "outcomes": {
+        "success": {
+          "mode": "sequential",
+          "steps": [
+            {
+              "kind": "play_answer"
+            },
+            {
+              "kind": "wait",
+              "ms": 200
+            }
+          ]
+        },
+        "fail": {
+          "default": {
+            "mode": "sequential",
+            "steps": [
+              {
+                "kind": "play_answer"
+              },
+              {
+                "kind": "wait",
+                "ms": 500
+              }
+            ]
+          }
+        }
+      },
+      "text": {
+        "banner": {
+          "ka": "მიაწოდე #10-ს ხვრელში, მცველების უკან",
+          "en": "Play #10 into the gap behind them"
+        },
+        "fail": {
+          "cut": {
+            "ka": "პასი გადაჭრეს! ბურთი მცველებს გვერდით გაატარე.",
+            "en": "Cut out! Play it past the defenders, not at them."
+          },
+          "race": {
+            "ka": "ვერ მიუსწრო! მიაწოდე იქ, სადაც ის პირველი იქნება.",
+            "en": "He didn't get there first! Play it where he arrives first."
+          },
+          "line": {
+            "ka": "ეს მცველების წინაა! მიაწოდე შენ მიერ გახსნილ სივრცეში.",
+            "en": "That's in front of them! Play it into the space you opened."
+          },
+          "offside": {
+            "ka": "ოფსაიდი! გარბენა ხაზიდან უნდა დაიწყოს.",
+            "en": "Offside! The runner must start level with the line."
+          }
+        },
+        "success": {
+          "ka": "ზუსტია! შექმენი სივრცე და გამოიყენე.",
+          "en": "Spot on! You made the space and used it."
+        }
+      },
+      "hints": [
+        {
+          "afterWrong": 2,
+          "text": {
+            "ka": "ხვრელი #5-ის მარცხნივაა. #10 იქ პირველი მივა",
+            "en": "The gap is left of #5. #10 gets there first"
+          }
+        },
+        {
+          "afterWrong": 4,
+          "text": {
+            "ka": "ნახე ამოხსნა",
+            "en": "Watch the answer"
+          },
+          "ghost": true
+        }
+      ],
+      "assist": "none"
+    }
+  ],
+  "finale": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "slowmo",
+        "factor": 0.4,
+        "ms": 1500
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 30,
+          "x1": 70,
+          "y0": 74,
+          "y1": 100
+        },
+        "ms": 800
+      },
+      {
+        "kind": "shoot",
+        "from": "h10",
+        "target": "goal",
+        "ms": 800,
+        "result": "goal"
+      }
+    ]
+  }
+}

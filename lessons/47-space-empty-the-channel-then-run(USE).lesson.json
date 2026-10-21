@@ -1,0 +1,562 @@
+{
+  "schemaVersion": 1,
+  "id": "space-empty-the-channel-then-run",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: გაათავისუფლე და გაიჭერი",
+      "en": "Puzzle: empty it, then run"
+    },
+    "topic": "creating-space",
+    "level": "game-speed",
+    "difficulty": 47,
+    "ageBand": "11-13",
+    "positions": [
+      "ATT"
+    ],
+    "tags": [
+      "create-space",
+      "decoy-run",
+      "runs-in-behind",
+      "offside",
+      "puzzle"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 28,
+        "x1": 92,
+        "y0": 46,
+        "y1": 92
+      }
+    },
+    "players": [
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 50,
+          "y": 52
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 48,
+          "y": 72
+        },
+        "facing": 0
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 58,
+          "y": 71.4
+        },
+        "facing": 180
+      },
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 76,
+          "y": 71.4
+        },
+        "facing": 180
+      },
+      {
+        "id": "h11",
+        "team": "home",
+        "number": 11,
+        "role": "LW",
+        "at": {
+          "x": 34,
+          "y": 62
+        },
+        "facing": 0
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 40,
+          "y": 56
+        },
+        "facing": 180
+      },
+      {
+        "id": "a3",
+        "team": "away",
+        "number": 3,
+        "role": "LB",
+        "at": {
+          "x": 24,
+          "y": 74
+        },
+        "facing": 180
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 42,
+          "y": 74
+        },
+        "facing": 180
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 58,
+          "y": 74
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h10",
+          "gapM": 2.7
+        }
+      },
+      {
+        "id": "a2",
+        "team": "away",
+        "number": 2,
+        "role": "RB",
+        "at": {
+          "x": 76,
+          "y": 74
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h7",
+          "gapM": 2.7
+        }
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h8"
+    },
+    "overlays": [
+      {
+        "landmark": "offsideLine.away",
+        "style": "line"
+      }
+    ]
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 5,
+          "x1": 95,
+          "y0": 30,
+          "y1": 100
+        },
+        "ms": 0
+      },
+      {
+        "kind": "move",
+        "who": "h8",
+        "to": {
+          "x": 50,
+          "y": 52
+        },
+        "ms": 400,
+        "face": 0
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "preset": "focus"
+        },
+        "ms": 800
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h10",
+      "h7",
+      "h11"
+    ],
+    "maxMoves": 2,
+    "bounds": {
+      "x0": 30,
+      "x1": 90,
+      "y0": 50,
+      "y1": 90
+    }
+  },
+  "rules": [
+    {
+      "type": "count_in_zone",
+      "failKey": "occupied",
+      "params": {
+        "zone": {
+          "x0": 54,
+          "x1": 80,
+          "y0": 72,
+          "y1": 88
+        },
+        "team": "away",
+        "max": 0
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h10": {
+        "at": {
+          "x": 60,
+          "y": 58
+        }
+      },
+      "h7": {
+        "at": {
+          "x": 88,
+          "y": 66
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "wait",
+          "ms": 2600
+        }
+      ]
+    },
+    "fail": {
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "run_path",
+            "who": "h9",
+            "path": [
+              {
+                "x": 48,
+                "y": 72
+              },
+              {
+                "x": 58,
+                "y": 80
+              }
+            ],
+            "ms": 1600
+          },
+          {
+            "kind": "rush",
+            "who": "a5",
+            "at": "h9",
+            "ms": 600
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "გაათავისუფლე მარჯვენა არხი #9-ის გარბენისთვის. 2",
+      "en": "Empty the right channel for #9's run. 2 moves"
+    },
+    "fail": {
+      "occupied": {
+        "ka": "არხში ისევ მცველია! ის, ვინც იქაა, ვიღაცას მისდევს.",
+        "en": "There's still a defender there! He follows one of ours."
+      }
+    },
+    "success": {
+      "ka": "არხი ცარიელია! ახლა დახატე #9-ის გარბენა.",
+      "en": "The channel is empty! Now draw #9's run."
+    },
+    "lessonLine": {
+      "ka": "შექმენი სივრცე, მერე გაიჭერი შიგ",
+      "en": "Make the space, then run into it"
+    }
+  },
+  "rewards": {
+    "xp": 55
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "ორი მცველი იცავს არხს. ორივე ვიღაცას მისდევს",
+        "en": "Two defenders guard the channel. Both follow someone"
+      }
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ],
+  "stages": [
+    {
+      "id": "run-into-it",
+      "camera": {
+        "focus": {
+          "x0": 34,
+          "x1": 84,
+          "y0": 46,
+          "y1": 92
+        }
+      },
+      "overlays": [
+        {
+          "landmark": "offsideLine.away",
+          "style": "line"
+        }
+      ],
+      "intro": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "camera",
+            "to": {
+              "preset": "focus"
+            },
+            "ms": 700
+          },
+          {
+            "kind": "caption",
+            "text": {
+              "ka": "ახლა გაიჭერი!",
+              "en": "Now run!"
+            },
+            "ms": 900
+          }
+        ]
+      },
+      "interaction": {
+        "type": "path",
+        "who": [
+          "h9"
+        ],
+        "path": {
+          "maxLengthM": 30,
+          "runSpeedMps": 7,
+          "passAfterM": 8
+        }
+      },
+      "rules": [
+        {
+          "type": "onside_at_pass",
+          "failKey": "offside",
+          "params": {
+            "who": "h9",
+            "passAfterM": 8
+          }
+        },
+        {
+          "type": "path_clear",
+          "failKey": "blocked",
+          "params": {
+            "who": "h9",
+            "minM": 1
+          }
+        },
+        {
+          "type": "in_zone",
+          "failKey": "zone",
+          "params": {
+            "who": "h9",
+            "zone": {
+              "x0": 60,
+              "x1": 72,
+              "y0": 79,
+              "y1": 88
+            }
+          }
+        }
+      ],
+      "solution": {
+        "moves": {
+          "h9": {
+            "path": [
+              {
+                "x": 48,
+                "y": 72
+              },
+              {
+                "x": 58,
+                "y": 72
+              },
+              {
+                "x": 64,
+                "y": 74.5
+              },
+              {
+                "x": 66,
+                "y": 84
+              }
+            ]
+          }
+        },
+        "tolerance": {
+          "radiusM": 1.5
+        }
+      },
+      "outcomes": {
+        "success": {
+          "mode": "sequential",
+          "steps": [
+            {
+              "kind": "play_answer"
+            },
+            {
+              "kind": "wait",
+              "ms": 200
+            }
+          ]
+        },
+        "fail": {
+          "offside": {
+            "mode": "sequential",
+            "steps": [
+              {
+                "kind": "play_answer"
+              },
+              {
+                "kind": "flag",
+                "reason": "offside"
+              }
+            ]
+          },
+          "default": {
+            "mode": "sequential",
+            "steps": [
+              {
+                "kind": "play_answer"
+              },
+              {
+                "kind": "wait",
+                "ms": 600
+              }
+            ]
+          }
+        }
+      },
+      "text": {
+        "banner": {
+          "ka": "დახატე #9-ის გარბენა არხში. ოფსაიდი არა!",
+          "en": "Draw #9's run into the channel. No offside!"
+        },
+        "fail": {
+          "offside": {
+            "ka": "ოფსაიდი! სანამ პასი მოვა, დარჩი მცველების ხაზზე.",
+            "en": "Offside! Stay level with the line until the pass."
+          },
+          "blocked": {
+            "ka": "მცველს ძალიან ახლოს ჩაურბინე! შემოუარე მას.",
+            "en": "You ran too close to a defender! Go round him."
+          },
+          "zone": {
+            "ka": "არხში ვერ გახვედი! დაასრულე შენ მიერ გახსნილ სივრცეში.",
+            "en": "Not in the channel! Finish in the space you opened."
+          }
+        },
+        "success": {
+          "ka": "ზუსტია! სივრცე შექმენი და შიგ გაიჭერი.",
+          "en": "Spot on! You made the space and ran into it."
+        }
+      },
+      "hints": [
+        {
+          "afterWrong": 2,
+          "text": {
+            "ka": "პასი 8 მეტრის შემდეგ მოდის. ჯერ ხაზის გასწვრივ",
+            "en": "The pass comes after 8 m. Run along the line first"
+          }
+        },
+        {
+          "afterWrong": 4,
+          "text": {
+            "ka": "ნახე ამოხსნა",
+            "en": "Watch the answer"
+          },
+          "ghost": true
+        }
+      ],
+      "assist": "none"
+    }
+  ],
+  "finale": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "slowmo",
+        "factor": 0.4,
+        "ms": 1500
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 40,
+          "x1": 80,
+          "y0": 74,
+          "y1": 100
+        },
+        "ms": 800
+      },
+      {
+        "kind": "shoot",
+        "from": "h9",
+        "target": "goal",
+        "ms": 800,
+        "result": "goal"
+      }
+    ]
+  }
+}

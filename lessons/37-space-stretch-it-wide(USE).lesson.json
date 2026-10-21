@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "id": "space-stretch-it-wide",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: გაჭიმე სიგანეში",
+      "en": "Puzzle: stretch it wide"
+    },
+    "topic": "creating-space",
+    "level": "decide",
+    "difficulty": 37,
+    "ageBand": "11-13",
+    "positions": [
+      "ATT"
+    ],
+    "tags": [
+      "create-space",
+      "width",
+      "stretch",
+      "puzzle"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 18,
+        "x1": 82,
+        "y0": 50,
+        "y1": 96
+      }
+    },
+    "players": [
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 50,
+          "y": 60
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 50,
+          "y": 72
+        },
+        "facing": 180
+      },
+      {
+        "id": "h11",
+        "team": "home",
+        "number": 11,
+        "role": "LW",
+        "at": {
+          "x": 40,
+          "y": 74
+        },
+        "facing": 0
+      },
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 60,
+          "y": 74
+        },
+        "facing": 0
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 34,
+          "y": 58
+        },
+        "facing": 0
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 43,
+          "y": 76.5
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h11",
+          "gapM": 3.3
+        }
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 57,
+          "y": 76.5
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h7",
+          "gapM": 3.3
+        }
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h10"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h10",
+        "to": {
+          "x": 50,
+          "y": 60
+        },
+        "ms": 400,
+        "face": 0
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h11",
+      "h7",
+      "h9",
+      "h8"
+    ],
+    "maxMoves": 2,
+    "bounds": {
+      "x0": 20,
+      "x1": 80,
+      "y0": 54,
+      "y1": 90
+    }
+  },
+  "rules": [
+    {
+      "type": "gap_width",
+      "failKey": "gap",
+      "params": {
+        "a": "a4",
+        "b": "a5",
+        "m": 24
+      }
+    },
+    {
+      "type": "count_in_zone",
+      "failKey": "middle",
+      "params": {
+        "zone": {
+          "x0": 40,
+          "x1": 60,
+          "y0": 75,
+          "y1": 86
+        },
+        "team": "away",
+        "max": 0
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h11": {
+        "at": {
+          "x": 22,
+          "y": 74
+        }
+      },
+      "h7": {
+        "at": {
+          "x": 78,
+          "y": 74
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "run_path",
+          "who": "h9",
+          "path": [
+            {
+              "x": 50,
+              "y": 72
+            },
+            {
+              "x": 50,
+              "y": 82
+            }
+          ],
+          "ms": 1600
+        },
+        {
+          "kind": "pass",
+          "from": "h10",
+          "to": "h9",
+          "ms": 800
+        },
+        {
+          "kind": "shoot",
+          "from": "h9",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "run_path",
+            "who": "h9",
+            "path": [
+              {
+                "x": 50,
+                "y": 72
+              },
+              {
+                "x": 50,
+                "y": 78
+              }
+            ],
+            "ms": 1000
+          },
+          {
+            "kind": "rush",
+            "who": "a5",
+            "at": "h9",
+            "ms": 600
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "გაჭიმე მათი ხაზი სიგანეში, რომ ცენტრი გაიხსნას. 2",
+      "en": "Stretch their line wide to open the middle. 2"
+    },
+    "fail": {
+      "gap": {
+        "ka": "მცველები ისევ ახლოს არიან! გაჭიმე მათი ხაზი.",
+        "en": "The defenders are still close! Stretch their line."
+      },
+      "middle": {
+        "ka": "ცენტრში ისევ მცველია! ის იქიდან უნდა წაიყვანო.",
+        "en": "There's still a defender in the middle! Lead him out."
+      }
+    },
+    "success": {
+      "ka": "ბრავო! ფლანგებზე გახვედით და ცენტრი ცარიელი დარჩა.",
+      "en": "Bravo! You went wide and the middle was empty."
+    },
+    "lessonLine": {
+      "ka": "სიგანე ცენტრს ხსნის",
+      "en": "Width opens the middle"
+    }
+  },
+  "rewards": {
+    "xp": 45
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "თითოეული მცველი ერთ ჩვენიანს მისდევს. წაიყვანე ფლანგებზე",
+        "en": "Each defender follows one of ours. Take them wide"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ]
+}

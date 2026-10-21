@@ -1,0 +1,359 @@
+{
+  "schemaVersion": 1,
+  "id": "space-round-the-defender",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: შემოუარე მცველს",
+      "en": "Puzzle: round the defender"
+    },
+    "topic": "runs-in-behind",
+    "level": "execute",
+    "difficulty": 18,
+    "ageBand": "11-13",
+    "positions": [
+      "ATT"
+    ],
+    "tags": [
+      "free-space",
+      "runs-in-behind",
+      "offside",
+      "puzzle"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 16,
+        "x1": 80,
+        "y0": 46,
+        "y1": 96
+      }
+    },
+    "players": [
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 44,
+          "y": 56
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h11",
+        "team": "home",
+        "number": 11,
+        "role": "LW",
+        "at": {
+          "x": 28,
+          "y": 73
+        },
+        "facing": 0
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 64,
+          "y": 72
+        },
+        "facing": 0
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 64
+        },
+        "facing": 180
+      },
+      {
+        "id": "a3",
+        "team": "away",
+        "number": 3,
+        "role": "LB",
+        "at": {
+          "x": 20,
+          "y": 76
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "holdLine",
+          "withIds": [
+            "a4",
+            "a5",
+            "a2"
+          ]
+        }
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 38,
+          "y": 76
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "holdLine",
+          "withIds": [
+            "a3",
+            "a5",
+            "a2"
+          ]
+        }
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 58,
+          "y": 76
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "holdLine",
+          "withIds": [
+            "a3",
+            "a4",
+            "a2"
+          ]
+        }
+      },
+      {
+        "id": "a2",
+        "team": "away",
+        "number": 2,
+        "role": "RB",
+        "at": {
+          "x": 76,
+          "y": 76
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "holdLine",
+          "withIds": [
+            "a3",
+            "a4",
+            "a5"
+          ]
+        }
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h8"
+    },
+    "overlays": [
+      {
+        "landmark": "offsideLine.away",
+        "style": "line"
+      }
+    ]
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h8",
+        "to": {
+          "x": 44,
+          "y": 57
+        },
+        "ms": 500,
+        "face": 10
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "path",
+    "who": [
+      "h11"
+    ],
+    "path": {
+      "maxLengthM": 30,
+      "runSpeedMps": 7,
+      "passAfterM": 10
+    }
+  },
+  "rules": [
+    {
+      "type": "onside_at_pass",
+      "failKey": "offside",
+      "params": {
+        "who": "h11",
+        "passAfterM": 10
+      }
+    },
+    {
+      "type": "path_clear",
+      "failKey": "blocked",
+      "params": {
+        "who": "h11",
+        "minM": 2
+      }
+    },
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h11",
+        "zone": {
+          "x0": 44,
+          "x1": 54,
+          "y0": 81,
+          "y1": 89
+        }
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h11": {
+        "path": [
+          {
+            "x": 28,
+            "y": 73
+          },
+          {
+            "x": 36,
+            "y": 72
+          },
+          {
+            "x": 44,
+            "y": 73
+          },
+          {
+            "x": 49,
+            "y": 84
+          }
+        ]
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "play_answer"
+        },
+        {
+          "kind": "shoot",
+          "from": "h11",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "offside": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "play_answer"
+          },
+          {
+            "kind": "flag",
+            "reason": "offside"
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "play_answer"
+          },
+          {
+            "kind": "wait",
+            "ms": 600
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "გაიჭერი #4-სა და #5-ს შორის, ოფსაიდის გარეშე",
+      "en": "Run between #4 and #5, and stay onside"
+    },
+    "fail": {
+      "offside": {
+        "ka": "ოფსაიდი! სანამ პასი მოვა, დარჩი მცველების ხაზზე.",
+        "en": "Offside! Stay level with the line until the pass."
+      },
+      "blocked": {
+        "ka": "მცველს ძალიან ახლოს ჩაურბინე! შემოუარე მას.",
+        "en": "You ran too close to a defender! Go round him."
+      },
+      "zone": {
+        "ka": "ხვრელში ვერ მოხვდი! დაასრულე #4-სა და #5-ს შორის, მათ უკან.",
+        "en": "Not in the gap! Finish between #4 and #5, behind them."
+      }
+    },
+    "success": {
+      "ka": "შესანიშნავია! მცველს შემოუარე და ხვრელში გაიჭერი.",
+      "en": "Great! You went round the defender and into the gap."
+    },
+    "lessonLine": {
+      "ka": "შემოუარე მცველს, გაიჭერი ხვრელში",
+      "en": "Go round the defender, into the gap"
+    }
+  },
+  "rewards": {
+    "xp": 35
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "#4 გზაზე დგას. ჯერ მის წინ გაიარე, მერე გაიჭერი",
+        "en": "#4 is in the way. Pass in front of him, then go"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ]
+}

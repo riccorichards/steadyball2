@@ -1,0 +1,341 @@
+{
+  "schemaVersion": 1,
+  "id": "space-take-the-marker-away",
+  "meta": {
+    "title": {
+      "ka": "წაიყვანე მცველი",
+      "en": "Take the defender away"
+    },
+    "topic": "creating-space",
+    "level": "decide",
+    "difficulty": 26,
+    "ageBand": "11-13",
+    "positions": [
+      "ATT"
+    ],
+    "tags": [
+      "create-space",
+      "decoy-run",
+      "guided"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "full",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 24,
+        "x1": 78,
+        "y0": 46,
+        "y1": 92
+      }
+    },
+    "players": [
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 50,
+          "y": 52
+        },
+        "facing": 0
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 50,
+          "y": 76
+        },
+        "facing": 180,
+        "highlight": true
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 54,
+          "y": 80
+        },
+        "facing": 0
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 50,
+          "y": 78
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h9",
+          "gapM": 2
+        }
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 66,
+          "y": 80
+        },
+        "facing": 180
+      },
+      {
+        "id": "a3",
+        "team": "away",
+        "number": 3,
+        "role": "LB",
+        "at": {
+          "x": 34,
+          "y": 80
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 58,
+          "y": 60
+        },
+        "facing": 180
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h8"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h8",
+        "to": {
+          "x": 50,
+          "y": 52
+        },
+        "ms": 400,
+        "face": 0
+      },
+      {
+        "kind": "spotlight",
+        "on": {
+          "players": [
+            "h9",
+            "a4",
+            "h10"
+          ]
+        },
+        "dim": 0.5,
+        "ms": 500
+      },
+      {
+        "kind": "caption",
+        "text": {
+          "ka": "#4 დაჰყვება #9-ს",
+          "en": "#4 follows #9"
+        },
+        "ms": 1200
+      },
+      {
+        "kind": "pulse",
+        "who": [
+          "h9",
+          "a4"
+        ],
+        "ms": 1000
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h9"
+    ],
+    "bounds": {
+      "x0": 26,
+      "x1": 76,
+      "y0": 58,
+      "y1": 86
+    }
+  },
+  "rules": [
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h10",
+        "from": {
+          "team": "away"
+        },
+        "m": 6
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h8",
+        "to": "h10"
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h9": {
+        "at": {
+          "x": 34,
+          "y": 68
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h8",
+          "to": "h10",
+          "ms": 900
+        },
+        {
+          "kind": "shoot",
+          "from": "h10",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "marked": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h8",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a4",
+            "at": "h10",
+            "ms": 500
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h8",
+            "to": "h10",
+            "ms": 900,
+            "interceptedBy": "a4"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "წაიყვანე #9 ისე, რომ #4 გაჰყვეს და #10 გათავისუფლდეს",
+      "en": "Take #9 away so #4 follows and #10 is free"
+    },
+    "fail": {
+      "marked": {
+        "ka": "#4 ისევ #10-თან ახლოსაა! #9 მისგან შორს წაიყვანე.",
+        "en": "#4 is still near #10! Take #9 far away from him."
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! #4 ბურთის გზაზე დადგა.",
+        "en": "The lane is closed! #4 ended up in the ball's way."
+      }
+    },
+    "success": {
+      "ka": "ბრავო! #4 #9-ს გაჰყვა და #10-ს სივრცე დარჩა.",
+      "en": "Bravo! #4 went with #9 and #10 had the space."
+    },
+    "lessonLine": {
+      "ka": "შენი გარბენა მეგობარს სივრცეს უხსნის",
+      "en": "Your run opens space for a teammate"
+    }
+  },
+  "rewards": {
+    "xp": 25
+  },
+  "hints": [
+    {
+      "afterWrong": 1,
+      "text": {
+        "ka": "#4 ყველგან #9-ს მისდევს. სად წაიყვან მას?",
+        "en": "#4 follows #9 everywhere. Where will you take him?"
+      }
+    },
+    {
+      "afterWrong": 3,
+      "pulse": [
+        "a4",
+        "h10"
+      ],
+      "spotlight": {
+        "zone": {
+          "x0": 26,
+          "x1": 76,
+          "y0": 58,
+          "y1": 86
+        }
+      }
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე, სად წაიყვანო",
+        "en": "Watch where to take him"
+      },
+      "ghost": true
+    }
+  ]
+}

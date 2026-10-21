@@ -1,0 +1,327 @@
+{
+  "schemaVersion": 1,
+  "id": "space-two-decoys",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: ორი მატყუარა გარბენა",
+      "en": "Puzzle: two decoys"
+    },
+    "topic": "creating-space",
+    "level": "decide",
+    "difficulty": 35,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "create-space",
+      "decoy-run",
+      "puzzle"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 18,
+        "x1": 82,
+        "y0": 32,
+        "y1": 86
+      }
+    },
+    "players": [
+      {
+        "id": "h6",
+        "team": "home",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 40
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 52,
+          "y": 66
+        },
+        "facing": 180
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 55,
+          "y": 54.5
+        },
+        "facing": 0
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 48,
+          "y": 72
+        },
+        "facing": 180
+      },
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 78,
+          "y": 64
+        },
+        "facing": 0
+      },
+      {
+        "id": "h11",
+        "team": "home",
+        "number": 11,
+        "role": "LW",
+        "at": {
+          "x": 22,
+          "y": 64
+        },
+        "facing": 0
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 51,
+          "y": 56
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h8",
+          "gapM": 3
+        }
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 52,
+          "y": 69
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h9",
+          "gapM": 4.2
+        }
+      }
+    ],
+    "ball": {
+      "holder": "h6"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h6",
+        "to": {
+          "x": 50,
+          "y": 41
+        },
+        "ms": 500,
+        "face": 0
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h8",
+      "h9",
+      "h7",
+      "h11"
+    ],
+    "maxMoves": 2,
+    "bounds": {
+      "x0": 20,
+      "x1": 80,
+      "y0": 44,
+      "y1": 84
+    }
+  },
+  "rules": [
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h10",
+        "from": {
+          "team": "away"
+        },
+        "m": 5
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h6",
+        "to": "h10"
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h8": {
+        "at": {
+          "x": 72,
+          "y": 50
+        }
+      },
+      "h9": {
+        "at": {
+          "x": 34,
+          "y": 78
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h6",
+          "to": "h10",
+          "ms": 900
+        },
+        {
+          "kind": "move",
+          "who": "h10",
+          "to": {
+            "x": 52,
+            "y": 72
+          },
+          "ms": 900,
+          "face": 0
+        },
+        {
+          "kind": "shoot",
+          "from": "h10",
+          "target": "goal",
+          "ms": 800,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "marked": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a4",
+            "at": "h10",
+            "ms": 500
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h10",
+            "ms": 900,
+            "interceptedBy": "a6"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "#10 ადგილზე რჩება. გაათავისუფლე ის 2 სვლით",
+      "en": "#10 stays put. Free him with 2 moves"
+    },
+    "fail": {
+      "marked": {
+        "ka": "#10-ს ზურგთან ისევ მცველი უდგას! ის ვის მისდევს?",
+        "en": "A defender is still at #10's back! Whom does he follow?"
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! #6 ჯერ ისევ გზაზეა.",
+        "en": "The lane is blocked! #6 is still in the way."
+      }
+    },
+    "success": {
+      "ka": "ჩინებულია! ორი მატყუარა გარბენა და #10 თავისუფალია.",
+      "en": "Superb! Two decoy runs, and #10 is free."
+    },
+    "lessonLine": {
+      "ka": "ორი მატყუარა გარბენა, ერთი თავისუფალი",
+      "en": "Two decoys free one player"
+    }
+  },
+  "rewards": {
+    "xp": 45
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "ორი მეტოქე გიშლის ხელს. თითოეული ვის მისდევს?",
+        "en": "Two opponents are in the way. Whom does each follow?"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ]
+}

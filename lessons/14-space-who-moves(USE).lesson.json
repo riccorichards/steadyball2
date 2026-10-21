@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 1,
+  "id": "space-who-moves",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: ვინ გადაინაცვლოს?",
+      "en": "Puzzle: who moves?"
+    },
+    "topic": "free-space",
+    "level": "decide",
+    "difficulty": 14,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "free-space",
+      "spread-out",
+      "puzzle",
+      "who-moves"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 18,
+        "x1": 82,
+        "y0": 32,
+        "y1": 82
+      }
+    },
+    "players": [
+      {
+        "id": "h6",
+        "team": "home",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 38
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 64,
+          "y": 58
+        },
+        "facing": 180
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 68,
+          "y": 62
+        },
+        "facing": 200
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 50,
+          "y": 76
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 54,
+          "y": 50
+        },
+        "facing": 180
+      },
+      {
+        "id": "a8",
+        "team": "away",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 44,
+          "y": 58
+        },
+        "facing": 180
+      },
+      {
+        "id": "a11",
+        "team": "away",
+        "number": 11,
+        "role": "LM",
+        "at": {
+          "x": 84,
+          "y": 60
+        },
+        "facing": 200
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 50,
+          "y": 79.5
+        },
+        "facing": 180
+      }
+    ],
+    "ball": {
+      "holder": "h6"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h6",
+        "to": {
+          "x": 50,
+          "y": 39
+        },
+        "ms": 500,
+        "face": 0
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h8",
+      "h10",
+      "h9"
+    ],
+    "maxMoves": 1,
+    "bounds": {
+      "x0": 18,
+      "x1": 82,
+      "y0": 44,
+      "y1": 82
+    }
+  },
+  "rules": [
+    {
+      "type": "count_in_zone",
+      "failKey": "empty",
+      "params": {
+        "zone": {
+          "x0": 22,
+          "x1": 34,
+          "y0": 52,
+          "y1": 64
+        },
+        "team": "home",
+        "min": 1
+      }
+    },
+    {
+      "type": "count_in_zone",
+      "failKey": "crowded",
+      "params": {
+        "zone": {
+          "x0": 58,
+          "x1": 76,
+          "y0": 52,
+          "y1": 68
+        },
+        "team": "home",
+        "max": 1
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h8": {
+        "at": {
+          "x": 28,
+          "y": 58
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h6",
+          "to": "h8",
+          "ms": 800
+        },
+        {
+          "kind": "move",
+          "who": "h8",
+          "to": {
+            "x": 30,
+            "y": 66
+          },
+          "ms": 1300,
+          "face": 0
+        },
+        {
+          "kind": "pass",
+          "from": "h8",
+          "to": "h9",
+          "ms": 800
+        }
+      ]
+    },
+    "fail": {
+      "crowded": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h10",
+            "ms": 800
+          },
+          {
+            "kind": "rush",
+            "who": "a6",
+            "at": "h10",
+            "ms": 700
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h10",
+            "ms": 800
+          },
+          {
+            "kind": "rush",
+            "who": "a6",
+            "at": "h10",
+            "ms": 700
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "ერთ ადგილას ორი დგას. გადაადგილე 1 მოთამაშე",
+      "en": "Two of ours share one space. Move 1 player"
+    },
+    "fail": {
+      "empty": {
+        "ka": "მარცხნივ ჯერ ისევ ცარიელია! სივრცე იქ არის.",
+        "en": "The left is still empty! That's where the space is."
+      },
+      "crowded": {
+        "ka": "მარჯვნივ ისევ ორნი ხართ! ერთ-ერთი უნდა წავიდეს.",
+        "en": "Still two of you on the right! One of them must go."
+      }
+    },
+    "success": {
+      "ka": "ყოჩაღ! გაიშალეთ და #6-ს ახლა მეტი პასი აქვს.",
+      "en": "Well done! You spread out and #6 has more passes."
+    },
+    "lessonLine": {
+      "ka": "ორი ერთ ადგილას = ერთი სივრცე იკარგება",
+      "en": "Two in one spot wastes a space"
+    }
+  },
+  "rewards": {
+    "xp": 35
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "სად არის ცარიელი ადგილი? ვინ დგას ზედმეტად?",
+        "en": "Where is the empty space? Who is one too many?"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ]
+}

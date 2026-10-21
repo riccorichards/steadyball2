@@ -1,0 +1,459 @@
+{
+  "schemaVersion": 1,
+  "id": "space-free-two-and-turn",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: ორი სივრცეში",
+      "en": "Puzzle: two into space"
+    },
+    "topic": "free-space",
+    "level": "game-speed",
+    "difficulty": 25,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "free-space",
+      "cover-shadow",
+      "body-shape",
+      "puzzle",
+      "time-limit"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 10,
+        "x1": 76,
+        "y0": 22,
+        "y1": 82
+      }
+    },
+    "players": [
+      {
+        "id": "h4",
+        "team": "home",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 40,
+          "y": 28
+        },
+        "facing": 15,
+        "highlight": true
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 50.5,
+          "y": 49
+        },
+        "facing": 180
+      },
+      {
+        "id": "h11",
+        "team": "home",
+        "number": 11,
+        "role": "LW",
+        "at": {
+          "x": 18,
+          "y": 62
+        },
+        "facing": 0
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 58,
+          "y": 66
+        },
+        "facing": 180
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 50,
+          "y": 77
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 46,
+          "y": 40
+        },
+        "facing": 200
+      },
+      {
+        "id": "a10",
+        "team": "away",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 58,
+          "y": 32
+        },
+        "facing": 220
+      },
+      {
+        "id": "a2",
+        "team": "away",
+        "number": 2,
+        "role": "RB",
+        "at": {
+          "x": 19,
+          "y": 65
+        },
+        "facing": 180
+      },
+      {
+        "id": "a8",
+        "team": "away",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 32,
+          "y": 52
+        },
+        "facing": 170
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 46,
+          "y": 81
+        },
+        "facing": 180
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 62,
+          "y": 80
+        },
+        "facing": 180
+      }
+    ],
+    "ball": {
+      "holder": "h4"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 5,
+          "x1": 95,
+          "y0": 15,
+          "y1": 95
+        },
+        "ms": 0
+      },
+      {
+        "kind": "move",
+        "who": "h4",
+        "to": {
+          "x": 40,
+          "y": 29
+        },
+        "ms": 500,
+        "face": 15
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "preset": "focus"
+        },
+        "ms": 800
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h8",
+      "h11",
+      "h10",
+      "h9"
+    ],
+    "maxMoves": 2,
+    "allowRotate": true,
+    "bounds": {
+      "x0": 12,
+      "x1": 74,
+      "y0": 34,
+      "y1": 76
+    }
+  },
+  "rules": [
+    {
+      "type": "out_of_shadow",
+      "failKey": "hidden",
+      "params": {
+        "who": "h8",
+        "presser": "a6"
+      }
+    },
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h8",
+        "zone": {
+          "x0": 62,
+          "x1": 73,
+          "y0": 44,
+          "y1": 54
+        }
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h4",
+        "to": "h8"
+      }
+    },
+    {
+      "type": "sees",
+      "failKey": "body",
+      "params": {
+        "who": "h8",
+        "targets": [
+          "ball",
+          "goal.opp"
+        ]
+      }
+    },
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h11",
+        "from": {
+          "team": "away"
+        },
+        "m": 5
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h4",
+        "to": "h11"
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h8": {
+        "at": {
+          "x": 68,
+          "y": 49
+        },
+        "facing": -76
+      },
+      "h11": {
+        "at": {
+          "x": 16,
+          "y": 52
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5,
+      "facingDeg": 20
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h4",
+          "to": "h8",
+          "ms": 900
+        },
+        {
+          "kind": "move",
+          "who": "h8",
+          "to": {
+            "x": 66,
+            "y": 60
+          },
+          "ms": 1700,
+          "face": 0
+        },
+        {
+          "kind": "pass",
+          "from": "h8",
+          "to": "h10",
+          "ms": 800
+        },
+        {
+          "kind": "shoot",
+          "from": "h10",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "hidden": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h8",
+            "ms": 800,
+            "interceptedBy": "a6"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      },
+      "body": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h8",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a10",
+            "at": "h8",
+            "ms": 900
+          }
+        ]
+      },
+      "marked": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h11",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a2",
+            "at": "h11",
+            "ms": 500
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h8",
+            "ms": 900,
+            "interceptedBy": "a6"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "გაათავისუფლე ორი, ერთი კარისკენ შებრუნდეს. 2 სვლა",
+      "en": "Free two, one facing goal. 2 moves"
+    },
+    "fail": {
+      "hidden": {
+        "ka": "ერთი ჯერ კიდევ ჩრდილშია! ვინ იმალება #6-ის უკან?",
+        "en": "Someone is still hidden! Who is behind #6?"
+      },
+      "zone": {
+        "ka": "ის გამოვიდა, მაგრამ სივრცეში არა! მარჯვენა ნახევარსივრცე ცარიელია.",
+        "en": "Out, but not in space! The right half-space is empty."
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! #4-ს ღია გზა სჭირდება.",
+        "en": "A lane is closed! #4 needs an open way."
+      },
+      "body": {
+        "ka": "ტანი დახურულია! შებრუნდი, რომ ბურთიც და კარიც დაინახო.",
+        "en": "Closed body! Turn so you see the ball and the goal."
+      },
+      "marked": {
+        "ka": "ფლანგზე ერთს ისევ მეტოქე უდგას! მოაშორე.",
+        "en": "Someone on the wing is still marked! Get him free."
+      }
+    },
+    "success": {
+      "ka": "ჩემპიონის ამოხსნაა! ორივე თავისუფალია და #8 კარს ხედავს.",
+      "en": "A champion's answer! Both free, and #8 sees the goal."
+    },
+    "lessonLine": {
+      "ka": "სივრცე + ღია ტანი = წინ თამაში",
+      "en": "Space plus an open body: play forward"
+    }
+  },
+  "rewards": {
+    "xp": 50
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "ერთი ჩრდილშია, მეორე ფლანგზე დაფარულია",
+        "en": "One is in a shadow, one is marked on the wing"
+      }
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ],
+  "timing": {
+    "timeLimitMs": 15000
+  }
+}

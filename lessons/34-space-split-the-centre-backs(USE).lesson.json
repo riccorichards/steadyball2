@@ -1,0 +1,332 @@
+{
+  "schemaVersion": 1,
+  "id": "space-split-the-centre-backs",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: დაშორე მცველები",
+      "en": "Puzzle: split the centre-backs"
+    },
+    "topic": "creating-space",
+    "level": "decide",
+    "difficulty": 34,
+    "ageBand": "11-13",
+    "positions": [
+      "ATT"
+    ],
+    "tags": [
+      "create-space",
+      "decoy-run",
+      "gap",
+      "puzzle"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 18,
+        "x1": 84,
+        "y0": 46,
+        "y1": 96
+      }
+    },
+    "players": [
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 50,
+          "y": 56
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 50,
+          "y": 79
+        },
+        "facing": 0
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 41,
+          "y": 78
+        },
+        "facing": 0
+      },
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 60,
+          "y": 78.5
+        },
+        "facing": 0
+      },
+      {
+        "id": "h11",
+        "team": "home",
+        "number": 11,
+        "role": "LW",
+        "at": {
+          "x": 24,
+          "y": 70
+        },
+        "facing": 0
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 45,
+          "y": 80
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h9",
+          "gapM": 3.4
+        }
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 55,
+          "y": 80
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h7",
+          "gapM": 3.75
+        }
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h8"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h8",
+        "to": {
+          "x": 50,
+          "y": 56
+        },
+        "ms": 400,
+        "face": 0
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h9",
+      "h7",
+      "h11",
+      "h10"
+    ],
+    "maxMoves": 2,
+    "bounds": {
+      "x0": 20,
+      "x1": 82,
+      "y0": 60,
+      "y1": 90
+    }
+  },
+  "rules": [
+    {
+      "type": "gap_width",
+      "failKey": "gap",
+      "params": {
+        "a": "a4",
+        "b": "a5",
+        "m": 16
+      }
+    },
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h10",
+        "from": {
+          "team": "away"
+        },
+        "m": 6
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h8",
+        "to": "h10"
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h9": {
+        "at": {
+          "x": 30,
+          "y": 72
+        }
+      },
+      "h7": {
+        "at": {
+          "x": 70,
+          "y": 72
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h8",
+          "to": "h10",
+          "ms": 900
+        },
+        {
+          "kind": "shoot",
+          "from": "h10",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "marked": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h8",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a4",
+            "at": "h10",
+            "ms": 500
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h8",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a5",
+            "at": "h10",
+            "ms": 600
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "დაშორე ცენტრალური მცველები #10-ისთვის. 2 სვლა",
+      "en": "Split their centre-backs for #10. 2 moves"
+    },
+    "fail": {
+      "gap": {
+        "ka": "მცველები ისევ ერთად დგანან! დაშორე ისინი ერთმანეთს.",
+        "en": "The defenders are still together! Pull them apart."
+      },
+      "marked": {
+        "ka": "#10-ს ისევ მცველი უდგას! ჯერ ის სხვაგან წაიყვანე.",
+        "en": "#10 is still marked! Lead that defender away first."
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! ბურთს #10-მდე ღია გზა სჭირდება.",
+        "en": "The lane is blocked! The ball needs a clear way to #10."
+      }
+    },
+    "success": {
+      "ka": "ბრავო! მცველები დაშორდნენ და #10 მათ შორის მარტოა.",
+      "en": "Bravo! The defenders split and #10 is alone between them."
+    },
+    "lessonLine": {
+      "ka": "დაშორე მცველები, ხვრელი გაჩნდება",
+      "en": "Split the defenders, a gap appears"
+    }
+  },
+  "rewards": {
+    "xp": 40
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "თითო მცველი თითო ჩვენიანს მისდევს",
+        "en": "Each centre-back follows one of ours"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ]
+}

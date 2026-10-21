@@ -1,0 +1,514 @@
+{
+  "schemaVersion": 1,
+  "id": "space-story-empty-then-fill",
+  "meta": {
+    "title": {
+      "ka": "გაათავისუფლე და შეავსე",
+      "en": "Empty it, then fill it"
+    },
+    "topic": "creating-space",
+    "level": "decide",
+    "difficulty": 28,
+    "ageBand": "11-13",
+    "positions": [
+      "ATT"
+    ],
+    "tags": [
+      "create-space",
+      "decoy-run",
+      "story",
+      "guided"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "full",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 24,
+        "x1": 78,
+        "y0": 46,
+        "y1": 92
+      }
+    },
+    "players": [
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 50,
+          "y": 54
+        },
+        "facing": 0
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 50,
+          "y": 76
+        },
+        "facing": 180,
+        "highlight": true
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 64,
+          "y": 70
+        },
+        "facing": 0
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 50,
+          "y": 78
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h9",
+          "gapM": 2
+        }
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 66,
+          "y": 79
+        },
+        "facing": 180
+      },
+      {
+        "id": "a3",
+        "team": "away",
+        "number": 3,
+        "role": "LB",
+        "at": {
+          "x": 34,
+          "y": 79
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 40,
+          "y": 60
+        },
+        "facing": 180
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h8"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 10,
+          "x1": 90,
+          "y0": 30,
+          "y1": 100
+        },
+        "ms": 0
+      },
+      {
+        "kind": "move",
+        "who": "h8",
+        "to": {
+          "x": 50,
+          "y": 54
+        },
+        "ms": 400,
+        "face": 0
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "preset": "focus"
+        },
+        "ms": 800
+      },
+      {
+        "kind": "spotlight",
+        "on": {
+          "zone": {
+            "x0": 40,
+            "x1": 60,
+            "y0": 72,
+            "y1": 88
+          }
+        },
+        "dim": 0.5,
+        "ms": 500
+      },
+      {
+        "kind": "caption",
+        "text": {
+          "ka": "ცენტრში სივრცე გვჭირდება",
+          "en": "We need space in the middle"
+        },
+        "ms": 1300
+      },
+      {
+        "kind": "pulse",
+        "who": [
+          "h9",
+          "a4"
+        ],
+        "ms": 1000
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h9"
+    ],
+    "bounds": {
+      "x0": 26,
+      "x1": 74,
+      "y0": 58,
+      "y1": 88
+    }
+  },
+  "rules": [
+    {
+      "type": "count_in_zone",
+      "failKey": "occupied",
+      "params": {
+        "zone": {
+          "x0": 42,
+          "x1": 58,
+          "y0": 74,
+          "y1": 86
+        },
+        "team": "away",
+        "max": 0
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h9": {
+        "at": {
+          "x": 36,
+          "y": 66
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "wait",
+          "ms": 300
+        },
+        {
+          "kind": "camera",
+          "to": {
+            "x0": 26,
+            "x1": 80,
+            "y0": 48,
+            "y1": 96
+          },
+          "ms": 700
+        },
+        {
+          "kind": "run_path",
+          "who": "h10",
+          "path": [
+            {
+              "x": 64,
+              "y": 70
+            },
+            {
+              "x": 60,
+              "y": 74
+            },
+            {
+              "x": 54,
+              "y": 78
+            }
+          ],
+          "ms": 1700
+        }
+      ]
+    },
+    "fail": {
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h8",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a4",
+            "at": "h10",
+            "ms": 700
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "გაათავისუფლე ცენტრი: წაიყვანე #9 და #4-იც წავა",
+      "en": "Empty the middle: take #9 and #4 goes too"
+    },
+    "fail": {
+      "occupied": {
+        "ka": "#4 ისევ ცენტრშია! #9 წაიყვანე იქიდან შორს, გვერდზე.",
+        "en": "#4 is still in the middle! Take #9 out of there, to the side."
+      }
+    },
+    "success": {
+      "ka": "ზუსტად! ცენტრი ცარიელია. ნახე, ვინ შემოდის.",
+      "en": "Exactly! The middle is empty. Look who comes in."
+    },
+    "lessonLine": {
+      "ka": "ჯერ გაათავისუფლე სივრცე, მერე შეავსე",
+      "en": "First empty the space, then fill it"
+    }
+  },
+  "rewards": {
+    "xp": 45
+  },
+  "hints": [
+    {
+      "afterWrong": 1,
+      "text": {
+        "ka": "#4 #9-ს მისდევს. წაიყვანე ის ცენტრიდან",
+        "en": "#4 follows #9. Lead him out of the middle"
+      }
+    },
+    {
+      "afterWrong": 3,
+      "showZones": true,
+      "pulse": [
+        "a4"
+      ]
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე, სად წაიყვანო",
+        "en": "Watch where to take him"
+      },
+      "ghost": true
+    }
+  ],
+  "stages": [
+    {
+      "id": "find-the-late-runner",
+      "camera": {
+        "focus": {
+          "x0": 24,
+          "x1": 80,
+          "y0": 46,
+          "y1": 92
+        }
+      },
+      "intro": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "camera",
+            "to": {
+              "preset": "focus"
+            },
+            "ms": 700
+          },
+          {
+            "kind": "pulse",
+            "who": [
+              "h10"
+            ],
+            "ms": 1000
+          },
+          {
+            "kind": "caption",
+            "text": {
+              "ka": "#10 სივრცეშია!",
+              "en": "#10 is in the space!"
+            },
+            "ms": 1100
+          }
+        ]
+      },
+      "interaction": {
+        "type": "pass_sequence",
+        "who": [
+          "h9",
+          "h10"
+        ]
+      },
+      "rules": [
+        {
+          "type": "sequence",
+          "failKey": "order",
+          "params": {
+            "order": [
+              "h8",
+              "h10"
+            ]
+          }
+        }
+      ],
+      "solution": {
+        "sequence": [
+          "h8",
+          "h10"
+        ],
+        "tolerance": {
+          "radiusM": 1.5
+        }
+      },
+      "outcomes": {
+        "success": {
+          "mode": "sequential",
+          "steps": [
+            {
+              "kind": "play_answer"
+            },
+            {
+              "kind": "wait",
+              "ms": 300
+            }
+          ]
+        },
+        "fail": {
+          "default": {
+            "mode": "sequential",
+            "steps": [
+              {
+                "kind": "pass",
+                "from": "h8",
+                "to": "h9",
+                "ms": 800
+              },
+              {
+                "kind": "rush",
+                "who": "a4",
+                "at": "h9",
+                "ms": 600
+              }
+            ]
+          }
+        }
+      },
+      "text": {
+        "banner": {
+          "ka": "ვის მიაწოდოს #8-მა?",
+          "en": "Who should #8 pass to?"
+        },
+        "fail": {
+          "order": {
+            "ka": "#9-ს #4 უდგას! #10 მარტოა ცენტრში.",
+            "en": "#4 is on #9! #10 is alone in the middle."
+          }
+        },
+        "success": {
+          "ka": "სწორია! #10 შენ მიერ გახსნილ სივრცეშია.",
+          "en": "Right! #10 is in the space you opened."
+        }
+      },
+      "hints": [
+        {
+          "afterWrong": 1,
+          "text": {
+            "ka": "ვინ შევიდა ცარიელ ცენტრში?",
+            "en": "Who ran into the empty middle?"
+          }
+        },
+        {
+          "afterWrong": 3,
+          "pulse": [
+            "h10"
+          ]
+        },
+        {
+          "afterWrong": 5,
+          "text": {
+            "ka": "ნახე ამოხსნა",
+            "en": "Watch the answer"
+          },
+          "ghost": true
+        }
+      ]
+    }
+  ],
+  "finale": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "slowmo",
+        "factor": 0.4,
+        "ms": 1500
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 30,
+          "x1": 70,
+          "y0": 72,
+          "y1": 100
+        },
+        "ms": 800
+      },
+      {
+        "kind": "shoot",
+        "from": "h10",
+        "target": "goal",
+        "ms": 800,
+        "result": "goal"
+      }
+    ]
+  }
+}

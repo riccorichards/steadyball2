@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "id": "space-pass-into-the-gap",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: პასი ხვრელში",
+      "en": "Puzzle: pass into the gap"
+    },
+    "topic": "through-ball",
+    "level": "execute",
+    "difficulty": 20,
+    "ageBand": "11-13",
+    "positions": [
+      "MID"
+    ],
+    "tags": [
+      "free-space",
+      "pass-into-space",
+      "puzzle"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 20,
+        "x1": 84,
+        "y0": 50,
+        "y1": 98
+      }
+    },
+    "players": [
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 50,
+          "y": 56
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 51,
+          "y": 69
+        },
+        "facing": 0
+      },
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 78,
+          "y": 83
+        },
+        "facing": 0
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 44,
+          "y": 66
+        },
+        "facing": 180
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 64,
+          "y": 80
+        },
+        "facing": 180
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 40,
+          "y": 80
+        },
+        "facing": 180
+      },
+      {
+        "id": "a2",
+        "team": "away",
+        "number": 2,
+        "role": "RB",
+        "at": {
+          "x": 26,
+          "y": 79
+        },
+        "facing": 180
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h10"
+    }
+  },
+  "intro": {
+    "mode": "parallel",
+    "steps": [
+      {
+        "kind": "run_path",
+        "who": "h9",
+        "path": [
+          {
+            "x": 51,
+            "y": 69
+          },
+          {
+            "x": 53,
+            "y": 74
+          },
+          {
+            "x": 55,
+            "y": 79.6
+          }
+        ],
+        "ms": 1700
+      },
+      {
+        "kind": "move",
+        "who": "a6",
+        "to": {
+          "x": 46,
+          "y": 62
+        },
+        "ms": 1200,
+        "face": 180
+      }
+    ]
+  },
+  "interaction": {
+    "type": "pass_space",
+    "who": [
+      "h9",
+      "h7"
+    ]
+  },
+  "rules": [
+    {
+      "type": "pass_clear",
+      "failKey": "cut",
+      "params": {}
+    },
+    {
+      "type": "reaches_first",
+      "failKey": "race",
+      "params": {
+        "who": "h9"
+      }
+    },
+    {
+      "type": "breaks_line",
+      "failKey": "line",
+      "params": {
+        "line": [
+          "a4",
+          "a5"
+        ]
+      }
+    }
+  ],
+  "solution": {
+    "passTo": {
+      "x": 53,
+      "y": 86
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "play_answer"
+        },
+        {
+          "kind": "shoot",
+          "from": "h9",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "play_answer"
+          },
+          {
+            "kind": "wait",
+            "ms": 500
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "მიაწოდე #9-ს სივრცეში, მცველების უკან",
+      "en": "Play #9 into the space behind"
+    },
+    "fail": {
+      "cut": {
+        "ka": "პასი გადაჭრეს! ბურთი მცველებს გვერდით გაატარე.",
+        "en": "Cut out! Play it past the defenders, not at them."
+      },
+      "race": {
+        "ka": "ვერ მიუსწრო! მიაწოდე იქ, სადაც ის პირველი იქნება.",
+        "en": "He didn't get there first! Play it where he arrives first."
+      },
+      "line": {
+        "ka": "ეს მცველების წინაა! მიაწოდე მათ ზურგს უკან.",
+        "en": "That's in front of the defenders! Play it behind them."
+      }
+    },
+    "success": {
+      "ka": "ზუსტი პასი სივრცეში! #9 მარტოა მეკარესთან.",
+      "en": "A perfect pass into space! #9 is through on goal."
+    },
+    "lessonLine": {
+      "ka": "პასი სივრცეში, არა ფეხებში",
+      "en": "Pass into space, not to feet"
+    }
+  },
+  "rewards": {
+    "xp": 35
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "არა ფეხებში! იქ, სადაც #9 გარბის, მცველებს შორის",
+        "en": "Not to his feet! Where #9 runs, between them"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ]
+}

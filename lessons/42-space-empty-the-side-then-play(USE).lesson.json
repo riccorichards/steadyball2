@@ -1,0 +1,508 @@
+{
+  "schemaVersion": 1,
+  "id": "space-empty-the-side-then-play",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: გაათავისუფლე და ითამაშე",
+      "en": "Puzzle: empty it, then play"
+    },
+    "topic": "creating-space",
+    "level": "execute",
+    "difficulty": 42,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "create-space",
+      "decoy-run",
+      "pass-into-space",
+      "puzzle"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 28,
+        "x1": 92,
+        "y0": 50,
+        "y1": 94
+      }
+    },
+    "players": [
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 50,
+          "y": 56
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 48,
+          "y": 76.5
+        },
+        "facing": 0
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 58,
+          "y": 75.4
+        },
+        "facing": 180
+      },
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 74,
+          "y": 75.4
+        },
+        "facing": 180
+      },
+      {
+        "id": "h11",
+        "team": "home",
+        "number": 11,
+        "role": "LW",
+        "at": {
+          "x": 24,
+          "y": 70
+        },
+        "facing": 0
+      },
+      {
+        "id": "a3",
+        "team": "away",
+        "number": 3,
+        "role": "LB",
+        "at": {
+          "x": 28,
+          "y": 78
+        },
+        "facing": 180
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 42,
+          "y": 78
+        },
+        "facing": 180
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 58,
+          "y": 78
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h10",
+          "gapM": 2.6
+        }
+      },
+      {
+        "id": "a2",
+        "team": "away",
+        "number": 2,
+        "role": "RB",
+        "at": {
+          "x": 74,
+          "y": 78
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h7",
+          "gapM": 2.6
+        }
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h8"
+    },
+    "overlays": [
+      {
+        "landmark": "offsideLine.away",
+        "style": "line"
+      }
+    ]
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h8",
+        "to": {
+          "x": 50,
+          "y": 56
+        },
+        "ms": 400,
+        "face": 0
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h10",
+      "h7",
+      "h9"
+    ],
+    "maxMoves": 2,
+    "bounds": {
+      "x0": 30,
+      "x1": 90,
+      "y0": 56,
+      "y1": 90
+    }
+  },
+  "rules": [
+    {
+      "type": "count_in_zone",
+      "failKey": "occupied",
+      "params": {
+        "zone": {
+          "x0": 54,
+          "x1": 78,
+          "y0": 74,
+          "y1": 88
+        },
+        "team": "away",
+        "max": 0
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h10": {
+        "at": {
+          "x": 62,
+          "y": 62
+        }
+      },
+      "h7": {
+        "at": {
+          "x": 88,
+          "y": 70
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "wait",
+          "ms": 2600
+        }
+      ]
+    },
+    "fail": {
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "run_path",
+            "who": "h9",
+            "path": [
+              {
+                "x": 48,
+                "y": 76.5
+              },
+              {
+                "x": 56,
+                "y": 82
+              }
+            ],
+            "ms": 1300
+          },
+          {
+            "kind": "rush",
+            "who": "a5",
+            "at": "h9",
+            "ms": 600
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "გაათავისუფლე მარჯვენა მხარე მცველების უკან. 2",
+      "en": "Empty the right side behind their line. 2 moves"
+    },
+    "fail": {
+      "occupied": {
+        "ka": "მარჯვნივ ისევ მცველია! ის, ვინც იქ დგას, სხვაგან წაიყვანე.",
+        "en": "There's still a defender there! Lead whoever stands there away."
+      }
+    },
+    "success": {
+      "ka": "მარჯვენა მხარე ცარიელია! ახლა გამოიყენე.",
+      "en": "The right side is empty! Now use it."
+    },
+    "lessonLine": {
+      "ka": "ორი გარბენა, ერთი დიდი სივრცე",
+      "en": "Two runs, one big space"
+    }
+  },
+  "rewards": {
+    "xp": 50
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "ორი მცველი იცავს ამ მხარეს. ორივე ვიღაცას მისდევს",
+        "en": "Two defenders guard that side. Both follow someone"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ],
+  "stages": [
+    {
+      "id": "use-the-space",
+      "camera": {
+        "focus": {
+          "x0": 32,
+          "x1": 92,
+          "y0": 50,
+          "y1": 92
+        }
+      },
+      "overlays": [
+        {
+          "landmark": "offsideLine.away",
+          "style": "line"
+        }
+      ],
+      "intro": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "camera",
+            "to": {
+              "preset": "focus"
+            },
+            "ms": 700
+          },
+          {
+            "kind": "caption",
+            "text": {
+              "ka": "ახლა გამოიყენე!",
+              "en": "Now use it!"
+            },
+            "ms": 1000
+          }
+        ]
+      },
+      "interaction": {
+        "type": "pass_space",
+        "who": [
+          "h9"
+        ]
+      },
+      "rules": [
+        {
+          "type": "pass_clear",
+          "failKey": "cut",
+          "params": {}
+        },
+        {
+          "type": "reaches_first",
+          "failKey": "race",
+          "params": {
+            "who": "h9"
+          }
+        },
+        {
+          "type": "breaks_line",
+          "failKey": "line",
+          "params": {
+            "line": [
+              "a4",
+              "a5"
+            ]
+          }
+        },
+        {
+          "type": "onside_at_pass",
+          "failKey": "offside",
+          "params": {
+            "who": "h9",
+            "passAfterM": 0
+          }
+        }
+      ],
+      "solution": {
+        "passTo": {
+          "x": 60,
+          "y": 84
+        },
+        "tolerance": {
+          "radiusM": 1.5
+        }
+      },
+      "outcomes": {
+        "success": {
+          "mode": "sequential",
+          "steps": [
+            {
+              "kind": "play_answer"
+            },
+            {
+              "kind": "wait",
+              "ms": 200
+            }
+          ]
+        },
+        "fail": {
+          "default": {
+            "mode": "sequential",
+            "steps": [
+              {
+                "kind": "play_answer"
+              },
+              {
+                "kind": "wait",
+                "ms": 500
+              }
+            ]
+          }
+        }
+      },
+      "text": {
+        "banner": {
+          "ka": "მიაწოდე #9-ს შექმნილ სივრცეში",
+          "en": "Play #9 into the space you created"
+        },
+        "fail": {
+          "cut": {
+            "ka": "პასი გადაჭრეს! ბურთი მცველებს გვერდით გაატარე.",
+            "en": "Cut out! Play it past the defenders, not at them."
+          },
+          "race": {
+            "ka": "ვერ მიუსწრო! მიაწოდე იქ, სადაც ის პირველი იქნება.",
+            "en": "He didn't get there first! Play it where he arrives first."
+          },
+          "line": {
+            "ka": "ეს მცველების წინაა! მიაწოდე შენ მიერ გახსნილ სივრცეში.",
+            "en": "That's in front of them! Play it into the space you opened."
+          },
+          "offside": {
+            "ka": "ოფსაიდი! გარბენა ხაზიდან უნდა დაიწყოს.",
+            "en": "Offside! The runner must start level with the line."
+          }
+        },
+        "success": {
+          "ka": "ბრწყინვალეა! #9 გაიჭრა იქ, სადაც მცველები აღარ იყვნენ.",
+          "en": "Brilliant! #9 ran where the defenders used to be."
+        }
+      },
+      "hints": [
+        {
+          "afterWrong": 2,
+          "text": {
+            "ka": "#9 დიაგონალზე გაიქცევა მარჯვნივ",
+            "en": "#9 runs diagonally to the right"
+          }
+        },
+        {
+          "afterWrong": 4,
+          "text": {
+            "ka": "ნახე ამოხსნა",
+            "en": "Watch the answer"
+          },
+          "ghost": true
+        }
+      ],
+      "assist": "none"
+    }
+  ],
+  "finale": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "slowmo",
+        "factor": 0.4,
+        "ms": 1500
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 36,
+          "x1": 76,
+          "y0": 74,
+          "y1": 100
+        },
+        "ms": 800
+      },
+      {
+        "kind": "shoot",
+        "from": "h9",
+        "target": "goal",
+        "ms": 800,
+        "result": "goal"
+      }
+    ]
+  }
+}

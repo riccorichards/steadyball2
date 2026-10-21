@@ -1,0 +1,544 @@
+{
+  "schemaVersion": 1,
+  "id": "space-split-then-chip",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: გაყავი და გადააგდე",
+      "en": "Puzzle: split it, then chip it"
+    },
+    "topic": "creating-space",
+    "level": "game-speed",
+    "difficulty": 49,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "create-space",
+      "decoy-run",
+      "lofted",
+      "high-line",
+      "puzzle"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 18,
+        "x1": 82,
+        "y0": 34,
+        "y1": 80
+      }
+    },
+    "players": [
+      {
+        "id": "h6",
+        "team": "home",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 40
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 42,
+          "y": 59.4
+        },
+        "facing": 180
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 58,
+          "y": 59.4
+        },
+        "facing": 180
+      },
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 72,
+          "y": 60
+        },
+        "facing": -30
+      },
+      {
+        "id": "h11",
+        "team": "home",
+        "number": 11,
+        "role": "LW",
+        "at": {
+          "x": 22,
+          "y": 56
+        },
+        "facing": 0
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 50
+        },
+        "facing": 180
+      },
+      {
+        "id": "a3",
+        "team": "away",
+        "number": 3,
+        "role": "LB",
+        "at": {
+          "x": 24,
+          "y": 62
+        },
+        "facing": 180
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 42,
+          "y": 62
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h9",
+          "gapM": 2.7
+        }
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 58,
+          "y": 62
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h10",
+          "gapM": 2.7
+        }
+      },
+      {
+        "id": "a2",
+        "team": "away",
+        "number": 2,
+        "role": "RB",
+        "at": {
+          "x": 78,
+          "y": 62
+        },
+        "facing": 180
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 90
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h6"
+    },
+    "overlays": [
+      {
+        "landmark": "offsideLine.away",
+        "style": "line"
+      }
+    ]
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 5,
+          "x1": 95,
+          "y0": 25,
+          "y1": 100
+        },
+        "ms": 0
+      },
+      {
+        "kind": "move",
+        "who": "h6",
+        "to": {
+          "x": 50,
+          "y": 40
+        },
+        "ms": 400,
+        "face": 0
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "preset": "focus"
+        },
+        "ms": 800
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h9",
+      "h10",
+      "h11"
+    ],
+    "maxMoves": 2,
+    "bounds": {
+      "x0": 20,
+      "x1": 80,
+      "y0": 42,
+      "y1": 76
+    }
+  },
+  "rules": [
+    {
+      "type": "gap_width",
+      "failKey": "gap",
+      "params": {
+        "a": "a4",
+        "b": "a5",
+        "m": 20
+      }
+    },
+    {
+      "type": "count_in_zone",
+      "failKey": "middle",
+      "params": {
+        "zone": {
+          "x0": 40,
+          "x1": 60,
+          "y0": 57,
+          "y1": 67
+        },
+        "team": "away",
+        "max": 0
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h9": {
+        "at": {
+          "x": 30,
+          "y": 50
+        }
+      },
+      "h10": {
+        "at": {
+          "x": 70,
+          "y": 50
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "wait",
+          "ms": 2600
+        }
+      ]
+    },
+    "fail": {
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": {
+              "x": 52,
+              "y": 70
+            },
+            "ms": 900,
+            "lofted": true
+          },
+          {
+            "kind": "rush",
+            "who": "a4",
+            "at": "h7",
+            "ms": 700
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "გაყავი მათი მაღალი ხაზი შუაზე. 2 სვლა",
+      "en": "Split the middle of their high line. 2 moves"
+    },
+    "fail": {
+      "gap": {
+        "ka": "ცენტრალური მცველები ისევ ახლოს არიან! დაშორე ისინი.",
+        "en": "Their centre-backs are still close! Pull them apart."
+      },
+      "middle": {
+        "ka": "ცენტრში ისევ მცველია! ის ვიღაცას მისდევს.",
+        "en": "A defender is still in the middle! He follows one of ours."
+      }
+    },
+    "success": {
+      "ka": "ცენტრი ღიაა! ახლა გადააგდე ბურთი #7-ის გარბენაში.",
+      "en": "The middle is open! Now chip it into #7's run."
+    },
+    "lessonLine": {
+      "ka": "გაყავი ხაზი, მერე გადააგდე მის უკან",
+      "en": "Split the line, then chip it behind"
+    }
+  },
+  "rewards": {
+    "xp": 60
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "ორივე ცენტრალური მცველი ჩვენს თავდამსხმელებს მისდევს",
+        "en": "Both centre-backs follow our forwards"
+      }
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ],
+  "stages": [
+    {
+      "id": "chip-it",
+      "camera": {
+        "focus": {
+          "x0": 18,
+          "x1": 84,
+          "y0": 34,
+          "y1": 92
+        }
+      },
+      "overlays": [
+        {
+          "landmark": "offsideLine.away",
+          "style": "line"
+        }
+      ],
+      "intro": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "camera",
+            "to": {
+              "preset": "focus"
+            },
+            "ms": 700
+          },
+          {
+            "kind": "pulse",
+            "who": [
+              "h7"
+            ],
+            "ms": 900
+          }
+        ]
+      },
+      "interaction": {
+        "type": "pass_space",
+        "who": [
+          "h7"
+        ],
+        "pass": {
+          "lofted": true,
+          "maxLengthM": 45
+        }
+      },
+      "rules": [
+        {
+          "type": "pass_clear",
+          "failKey": "cut",
+          "params": {}
+        },
+        {
+          "type": "reaches_first",
+          "failKey": "race",
+          "params": {
+            "who": "h7"
+          }
+        },
+        {
+          "type": "breaks_line",
+          "failKey": "line",
+          "params": {
+            "line": [
+              "a3",
+              "a2"
+            ]
+          }
+        },
+        {
+          "type": "onside_at_pass",
+          "failKey": "offside",
+          "params": {
+            "who": "h7",
+            "passAfterM": 0
+          }
+        }
+      ],
+      "solution": {
+        "passTo": {
+          "x": 57,
+          "y": 76
+        },
+        "tolerance": {
+          "radiusM": 1.5
+        }
+      },
+      "outcomes": {
+        "success": {
+          "mode": "sequential",
+          "steps": [
+            {
+              "kind": "play_answer"
+            },
+            {
+              "kind": "wait",
+              "ms": 200
+            }
+          ]
+        },
+        "fail": {
+          "default": {
+            "mode": "sequential",
+            "steps": [
+              {
+                "kind": "play_answer"
+              },
+              {
+                "kind": "wait",
+                "ms": 500
+              }
+            ]
+          }
+        }
+      },
+      "text": {
+        "banner": {
+          "ka": "გადააგდე ბურთი #7-ის წინ, ხაზის უკან",
+          "en": "Chip the ball ahead of #7, behind the line"
+        },
+        "fail": {
+          "cut": {
+            "ka": "პასი გადაჭრეს! ბურთი მცველებს გვერდით გაატარე.",
+            "en": "Cut out! Play it past the defenders, not at them."
+          },
+          "race": {
+            "ka": "ვერ მიუსწრო! მიაწოდე იქ, სადაც ის პირველი იქნება.",
+            "en": "He didn't get there first! Play it where he arrives first."
+          },
+          "line": {
+            "ka": "ეს მცველების წინაა! მიაწოდე შენ მიერ გახსნილ სივრცეში.",
+            "en": "That's in front of them! Play it into the space you opened."
+          },
+          "offside": {
+            "ka": "ოფსაიდი! გარბენა ხაზიდან უნდა დაიწყოს.",
+            "en": "Offside! The runner must start level with the line."
+          }
+        },
+        "success": {
+          "ka": "ზუსტი გადაგდება! #7 ცარიელ ცენტრში გაიჭრა.",
+          "en": "A perfect chip! #7 ran into the empty middle."
+        }
+      },
+      "hints": [
+        {
+          "afterWrong": 2,
+          "text": {
+            "ka": "#7 დიაგონალზე გარბის შიგნით. ბურთი მის წინ, მეკარის წინ",
+            "en": "#7 runs inside on a diagonal. Ahead of him, before the keeper"
+          }
+        },
+        {
+          "afterWrong": 4,
+          "text": {
+            "ka": "ნახე ამოხსნა",
+            "en": "Watch the answer"
+          },
+          "ghost": true
+        }
+      ],
+      "assist": "none"
+    }
+  ],
+  "finale": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "slowmo",
+        "factor": 0.4,
+        "ms": 1500
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 34,
+          "x1": 74,
+          "y0": 70,
+          "y1": 100
+        },
+        "ms": 800
+      },
+      {
+        "kind": "shoot",
+        "from": "h7",
+        "target": "goal",
+        "ms": 800,
+        "result": "goal"
+      }
+    ]
+  }
+}

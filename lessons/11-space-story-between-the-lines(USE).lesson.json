@@ -1,0 +1,566 @@
+{
+  "schemaVersion": 1,
+  "id": "space-story-between-the-lines",
+  "meta": {
+    "title": {
+      "ka": "ხაზებს შორის",
+      "en": "Between the lines"
+    },
+    "topic": "free-space",
+    "level": "execute",
+    "difficulty": 11,
+    "ageBand": "11-13",
+    "positions": [
+      "MID"
+    ],
+    "tags": [
+      "free-space",
+      "between-the-lines",
+      "body-shape",
+      "story",
+      "challenge"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "some",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 28,
+        "x1": 82,
+        "y0": 30,
+        "y1": 88
+      }
+    },
+    "players": [
+      {
+        "id": "h6",
+        "team": "home",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 44,
+          "y": 36
+        },
+        "facing": 10
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 46,
+          "y": 48
+        },
+        "facing": 180,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 48,
+          "y": 82
+        },
+        "facing": 180
+      },
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 82,
+          "y": 80
+        },
+        "facing": 0
+      },
+      {
+        "id": "a8",
+        "team": "away",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 36,
+          "y": 56
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 57
+        },
+        "facing": 180
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 46,
+          "y": 84.5
+        },
+        "facing": 180
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 62,
+          "y": 78
+        },
+        "facing": 180
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h6"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 10,
+          "x1": 90,
+          "y0": 30,
+          "y1": 100
+        },
+        "ms": 0
+      },
+      {
+        "kind": "move",
+        "who": "h6",
+        "to": {
+          "x": 44,
+          "y": 37
+        },
+        "ms": 500,
+        "face": 10
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "preset": "focus"
+        },
+        "ms": 800
+      },
+      {
+        "kind": "spotlight",
+        "on": {
+          "zone": {
+            "x0": 30,
+            "x1": 80,
+            "y0": 40,
+            "y1": 76
+          }
+        },
+        "dim": 0.45,
+        "ms": 500
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h8"
+    ],
+    "allowRotate": true,
+    "bounds": {
+      "x0": 30,
+      "x1": 80,
+      "y0": 42,
+      "y1": 76
+    }
+  },
+  "rules": [
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h8",
+        "zone": {
+          "x0": 58,
+          "x1": 70,
+          "y0": 61,
+          "y1": 71
+        }
+      }
+    },
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h8",
+        "from": {
+          "team": "away"
+        },
+        "m": 5
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h6",
+        "to": "h8"
+      }
+    },
+    {
+      "type": "sees",
+      "failKey": "body",
+      "params": {
+        "who": "h8",
+        "targets": [
+          "ball",
+          "goal.opp"
+        ]
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h8": {
+        "at": {
+          "x": 64,
+          "y": 66
+        },
+        "facing": -85
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5,
+      "facingDeg": 20
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h6",
+          "to": "h8",
+          "ms": 900
+        },
+        {
+          "kind": "move",
+          "who": "h8",
+          "to": {
+            "x": 64,
+            "y": 68
+          },
+          "ms": 600,
+          "face": 20
+        },
+        {
+          "kind": "wait",
+          "ms": 200
+        }
+      ]
+    },
+    "fail": {
+      "zone": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h8",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a6",
+            "at": "h8",
+            "ms": 700
+          }
+        ]
+      },
+      "lane": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h8",
+            "ms": 900,
+            "interceptedBy": "a6"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      },
+      "body": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h8",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a5",
+            "at": "h8",
+            "ms": 700
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h8",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a6",
+            "at": "h8",
+            "ms": 700
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "იპოვე სივრცე ხაზებს შორის და შებრუნდი",
+      "en": "Find the space between the lines and turn"
+    },
+    "fail": {
+      "zone": {
+        "ka": "აქ სივრცე არ არის! ნახევარმცველების უკან, მარჯვნივ, ცარიელია.",
+        "en": "No space there! Behind their midfield, on the right, it's empty."
+      },
+      "marked": {
+        "ka": "მეტოქე ძალიან ახლოსაა! დადექი მათ შორის, შორს.",
+        "en": "An opponent is too close! Stand between them, away."
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! #6 ბურთს ჭრის.",
+        "en": "The lane is closed! #6 cuts the pass."
+      },
+      "body": {
+        "ka": "ტანი დახურულია! შებრუნდი, რომ კარიც დაინახო.",
+        "en": "Closed body! Turn so you see the goal too."
+      }
+    },
+    "success": {
+      "ka": "კარგია! ხაზებს შორის მიიღე და შებრუნდი.",
+      "en": "Good! You received between the lines and turned."
+    },
+    "lessonLine": {
+      "ka": "ხაზებს შორის სივრცე: მიიღე და შებრუნდი",
+      "en": "Space between the lines: receive and turn"
+    }
+  },
+  "rewards": {
+    "xp": 45
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "ნახევარმცველების ხაზის უკან ადგილია",
+        "en": "There is room behind their midfield line"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე, სად და როგორ",
+        "en": "Watch where and how"
+      },
+      "ghost": true
+    }
+  ],
+  "stages": [
+    {
+      "id": "find-the-winger",
+      "camera": {
+        "focus": {
+          "x0": 36,
+          "x1": 92,
+          "y0": 52,
+          "y1": 100
+        }
+      },
+      "intro": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "camera",
+            "to": {
+              "preset": "focus"
+            },
+            "ms": 700
+          },
+          {
+            "kind": "caption",
+            "text": {
+              "ka": "ვინ არის თავისუფალი?",
+              "en": "Who is free?"
+            },
+            "ms": 1000
+          }
+        ]
+      },
+      "interaction": {
+        "type": "pass_sequence",
+        "who": [
+          "h9",
+          "h7"
+        ]
+      },
+      "rules": [
+        {
+          "type": "sequence",
+          "failKey": "order",
+          "params": {
+            "order": [
+              "h8",
+              "h7"
+            ]
+          }
+        }
+      ],
+      "solution": {
+        "sequence": [
+          "h8",
+          "h7"
+        ],
+        "tolerance": {
+          "radiusM": 1.5
+        }
+      },
+      "outcomes": {
+        "success": {
+          "mode": "sequential",
+          "steps": [
+            {
+              "kind": "play_answer"
+            },
+            {
+              "kind": "run_path",
+              "who": "h7",
+              "path": [
+                {
+                  "x": 82,
+                  "y": 80
+                },
+                {
+                  "x": 76,
+                  "y": 86
+                }
+              ],
+              "ms": 1100
+            }
+          ]
+        },
+        "fail": {
+          "default": {
+            "mode": "sequential",
+            "steps": [
+              {
+                "kind": "pass",
+                "from": "h8",
+                "to": "h9",
+                "ms": 800,
+                "interceptedBy": "a4"
+              },
+              {
+                "kind": "wait",
+                "ms": 300
+              }
+            ]
+          }
+        }
+      },
+      "text": {
+        "banner": {
+          "ka": "ვის მიაწოდოს #8-მა?",
+          "en": "Who should #8 pass to?"
+        },
+        "fail": {
+          "order": {
+            "ka": "#9-ს მცველი უდგას! #7 მარტოა მარჯვნივ.",
+            "en": "#9 is marked! #7 is alone on the right."
+          }
+        },
+        "success": {
+          "ka": "სწორია! #7 თავისუფალია.",
+          "en": "Right! #7 is free."
+        }
+      },
+      "hints": [
+        {
+          "afterWrong": 2,
+          "text": {
+            "ka": "მცველი ვის უდგას ახლოს?",
+            "en": "Who has a defender right on him?"
+          }
+        }
+      ],
+      "assist": "some"
+    }
+  ],
+  "finale": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "slowmo",
+        "factor": 0.4,
+        "ms": 1500
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 40,
+          "x1": 90,
+          "y0": 72,
+          "y1": 100
+        },
+        "ms": 800
+      },
+      {
+        "kind": "shoot",
+        "from": "h7",
+        "target": "goal",
+        "ms": 800,
+        "result": "goal"
+      }
+    ]
+  }
+}

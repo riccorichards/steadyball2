@@ -1,0 +1,380 @@
+{
+  "schemaVersion": 1,
+  "id": "space-lose-him-and-turn",
+  "meta": {
+    "title": {
+      "ka": "მოშორდი და შებრუნდი",
+      "en": "Lose your marker and turn"
+    },
+    "topic": "free-space",
+    "level": "execute",
+    "difficulty": 10,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "free-space",
+      "losing-the-marker",
+      "body-shape",
+      "challenge"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "some",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 18,
+        "x1": 78,
+        "y0": 34,
+        "y1": 84
+      }
+    },
+    "players": [
+      {
+        "id": "h6",
+        "team": "home",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 56,
+          "y": 40
+        },
+        "facing": -10
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 48,
+          "y": 64
+        },
+        "facing": 180,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 56,
+          "y": 79
+        },
+        "facing": 180
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 48,
+          "y": 67.5
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 56,
+          "y": 54
+        },
+        "facing": 180
+      },
+      {
+        "id": "a8",
+        "team": "away",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 38,
+          "y": 48
+        },
+        "facing": 160
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 62,
+          "y": 75
+        },
+        "facing": 180
+      },
+      {
+        "id": "a3",
+        "team": "away",
+        "number": 3,
+        "role": "LB",
+        "at": {
+          "x": 24,
+          "y": 74
+        },
+        "facing": 180
+      }
+    ],
+    "ball": {
+      "holder": "h6"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h6",
+        "to": {
+          "x": 56,
+          "y": 41
+        },
+        "ms": 500,
+        "face": -10
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h10"
+    ],
+    "allowRotate": true,
+    "bounds": {
+      "x0": 20,
+      "x1": 76,
+      "y0": 46,
+      "y1": 76
+    }
+  },
+  "rules": [
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h10",
+        "from": {
+          "team": "away"
+        },
+        "m": 5.5
+      }
+    },
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h10",
+        "zone": {
+          "x0": 26,
+          "x1": 38,
+          "y0": 57,
+          "y1": 67
+        }
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h6",
+        "to": "h10"
+      }
+    },
+    {
+      "type": "sees",
+      "failKey": "body",
+      "params": {
+        "who": "h10",
+        "targets": [
+          "ball",
+          "goal.opp"
+        ]
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h10": {
+        "at": {
+          "x": 32,
+          "y": 62
+        },
+        "facing": 80
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5,
+      "facingDeg": 20
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h6",
+          "to": "h10",
+          "ms": 900
+        },
+        {
+          "kind": "move",
+          "who": "h10",
+          "to": {
+            "x": 36,
+            "y": 72
+          },
+          "ms": 1600,
+          "face": 20
+        },
+        {
+          "kind": "pass",
+          "from": "h10",
+          "to": "h9",
+          "ms": 800
+        },
+        {
+          "kind": "shoot",
+          "from": "h9",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "marked": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a4",
+            "at": "h10",
+            "ms": 600
+          }
+        ]
+      },
+      "lane": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h10",
+            "ms": 900,
+            "interceptedBy": "a8"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      },
+      "body": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a3",
+            "at": "h10",
+            "ms": 800
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a8",
+            "at": "h10",
+            "ms": 800
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "მოშორდი #4-ს, გადი სივრცეში და შებრუნდი",
+      "en": "Lose #4, find the space and turn"
+    },
+    "fail": {
+      "marked": {
+        "ka": "#4 ისევ ახლოსაა! გადი მარცხნივ, მისგან შორს.",
+        "en": "#4 is still close! Move left, away from him."
+      },
+      "zone": {
+        "ka": "აქ სივრცე არ არის! მარცხენა ნახევარსივრცე თავისუფალია.",
+        "en": "No space there! The left half-space is free."
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! #8 ბურთს ჭრის.",
+        "en": "The lane is closed! #8 cuts the pass."
+      },
+      "body": {
+        "ka": "ტანი დახურულია! შებრუნდი, რომ ბურთიც და კარიც დაინახო.",
+        "en": "Closed body! Turn so you see the ball and the goal."
+      }
+    },
+    "success": {
+      "ka": "ბრავო! მეურვეს მოშორდი და უკვე კარისკენ იყურები.",
+      "en": "Bravo! You lost your marker and you face the goal."
+    },
+    "lessonLine": {
+      "ka": "მოშორდი, გაიხსენი, შებრუნდი",
+      "en": "Lose him, get open, turn"
+    }
+  },
+  "rewards": {
+    "xp": 30
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "მარცხნივ, #8-ის წინ, ადგილი ცარიელია",
+        "en": "On the left, ahead of #8, the space is empty"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე, სად და როგორ",
+        "en": "Watch where and how"
+      },
+      "ghost": true
+    }
+  ]
+}

@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "id": "space-two-get-free",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: ორივე გაიხსენი",
+      "en": "Puzzle: get both free"
+    },
+    "topic": "free-space",
+    "level": "execute",
+    "difficulty": 23,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "free-space",
+      "cover-shadow",
+      "losing-the-marker",
+      "puzzle",
+      "time-limit"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 18,
+        "x1": 82,
+        "y0": 22,
+        "y1": 80
+      }
+    },
+    "players": [
+      {
+        "id": "h4",
+        "team": "home",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 40,
+          "y": 28
+        },
+        "facing": 15,
+        "highlight": true
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 50.5,
+          "y": 49
+        },
+        "facing": 180
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 66,
+          "y": 62
+        },
+        "facing": 180
+      },
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 78,
+          "y": 47
+        },
+        "facing": 200
+      },
+      {
+        "id": "h11",
+        "team": "home",
+        "number": 11,
+        "role": "LW",
+        "at": {
+          "x": 22,
+          "y": 61
+        },
+        "facing": 160
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 46,
+          "y": 40
+        },
+        "facing": 200
+      },
+      {
+        "id": "a8",
+        "team": "away",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 66,
+          "y": 64.6
+        },
+        "facing": 180
+      },
+      {
+        "id": "a10",
+        "team": "away",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 60,
+          "y": 34
+        },
+        "facing": 220
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 50,
+          "y": 80
+        },
+        "facing": 180
+      }
+    ],
+    "ball": {
+      "holder": "h4"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h4",
+        "to": {
+          "x": 40,
+          "y": 29
+        },
+        "ms": 500,
+        "face": 15
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h8",
+      "h10",
+      "h7",
+      "h11"
+    ],
+    "maxMoves": 2,
+    "bounds": {
+      "x0": 20,
+      "x1": 80,
+      "y0": 34,
+      "y1": 74
+    }
+  },
+  "rules": [
+    {
+      "type": "out_of_shadow",
+      "failKey": "hidden",
+      "params": {
+        "who": "h8",
+        "presser": "a6"
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h4",
+        "to": "h8"
+      }
+    },
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h8",
+        "from": {
+          "team": "away"
+        },
+        "m": 4
+      }
+    },
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h10",
+        "from": {
+          "team": "away"
+        },
+        "m": 5.5
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h4",
+        "to": "h10"
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h8": {
+        "at": {
+          "x": 30,
+          "y": 50
+        }
+      },
+      "h10": {
+        "at": {
+          "x": 76,
+          "y": 56
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h4",
+          "to": "h10",
+          "ms": 900
+        },
+        {
+          "kind": "move",
+          "who": "h10",
+          "to": {
+            "x": 72,
+            "y": 66
+          },
+          "ms": 1600,
+          "face": 0
+        },
+        {
+          "kind": "pass",
+          "from": "h10",
+          "to": "h8",
+          "ms": 900
+        }
+      ]
+    },
+    "fail": {
+      "hidden": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h8",
+            "ms": 800,
+            "interceptedBy": "a6"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      },
+      "marked": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a8",
+            "at": "h10",
+            "ms": 500
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h10",
+            "ms": 900,
+            "interceptedBy": "a6"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "ორი ჯერ თავისუფალი არ არის. გადაადგილე 2",
+      "en": "Two of ours aren't free yet. Move 2 players"
+    },
+    "fail": {
+      "hidden": {
+        "ka": "ერთი ჯერ კიდევ ჩრდილშია! ვინ იმალება #6-ის უკან?",
+        "en": "Someone is still hidden! Who is behind #6?"
+      },
+      "marked": {
+        "ka": "ერთს ისევ მეტოქე უდგას! ვინ არის დაფარული?",
+        "en": "Someone is still marked! Who has a man on him?"
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! #4-ს ღია გზა სჭირდება.",
+        "en": "A lane is closed! #4 needs an open way."
+      }
+    },
+    "success": {
+      "ka": "ბრწყინვალეა! ორივე გაიხსნა და #4-ს ორი პასი აქვს.",
+      "en": "Brilliant! Both got free and #4 has two passes."
+    },
+    "lessonLine": {
+      "ka": "იპოვე, ვინ არ არის თავისუფალი",
+      "en": "Spot who isn't free, then fix it"
+    }
+  },
+  "rewards": {
+    "xp": 45
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "ერთი ჩრდილშია, მეორეს მეტოქე ზურგთან უდგას",
+        "en": "One is in a shadow, one has a man at his back"
+      }
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ],
+  "timing": {
+    "timeLimitMs": 25000
+  }
+}

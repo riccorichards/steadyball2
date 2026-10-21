@@ -1,0 +1,350 @@
+{
+  "schemaVersion": 1,
+  "id": "space-pull-him-off-the-lane",
+  "meta": {
+    "title": {
+      "ka": "გაუხსენი ხაზი",
+      "en": "Pull him off the lane"
+    },
+    "topic": "creating-space",
+    "level": "decide",
+    "difficulty": 27,
+    "ageBand": "11-13",
+    "positions": [
+      "MID"
+    ],
+    "tags": [
+      "create-space",
+      "decoy-run",
+      "passing-lane",
+      "guided"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "full",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 20,
+        "x1": 76,
+        "y0": 24,
+        "y1": 84
+      }
+    },
+    "players": [
+      {
+        "id": "h4",
+        "team": "home",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 44,
+          "y": 30
+        },
+        "facing": 15
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 45,
+          "y": 49
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 54,
+          "y": 62
+        },
+        "facing": 180
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 48,
+          "y": 78
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 49.5
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h8",
+          "gapM": 3.5
+        }
+      },
+      {
+        "id": "a8",
+        "team": "away",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 36,
+          "y": 61
+        },
+        "facing": 180
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 46,
+          "y": 82
+        },
+        "facing": 180
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 62,
+          "y": 76
+        },
+        "facing": 180
+      }
+    ],
+    "ball": {
+      "holder": "h4"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h4",
+        "to": {
+          "x": 44,
+          "y": 30
+        },
+        "ms": 400,
+        "face": 15
+      },
+      {
+        "kind": "spotlight",
+        "on": {
+          "players": [
+            "h8",
+            "a6",
+            "h10"
+          ]
+        },
+        "dim": 0.5,
+        "ms": 500
+      },
+      {
+        "kind": "caption",
+        "text": {
+          "ka": "#6 დაჰყვება #8-ს",
+          "en": "#6 follows #8"
+        },
+        "ms": 1200
+      },
+      {
+        "kind": "pulse",
+        "who": [
+          "h8",
+          "a6"
+        ],
+        "ms": 1000
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h8"
+    ],
+    "bounds": {
+      "x0": 22,
+      "x1": 74,
+      "y0": 36,
+      "y1": 66
+    }
+  },
+  "rules": [
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h4",
+        "to": "h10"
+      }
+    },
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h10",
+        "from": {
+          "team": "away"
+        },
+        "m": 5
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h8": {
+        "at": {
+          "x": 30,
+          "y": 54
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h4",
+          "to": "h10",
+          "ms": 900
+        },
+        {
+          "kind": "move",
+          "who": "h10",
+          "to": {
+            "x": 56,
+            "y": 68
+          },
+          "ms": 1000,
+          "face": 0
+        },
+        {
+          "kind": "pass",
+          "from": "h10",
+          "to": "h9",
+          "ms": 700
+        }
+      ]
+    },
+    "fail": {
+      "lane": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h10",
+            "ms": 900,
+            "interceptedBy": "a6"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a6",
+            "at": "h10",
+            "ms": 600
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "წაიყვანე #6 პასის ხაზიდან. გადაადგილე #8",
+      "en": "Pull #6 off the passing lane: move #8"
+    },
+    "fail": {
+      "lane": {
+        "ka": "#6 ისევ ხაზზეა! #8 გვერდზე წაიყვანე, ხაზიდან შორს.",
+        "en": "#6 is still on the lane! Take #8 sideways, off the line."
+      },
+      "marked": {
+        "ka": "#6 #10-თან ახლოს დარჩა! სხვა მხარეს წაიყვანე.",
+        "en": "#6 stayed near #10! Take him the other way."
+      }
+    },
+    "success": {
+      "ka": "ყოჩაღ! #6 #8-ს გაჰყვა და #4-ს #10-მდე გზა გაეხსნა.",
+      "en": "Well done! #6 went with #8 and #4 could find #10."
+    },
+    "lessonLine": {
+      "ka": "წაიყვანე მეტოქე, გაუხსენი ხაზი",
+      "en": "Pull the opponent, open the lane"
+    }
+  },
+  "rewards": {
+    "xp": 25
+  },
+  "hints": [
+    {
+      "afterWrong": 1,
+      "text": {
+        "ka": "#6 #8-ს მისდევს. წაიყვანე იგი გვერდზე",
+        "en": "#6 follows #8. Lead him to the side"
+      }
+    },
+    {
+      "afterWrong": 3,
+      "pulse": [
+        "a6",
+        "h10"
+      ],
+      "spotlight": {
+        "zone": {
+          "x0": 22,
+          "x1": 74,
+          "y0": 36,
+          "y1": 66
+        }
+      }
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე, სად წაიყვანო",
+        "en": "Watch where to take him"
+      },
+      "ghost": true
+    }
+  ]
+}

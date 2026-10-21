@@ -1,0 +1,394 @@
+{
+  "schemaVersion": 1,
+  "id": "space-stretch-and-fill",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: გაჭიმე და შეავსე",
+      "en": "Puzzle: stretch and fill"
+    },
+    "topic": "creating-space",
+    "level": "execute",
+    "difficulty": 39,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "create-space",
+      "width",
+      "stretch",
+      "puzzle"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 22,
+        "x1": 82,
+        "y0": 46,
+        "y1": 96
+      }
+    },
+    "players": [
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 50,
+          "y": 56
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 50,
+          "y": 66
+        },
+        "facing": 0
+      },
+      {
+        "id": "h11",
+        "team": "home",
+        "number": 11,
+        "role": "LW",
+        "at": {
+          "x": 41,
+          "y": 77.5
+        },
+        "facing": 0
+      },
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 59,
+          "y": 77.5
+        },
+        "facing": 0
+      },
+      {
+        "id": "h2",
+        "team": "home",
+        "number": 2,
+        "role": "RB",
+        "at": {
+          "x": 78,
+          "y": 58
+        },
+        "facing": 0
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 44,
+          "y": 80
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h11",
+          "gapM": 3.3
+        }
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 56,
+          "y": 80
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h7",
+          "gapM": 3.3
+        }
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 57,
+          "y": 64
+        },
+        "facing": 180
+      },
+      {
+        "id": "a3",
+        "team": "away",
+        "number": 3,
+        "role": "LB",
+        "at": {
+          "x": 24,
+          "y": 80
+        },
+        "facing": 180
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h8"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h8",
+        "to": {
+          "x": 50,
+          "y": 56
+        },
+        "ms": 400,
+        "face": 0
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h11",
+      "h7",
+      "h10",
+      "h2"
+    ],
+    "maxMoves": 3,
+    "bounds": {
+      "x0": 24,
+      "x1": 80,
+      "y0": 52,
+      "y1": 90
+    }
+  },
+  "rules": [
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h10",
+        "zone": {
+          "x0": 44,
+          "x1": 56,
+          "y0": 76,
+          "y1": 86
+        }
+      }
+    },
+    {
+      "type": "gap_width",
+      "failKey": "gap",
+      "params": {
+        "a": "a4",
+        "b": "a5",
+        "m": 20
+      }
+    },
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h10",
+        "from": {
+          "team": "away"
+        },
+        "m": 5
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h8",
+        "to": "h10"
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h11": {
+        "at": {
+          "x": 28,
+          "y": 72
+        }
+      },
+      "h7": {
+        "at": {
+          "x": 72,
+          "y": 72
+        }
+      },
+      "h10": {
+        "at": {
+          "x": 50,
+          "y": 81
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h8",
+          "to": "h10",
+          "ms": 900
+        },
+        {
+          "kind": "shoot",
+          "from": "h10",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "marked": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h8",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a5",
+            "at": "h10",
+            "ms": 500
+          }
+        ]
+      },
+      "lane": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h8",
+            "to": "h10",
+            "ms": 900,
+            "interceptedBy": "a6"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h8",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a4",
+            "at": "h10",
+            "ms": 600
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "გახსენი ხვრელი და შეიყვანე იქ #10. 3 სვლა",
+      "en": "Open a gap and get #10 into it. 3 moves"
+    },
+    "fail": {
+      "zone": {
+        "ka": "#10 ხვრელში არ არის! ის მცველებს შორის უნდა იყოს.",
+        "en": "#10 isn't in the gap! He must be between the defenders."
+      },
+      "gap": {
+        "ka": "მცველები ისევ ახლოს არიან! გაჭიმე მათი ხაზი.",
+        "en": "The defenders are still close! Stretch their line."
+      },
+      "marked": {
+        "ka": "#10-ს მცველი ახლოს უდგას! მეტი სივრცე სჭირდება.",
+        "en": "A defender is close to #10! He needs more space."
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! ბურთს ღია გზა სჭირდება.",
+        "en": "The lane is blocked! The ball needs a clear way."
+      }
+    },
+    "success": {
+      "ka": "ჩინებულია! ორი გარბენა ფლანგებზე და #10 ხვრელშია.",
+      "en": "Superb! Two runs wide and #10 is in the gap."
+    },
+    "lessonLine": {
+      "ka": "გაჭიმე, მერე შეავსე",
+      "en": "Stretch it, then fill it"
+    }
+  },
+  "rewards": {
+    "xp": 50
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "ჯერ ორივე მცველი გვერდზე, მერე #10 შუაში",
+        "en": "First both defenders wide, then #10 in the middle"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ]
+}

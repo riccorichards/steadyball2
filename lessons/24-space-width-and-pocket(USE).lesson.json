@@ -1,0 +1,380 @@
+{
+  "schemaVersion": 1,
+  "id": "space-width-and-pocket",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: სიგანე და ჯიბე",
+      "en": "Puzzle: width and the pocket"
+    },
+    "topic": "free-space",
+    "level": "execute",
+    "difficulty": 24,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "free-space",
+      "width",
+      "between-the-lines",
+      "puzzle",
+      "time-limit"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 32,
+        "x1": 98,
+        "y0": 30,
+        "y1": 84
+      }
+    },
+    "players": [
+      {
+        "id": "h6",
+        "team": "home",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 36
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 50,
+          "y": 66
+        },
+        "facing": 180
+      },
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 58,
+          "y": 63
+        },
+        "facing": 180
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 54,
+          "y": 72
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 57
+        },
+        "facing": 180
+      },
+      {
+        "id": "a8",
+        "team": "away",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 38,
+          "y": 54
+        },
+        "facing": 180
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 46,
+          "y": 78
+        },
+        "facing": 180
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 60,
+          "y": 78
+        },
+        "facing": 180
+      },
+      {
+        "id": "a2",
+        "team": "away",
+        "number": 2,
+        "role": "RB",
+        "at": {
+          "x": 78,
+          "y": 74
+        },
+        "facing": 200
+      },
+      {
+        "id": "a3",
+        "team": "away",
+        "number": 3,
+        "role": "LB",
+        "at": {
+          "x": 26,
+          "y": 74
+        },
+        "facing": 180
+      }
+    ],
+    "ball": {
+      "holder": "h6"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h6",
+        "to": {
+          "x": 50,
+          "y": 37
+        },
+        "ms": 500,
+        "face": 0
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h10",
+      "h7",
+      "h9"
+    ],
+    "maxMoves": 2,
+    "bounds": {
+      "x0": 34,
+      "x1": 96,
+      "y0": 40,
+      "y1": 82
+    }
+  },
+  "rules": [
+    {
+      "type": "count_in_zone",
+      "failKey": "crowded",
+      "params": {
+        "zone": {
+          "x0": 42,
+          "x1": 62,
+          "y0": 58,
+          "y1": 74
+        },
+        "team": "home",
+        "max": 1
+      }
+    },
+    {
+      "type": "count_in_zone",
+      "failKey": "wide",
+      "params": {
+        "zone": {
+          "x0": 82,
+          "x1": 94,
+          "y0": 54,
+          "y1": 70
+        },
+        "team": "home",
+        "min": 1
+      }
+    },
+    {
+      "type": "count_in_zone",
+      "failKey": "pocket",
+      "params": {
+        "zone": {
+          "x0": 64,
+          "x1": 76,
+          "y0": 56,
+          "y1": 68
+        },
+        "team": "home",
+        "min": 1
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h7": {
+        "at": {
+          "x": 88,
+          "y": 62
+        }
+      },
+      "h10": {
+        "at": {
+          "x": 70,
+          "y": 62
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h6",
+          "to": "h10",
+          "ms": 900
+        },
+        {
+          "kind": "move",
+          "who": "h10",
+          "to": {
+            "x": 70,
+            "y": 66
+          },
+          "ms": 700,
+          "face": 30
+        },
+        {
+          "kind": "pass",
+          "from": "h10",
+          "to": "h7",
+          "ms": 800
+        },
+        {
+          "kind": "run_path",
+          "who": "h7",
+          "path": [
+            {
+              "x": 88,
+              "y": 62
+            },
+            {
+              "x": 86,
+              "y": 74
+            }
+          ],
+          "ms": 1800
+        }
+      ]
+    },
+    "fail": {
+      "crowded": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h9",
+            "ms": 900,
+            "interceptedBy": "a6"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h10",
+            "ms": 900,
+            "interceptedBy": "a6"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "ცენტრში სამნი ხართ. გაიშალეთ: გადაადგილე 2",
+      "en": "Three of you in the middle. Spread out: move 2"
+    },
+    "fail": {
+      "crowded": {
+        "ka": "ცენტრში ისევ ზედმეტი ხალხია! იქ მხოლოდ ერთი დარჩეს.",
+        "en": "Still crowded in the middle! Leave only one there."
+      },
+      "wide": {
+        "ka": "მარჯვენა ფლანგი ცარიელია! სიგანე გვჭირდება.",
+        "en": "The right wing is empty! We need width."
+      },
+      "pocket": {
+        "ka": "ხაზებს შორის ადგილი ცარიელია! ვინმე იქ უნდა იყოს.",
+        "en": "The pocket between the lines is empty! Fill it."
+      }
+    },
+    "success": {
+      "ka": "შესანიშნავია! ერთი სიგანეში, ერთი ხაზებს შორის.",
+      "en": "Great! One in the width, one between the lines."
+    },
+    "lessonLine": {
+      "ka": "გაიშალეთ: სიგანე და ხაზებს შორის",
+      "en": "Spread out: width and between the lines"
+    }
+  },
+  "rewards": {
+    "xp": 45
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "ორი სივრცეა ცარიელი: ფლანგი და #6-ის მარჯვნივ",
+        "en": "Two spaces are empty: the wing and right of #6"
+      }
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ],
+  "timing": {
+    "timeLimitMs": 20000
+  }
+}

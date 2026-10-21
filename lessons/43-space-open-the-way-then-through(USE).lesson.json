@@ -1,0 +1,492 @@
+{
+  "schemaVersion": 1,
+  "id": "space-open-the-way-then-through",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: გზა და პასი",
+      "en": "Puzzle: open the way, then through"
+    },
+    "topic": "creating-space",
+    "level": "game-speed",
+    "difficulty": 43,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "create-space",
+      "decoy-run",
+      "pass-into-space",
+      "puzzle"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 18,
+        "x1": 82,
+        "y0": 44,
+        "y1": 86
+      }
+    },
+    "players": [
+      {
+        "id": "h6",
+        "team": "home",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 52
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 53,
+          "y": 60
+        },
+        "facing": 180
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 50,
+          "y": 76
+        },
+        "facing": 0
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 34,
+          "y": 58
+        },
+        "facing": 0
+      },
+      {
+        "id": "h11",
+        "team": "home",
+        "number": 11,
+        "role": "LW",
+        "at": {
+          "x": 22,
+          "y": 70
+        },
+        "facing": 0
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 62
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h10",
+          "gapM": 2.9
+        }
+      },
+      {
+        "id": "a3",
+        "team": "away",
+        "number": 3,
+        "role": "LB",
+        "at": {
+          "x": 22,
+          "y": 78
+        },
+        "facing": 180
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 38,
+          "y": 78
+        },
+        "facing": 180
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 62,
+          "y": 78
+        },
+        "facing": 180
+      },
+      {
+        "id": "a2",
+        "team": "away",
+        "number": 2,
+        "role": "RB",
+        "at": {
+          "x": 78,
+          "y": 78
+        },
+        "facing": 180
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h6"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h6",
+        "to": {
+          "x": 50,
+          "y": 52
+        },
+        "ms": 400,
+        "face": 0
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h10",
+      "h8",
+      "h11"
+    ],
+    "maxMoves": 1,
+    "bounds": {
+      "x0": 20,
+      "x1": 80,
+      "y0": 50,
+      "y1": 76
+    }
+  },
+  "rules": [
+    {
+      "type": "count_in_zone",
+      "failKey": "lane",
+      "params": {
+        "zone": {
+          "x0": 44,
+          "x1": 56,
+          "y0": 56,
+          "y1": 72
+        },
+        "team": "away",
+        "max": 0
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h10": {
+        "at": {
+          "x": 70,
+          "y": 64
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "wait",
+          "ms": 2600
+        }
+      ]
+    },
+    "fail": {
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h9",
+            "ms": 900,
+            "interceptedBy": "a6"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "გაუხსენი გზა ბურთს #9-მდე. 1 სვლა",
+      "en": "Open the way for the ball to #9. 1 move"
+    },
+    "fail": {
+      "lane": {
+        "ka": "#6 ისევ ბურთის გზაზეა! ის ვის მისდევს?",
+        "en": "#6 is still in the ball's way! Whom does he follow?"
+      }
+    },
+    "success": {
+      "ka": "გზა ღიაა! ახლა მიაწოდე სივრცეში.",
+      "en": "The way is open! Now play it into space."
+    },
+    "lessonLine": {
+      "ka": "ჯერ გზა გახსენი, მერე პასი სივრცეში",
+      "en": "Open the way, then pass into space"
+    }
+  },
+  "rewards": {
+    "xp": 50
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "#6 #10-ს მისდევს. წაიყვანე ის გვერდზე",
+        "en": "#6 follows #10. Take him to the side"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ],
+  "stages": [
+    {
+      "id": "through-ball",
+      "camera": {
+        "focus": {
+          "x0": 24,
+          "x1": 80,
+          "y0": 48,
+          "y1": 96
+        }
+      },
+      "overlays": [
+        {
+          "landmark": "offsideLine.away",
+          "style": "line"
+        }
+      ],
+      "intro": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "camera",
+            "to": {
+              "preset": "focus"
+            },
+            "ms": 700
+          },
+          {
+            "kind": "caption",
+            "text": {
+              "ka": "ახლა გამოიყენე!",
+              "en": "Now use it!"
+            },
+            "ms": 1000
+          }
+        ]
+      },
+      "interaction": {
+        "type": "pass_space",
+        "who": [
+          "h9"
+        ]
+      },
+      "rules": [
+        {
+          "type": "pass_clear",
+          "failKey": "cut",
+          "params": {}
+        },
+        {
+          "type": "reaches_first",
+          "failKey": "race",
+          "params": {
+            "who": "h9"
+          }
+        },
+        {
+          "type": "breaks_line",
+          "failKey": "line",
+          "params": {
+            "line": [
+              "a4",
+              "a5"
+            ]
+          }
+        },
+        {
+          "type": "onside_at_pass",
+          "failKey": "offside",
+          "params": {
+            "who": "h9",
+            "passAfterM": 0
+          }
+        }
+      ],
+      "solution": {
+        "passTo": {
+          "x": 50,
+          "y": 83.5
+        },
+        "tolerance": {
+          "radiusM": 1.5
+        }
+      },
+      "outcomes": {
+        "success": {
+          "mode": "sequential",
+          "steps": [
+            {
+              "kind": "play_answer"
+            },
+            {
+              "kind": "wait",
+              "ms": 200
+            }
+          ]
+        },
+        "fail": {
+          "default": {
+            "mode": "sequential",
+            "steps": [
+              {
+                "kind": "play_answer"
+              },
+              {
+                "kind": "wait",
+                "ms": 500
+              }
+            ]
+          }
+        }
+      },
+      "text": {
+        "banner": {
+          "ka": "მიაწოდე #9-ს სივრცეში, მცველების უკან",
+          "en": "Play #9 into the space behind"
+        },
+        "fail": {
+          "cut": {
+            "ka": "პასი გადაჭრეს! ბურთი მცველებს გვერდით გაატარე.",
+            "en": "Cut out! Play it past the defenders, not at them."
+          },
+          "race": {
+            "ka": "ვერ მიუსწრო! მიაწოდე იქ, სადაც ის პირველი იქნება.",
+            "en": "He didn't get there first! Play it where he arrives first."
+          },
+          "line": {
+            "ka": "ეს მცველების წინაა! მიაწოდე შენ მიერ გახსნილ სივრცეში.",
+            "en": "That's in front of them! Play it into the space you opened."
+          },
+          "offside": {
+            "ka": "ოფსაიდი! გარბენა ხაზიდან უნდა დაიწყოს.",
+            "en": "Offside! The runner must start level with the line."
+          }
+        },
+        "success": {
+          "ka": "ზუსტი პასი! #6 წავიდა და ბურთი #9-მდე მივიდა.",
+          "en": "A perfect pass! #6 left and the ball reached #9."
+        }
+      },
+      "hints": [
+        {
+          "afterWrong": 2,
+          "text": {
+            "ka": "ბურთი მცველებს შორის, #9-ის წინ",
+            "en": "The ball goes between them, ahead of #9"
+          }
+        },
+        {
+          "afterWrong": 4,
+          "text": {
+            "ka": "ნახე ამოხსნა",
+            "en": "Watch the answer"
+          },
+          "ghost": true
+        }
+      ],
+      "assist": "none"
+    }
+  ],
+  "finale": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "slowmo",
+        "factor": 0.4,
+        "ms": 1500
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 30,
+          "x1": 70,
+          "y0": 74,
+          "y1": 100
+        },
+        "ms": 800
+      },
+      {
+        "kind": "shoot",
+        "from": "h9",
+        "target": "goal",
+        "ms": 800,
+        "result": "goal"
+      }
+    ]
+  }
+}

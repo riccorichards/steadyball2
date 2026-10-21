@@ -1,0 +1,375 @@
+{
+  "schemaVersion": 1,
+  "id": "space-break-the-press",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: გატეხე პრესინგი",
+      "en": "Puzzle: break the press"
+    },
+    "topic": "creating-space",
+    "level": "game-speed",
+    "difficulty": 48,
+    "ageBand": "11-13",
+    "positions": [
+      "DEF",
+      "MID"
+    ],
+    "tags": [
+      "create-space",
+      "decoy-run",
+      "pressing",
+      "build-up",
+      "puzzle"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 14,
+        "x1": 78,
+        "y0": 10,
+        "y1": 68
+      }
+    },
+    "players": [
+      {
+        "id": "h4",
+        "team": "home",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 38,
+          "y": 20
+        },
+        "facing": 20,
+        "highlight": true
+      },
+      {
+        "id": "h5",
+        "team": "home",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 62,
+          "y": 20
+        },
+        "facing": 0
+      },
+      {
+        "id": "h6",
+        "team": "home",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 49,
+          "y": 31.5
+        },
+        "facing": 180
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 62,
+          "y": 50
+        },
+        "facing": 180
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 58,
+          "y": 46
+        },
+        "facing": 180
+      },
+      {
+        "id": "h3",
+        "team": "home",
+        "number": 3,
+        "role": "LB",
+        "at": {
+          "x": 20,
+          "y": 34
+        },
+        "facing": 0
+      },
+      {
+        "id": "h2",
+        "team": "home",
+        "number": 2,
+        "role": "RB",
+        "at": {
+          "x": 86,
+          "y": 34
+        },
+        "facing": 0
+      },
+      {
+        "id": "a9",
+        "team": "away",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 34,
+          "y": 26
+        },
+        "facing": 160
+      },
+      {
+        "id": "a10",
+        "team": "away",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 49,
+          "y": 34
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h6",
+          "gapM": 2.6
+        }
+      },
+      {
+        "id": "a8",
+        "team": "away",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 58,
+          "y": 49.7
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h8",
+          "gapM": 2.8
+        }
+      },
+      {
+        "id": "a11",
+        "team": "away",
+        "number": 11,
+        "role": "LW",
+        "at": {
+          "x": 80,
+          "y": 36
+        },
+        "facing": 200
+      }
+    ],
+    "ball": {
+      "holder": "h4"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 5,
+          "x1": 95,
+          "y0": 0,
+          "y1": 70
+        },
+        "ms": 0
+      },
+      {
+        "kind": "caption",
+        "text": {
+          "ka": "პრესინგი!",
+          "en": "They press!"
+        },
+        "ms": 1000
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "preset": "focus"
+        },
+        "ms": 800
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h6",
+      "h8",
+      "h3",
+      "h5"
+    ],
+    "maxMoves": 2,
+    "bounds": {
+      "x0": 18,
+      "x1": 76,
+      "y0": 14,
+      "y1": 64
+    }
+  },
+  "rules": [
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h4",
+        "to": "h10"
+      }
+    },
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h10",
+        "from": {
+          "team": "away"
+        },
+        "m": 5
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h6": {
+        "at": {
+          "x": 30,
+          "y": 30
+        }
+      },
+      "h8": {
+        "at": {
+          "x": 72,
+          "y": 60
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h4",
+          "to": "h10",
+          "ms": 900
+        },
+        {
+          "kind": "move",
+          "who": "h10",
+          "to": {
+            "x": 58,
+            "y": 54
+          },
+          "ms": 1300,
+          "face": 0
+        },
+        {
+          "kind": "pass",
+          "from": "h10",
+          "to": "h8",
+          "ms": 800
+        }
+      ]
+    },
+    "fail": {
+      "lane": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h10",
+            "ms": 900,
+            "interceptedBy": "a10"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a8",
+            "at": "h10",
+            "ms": 500
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "მაღალი პრესინგია! გაუხსენი #4-ს პასი #10-მდე. 2",
+      "en": "A high press! Open #4's pass to #10. 2 moves"
+    },
+    "fail": {
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! #10-ის გზაზე მეტოქე დგას.",
+        "en": "The lane is blocked! An opponent stands on the way to #10."
+      },
+      "marked": {
+        "ka": "#10-ს მეტოქე ახლოს უდგას! ის ვის მისდევს?",
+        "en": "An opponent is close to #10! Whom does he follow?"
+      }
+    },
+    "success": {
+      "ka": "ბრწყინვალეა! ორმა მატყუარამ პრესინგი გატეხა.",
+      "en": "Brilliant! Two decoys broke the press."
+    },
+    "lessonLine": {
+      "ka": "პრესინგი? წაიყვანე მეტოქეები, იპოვე თავისუფალი",
+      "en": "Pressed? Drag them away, find the free man"
+    }
+  },
+  "rewards": {
+    "xp": 55
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "ერთი მეტოქე ხაზს კეტავს, მეორე #10-ს უდგას. ვის მისდევენ?",
+        "en": "One blocks the lane, one is on #10. Whom do they follow?"
+      }
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ],
+  "timing": {
+    "timeLimitMs": 20000
+  }
+}

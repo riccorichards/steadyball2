@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 1,
+  "id": "space-who-is-hidden",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: ვინ იმალება?",
+      "en": "Puzzle: who is hidden?"
+    },
+    "topic": "free-space",
+    "level": "decide",
+    "difficulty": 12,
+    "ageBand": "11-13",
+    "positions": [
+      "MID"
+    ],
+    "tags": [
+      "free-space",
+      "cover-shadow",
+      "puzzle",
+      "who-moves"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 20,
+        "x1": 80,
+        "y0": 22,
+        "y1": 70
+      }
+    },
+    "players": [
+      {
+        "id": "h4",
+        "team": "home",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 40,
+          "y": 28
+        },
+        "facing": 15,
+        "highlight": true
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 50.5,
+          "y": 49
+        },
+        "facing": 180
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 70,
+          "y": 51
+        },
+        "facing": 200
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 50,
+          "y": 78
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 46,
+          "y": 40
+        },
+        "facing": 200
+      },
+      {
+        "id": "a8",
+        "team": "away",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 24,
+          "y": 58
+        },
+        "facing": 180
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 50,
+          "y": 82
+        },
+        "facing": 180
+      }
+    ],
+    "ball": {
+      "holder": "h4"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h4",
+        "to": {
+          "x": 40,
+          "y": 29
+        },
+        "ms": 500,
+        "face": 15
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h8",
+      "h10"
+    ],
+    "maxMoves": 1,
+    "bounds": {
+      "x0": 18,
+      "x1": 82,
+      "y0": 34,
+      "y1": 68
+    }
+  },
+  "rules": [
+    {
+      "type": "out_of_shadow",
+      "failKey": "hidden",
+      "params": {
+        "who": "h8",
+        "presser": "a6"
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h4",
+        "to": "h8"
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h4",
+        "to": "h10"
+      }
+    },
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h8",
+        "from": {
+          "team": "away"
+        },
+        "m": 4
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h8": {
+        "at": {
+          "x": 30,
+          "y": 50
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h4",
+          "to": "h8",
+          "ms": 800
+        },
+        {
+          "kind": "move",
+          "who": "h8",
+          "to": {
+            "x": 32,
+            "y": 58
+          },
+          "ms": 1300,
+          "face": 0
+        },
+        {
+          "kind": "pass",
+          "from": "h8",
+          "to": "h9",
+          "ms": 800
+        }
+      ]
+    },
+    "fail": {
+      "hidden": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h8",
+            "ms": 800,
+            "interceptedBy": "a6"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h10",
+            "ms": 800,
+            "interceptedBy": "a6"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "#4-ს ორი თავისუფალი პასი უნდა. გადაადგილე 1",
+      "en": "Give #4 two free passes. Move 1 player"
+    },
+    "fail": {
+      "hidden": {
+        "ka": "ერთი ჯერ კიდევ ჩრდილშია! ვინ იმალება #6-ის უკან?",
+        "en": "Someone is still hidden! Who is behind #6?"
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! ორივეს ღია ხაზი სჭირდება.",
+        "en": "A lane is closed! Both need an open line."
+      },
+      "marked": {
+        "ka": "მეტოქე ძალიან ახლოსაა! იპოვე ცარიელი ადგილი.",
+        "en": "An opponent is too close! Find an empty spot."
+      }
+    },
+    "success": {
+      "ka": "სწორი არჩევანი! ჩრდილიდან ის გამოვიდა, ვინც იქ იმალებოდა.",
+      "en": "Right choice! The hidden player stepped out."
+    },
+    "lessonLine": {
+      "ka": "ჩრდილში მყოფი უნდა გამოვიდეს",
+      "en": "The hidden player must move"
+    }
+  },
+  "rewards": {
+    "xp": 35
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "გაავლე ხაზი ბურთიდან #6-ზე. ვინ დგას მის უკან?",
+        "en": "Draw a line from the ball through #6. Who is behind?"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ]
+}

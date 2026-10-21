@@ -1,0 +1,390 @@
+{
+  "schemaVersion": 1,
+  "id": "space-half-turn-in-space",
+  "meta": {
+    "title": {
+      "ka": "სივრცე და ღია ტანი",
+      "en": "Space and an open body"
+    },
+    "topic": "free-space",
+    "level": "execute",
+    "difficulty": 9,
+    "ageBand": "11-13",
+    "positions": [
+      "MID"
+    ],
+    "tags": [
+      "free-space",
+      "half-space",
+      "body-shape",
+      "challenge"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "some",
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 30,
+        "x1": 88,
+        "y0": 18,
+        "y1": 72
+      }
+    },
+    "players": [
+      {
+        "id": "h4",
+        "team": "home",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 42,
+          "y": 22
+        },
+        "facing": 20
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 52,
+          "y": 54
+        },
+        "facing": 180,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 50,
+          "y": 84
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 44
+        },
+        "facing": 200
+      },
+      {
+        "id": "a8",
+        "team": "away",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 34,
+          "y": 52
+        },
+        "facing": 180
+      },
+      {
+        "id": "a10",
+        "team": "away",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 62,
+          "y": 30
+        },
+        "facing": 220
+      },
+      {
+        "id": "a7",
+        "team": "away",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 82,
+          "y": 57
+        },
+        "facing": 200
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 48,
+          "y": 76
+        },
+        "facing": 180
+      }
+    ],
+    "ball": {
+      "holder": "h4"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h4",
+        "to": {
+          "x": 42,
+          "y": 23
+        },
+        "ms": 500,
+        "face": 20
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h8"
+    ],
+    "allowRotate": true,
+    "bounds": {
+      "x0": 30,
+      "x1": 86,
+      "y0": 34,
+      "y1": 70
+    }
+  },
+  "rules": [
+    {
+      "type": "out_of_shadow",
+      "failKey": "shadow",
+      "params": {
+        "who": "h8",
+        "presser": "a6"
+      }
+    },
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h8",
+        "zone": {
+          "x0": 64,
+          "x1": 76,
+          "y0": 43,
+          "y1": 53
+        }
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h4",
+        "to": "h8"
+      }
+    },
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h8",
+        "from": {
+          "team": "away"
+        },
+        "m": 5
+      }
+    },
+    {
+      "type": "sees",
+      "failKey": "body",
+      "params": {
+        "who": "h8",
+        "targets": [
+          "ball",
+          "goal.opp"
+        ]
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h8": {
+        "at": {
+          "x": 70,
+          "y": 48
+        },
+        "facing": -80
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5,
+      "facingDeg": 20
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h4",
+          "to": "h8",
+          "ms": 900
+        },
+        {
+          "kind": "move",
+          "who": "h8",
+          "to": {
+            "x": 68,
+            "y": 58
+          },
+          "ms": 1600,
+          "face": 0
+        },
+        {
+          "kind": "pass",
+          "from": "h8",
+          "to": "h9",
+          "ms": 800
+        },
+        {
+          "kind": "shoot",
+          "from": "h9",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "shadow": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h8",
+            "ms": 900,
+            "interceptedBy": "a6"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      },
+      "lane": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h8",
+            "ms": 900,
+            "interceptedBy": "a10"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      },
+      "body": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h8",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a7",
+            "at": "h8",
+            "ms": 700
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h8",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a6",
+            "at": "h8",
+            "ms": 700
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "გაიხსენი და შებრუნდი: ბურთიც დაინახე და კარიც",
+      "en": "Get open and turn: see the ball and the goal"
+    },
+    "fail": {
+      "shadow": {
+        "ka": "#6-ის ჩრდილში ხარ! გადი გვერდზე, მარჯვნივ.",
+        "en": "You're in #6's shadow! Step out to the right."
+      },
+      "zone": {
+        "ka": "აქ სივრცე არ არის! მარჯვენა ნახევარსივრცე ცარიელია.",
+        "en": "No space there! The right half-space is empty."
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! #10 ბურთს ჭრის.",
+        "en": "The lane is closed! #10 cuts the pass."
+      },
+      "marked": {
+        "ka": "მეტოქე ძალიან ახლოსაა! მოშორდი მას.",
+        "en": "An opponent is too close! Move away from him."
+      },
+      "body": {
+        "ka": "ტანი დახურულია! შებრუნდი, რომ ბურთიც და კარიც დაინახო.",
+        "en": "Closed body! Turn so you see the ball and the goal."
+      }
+    },
+    "success": {
+      "ka": "შესანიშნავია! თავისუფალ სივრცეში ხარ და კარს ხედავ.",
+      "en": "Great! You're in free space and you can see the goal."
+    },
+    "lessonLine": {
+      "ka": "სივრცეში გადი, ტანი გახსენი",
+      "en": "Find the space, open your body"
+    }
+  },
+  "rewards": {
+    "xp": 30
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "ბურთი მარცხნივ უკანაა, კარი წინ. შებრუნდი მათ შორის",
+        "en": "Ball behind-left, goal ahead. Face between them"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე, სად და როგორ",
+        "en": "Watch where and how"
+      },
+      "ghost": true
+    }
+  ]
+}

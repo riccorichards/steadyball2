@@ -1,0 +1,469 @@
+{
+  "schemaVersion": 1,
+  "id": "space-high-line-free-the-ten",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: მაღალი ხაზი",
+      "en": "Puzzle: beat the high line"
+    },
+    "topic": "creating-space",
+    "level": "game-speed",
+    "difficulty": 45,
+    "ageBand": "11-13",
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "create-space",
+      "decoy-run",
+      "offside",
+      "high-line",
+      "puzzle"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 18,
+        "x1": 84,
+        "y0": 30,
+        "y1": 88
+      }
+    },
+    "players": [
+      {
+        "id": "h6",
+        "team": "home",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 40
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 48,
+          "y": 63.3
+        },
+        "facing": 180
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 64,
+          "y": 56
+        },
+        "facing": 180
+      },
+      {
+        "id": "h11",
+        "team": "home",
+        "number": 11,
+        "role": "LW",
+        "at": {
+          "x": 22,
+          "y": 58
+        },
+        "facing": 0
+      },
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 80,
+          "y": 58
+        },
+        "facing": 0
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 40,
+          "y": 50
+        },
+        "facing": 180
+      },
+      {
+        "id": "a8",
+        "team": "away",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 62,
+          "y": 50
+        },
+        "facing": 180
+      },
+      {
+        "id": "a3",
+        "team": "away",
+        "number": 3,
+        "role": "LB",
+        "at": {
+          "x": 26,
+          "y": 66
+        },
+        "facing": 180
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 48,
+          "y": 66
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h9",
+          "gapM": 2.8
+        }
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 62,
+          "y": 66
+        },
+        "facing": 180
+      },
+      {
+        "id": "a2",
+        "team": "away",
+        "number": 2,
+        "role": "RB",
+        "at": {
+          "x": 76,
+          "y": 66
+        },
+        "facing": 180
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 90
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h6"
+    },
+    "overlays": [
+      {
+        "landmark": "offsideLine.away",
+        "style": "line"
+      }
+    ]
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 5,
+          "x1": 95,
+          "y0": 25,
+          "y1": 100
+        },
+        "ms": 0
+      },
+      {
+        "kind": "move",
+        "who": "h6",
+        "to": {
+          "x": 50,
+          "y": 40
+        },
+        "ms": 400,
+        "face": 0
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "preset": "focus"
+        },
+        "ms": 800
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h9",
+      "h10",
+      "h11",
+      "h7"
+    ],
+    "maxMoves": 2,
+    "bounds": {
+      "x0": 20,
+      "x1": 82,
+      "y0": 46,
+      "y1": 84
+    }
+  },
+  "rules": [
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h10",
+        "zone": {
+          "x0": 46,
+          "x1": 56,
+          "y0": 56,
+          "y1": 64
+        }
+      }
+    },
+    {
+      "type": "gap_width",
+      "failKey": "gap",
+      "params": {
+        "a": "a4",
+        "b": "a5",
+        "m": 15
+      }
+    },
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h10",
+        "from": {
+          "team": "away"
+        },
+        "m": 7
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h6",
+        "to": "h10"
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h9": {
+        "at": {
+          "x": 30,
+          "y": 60
+        }
+      },
+      "h10": {
+        "at": {
+          "x": 51,
+          "y": 60
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h6",
+          "to": "h10",
+          "ms": 900
+        },
+        {
+          "kind": "move",
+          "who": "h10",
+          "to": {
+            "x": 52,
+            "y": 64
+          },
+          "ms": 800,
+          "face": 0
+        },
+        {
+          "kind": "pass",
+          "from": "h10",
+          "to": "h7",
+          "ms": 800
+        },
+        {
+          "kind": "run_path",
+          "who": "h7",
+          "path": [
+            {
+              "x": 80,
+              "y": 58
+            },
+            {
+              "x": 76,
+              "y": 74
+            }
+          ],
+          "ms": 2500
+        }
+      ]
+    },
+    "fail": {
+      "zone": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a5",
+            "at": "h10",
+            "ms": 600
+          }
+        ]
+      },
+      "marked": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a4",
+            "at": "h10",
+            "ms": 500
+          }
+        ]
+      },
+      "lane": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h10",
+            "ms": 900,
+            "interceptedBy": "a6"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a4",
+            "at": "h10",
+            "ms": 500
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "გაათავისუფლე #10 ხაზებს შორის. ოფსაიდი არა! 2",
+      "en": "Free #10 between the lines. No offside! 2 moves"
+    },
+    "fail": {
+      "zone": {
+        "ka": "#10 არასწორ ადგილასაა! ცენტრში, მათი ხაზის წინ, ოფსაიდის გარეშე.",
+        "en": "#10 is in the wrong spot! Centre, in front of their line, onside."
+      },
+      "gap": {
+        "ka": "ცენტრალური მცველები ისევ ერთად არიან! ერთი წაიყვანე.",
+        "en": "Their centre-backs are still together! Lead one away."
+      },
+      "marked": {
+        "ka": "#10-ს მცველი ახლოს უდგას! ჯერ ის სხვაგან წაიყვანე.",
+        "en": "A defender is close to #10! Lead him away first."
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! #6-ს ღია გზა სჭირდება.",
+        "en": "The lane is blocked! #6 needs a clear way."
+      }
+    },
+    "success": {
+      "ka": "ჩემპიონური! მაღალი ხაზის წინ სივრცე შექმენი და გამოიყენე.",
+      "en": "Champion stuff! You made space in front of a high line."
+    },
+    "lessonLine": {
+      "ka": "მაღალი ხაზი? სივრცე მის წინაც იქმნება",
+      "en": "High line? Make space in front of it too"
+    }
+  },
+  "rewards": {
+    "xp": 55
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "#4 #9-ს მისდევს. #10-ს ოფსაიდის გარეშე სივრცე სჭირდება",
+        "en": "#4 follows #9. #10 needs space, onside"
+      }
+    },
+    {
+      "afterWrong": 5,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ],
+  "timing": {
+    "timeLimitMs": 25000
+  }
+}

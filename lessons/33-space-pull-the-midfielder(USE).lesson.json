@@ -1,0 +1,354 @@
+{
+  "schemaVersion": 1,
+  "id": "space-pull-the-midfielder",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: წაიყვანე ნახევარმცველი",
+      "en": "Puzzle: pull the midfielder"
+    },
+    "topic": "creating-space",
+    "level": "decide",
+    "difficulty": 33,
+    "ageBand": "11-13",
+    "positions": [
+      "MID"
+    ],
+    "tags": [
+      "create-space",
+      "decoy-run",
+      "puzzle"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 14,
+        "x1": 78,
+        "y0": 24,
+        "y1": 84
+      }
+    },
+    "players": [
+      {
+        "id": "h4",
+        "team": "home",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 44,
+          "y": 30
+        },
+        "facing": 15,
+        "highlight": true
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 53,
+          "y": 49.5
+        },
+        "facing": 0
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 36,
+          "y": 70
+        },
+        "facing": 180
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 50,
+          "y": 78
+        },
+        "facing": 180
+      },
+      {
+        "id": "h11",
+        "team": "home",
+        "number": 11,
+        "role": "LW",
+        "at": {
+          "x": 18,
+          "y": 64
+        },
+        "facing": 0
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 52
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h8",
+          "gapM": 3.3
+        }
+      },
+      {
+        "id": "a10",
+        "team": "away",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 54,
+          "y": 36
+        },
+        "facing": 200
+      },
+      {
+        "id": "a8",
+        "team": "away",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 32,
+          "y": 54
+        },
+        "facing": 180
+      }
+    ],
+    "ball": {
+      "holder": "h4"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h4",
+        "to": {
+          "x": 44,
+          "y": 31
+        },
+        "ms": 500,
+        "face": 15
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h8",
+      "h10",
+      "h9",
+      "h11"
+    ],
+    "maxMoves": 2,
+    "bounds": {
+      "x0": 14,
+      "x1": 80,
+      "y0": 38,
+      "y1": 82
+    }
+  },
+  "rules": [
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h10",
+        "zone": {
+          "x0": 44,
+          "x1": 56,
+          "y0": 47,
+          "y1": 57
+        }
+      }
+    },
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h10",
+        "from": {
+          "team": "away"
+        },
+        "m": 7
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h4",
+        "to": "h10"
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h8": {
+        "at": {
+          "x": 70,
+          "y": 58
+        }
+      },
+      "h10": {
+        "at": {
+          "x": 50,
+          "y": 52
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h4",
+          "to": "h10",
+          "ms": 900
+        },
+        {
+          "kind": "move",
+          "who": "h10",
+          "to": {
+            "x": 52,
+            "y": 60
+          },
+          "ms": 1400,
+          "face": 0
+        },
+        {
+          "kind": "pass",
+          "from": "h10",
+          "to": "h9",
+          "ms": 800
+        }
+      ]
+    },
+    "fail": {
+      "marked": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a6",
+            "at": "h10",
+            "ms": 500
+          }
+        ]
+      },
+      "lane": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h10",
+            "ms": 900,
+            "interceptedBy": "a10"
+          },
+          {
+            "kind": "wait",
+            "ms": 300
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a8",
+            "at": "h10",
+            "ms": 700
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "გაათავისუფლე სივრცე #6-ის ადგილას. გადაადგილე 2",
+      "en": "Free the space where #6 stands. Move 2"
+    },
+    "fail": {
+      "zone": {
+        "ka": "#10 სივრცეში არ არის! ჩამოვიდეს იქ, სადაც #6 იდგა.",
+        "en": "#10 isn't in the space! He drops to where #6 stood."
+      },
+      "marked": {
+        "ka": "#10-ს #6 უდგას! ჯერ #6 სხვაგან წაიყვანე.",
+        "en": "#6 is on #10! Lead #6 somewhere else first."
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! #4-ს ღია გზა სჭირდება.",
+        "en": "The lane is blocked! #4 needs a clear way."
+      }
+    },
+    "success": {
+      "ka": "შესანიშნავია! #8-მა #6 წაიყვანა და #10 ცარიელ ადგილას ჩამოვიდა.",
+      "en": "Great! #8 took #6 away and #10 dropped into the gap."
+    },
+    "lessonLine": {
+      "ka": "ნახევარმცველიც შეიძლება წაიყვანო",
+      "en": "You can pull a midfielder too"
+    }
+  },
+  "rewards": {
+    "xp": 40
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "#6 ვის მისდევს? სად წაიყვან მას?",
+        "en": "Whom does #6 follow? Where can you take him?"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ]
+}

@@ -1,0 +1,361 @@
+{
+  "schemaVersion": 1,
+  "id": "space-deep-and-wide",
+  "meta": {
+    "title": {
+      "ka": "თავსატეხი: სიღრმე და სიგანე",
+      "en": "Puzzle: deep and wide"
+    },
+    "topic": "creating-space",
+    "level": "decide",
+    "difficulty": 38,
+    "ageBand": "11-13",
+    "positions": [
+      "ATT"
+    ],
+    "tags": [
+      "create-space",
+      "depth",
+      "width",
+      "stretch",
+      "puzzle"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "none",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 22,
+        "x1": 82,
+        "y0": 40,
+        "y1": 96
+      }
+    },
+    "players": [
+      {
+        "id": "h6",
+        "team": "home",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 46
+        },
+        "facing": 0,
+        "highlight": true
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 52,
+          "y": 70
+        },
+        "facing": 180
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 47,
+          "y": 74.5
+        },
+        "facing": 0
+      },
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 64,
+          "y": 74
+        },
+        "facing": 0
+      },
+      {
+        "id": "h11",
+        "team": "home",
+        "number": 11,
+        "role": "LW",
+        "at": {
+          "x": 26,
+          "y": 66
+        },
+        "facing": 0
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 48,
+          "y": 77
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h9",
+          "gapM": 2.7
+        }
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 61,
+          "y": 76.5
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h7",
+          "gapM": 3.3
+        }
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
+    ],
+    "ball": {
+      "holder": "h6"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h6",
+        "to": {
+          "x": 50,
+          "y": 47
+        },
+        "ms": 500,
+        "face": 0
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h9",
+      "h7",
+      "h11",
+      "h10"
+    ],
+    "maxMoves": 2,
+    "bounds": {
+      "x0": 24,
+      "x1": 80,
+      "y0": 54,
+      "y1": 92
+    }
+  },
+  "rules": [
+    {
+      "type": "count_in_zone",
+      "failKey": "pocket",
+      "params": {
+        "zone": {
+          "x0": 42,
+          "x1": 62,
+          "y0": 72,
+          "y1": 80
+        },
+        "team": "away",
+        "max": 0
+      }
+    },
+    {
+      "type": "gap_width",
+      "failKey": "gap",
+      "params": {
+        "a": "a4",
+        "b": "a5",
+        "m": 18
+      }
+    },
+    {
+      "type": "min_distance",
+      "failKey": "marked",
+      "params": {
+        "who": "h10",
+        "from": {
+          "team": "away"
+        },
+        "m": 8
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h6",
+        "to": "h10"
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h9": {
+        "at": {
+          "x": 46,
+          "y": 90
+        }
+      },
+      "h7": {
+        "at": {
+          "x": 76,
+          "y": 70
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h6",
+          "to": "h10",
+          "ms": 900
+        },
+        {
+          "kind": "move",
+          "who": "h10",
+          "to": {
+            "x": 52,
+            "y": 76
+          },
+          "ms": 1000,
+          "face": 0
+        },
+        {
+          "kind": "shoot",
+          "from": "h10",
+          "target": "goal",
+          "ms": 800,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "pocket": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a4",
+            "at": "h10",
+            "ms": 600
+          }
+        ]
+      },
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h6",
+            "to": "h10",
+            "ms": 900
+          },
+          {
+            "kind": "rush",
+            "who": "a5",
+            "at": "h10",
+            "ms": 600
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "ერთი სიღრმეში, ერთი სიგანეში: გაუხსენი ადგილი #10-ს",
+      "en": "One deep, one wide: open room for #10"
+    },
+    "fail": {
+      "pocket": {
+        "ka": "#10-ის წინ ისევ მცველია! ის იქიდან წაიყვანე.",
+        "en": "A defender is still in front of #10! Take him away."
+      },
+      "gap": {
+        "ka": "მცველები ისევ ახლოს არიან! გაჭიმე მათი ხაზი.",
+        "en": "The defenders are still close! Stretch their line."
+      },
+      "marked": {
+        "ka": "#10-ს მცველი ახლოს უდგას! მეტი სივრცე სჭირდება.",
+        "en": "A defender is close to #10! He needs more space."
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია! ბურთს ღია გზა სჭირდება.",
+        "en": "The lane is blocked! The ball needs a clear way."
+      }
+    },
+    "success": {
+      "ka": "შესანიშნავია! ერთმა უკან წაიყვანა, მეორემ გვერდზე. #10 მარტოა.",
+      "en": "Great! One took his man back, one wide. #10 is alone."
+    },
+    "lessonLine": {
+      "ka": "სიღრმე და სიგანე ერთად ხსნის სივრცეს",
+      "en": "Depth and width together open space"
+    }
+  },
+  "rewards": {
+    "xp": 45
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "ერთი მცველი უკან უნდა წავიდეს, მეორე გვერდზე",
+        "en": "One defender must go back, the other wide"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე ამოხსნა",
+        "en": "Watch the answer"
+      },
+      "ghost": true
+    }
+  ]
+}

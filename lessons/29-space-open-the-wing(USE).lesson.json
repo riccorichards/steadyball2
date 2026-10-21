@@ -1,0 +1,327 @@
+{
+  "schemaVersion": 1,
+  "id": "space-open-the-wing",
+  "meta": {
+    "title": {
+      "ka": "გაუხსენი ფლანგი",
+      "en": "Open the wing"
+    },
+    "topic": "creating-space",
+    "level": "decide",
+    "difficulty": 29,
+    "ageBand": "11-13",
+    "positions": [
+      "ATT"
+    ],
+    "tags": [
+      "create-space",
+      "decoy-run",
+      "width",
+      "challenge"
+    ],
+    "status": "draft",
+    "source": "ai"
+  },
+  "assist": "some",
+  "reaction": {
+    "ms": 2000
+  },
+  "scene": {
+    "camera": {
+      "focus": {
+        "x0": 44,
+        "x1": 98,
+        "y0": 44,
+        "y1": 92
+      }
+    },
+    "players": [
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 64,
+          "y": 52
+        },
+        "facing": 20
+      },
+      {
+        "id": "h7",
+        "team": "home",
+        "number": 7,
+        "role": "RW",
+        "at": {
+          "x": 82,
+          "y": 70
+        },
+        "facing": 180,
+        "highlight": true
+      },
+      {
+        "id": "h2",
+        "team": "home",
+        "number": 2,
+        "role": "RB",
+        "at": {
+          "x": 90,
+          "y": 56
+        },
+        "facing": 0
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 54,
+          "y": 78
+        },
+        "facing": 180
+      },
+      {
+        "id": "h10",
+        "team": "home",
+        "number": 10,
+        "role": "AM",
+        "at": {
+          "x": 52,
+          "y": 64
+        },
+        "facing": 180
+      },
+      {
+        "id": "a3",
+        "team": "away",
+        "number": 3,
+        "role": "LB",
+        "at": {
+          "x": 82,
+          "y": 72.1
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h7",
+          "gapM": 2
+        }
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 62,
+          "y": 79
+        },
+        "facing": 180
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 46,
+          "y": 79
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 60,
+          "y": 60
+        },
+        "facing": 180
+      }
+    ],
+    "ball": {
+      "holder": "h8"
+    }
+  },
+  "intro": {
+    "mode": "sequential",
+    "steps": [
+      {
+        "kind": "move",
+        "who": "h8",
+        "to": {
+          "x": 64,
+          "y": 52
+        },
+        "ms": 400,
+        "face": 20
+      },
+      {
+        "kind": "wait",
+        "ms": 300
+      }
+    ]
+  },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h7"
+    ],
+    "bounds": {
+      "x0": 50,
+      "x1": 96,
+      "y0": 56,
+      "y1": 88
+    }
+  },
+  "rules": [
+    {
+      "type": "count_in_zone",
+      "failKey": "wingFull",
+      "params": {
+        "zone": {
+          "x0": 76,
+          "x1": 94,
+          "y0": 68,
+          "y1": 84
+        },
+        "team": "away",
+        "max": 0
+      }
+    }
+  ],
+  "solution": {
+    "moves": {
+      "h7": {
+        "at": {
+          "x": 68,
+          "y": 70
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
+  "outcomes": {
+    "success": {
+      "mode": "sequential",
+      "steps": [
+        {
+          "kind": "run_path",
+          "who": "h2",
+          "path": [
+            {
+              "x": 90,
+              "y": 56
+            },
+            {
+              "x": 90,
+              "y": 66
+            },
+            {
+              "x": 88,
+              "y": 76
+            }
+          ],
+          "ms": 3000
+        },
+        {
+          "kind": "pass",
+          "from": "h8",
+          "to": "h2",
+          "ms": 900
+        },
+        {
+          "kind": "pass",
+          "from": "h2",
+          "to": "h9",
+          "ms": 900,
+          "lofted": true
+        },
+        {
+          "kind": "shoot",
+          "from": "h9",
+          "target": "goal",
+          "ms": 700,
+          "result": "goal"
+        }
+      ]
+    },
+    "fail": {
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "run_path",
+            "who": "h2",
+            "path": [
+              {
+                "x": 90,
+                "y": 56
+              },
+              {
+                "x": 90,
+                "y": 66
+              },
+              {
+                "x": 88,
+                "y": 74
+              }
+            ],
+            "ms": 2800
+          },
+          {
+            "kind": "rush",
+            "who": "a3",
+            "at": "h2",
+            "ms": 600
+          }
+        ]
+      }
+    }
+  },
+  "text": {
+    "banner": {
+      "ka": "გაუხსენი ფლანგი #2-ს. წაიყვანე #7",
+      "en": "Open the wing for #2: move #7"
+    },
+    "fail": {
+      "wingFull": {
+        "ka": "ფლანგზე ისევ მცველია! #7 შიგნით წაიყვანე, #3 გაჰყვება.",
+        "en": "There's still a defender on the wing! Take #7 inside, #3 will follow."
+      }
+    },
+    "success": {
+      "ka": "შესანიშნავია! #3 შიგნით გაჰყვა და #2-ს მთელი ფლანგი დარჩა.",
+      "en": "Great! #3 went inside and #2 had the whole wing."
+    },
+    "lessonLine": {
+      "ka": "შიგნით გაიქეცი, ფლანგი გაუხსენი",
+      "en": "Run inside to open the wing"
+    }
+  },
+  "rewards": {
+    "xp": 30
+  },
+  "hints": [
+    {
+      "afterWrong": 2,
+      "text": {
+        "ka": "#3 #7-ს მისდევს. თუ #7 შიგნით წავა?",
+        "en": "#3 follows #7. What if #7 goes inside?"
+      }
+    },
+    {
+      "afterWrong": 4,
+      "text": {
+        "ka": "ნახე, სად წაიყვანო",
+        "en": "Watch where to take him"
+      },
+      "ghost": true
+    }
+  ]
+}
