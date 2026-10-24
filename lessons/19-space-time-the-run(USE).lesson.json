@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: გარბენის დრო",
-      "en": "Puzzle: time the run"
+      "en": "Puzzle: time the run",
+      "ru": "Головоломка: выбери момент для рывка"
     },
     "topic": "runs-in-behind",
     "level": "execute",
@@ -312,29 +313,35 @@
   "text": {
     "banner": {
       "ka": "პასი გვიან მოდის. დაელოდე და გაიჭერი მარცხნივ",
-      "en": "The pass comes late. Wait, then run in on the left"
+      "en": "The pass comes late. Wait, then run in on the left",
+      "ru": "Пас придёт поздно. Подожди, потом беги слева"
     },
     "fail": {
       "offside": {
         "ka": "ოფსაიდი! სანამ პასი მოვა, დარჩი მცველების ხაზზე.",
-        "en": "Offside! Stay level with the line until the pass."
+        "en": "Offside! Stay level with the line until the pass.",
+        "ru": "Офсайд! Держись на уровне линии до паса."
       },
       "blocked": {
         "ka": "მცველს ძალიან ახლოს ჩაურბინე! შემოუარე მას.",
-        "en": "You ran too close to a defender! Go round him."
+        "en": "You ran too close to a defender! Go round him.",
+        "ru": "Ты пробежал слишком близко к защитнику! Обеги его."
       },
       "zone": {
         "ka": "სივრცეში ვერ გახვედი! დაასრულე #3-ის უკან, მარცხნივ.",
-        "en": "Not in the space! Finish behind #3, on the left."
+        "en": "Not in the space! Finish behind #3, on the left.",
+        "ru": "Не в пространстве! Закончи за спиной #3, слева."
       }
     },
     "success": {
       "ka": "ზუსტი დრო! ხაზზე დაელოდე და მერე გაიჭერი.",
-      "en": "Perfect timing! You waited on the line, then went."
+      "en": "Perfect timing! You waited on the line, then went.",
+      "ru": "Идеальный момент! Ты подождал на линии и рванул."
     },
     "lessonLine": {
       "ka": "გარბენის დრო: ჯერ დაელოდე, მერე გაიჭერი",
-      "en": "Time the run: wait, then go"
+      "en": "Time the run: wait, then go",
+      "ru": "Выбери момент: подожди, потом беги"
     }
   },
   "rewards": {
@@ -345,14 +352,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "12 მეტრი ხაზის გასწვრივ, მერე ზურგს უკან",
-        "en": "12 m along the line, then in behind"
+        "en": "12 m along the line, then in behind",
+        "ru": "12 м вдоль линии, потом за спину"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

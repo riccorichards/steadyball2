@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "2 ორზე გადააქციე 2 ერთზე",
-      "en": "Turn 2v2 into 2v1"
+      "en": "Turn 2v2 into 2v1",
+      "ru": "Преврати 2 на 2 в 2 на 1"
     },
     "topic": "two-v-two",
     "level": "recognize",
@@ -123,7 +124,8 @@
         },
         "label": {
           "ka": "გარედან შემოურბინე",
-          "en": "Overlap outside"
+          "en": "Overlap outside",
+          "ru": "Обгон снаружи"
         }
       },
       {
@@ -134,7 +136,8 @@
         },
         "label": {
           "ka": "#7-ის გვერდით",
-          "en": "Next to #7"
+          "en": "Next to #7",
+          "ru": "Рядом с #7"
         }
       },
       {
@@ -145,7 +148,8 @@
         },
         "label": {
           "ka": "უკან დარჩი",
-          "en": "Stay back"
+          "en": "Stay back",
+          "ru": "Остаться сзади"
         }
       }
     ]
@@ -253,25 +257,30 @@
   "text": {
     "banner": {
       "ka": "#2, საით გაიქცევი, რომ #7-ს დაეხმარო?",
-      "en": "#2, where do you run to help #7?"
+      "en": "#2, where do you run to help #7?",
+      "ru": "#2, куда побежишь, чтобы помочь #7?"
     },
     "hint": {
       "ka": "თუ #7-ს გარედან შემოურბენ, მის მცველს ორი მოთამაშე ეყოლება.",
-      "en": "Run round #7 and his defender has two players to stop."
+      "en": "Run round #7 and his defender has two players to stop.",
+      "ru": "Обеги #7, и его защитнику придётся держать двоих."
     },
     "fail": {
       "pick": {
         "ka": "ასე ისევ 2 ორზეა! შემოურბინე #7-ს გარედან.",
-        "en": "Still 2 against 2! Run round #7 on the outside."
+        "en": "Still 2 against 2! Run round #7 on the outside.",
+        "ru": "Всё ещё 2 на 2! Обеги #7 снаружи."
       }
     },
     "success": {
       "ka": "ყოჩაღ! შემორბენით #3 ორი მოთამაშის წინაშე დარჩა.",
-      "en": "Well done! Your overlap leaves their #3 facing two players."
+      "en": "Well done! Your overlap leaves their #3 facing two players.",
+      "ru": "Молодец! После твоего обгона их #3 один против двоих."
     },
     "lessonLine": {
       "ka": "შემოურბინე და შექმენი 2 ერთზე",
-      "en": "Overlap to make 2 against 1"
+      "en": "Overlap to make 2 against 1",
+      "ru": "Обгон, чтобы сделать 2 на 1"
     }
   },
   "rewards": {
@@ -282,7 +291,8 @@
       "afterWrong": 1,
       "text": {
         "ka": "საით არ დგას არც ერთი მეტოქე?",
-        "en": "Where is there no opponent?"
+        "en": "Where is there no opponent?",
+        "ru": "Где нет соперника?"
       }
     },
     {
@@ -304,7 +314,8 @@
       "afterWrong": 5,
       "text": {
         "ka": "ნახე გარბენა",
-        "en": "Watch the run"
+        "en": "Watch the run",
+        "ru": "Смотри на рывок"
       },
       "ghost": true
     }

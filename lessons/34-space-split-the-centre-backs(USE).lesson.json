@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: დაშორე მცველები",
-      "en": "Puzzle: split the centre-backs"
+      "en": "Puzzle: split the centre-backs",
+      "ru": "Головоломка: раздвинь центральных защитников"
     },
     "topic": "creating-space",
     "level": "decide",
@@ -284,29 +285,35 @@
   "text": {
     "banner": {
       "ka": "დაშორე ცენტრალური მცველები #10-ისთვის. 2 სვლა",
-      "en": "Split their centre-backs for #10. 2 moves"
+      "en": "Split their centre-backs for #10. 2 moves",
+      "ru": "Раздвинь их центральных защитников для #10. 2 хода"
     },
     "fail": {
       "gap": {
         "ka": "მცველები ისევ ერთად დგანან! დაშორე ისინი ერთმანეთს.",
-        "en": "The defenders are still together! Pull them apart."
+        "en": "The defenders are still together! Pull them apart.",
+        "ru": "Защитники всё ещё вместе! Растащи их."
       },
       "marked": {
         "ka": "#10-ს ისევ მცველი უდგას! ჯერ ის სხვაგან წაიყვანე.",
-        "en": "#10 is still marked! Lead that defender away first."
+        "en": "#10 is still marked! Lead that defender away first.",
+        "ru": "#10 всё ещё под опекой! Сначала уведи того защитника."
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! ბურთს #10-მდე ღია გზა სჭირდება.",
-        "en": "The lane is blocked! The ball needs a clear way to #10."
+        "en": "The lane is blocked! The ball needs a clear way to #10.",
+        "ru": "Линия перекрыта! Мячу нужен свободный путь до #10."
       }
     },
     "success": {
       "ka": "ბრავო! მცველები დაშორდნენ და #10 მათ შორის მარტოა.",
-      "en": "Bravo! The defenders split and #10 is alone between them."
+      "en": "Bravo! The defenders split and #10 is alone between them.",
+      "ru": "Браво! Защитники разошлись, и #10 один между ними."
     },
     "lessonLine": {
       "ka": "დაშორე მცველები, ხვრელი გაჩნდება",
-      "en": "Split the defenders, a gap appears"
+      "en": "Split the defenders, a gap appears",
+      "ru": "Раздвинь защитников — появится щель"
     }
   },
   "rewards": {
@@ -317,14 +324,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "თითო მცველი თითო ჩვენიანს მისდევს",
-        "en": "Each centre-back follows one of ours"
+        "en": "Each centre-back follows one of ours",
+        "ru": "Каждый центральный защитник бежит за одним из наших"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

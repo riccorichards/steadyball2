@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: გატეხე პრესინგი",
-      "en": "Puzzle: break the press"
+      "en": "Puzzle: break the press",
+      "ru": "Головоломка: прорви прессинг"
     },
     "topic": "creating-space",
     "level": "game-speed",
@@ -192,7 +193,8 @@
         "kind": "caption",
         "text": {
           "ka": "პრესინგი!",
-          "en": "They press!"
+          "en": "They press!",
+          "ru": "Они прессингуют!"
         },
         "ms": 1000
       },
@@ -328,25 +330,30 @@
   "text": {
     "banner": {
       "ka": "მაღალი პრესინგია! გაუხსენი #4-ს პასი #10-მდე. 2",
-      "en": "A high press! Open #4's pass to #10. 2 moves"
+      "en": "A high press! Open #4's pass to #10. 2 moves",
+      "ru": "Высокий прессинг! Открой пас #4 на #10. 2 хода"
     },
     "fail": {
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! #10-ის გზაზე მეტოქე დგას.",
-        "en": "The lane is blocked! An opponent stands on the way to #10."
+        "en": "The lane is blocked! An opponent stands on the way to #10.",
+        "ru": "Линия перекрыта! Соперник стоит на пути к #10."
       },
       "marked": {
         "ka": "#10-ს მეტოქე ახლოს უდგას! ის ვის მისდევს?",
-        "en": "An opponent is close to #10! Whom does he follow?"
+        "en": "An opponent is close to #10! Whom does he follow?",
+        "ru": "Соперник рядом с #10! За кем он бежит?"
       }
     },
     "success": {
       "ka": "ბრწყინვალეა! ორმა მატყუარამ პრესინგი გატეხა.",
-      "en": "Brilliant! Two decoys broke the press."
+      "en": "Brilliant! Two decoys broke the press.",
+      "ru": "Блестяще! Два отвлекающих рывка прорвали прессинг."
     },
     "lessonLine": {
       "ka": "პრესინგი? წაიყვანე მეტოქეები, იპოვე თავისუფალი",
-      "en": "Pressed? Drag them away, find the free man"
+      "en": "Pressed? Drag them away, find the free man",
+      "ru": "Прессингуют? Уведи их и найди свободного"
     }
   },
   "rewards": {
@@ -357,14 +364,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "ერთი მეტოქე ხაზს კეტავს, მეორე #10-ს უდგას. ვის მისდევენ?",
-        "en": "One blocks the lane, one is on #10. Whom do they follow?"
+        "en": "One blocks the lane, one is on #10. Whom do they follow?",
+        "ru": "Один закрывает линию, другой на #10. За кем они бегут?"
       }
     },
     {
       "afterWrong": 5,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

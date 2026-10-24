@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "სამკუთხედის სიგანე",
-      "en": "Width in the triangle"
+      "en": "Width in the triangle",
+      "ru": "Ширина в треугольнике"
     },
     "topic": "three-v-two",
     "level": "decide",
@@ -236,29 +237,35 @@
   "text": {
     "banner": {
       "ka": "#7, გაგვიფართოვე სამკუთხედი!",
-      "en": "#7, make the triangle wide!"
+      "en": "#7, make the triangle wide!",
+      "ru": "#7, сделай треугольник широким!"
     },
     "fail": {
       "shadow": {
         "ka": "#8 გფარავს! გადი ფართოდ, ფლანგზე.",
-        "en": "Their #8 hides you! Go wide, onto the wing."
+        "en": "Their #8 hides you! Go wide, onto the wing.",
+        "ru": "Их #8 закрывает тебя! Уходи в ширину, на фланг."
       },
       "zone": {
         "ka": "ჯერ კიდევ ვიწროდ ხარ! დადექი ფლანგზე, #6-ზე ოდნავ წინ.",
-        "en": "Still too narrow! Stand on the wing, a little ahead of #6."
+        "en": "Still too narrow! Stand on the wing, a little ahead of #6.",
+        "ru": "Всё ещё слишком узко! Встань на фланге, чуть впереди #6."
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! #6-სა და შენ შორის მეტოქე არ უნდა იყოს.",
-        "en": "The lane is closed! No opponent between #6 and you."
+        "en": "The lane is closed! No opponent between #6 and you.",
+        "ru": "Линия закрыта! Между #6 и тобой не должно быть соперника."
       }
     },
     "success": {
       "ka": "იდეალურია! ფართო სამკუთხედი — მეტოქეები ვეღარ გწვდებიან.",
-      "en": "Perfect! A wide triangle: the opponents can't reach you."
+      "en": "Perfect! A wide triangle: the opponents can't reach you.",
+      "ru": "Идеально! Широкий треугольник: соперники не достанут."
     },
     "lessonLine": {
       "ka": "ფართო სამკუთხედი = ღია პასი",
-      "en": "A wide triangle gives an open pass"
+      "en": "A wide triangle gives an open pass",
+      "ru": "Широкий треугольник даёт открытый пас"
     }
   },
   "rewards": {
@@ -269,7 +276,8 @@
       "afterWrong": 1,
       "text": {
         "ka": "#8-ის უკან დგახარ. ფლანგზე სივრცეა.",
-        "en": "You're behind their #8. There's space on the wing."
+        "en": "You're behind their #8. There's space on the wing.",
+        "ru": "Ты за спиной их #8. На фланге есть место."
       }
     },
     {
@@ -284,7 +292,8 @@
       "afterWrong": 5,
       "text": {
         "ka": "ნახე, სად დადგე",
-        "en": "Watch where to stand"
+        "en": "Watch where to stand",
+        "ru": "Смотри, где встать"
       },
       "ghost": true
     }

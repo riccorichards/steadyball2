@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "სამკუთხედის სიღრმე",
-      "en": "Depth in the triangle"
+      "en": "Depth in the triangle",
+      "ru": "Глубина в треугольнике"
     },
     "topic": "three-v-two",
     "level": "decide",
@@ -223,29 +224,35 @@
   "text": {
     "banner": {
       "ka": "#9, მიეცი სამკუთხედს სიღრმე",
-      "en": "#9, give the triangle depth"
+      "en": "#9, give the triangle depth",
+      "ru": "#9, дай треугольнику глубину"
     },
     "fail": {
       "zone": {
         "ka": "#6-ის დონეზე დგახარ! გაიწიე წინ, მეტოქეების უკან.",
-        "en": "You're level with #6! Move up, behind the opponents."
+        "en": "You're level with #6! Move up, behind the opponents.",
+        "ru": "Ты на одной линии с #6! Поднимись выше, за спину соперникам."
       },
       "shadow": {
         "ka": "#6 გფარავს! გადი გვერდზე.",
-        "en": "Their #6 hides you! Step to the side."
+        "en": "Their #6 hides you! Step to the side.",
+        "ru": "Их #6 закрывает тебя! Сместись в сторону."
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! იპოვე ადგილი, სადაც ბურთი მოგწვდება.",
-        "en": "The lane is closed! Find a spot the ball can reach."
+        "en": "The lane is closed! Find a spot the ball can reach.",
+        "ru": "Линия закрыта! Найди место, куда дойдёт мяч."
       }
     },
     "success": {
       "ka": "ყოჩაღ! ახლა #6-ს წინ პასიც აქვს და გვერდზეც.",
-      "en": "Well done! Now #6 has a forward pass and a side pass."
+      "en": "Well done! Now #6 has a forward pass and a side pass.",
+      "ru": "Молодец! Теперь у #6 есть пас вперёд и пас в сторону."
     },
     "lessonLine": {
       "ka": "სიღრმე: ერთი წინ, ერთი გვერდზე",
-      "en": "Depth: one ahead, one to the side"
+      "en": "Depth: one ahead, one to the side",
+      "ru": "Глубина: один впереди, один сбоку"
     }
   },
   "rewards": {
@@ -256,7 +263,8 @@
       "afterWrong": 1,
       "text": {
         "ka": "ფართოდ #7 უკვე დგას. ვინ იქნება წინ?",
-        "en": "#7 is already wide. Who will be ahead?"
+        "en": "#7 is already wide. Who will be ahead?",
+        "ru": "#7 уже в ширине. Кто будет впереди?"
       }
     },
     {
@@ -271,7 +279,8 @@
       "afterWrong": 5,
       "text": {
         "ka": "ნახე, სად დადგე",
-        "en": "Watch where to stand"
+        "en": "Watch where to stand",
+        "ru": "Смотри, где встать"
       },
       "ghost": true
     }

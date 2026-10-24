@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: გაიჭერი ხვრელში",
-      "en": "Puzzle: run into the gap"
+      "en": "Puzzle: run into the gap",
+      "ru": "Головоломка: беги в щель"
     },
     "topic": "runs-in-behind",
     "level": "execute",
@@ -296,29 +297,35 @@
   "text": {
     "banner": {
       "ka": "გაიჭერი სივრცეში #5-სა და #2-ს შორის",
-      "en": "Run into the space between #5 and #2"
+      "en": "Run into the space between #5 and #2",
+      "ru": "Беги в пространство между #5 и #2"
     },
     "fail": {
       "offside": {
         "ka": "ოფსაიდი! სანამ პასი მოვა, დარჩი მცველების ხაზზე.",
-        "en": "Offside! Stay level with the line until the pass."
+        "en": "Offside! Stay level with the line until the pass.",
+        "ru": "Офсайд! Держись на уровне линии до паса."
       },
       "blocked": {
         "ka": "მცველს ძალიან ახლოს ჩაურბინე! შემოუარე მას.",
-        "en": "You ran too close to a defender! Go round him."
+        "en": "You ran too close to a defender! Go round him.",
+        "ru": "Ты пробежал слишком близко к защитнику! Обеги его."
       },
       "zone": {
         "ka": "გაიჭერი ზურგს უკან, #5-სა და #2-ს შორის.",
-        "en": "Run in behind, into the gap between #5 and #2."
+        "en": "Run in behind, into the gap between #5 and #2.",
+        "ru": "Беги за спину, в щель между #5 и #2."
       }
     },
     "success": {
       "ka": "ზუსტი გარბენა! ჯერ ხაზზე, მერე სივრცეში.",
-      "en": "Perfect run! Along the line first, then into the space."
+      "en": "Perfect run! Along the line first, then into the space.",
+      "ru": "Идеальный рывок! Сначала вдоль линии, потом в пространство."
     },
     "lessonLine": {
       "ka": "ჯერ ხაზზე, მერე სივრცეში",
-      "en": "Along the line, then into the space"
+      "en": "Along the line, then into the space",
+      "ru": "Вдоль линии, потом в пространство"
     }
   },
   "rewards": {
@@ -329,14 +336,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "პასი 7 მეტრის შემდეგ მოდის. მანამდე ხაზზე დარჩი",
-        "en": "The pass comes after 7 m. Stay level until then"
+        "en": "The pass comes after 7 m. Stay level until then",
+        "ru": "Пас придёт через 7 м. До этого держись на линии"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: გაათავისუფლე და ითამაშე",
-      "en": "Puzzle: empty it, then play"
+      "en": "Puzzle: empty it, then play",
+      "ru": "Головоломка: освободи, потом играй"
     },
     "topic": "creating-space",
     "level": "execute",
@@ -281,21 +282,25 @@
   "text": {
     "banner": {
       "ka": "გაათავისუფლე მარჯვენა მხარე მცველების უკან. 2",
-      "en": "Empty the right side behind their line. 2 moves"
+      "en": "Empty the right side behind their line. 2 moves",
+      "ru": "Освободи правую сторону за их линией. 2 хода"
     },
     "fail": {
       "occupied": {
         "ka": "მარჯვნივ ისევ მცველია! ის, ვინც იქ დგას, სხვაგან წაიყვანე.",
-        "en": "There's still a defender there! Lead whoever stands there away."
+        "en": "There's still a defender there! Lead whoever stands there away.",
+        "ru": "Там всё ещё защитник! Уведи того, кто там стоит."
       }
     },
     "success": {
       "ka": "მარჯვენა მხარე ცარიელია! ახლა გამოიყენე.",
-      "en": "The right side is empty! Now use it."
+      "en": "The right side is empty! Now use it.",
+      "ru": "Правая сторона пуста! Теперь используй её."
     },
     "lessonLine": {
       "ka": "ორი გარბენა, ერთი დიდი სივრცე",
-      "en": "Two runs, one big space"
+      "en": "Two runs, one big space",
+      "ru": "Два рывка — одно большое пространство"
     }
   },
   "rewards": {
@@ -306,14 +311,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "ორი მცველი იცავს ამ მხარეს. ორივე ვიღაცას მისდევს",
-        "en": "Two defenders guard that side. Both follow someone"
+        "en": "Two defenders guard that side. Both follow someone",
+        "ru": "Эту сторону охраняют два защитника. Оба бегут за кем-то"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }
@@ -349,7 +356,8 @@
             "kind": "caption",
             "text": {
               "ka": "ახლა გამოიყენე!",
-              "en": "Now use it!"
+              "en": "Now use it!",
+              "ru": "Теперь используй!"
             },
             "ms": 1000
           }
@@ -433,29 +441,35 @@
       "text": {
         "banner": {
           "ka": "მიაწოდე #9-ს შექმნილ სივრცეში",
-          "en": "Play #9 into the space you created"
+          "en": "Play #9 into the space you created",
+          "ru": "Отдай #9 в пространство, которое ты создал"
         },
         "fail": {
           "cut": {
             "ka": "პასი გადაჭრეს! ბურთი მცველებს გვერდით გაატარე.",
-            "en": "Cut out! Play it past the defenders, not at them."
+            "en": "Cut out! Play it past the defenders, not at them.",
+            "ru": "Перехват! Играй мимо защитников, а не в них."
           },
           "race": {
             "ka": "ვერ მიუსწრო! მიაწოდე იქ, სადაც ის პირველი იქნება.",
-            "en": "He didn't get there first! Play it where he arrives first."
+            "en": "He didn't get there first! Play it where he arrives first.",
+            "ru": "Он не успел первым! Отдай туда, где он будет первым."
           },
           "line": {
             "ka": "ეს მცველების წინაა! მიაწოდე შენ მიერ გახსნილ სივრცეში.",
-            "en": "That's in front of them! Play it into the space you opened."
+            "en": "That's in front of them! Play it into the space you opened.",
+            "ru": "Это перед ними! Отдай в пространство, которое ты открыл."
           },
           "offside": {
             "ka": "ოფსაიდი! გარბენა ხაზიდან უნდა დაიწყოს.",
-            "en": "Offside! The runner must start level with the line."
+            "en": "Offside! The runner must start level with the line.",
+            "ru": "Офсайд! Бегущий должен стартовать на уровне линии."
           }
         },
         "success": {
           "ka": "ბრწყინვალეა! #9 გაიჭრა იქ, სადაც მცველები აღარ იყვნენ.",
-          "en": "Brilliant! #9 ran where the defenders used to be."
+          "en": "Brilliant! #9 ran where the defenders used to be.",
+          "ru": "Блестяще! #9 побежал туда, где раньше были защитники."
         }
       },
       "hints": [
@@ -463,14 +477,16 @@
           "afterWrong": 2,
           "text": {
             "ka": "#9 დიაგონალზე გაიქცევა მარჯვნივ",
-            "en": "#9 runs diagonally to the right"
+            "en": "#9 runs diagonally to the right",
+            "ru": "#9 бежит по диагонали вправо"
           }
         },
         {
           "afterWrong": 4,
           "text": {
             "ka": "ნახე ამოხსნა",
-            "en": "Watch the answer"
+            "en": "Watch the answer",
+            "ru": "Смотри ответ"
           },
           "ghost": true
         }

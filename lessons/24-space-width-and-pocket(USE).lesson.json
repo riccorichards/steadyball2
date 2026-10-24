@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: სიგანე და ჯიბე",
-      "en": "Puzzle: width and the pocket"
+      "en": "Puzzle: width and the pocket",
+      "ru": "Головоломка: ширина и карман"
     },
     "topic": "free-space",
     "level": "execute",
@@ -329,29 +330,35 @@
   "text": {
     "banner": {
       "ka": "ცენტრში სამნი ხართ. გაიშალეთ: გადაადგილე 2",
-      "en": "Three of you in the middle. Spread out: move 2"
+      "en": "Three of you in the middle. Spread out: move 2",
+      "ru": "Вас трое в центре. Разойдитесь: передвинь 2"
     },
     "fail": {
       "crowded": {
         "ka": "ცენტრში ისევ ზედმეტი ხალხია! იქ მხოლოდ ერთი დარჩეს.",
-        "en": "Still crowded in the middle! Leave only one there."
+        "en": "Still crowded in the middle! Leave only one there.",
+        "ru": "В центре всё ещё тесно! Оставь там только одного."
       },
       "wide": {
         "ka": "მარჯვენა ფლანგი ცარიელია! სიგანე გვჭირდება.",
-        "en": "The right wing is empty! We need width."
+        "en": "The right wing is empty! We need width.",
+        "ru": "Правый фланг пуст! Нам нужна ширина."
       },
       "pocket": {
         "ka": "ხაზებს შორის ადგილი ცარიელია! ვინმე იქ უნდა იყოს.",
-        "en": "The pocket between the lines is empty! Fill it."
+        "en": "The pocket between the lines is empty! Fill it.",
+        "ru": "Карман между линиями пуст! Займи его."
       }
     },
     "success": {
       "ka": "შესანიშნავია! ერთი სიგანეში, ერთი ხაზებს შორის.",
-      "en": "Great! One in the width, one between the lines."
+      "en": "Great! One in the width, one between the lines.",
+      "ru": "Отлично! Один в ширине, один между линиями."
     },
     "lessonLine": {
       "ka": "გაიშალეთ: სიგანე და ხაზებს შორის",
-      "en": "Spread out: width and between the lines"
+      "en": "Spread out: width and between the lines",
+      "ru": "Разойдитесь: ширина и между линиями"
     }
   },
   "rewards": {
@@ -362,14 +369,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "ორი სივრცეა ცარიელი: ფლანგი და #6-ის მარჯვნივ",
-        "en": "Two spaces are empty: the wing and right of #6"
+        "en": "Two spaces are empty: the wing and right of #6",
+        "ru": "Два места пусты: фланг и справа от #6"
       }
     },
     {
       "afterWrong": 5,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

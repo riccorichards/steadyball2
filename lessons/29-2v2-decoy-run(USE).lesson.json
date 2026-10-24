@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "მატყუარა გარბენა",
-      "en": "The decoy run"
+      "en": "The decoy run",
+      "ru": "Отвлекающий рывок"
     },
     "topic": "two-v-two",
     "level": "decide",
@@ -240,25 +241,30 @@
   "text": {
     "banner": {
       "ka": "#9, წაიყვანე შენი მცველი და #10-ს გზა გაუხსენი",
-      "en": "#9, take your defender away and open a path for #10"
+      "en": "#9, take your defender away and open a path for #10",
+      "ru": "#9, уведи своего защитника и открой путь для #10"
     },
     "fail": {
       "gap": {
         "ka": "მცველები ჯერ კიდევ ახლოს არიან! გაიქეცი მეორე მცველისგან შორს.",
-        "en": "The defenders are still together! Run away from the other one."
+        "en": "The defenders are still together! Run away from the other one.",
+        "ru": "Защитники всё ещё вместе! Беги от другого."
       },
       "zone": {
         "ka": "ძალიან ახლოს ან ძალიან შორს! გადი მარცხნივ, ფართოდ.",
-        "en": "Not that far or that near! Go wide to the left."
+        "en": "Not that far or that near! Go wide to the left.",
+        "ru": "Не так далеко и не так близко! Уходи в ширину влево."
       }
     },
     "success": {
       "ka": "ბრწყინვალე! #4 გამოგყვა და #10-ს ცარიელი გზა აქვს.",
-      "en": "Brilliant! #4 followed you and #10 has a clear path."
+      "en": "Brilliant! #4 followed you and #10 has a clear path.",
+      "ru": "Блестяще! #4 побежал за тобой, и у #10 свободный путь."
     },
     "lessonLine": {
       "ka": "შენი გარბენა თანაგუნდელს უხსნის სივრცეს",
-      "en": "Your run opens space for a teammate"
+      "en": "Your run opens space for a teammate",
+      "ru": "Твой рывок открывает место партнёру"
     }
   },
   "rewards": {
@@ -269,7 +275,8 @@
       "afterWrong": 1,
       "text": {
         "ka": "#4 ყველგან გამოგყვება. საით უნდა წაიყვანო?",
-        "en": "#4 follows you everywhere. Where should you take him?"
+        "en": "#4 follows you everywhere. Where should you take him?",
+        "ru": "#4 везде бежит за тобой. Куда его увести?"
       }
     },
     {
@@ -284,7 +291,8 @@
       "afterWrong": 5,
       "text": {
         "ka": "ნახე გარბენა",
-        "en": "Watch the run"
+        "en": "Watch the run",
+        "ru": "Смотри на рывок"
       },
       "ghost": true
     }

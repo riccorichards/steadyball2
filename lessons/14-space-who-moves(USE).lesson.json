@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: ვინ გადაინაცვლოს?",
-      "en": "Puzzle: who moves?"
+      "en": "Puzzle: who moves?",
+      "ru": "Головоломка: кто сдвинется?"
     },
     "topic": "free-space",
     "level": "decide",
@@ -273,25 +274,30 @@
   "text": {
     "banner": {
       "ka": "ერთ ადგილას ორი დგას. გადაადგილე 1 მოთამაშე",
-      "en": "Two of ours share one space. Move 1 player"
+      "en": "Two of ours share one space. Move 1 player",
+      "ru": "Двое наших в одной зоне. Передвинь 1 игрока"
     },
     "fail": {
       "empty": {
         "ka": "მარცხნივ ჯერ ისევ ცარიელია! სივრცე იქ არის.",
-        "en": "The left is still empty! That's where the space is."
+        "en": "The left is still empty! That's where the space is.",
+        "ru": "Слева всё ещё пусто! Вот где пространство."
       },
       "crowded": {
         "ka": "მარჯვნივ ისევ ორნი ხართ! ერთ-ერთი უნდა წავიდეს.",
-        "en": "Still two of you on the right! One of them must go."
+        "en": "Still two of you on the right! One of them must go.",
+        "ru": "Справа вас всё ещё двое! Один должен уйти."
       }
     },
     "success": {
       "ka": "ყოჩაღ! გაიშალეთ და #6-ს ახლა მეტი პასი აქვს.",
-      "en": "Well done! You spread out and #6 has more passes."
+      "en": "Well done! You spread out and #6 has more passes.",
+      "ru": "Молодец! Вы разошлись, и у #6 больше пасов."
     },
     "lessonLine": {
       "ka": "ორი ერთ ადგილას = ერთი სივრცე იკარგება",
-      "en": "Two in one spot wastes a space"
+      "en": "Two in one spot wastes a space",
+      "ru": "Двое в одном месте — пространство теряется"
     }
   },
   "rewards": {
@@ -302,14 +308,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "სად არის ცარიელი ადგილი? ვინ დგას ზედმეტად?",
-        "en": "Where is the empty space? Who is one too many?"
+        "en": "Where is the empty space? Who is one too many?",
+        "ru": "Где пустое место? Кто здесь лишний?"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

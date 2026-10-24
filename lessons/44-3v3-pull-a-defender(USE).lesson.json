@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "წაიყვანე მცველი",
-      "en": "Pull a defender away"
+      "en": "Pull a defender away",
+      "ru": "Уведи защитника"
     },
     "topic": "creating-space",
     "level": "decide",
@@ -238,25 +239,30 @@
   "text": {
     "banner": {
       "ka": "#9, წაიყვანე #4, რომ #10 გათავისუფლდეს",
-      "en": "#9, pull #4 away so #10 is free"
+      "en": "#9, pull #4 away so #10 is free",
+      "ru": "#9, уведи #4, чтобы #10 был свободен"
     },
     "fail": {
       "lane": {
         "ka": "#4 ისევ კეტავს პასს! #9, წაიყვანე ის ცენტრიდან.",
-        "en": "#4 still blocks the pass! #9, take him out of the middle."
+        "en": "#4 still blocks the pass! #9, take him out of the middle.",
+        "ru": "#4 всё ещё закрывает пас! #9, уведи его из центра."
       },
       "marked": {
         "ka": "#10-ს ჯერ კიდევ მცველი უდგას! #9 უფრო შორს გაიქეცი.",
-        "en": "#10 is still marked! #9, run further away."
+        "en": "#10 is still marked! #9, run further away.",
+        "ru": "#10 всё ещё под опекой! #9, беги дальше."
       }
     },
     "success": {
       "ka": "შესანიშნავია! #4 გამოგყვა და #10 მარტოა.",
-      "en": "Great! #4 followed you and #10 is alone."
+      "en": "Great! #4 followed you and #10 is alone.",
+      "ru": "Отлично! #4 побежал за тобой, и #10 один."
     },
     "lessonLine": {
       "ka": "შენი გარბენა თანაგუნდელს ათავისუფლებს",
-      "en": "Your run sets a teammate free"
+      "en": "Your run sets a teammate free",
+      "ru": "Твой рывок освобождает партнёра"
     }
   },
   "rewards": {
@@ -267,7 +273,8 @@
       "afterWrong": 1,
       "text": {
         "ka": "#4 #9-ს მიჰყვება. თუ #9 ცენტრიდან წავა?",
-        "en": "#4 follows #9. What if #9 leaves the middle?"
+        "en": "#4 follows #9. What if #9 leaves the middle?",
+        "ru": "#4 бежит за #9. А если #9 уйдёт из центра?"
       }
     },
     {
@@ -289,7 +296,8 @@
       "afterWrong": 5,
       "text": {
         "ka": "ნახე გარბენა",
-        "en": "Watch the run"
+        "en": "Watch the run",
+        "ru": "Смотри на рывок"
       },
       "ghost": true
     }

@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: რკალისებური გარბენა",
-      "en": "Puzzle: curve the run"
+      "en": "Puzzle: curve the run",
+      "ru": "Головоломка: изогни рывок"
     },
     "topic": "runs-in-behind",
     "level": "execute",
@@ -300,29 +301,35 @@
   "text": {
     "banner": {
       "ka": "მოხარე #7-ის გარბენა და დარჩი ოფსაიდის გარეშე",
-      "en": "Bend #7's run and stay onside"
+      "en": "Bend #7's run and stay onside",
+      "ru": "Изогни рывок #7 и останься в игре"
     },
     "fail": {
       "offside": {
         "ka": "ოფსაიდი! სანამ პასი მოვა, დარჩი მცველების ხაზზე.",
-        "en": "Offside! Stay level with the line until the pass."
+        "en": "Offside! Stay level with the line until the pass.",
+        "ru": "Офсайд! Держись на уровне линии до паса."
       },
       "blocked": {
         "ka": "მცველს ძალიან ახლოს ჩაურბინე! შემოუარე მას.",
-        "en": "You ran too close to a defender! Go round him."
+        "en": "You ran too close to a defender! Go round him.",
+        "ru": "Ты пробежал слишком близко к защитнику! Обеги его."
       },
       "zone": {
         "ka": "ზურგს უკან ვერ გახვედი! დაასრულე #5-ის უკან, შიგნით.",
-        "en": "Not in behind! Finish behind #5, inside the defence."
+        "en": "Not in behind! Finish behind #5, inside the defence.",
+        "ru": "Не за спиной! Закончи за #5, внутри обороны."
       }
     },
     "success": {
       "ka": "ბრავო! რკალით გაიქეცი და ოფსაიდი არ არის.",
-      "en": "Bravo! A curved run and no offside."
+      "en": "Bravo! A curved run and no offside.",
+      "ru": "Браво! Изогнутый рывок и без офсайда."
     },
     "lessonLine": {
       "ka": "მოხარე გარბენა: ჯერ ხაზზე, მერე უკან",
-      "en": "Curve it: level first, then in behind"
+      "en": "Curve it: level first, then in behind",
+      "ru": "Изогни: сначала на уровне, потом за спину"
     }
   },
   "rewards": {
@@ -333,14 +340,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "პასი 12 მეტრის შემდეგ მოდის. ჯერ ხაზის გასწვრივ",
-        "en": "The pass comes after 12 m. Run along the line first"
+        "en": "The pass comes after 12 m. Run along the line first",
+        "ru": "Пас придёт через 12 м. Сначала беги вдоль линии"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

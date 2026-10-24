@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "როტაცია: დაიკავე სივრცე",
-      "en": "Rotate into the space"
+      "en": "Rotate into the space",
+      "ru": "Ротация в пространство"
     },
     "topic": "rotation",
     "level": "decide",
@@ -276,29 +277,35 @@
   "text": {
     "banner": {
       "ka": "#9 ჩამოვიდა. #10, დაიკავე მისი ადგილი!",
-      "en": "#9 dropped. #10, take his place!"
+      "en": "#9 dropped. #10, take his place!",
+      "ru": "#9 опустился. #10, займи его место!"
     },
     "fail": {
       "zone": {
         "ka": "ეს ის სივრცე არ არის! #10 უნდა გაიქცეს იქ, სადაც #9 იყო.",
-        "en": "Not that space! #10 must go where #9 was."
+        "en": "Not that space! #10 must go where #9 was.",
+        "ru": "Не то место! #10 должен идти туда, где был #9."
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! #8-მა უნდა დაგინახოს.",
-        "en": "The lane is closed! #8 must be able to find you."
+        "en": "The lane is closed! #8 must be able to find you.",
+        "ru": "Линия закрыта! #8 должен тебя найти."
       },
       "marked": {
         "ka": "მეტოქე ძალიან ახლოსაა! მოძებნე თავისუფალი ადგილი.",
-        "en": "An opponent is too close! Find free space."
+        "en": "An opponent is too close! Find free space.",
+        "ru": "Соперник слишком близко! Найди свободное место."
       }
     },
     "success": {
       "ka": "ბრავო! როტაციამ მეტოქეები დააბნია.",
-      "en": "Bravo! The rotation confused them."
+      "en": "Bravo! The rotation confused them.",
+      "ru": "Браво! Ротация их запутала."
     },
     "lessonLine": {
       "ka": "როცა ერთი ჩამოდის, მეორე წინ გარბის",
-      "en": "When one drops, another runs forward"
+      "en": "When one drops, another runs forward",
+      "ru": "Когда один опускается, другой бежит вперёд"
     }
   },
   "rewards": {
@@ -309,7 +316,8 @@
       "afterWrong": 1,
       "text": {
         "ka": "#4 #9-ს გაჰყვა. სად დარჩა სივრცე?",
-        "en": "#4 followed #9. Where is the space now?"
+        "en": "#4 followed #9. Where is the space now?",
+        "ru": "#4 пошёл за #9. Где теперь пространство?"
       }
     },
     {
@@ -323,7 +331,8 @@
       "afterWrong": 5,
       "text": {
         "ka": "ნახე, სად გაიქცე",
-        "en": "Watch where to run"
+        "en": "Watch where to run",
+        "ru": "Смотри, куда бежать"
       },
       "ghost": true
     }

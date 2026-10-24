@@ -1,6 +1,6 @@
 # SteadyBall Tactics
 
-Mobile-only web app with five interactive football tactics puzzles.
+Mobile-only web app: 69 interactive football tactics lessons on an animated knowledge tree, in Georgian, English and Russian.
 Next.js 15 (App Router) · React 19 · Tailwind CSS 3 · Framer Motion · Lucide.
 
 ## Run it
@@ -28,12 +28,44 @@ a clear message if one is broken. The header, home page, progress and finish pag
 **Update the player:** in the Studio repo run `pnpm bundle:player ../steadyball2/vendor/pss-player`,
 then `npm install` here.
 
+## Languages (ka / en / ru)
+
+- App texts: `lib/i18n.ts` (one table, all three languages). Switch: `components/LangSwitch.tsx` (home and tree).
+- First visit: the invite link's language (`?l=ru`), else the phone's language, else Georgian.
+- Lesson texts: every `{ ka, en }` in a lesson file also has `ru`. A new lesson exported without Russian
+  shows English to Russian players (`lib/lessons.ts`), and `npm run lessons` lists which ones need Russian.
+- The player's own buttons (Check, Try again, Next…) got Russian in `vendor/pss-player/index.js`.
+  **When the player is rebuilt in the Studio, add the same 12 `ru` strings to the Studio's player UI table**,
+  or they fall back to Georgian.
+
+## Knowledge tree
+
+`lib/tree.ts` hangs every lesson on a branch by its `meta.topic` (set in the Studio). Five branches,
+roots → crown: Get open · Under pressure · Combinations · In behind · Create space. A new topic not listed
+there lands on the last branch. Pages: `/tree` (the animated tree) and `/tree/<branch>` (its lessons).
+"Next" in a lesson goes to the next unfinished lesson of the same branch.
+
+## Invite links and the dashboard
+
+- Create links in `/admin` → **Invite links** (name, code, kind, language). Share `https://<site>/i/<code>`.
+- The first link a device arrives with is saved with the player (`players.invite_code`); the dashboard
+  shows players, active, came back and lessons per link. The in-app share button uses `/i/share`.
+- Also recorded (no names, no emails): language, country (from Vercel's edge header, no IP stored),
+  XP / attempts / time per finished lesson, every Check press (`lesson_attempts`), active days (`player_days`).
+
+**Database setup for this version (once):** in Supabase → SQL Editor run
+`supabase/002_invites_progress.sql`, then `supabase/admin.sql`.
+
 ## Structure
 
 ```
 app/
   layout.tsx                    full-height page area (max 480px wide)
-  page.tsx                      sign-up (position, age), then the first unfinished lesson
+  page.tsx                      sign-up (language, position, age), then the tree
+  tree/page.tsx                 the knowledge tree
+  tree/[branch]/page.tsx        one branch: its lessons as a path
+  i/[code]/route.ts             invite links → /?i=<code>&l=<lang>
+  api/geo/route.ts              visitor's country code (Vercel header)
   lesson/[id]/page.tsx          plays any lesson from lessons/
   challenges/<slug>/page.tsx    the five hand-built pilot pages, kept for comparison (not in the list)
   finish/page.tsx               after the last lesson: rating + share

@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: პასი ხვრელში",
-      "en": "Puzzle: pass into the gap"
+      "en": "Puzzle: pass into the gap",
+      "ru": "Головоломка: пас в щель"
     },
     "topic": "through-ball",
     "level": "execute",
@@ -235,29 +236,35 @@
   "text": {
     "banner": {
       "ka": "მიაწოდე #9-ს სივრცეში, მცველების უკან",
-      "en": "Play #9 into the space behind"
+      "en": "Play #9 into the space behind",
+      "ru": "Отдай #9 в пространство за спину"
     },
     "fail": {
       "cut": {
         "ka": "პასი გადაჭრეს! ბურთი მცველებს გვერდით გაატარე.",
-        "en": "Cut out! Play it past the defenders, not at them."
+        "en": "Cut out! Play it past the defenders, not at them.",
+        "ru": "Перехват! Играй мимо защитников, а не в них."
       },
       "race": {
         "ka": "ვერ მიუსწრო! მიაწოდე იქ, სადაც ის პირველი იქნება.",
-        "en": "He didn't get there first! Play it where he arrives first."
+        "en": "He didn't get there first! Play it where he arrives first.",
+        "ru": "Он не успел первым! Отдай туда, где он будет первым."
       },
       "line": {
         "ka": "ეს მცველების წინაა! მიაწოდე მათ ზურგს უკან.",
-        "en": "That's in front of the defenders! Play it behind them."
+        "en": "That's in front of the defenders! Play it behind them.",
+        "ru": "Это перед защитниками! Отдай за их спину."
       }
     },
     "success": {
       "ka": "ზუსტი პასი სივრცეში! #9 მარტოა მეკარესთან.",
-      "en": "A perfect pass into space! #9 is through on goal."
+      "en": "A perfect pass into space! #9 is through on goal.",
+      "ru": "Идеальный пас в пространство! #9 выходит один на ворота."
     },
     "lessonLine": {
       "ka": "პასი სივრცეში, არა ფეხებში",
-      "en": "Pass into space, not to feet"
+      "en": "Pass into space, not to feet",
+      "ru": "Пас в пространство, а не в ноги"
     }
   },
   "rewards": {
@@ -268,14 +275,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "არა ფეხებში! იქ, სადაც #9 გარბის, მცველებს შორის",
-        "en": "Not to his feet! Where #9 runs, between them"
+        "en": "Not to his feet! Where #9 runs, between them",
+        "ru": "Не в ноги! Туда, куда бежит #9, между ними"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

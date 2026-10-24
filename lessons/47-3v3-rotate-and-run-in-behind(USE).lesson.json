@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "როტაცია და გარბენა ზურგს უკან",
-      "en": "Rotate and run in behind"
+      "en": "Rotate and run in behind",
+      "ru": "Ротация и рывок за спину"
     },
     "topic": "rotation",
     "level": "execute",
@@ -271,29 +272,35 @@
   "text": {
     "banner": {
       "ka": "#9 ჩამოვიდა. #8, გაიქეცი მის ადგილზე!",
-      "en": "#9 dropped. #8, run into his space!"
+      "en": "#9 dropped. #8, run into his space!",
+      "ru": "#9 опустился. #8, беги в его зону!"
     },
     "fail": {
       "offside": {
         "ka": "ოფსაიდი! პასამდე #5-ის დონეზე დარჩი.",
-        "en": "Offside! Stay level with #5 until the pass."
+        "en": "Offside! Stay level with #5 until the pass.",
+        "ru": "Офсайд! Держись на уровне #5 до паса."
       },
       "blocked": {
         "ka": "#6-ს დაეჯახე! შემოუარე გვერდიდან.",
-        "en": "You ran into #6! Go round him."
+        "en": "You ran into #6! Go round him.",
+        "ru": "Ты врезался в #6! Обеги его."
       },
       "zone": {
         "ka": "ჯერ არა! დაასრულე ცენტრში, #9-ის ძველ ადგილზე.",
-        "en": "Not yet! Finish in the middle, where #9 was."
+        "en": "Not yet! Finish in the middle, where #9 was.",
+        "ru": "Ещё нет! Закончи в центре, где был #9."
       }
     },
     "success": {
       "ka": "ბრწყინვალე! #9 ჩამოვიდა, #8 გაიჭრა — როტაცია!",
-      "en": "Brilliant! #9 dropped, #8 ran in behind: rotation!"
+      "en": "Brilliant! #9 dropped, #8 ran in behind: rotation!",
+      "ru": "Блестяще! #9 опустился, #8 убежал за спину: ротация!"
     },
     "lessonLine": {
       "ka": "ერთი ჩამოდის, მეორე იჭრება",
-      "en": "One drops in, another runs beyond"
+      "en": "One drops in, another runs beyond",
+      "ru": "Один опускается, другой убегает дальше"
     }
   },
   "rewards": {
@@ -304,7 +311,8 @@
       "afterWrong": 2,
       "text": {
         "ka": "#6-ს გვერდიდან შემოუარე და ცენტრისკენ გაიქეცი.",
-        "en": "Go round #6, then run to the middle."
+        "en": "Go round #6, then run to the middle.",
+        "ru": "Обеги #6, потом беги в центр."
       }
     }
   ]

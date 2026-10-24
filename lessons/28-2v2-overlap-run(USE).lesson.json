@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "შემორბენა",
-      "en": "The overlap run"
+      "en": "The overlap run",
+      "ru": "Обгон"
     },
     "topic": "two-v-two",
     "level": "execute",
@@ -247,33 +248,40 @@
   "text": {
     "banner": {
       "ka": "დახატე #2-ის გარბენა #7-ის გარშემო",
-      "en": "Draw #2's run round the outside of #7"
+      "en": "Draw #2's run round the outside of #7",
+      "ru": "Нарисуй рывок #2 снаружи от #7"
     },
     "hint": {
       "ka": "ჯერ #7-ის უკნიდან, მერე ხაზის გასწვრივ.",
-      "en": "Behind #7 first, then up the line."
+      "en": "Behind #7 first, then up the line.",
+      "ru": "Сначала за спину #7, потом вперёд вдоль линии."
     },
     "fail": {
       "offside": {
         "ka": "ოფსაიდი! პასის დროს #3-ზე წინ ნუ იქნები.",
-        "en": "Offside! Don't be past their #3 when the pass comes."
+        "en": "Offside! Don't be past their #3 when the pass comes.",
+        "ru": "Офсайд! Не будь дальше их #3, когда идёт пас."
       },
       "blocked": {
         "ka": "მეტოქეს დაეჯახე! შემოურბინე #7-ს გარედან.",
-        "en": "You ran into an opponent! Go round #7 on the outside."
+        "en": "You ran into an opponent! Go round #7 on the outside.",
+        "ru": "Ты врезался в соперника! Обеги #7 снаружи."
       },
       "zone": {
         "ka": "ძალიან ახლოს გაჩერდი! დაასრულე ფლანგზე, #3-ის ზურგს უკან.",
-        "en": "You stopped short! Finish on the wing, behind their #3."
+        "en": "You stopped short! Finish on the wing, behind their #3.",
+        "ru": "Ты остановился рано! Закончи на фланге, за спиной их #3."
       }
     },
     "success": {
       "ka": "იდეალური შემორბენა! #2 ფლანგზე თავისუფალია.",
-      "en": "Perfect overlap! #2 is free on the wing."
+      "en": "Perfect overlap! #2 is free on the wing.",
+      "ru": "Идеальный обгон! #2 свободен на фланге."
     },
     "lessonLine": {
       "ka": "შემოურბინე გარედან, დარჩი ოფსაიდის გარეშე",
-      "en": "Overlap outside and stay onside"
+      "en": "Overlap outside and stay onside",
+      "ru": "Обгон снаружи без офсайда"
     }
   },
   "rewards": {
@@ -284,7 +292,8 @@
       "afterWrong": 1,
       "text": {
         "ka": "გაიქეცი #7-ის უკან და მერე გარედან წინ.",
-        "en": "Run behind #7, then up the outside."
+        "en": "Run behind #7, then up the outside.",
+        "ru": "Беги за спиной #7, потом вперёд снаружи."
       }
     },
     {
@@ -299,7 +308,8 @@
       "afterWrong": 5,
       "text": {
         "ka": "ნახე გარბენა",
-        "en": "Watch the run"
+        "en": "Watch the run",
+        "ru": "Смотри на рывок"
       },
       "ghost": true
     }

@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: სიღრმე და სიგანე",
-      "en": "Puzzle: deep and wide"
+      "en": "Puzzle: deep and wide",
+      "ru": "Головоломка: глубина и ширина"
     },
     "topic": "creating-space",
     "level": "decide",
@@ -309,33 +310,40 @@
   "text": {
     "banner": {
       "ka": "ერთი სიღრმეში, ერთი სიგანეში: გაუხსენი ადგილი #10-ს",
-      "en": "One deep, one wide: open room for #10"
+      "en": "One deep, one wide: open room for #10",
+      "ru": "Один в глубину, один в ширину: освободи место для #10"
     },
     "fail": {
       "pocket": {
         "ka": "#10-ის წინ ისევ მცველია! ის იქიდან წაიყვანე.",
-        "en": "A defender is still in front of #10! Take him away."
+        "en": "A defender is still in front of #10! Take him away.",
+        "ru": "Перед #10 всё ещё защитник! Уведи его."
       },
       "gap": {
         "ka": "მცველები ისევ ახლოს არიან! გაჭიმე მათი ხაზი.",
-        "en": "The defenders are still close! Stretch their line."
+        "en": "The defenders are still close! Stretch their line.",
+        "ru": "Защитники всё ещё рядом! Растяни их линию."
       },
       "marked": {
         "ka": "#10-ს მცველი ახლოს უდგას! მეტი სივრცე სჭირდება.",
-        "en": "A defender is close to #10! He needs more space."
+        "en": "A defender is close to #10! He needs more space.",
+        "ru": "Защитник рядом с #10! Ему нужно больше места."
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! ბურთს ღია გზა სჭირდება.",
-        "en": "The lane is blocked! The ball needs a clear way."
+        "en": "The lane is blocked! The ball needs a clear way.",
+        "ru": "Линия перекрыта! Мячу нужен свободный путь."
       }
     },
     "success": {
       "ka": "შესანიშნავია! ერთმა უკან წაიყვანა, მეორემ გვერდზე. #10 მარტოა.",
-      "en": "Great! One took his man back, one wide. #10 is alone."
+      "en": "Great! One took his man back, one wide. #10 is alone.",
+      "ru": "Отлично! Один увёл своего назад, другой в ширину. #10 один."
     },
     "lessonLine": {
       "ka": "სიღრმე და სიგანე ერთად ხსნის სივრცეს",
-      "en": "Depth and width together open space"
+      "en": "Depth and width together open space",
+      "ru": "Глубина и ширина вместе открывают пространство"
     }
   },
   "rewards": {
@@ -346,14 +354,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "ერთი მცველი უკან უნდა წავიდეს, მეორე გვერდზე",
-        "en": "One defender must go back, the other wide"
+        "en": "One defender must go back, the other wide",
+        "ru": "Один защитник должен уйти назад, другой в ширину"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

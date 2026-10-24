@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "მოშორდი და შებრუნდი",
-      "en": "Lose your marker and turn"
+      "en": "Lose your marker and turn",
+      "ru": "Уйди от опекуна и развернись"
     },
     "topic": "free-space",
     "level": "execute",
@@ -328,33 +329,40 @@
   "text": {
     "banner": {
       "ka": "მოშორდი #4-ს, გადი სივრცეში და შებრუნდი",
-      "en": "Lose #4, find the space and turn"
+      "en": "Lose #4, find the space and turn",
+      "ru": "Уйди от #4, найди место и развернись"
     },
     "fail": {
       "marked": {
         "ka": "#4 ისევ ახლოსაა! გადი მარცხნივ, მისგან შორს.",
-        "en": "#4 is still close! Move left, away from him."
+        "en": "#4 is still close! Move left, away from him.",
+        "ru": "#4 всё ещё рядом! Уходи влево, от него."
       },
       "zone": {
         "ka": "აქ სივრცე არ არის! მარცხენა ნახევარსივრცე თავისუფალია.",
-        "en": "No space there! The left half-space is free."
+        "en": "No space there! The left half-space is free.",
+        "ru": "Там нет места! Левый полуфланг свободен."
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! #8 ბურთს ჭრის.",
-        "en": "The lane is closed! #8 cuts the pass."
+        "en": "The lane is closed! #8 cuts the pass.",
+        "ru": "Линия закрыта! #8 перекрывает пас."
       },
       "body": {
         "ka": "ტანი დახურულია! შებრუნდი, რომ ბურთიც და კარიც დაინახო.",
-        "en": "Closed body! Turn so you see the ball and the goal."
+        "en": "Closed body! Turn so you see the ball and the goal.",
+        "ru": "Корпус закрыт! Развернись, чтобы видеть мяч и ворота."
       }
     },
     "success": {
       "ka": "ბრავო! მეურვეს მოშორდი და უკვე კარისკენ იყურები.",
-      "en": "Bravo! You lost your marker and you face the goal."
+      "en": "Bravo! You lost your marker and you face the goal.",
+      "ru": "Браво! Ты ушёл от опекуна и смотришь на ворота."
     },
     "lessonLine": {
       "ka": "მოშორდი, გაიხსენი, შებრუნდი",
-      "en": "Lose him, get open, turn"
+      "en": "Lose him, get open, turn",
+      "ru": "Уйди от него, откройся, развернись"
     }
   },
   "rewards": {
@@ -365,14 +373,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "მარცხნივ, #8-ის წინ, ადგილი ცარიელია",
-        "en": "On the left, ahead of #8, the space is empty"
+        "en": "On the left, ahead of #8, the space is empty",
+        "ru": "Слева, впереди #8, пусто"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე, სად და როგორ",
-        "en": "Watch where and how"
+        "en": "Watch where and how",
+        "ru": "Смотри, куда и как"
       },
       "ghost": true
     }

@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: ჩამოდი და გაიჭერი",
-      "en": "Puzzle: drop, then run"
+      "en": "Puzzle: drop, then run",
+      "ru": "Головоломка: опустись, потом беги"
     },
     "topic": "creating-space",
     "level": "game-speed",
@@ -281,21 +282,25 @@
   "text": {
     "banner": {
       "ka": "გაათავისუფლე ადგილი #4-ის ზურგს უკან. 1 სვლა",
-      "en": "Empty the space behind #4. 1 move"
+      "en": "Empty the space behind #4. 1 move",
+      "ru": "Освободи место за спиной #4. 1 ход"
     },
     "fail": {
       "occupied": {
         "ka": "#4 ისევ იქაა! ის ვის მისდევს? წაიყვანე იგი.",
-        "en": "#4 is still there! Whom does he follow? Lead him away."
+        "en": "#4 is still there! Whom does he follow? Lead him away.",
+        "ru": "#4 всё ещё там! За кем он бежит? Уведи его."
       }
     },
     "success": {
       "ka": "სივრცე ცარიელია! ახლა #11-ს მიაწოდე.",
-      "en": "The space is empty! Now find #11."
+      "en": "The space is empty! Now find #11.",
+      "ru": "Пространство пусто! Теперь найди #11."
     },
     "lessonLine": {
       "ka": "ჩამოსვლა მცველს ზურგს უკან სივრცეს უტოვებს",
-      "en": "A drop leaves space behind the defender"
+      "en": "A drop leaves space behind the defender",
+      "ru": "Если опуститься, за защитником появится место"
     }
   },
   "rewards": {
@@ -306,14 +311,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "#9 რომ ბურთისკენ ჩამოვიდეს, #4 გაჰყვება",
-        "en": "If #9 drops towards the ball, #4 goes with him"
+        "en": "If #9 drops towards the ball, #4 goes with him",
+        "ru": "Если #9 опустится к мячу, #4 пойдёт с ним"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }
@@ -349,7 +356,8 @@
             "kind": "caption",
             "text": {
               "ka": "ახლა გამოიყენე!",
-              "en": "Now use it!"
+              "en": "Now use it!",
+              "ru": "Теперь используй!"
             },
             "ms": 1000
           }
@@ -434,29 +442,35 @@
       "text": {
         "banner": {
           "ka": "მიაწოდე #11-ს სივრცეში, #4-ის ადგილას",
-          "en": "Play #11 into the space #4 left"
+          "en": "Play #11 into the space #4 left",
+          "ru": "Отдай #11 в место, которое оставил #4"
         },
         "fail": {
           "cut": {
             "ka": "პასი გადაჭრეს! ბურთი მცველებს გვერდით გაატარე.",
-            "en": "Cut out! Play it past the defenders, not at them."
+            "en": "Cut out! Play it past the defenders, not at them.",
+            "ru": "Перехват! Играй мимо защитников, а не в них."
           },
           "race": {
             "ka": "ვერ მიუსწრო! მიაწოდე იქ, სადაც ის პირველი იქნება.",
-            "en": "He didn't get there first! Play it where he arrives first."
+            "en": "He didn't get there first! Play it where he arrives first.",
+            "ru": "Он не успел первым! Отдай туда, где он будет первым."
           },
           "line": {
             "ka": "ეს მცველების წინაა! მიაწოდე შენ მიერ გახსნილ სივრცეში.",
-            "en": "That's in front of them! Play it into the space you opened."
+            "en": "That's in front of them! Play it into the space you opened.",
+            "ru": "Это перед ними! Отдай в пространство, которое ты открыл."
           },
           "offside": {
             "ka": "ოფსაიდი! გარბენა ხაზიდან უნდა დაიწყოს.",
-            "en": "Offside! The runner must start level with the line."
+            "en": "Offside! The runner must start level with the line.",
+            "ru": "Офсайд! Бегущий должен стартовать на уровне линии."
           }
         },
         "success": {
           "ka": "ჩინებულია! #9 ჩამოვიდა, #11 გაიჭრა და ბურთი იქ დახვდა.",
-          "en": "Superb! #9 dropped, #11 ran in, the ball was there."
+          "en": "Superb! #9 dropped, #11 ran in, the ball was there.",
+          "ru": "Превосходно! #9 опустился, #11 вбежал, мяч уже там."
         }
       },
       "hints": [
@@ -464,14 +478,16 @@
           "afterWrong": 2,
           "text": {
             "ka": "#11 დიაგონალზე გარბის ცარიელ ადგილზე",
-            "en": "#11 runs diagonally into the empty space"
+            "en": "#11 runs diagonally into the empty space",
+            "ru": "#11 бежит по диагонали в пустое место"
           }
         },
         {
           "afterWrong": 4,
           "text": {
             "ka": "ნახე ამოხსნა",
-            "en": "Watch the answer"
+            "en": "Watch the answer",
+            "ru": "Смотри ответ"
           },
           "ghost": true
         }
