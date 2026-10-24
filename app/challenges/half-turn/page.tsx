@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import HalfTurn from "@/components/challenges/HalfTurn";
-import { getChallenge } from "@/lib/challenges";
 
-export const metadata: Metadata = { title: getChallenge("half-turn").full_title };
+export const metadata: Metadata = { title: "Half-Turn (pilot)" };
 
 export default function Page(): React.JSX.Element {
   return <HalfTurn />;

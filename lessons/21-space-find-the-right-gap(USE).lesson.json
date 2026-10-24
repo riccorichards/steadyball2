@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: სწორი ხვრელი",
-      "en": "Puzzle: the right gap"
+      "en": "Puzzle: the right gap",
+      "ru": "Головоломка: нужная щель"
     },
     "topic": "through-ball",
     "level": "execute",
@@ -239,33 +240,40 @@
   "text": {
     "banner": {
       "ka": "იპოვე ხვრელი და მიაწოდე ბურთი სივრცეში",
-      "en": "Find the gap and play the ball into it"
+      "en": "Find the gap and play the ball into it",
+      "ru": "Найди щель и отдай в неё мяч"
     },
     "fail": {
       "cut": {
         "ka": "პასი გადაჭრეს! ბურთი მცველებს გვერდით გაატარე.",
-        "en": "Cut out! Play it past the defenders, not at them."
+        "en": "Cut out! Play it past the defenders, not at them.",
+        "ru": "Перехват! Играй мимо защитников, а не в них."
       },
       "race": {
         "ka": "ვერ მიუსწრო! მიაწოდე იქ, სადაც ის პირველი იქნება.",
-        "en": "He didn't get there first! Play it where he arrives first."
+        "en": "He didn't get there first! Play it where he arrives first.",
+        "ru": "Он не успел первым! Отдай туда, где он будет первым."
       },
       "line": {
         "ka": "ეს მცველების წინაა! მიაწოდე მათ ზურგს უკან.",
-        "en": "That's in front of the defenders! Play it behind them."
+        "en": "That's in front of the defenders! Play it behind them.",
+        "ru": "Это перед защитниками! Отдай за их спину."
       },
       "offside": {
         "ka": "ოფსაიდი! გარბენა ხაზიდან უნდა დაიწყოს.",
-        "en": "Offside! The runner must start level with the line."
+        "en": "Offside! The runner must start level with the line.",
+        "ru": "Офсайд! Бегущий должен стартовать на уровне линии."
       }
     },
     "success": {
       "ka": "ბრწყინვალეა! #7 პირველი მივიდა ბურთთან.",
-      "en": "Brilliant! #7 got to the ball first."
+      "en": "Brilliant! #7 got to the ball first.",
+      "ru": "Блестяще! #7 первым успел к мячу."
     },
     "lessonLine": {
       "ka": "იპოვე ხვრელი, სადაც ჩვენი პირველი მივა",
-      "en": "Find the gap our runner wins"
+      "en": "Find the gap our runner wins",
+      "ru": "Найди щель, где наш игрок будет первым"
     }
   },
   "rewards": {
@@ -276,14 +284,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "#9-ს მცველი უდგას. #5-სა და #2-ს შორის კი?",
-        "en": "#9 is marked. What about between #5 and #2?"
+        "en": "#9 is marked. What about between #5 and #2?",
+        "ru": "#9 под опекой. А между #5 и #2?"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

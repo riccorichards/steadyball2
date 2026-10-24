@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: მაღალი ხაზი",
-      "en": "Puzzle: beat the high line"
+      "en": "Puzzle: beat the high line",
+      "ru": "Головоломка: обыграй высокую линию"
     },
     "topic": "creating-space",
     "level": "game-speed",
@@ -414,33 +415,40 @@
   "text": {
     "banner": {
       "ka": "გაათავისუფლე #10 ხაზებს შორის. ოფსაიდი არა! 2",
-      "en": "Free #10 between the lines. No offside! 2 moves"
+      "en": "Free #10 between the lines. No offside! 2 moves",
+      "ru": "Освободи #10 между линиями. Без офсайда! 2 хода"
     },
     "fail": {
       "zone": {
         "ka": "#10 არასწორ ადგილასაა! ცენტრში, მათი ხაზის წინ, ოფსაიდის გარეშე.",
-        "en": "#10 is in the wrong spot! Centre, in front of their line, onside."
+        "en": "#10 is in the wrong spot! Centre, in front of their line, onside.",
+        "ru": "#10 не там! В центре, перед их линией, без офсайда."
       },
       "gap": {
         "ka": "ცენტრალური მცველები ისევ ერთად არიან! ერთი წაიყვანე.",
-        "en": "Their centre-backs are still together! Lead one away."
+        "en": "Their centre-backs are still together! Lead one away.",
+        "ru": "Их центральные защитники всё ещё вместе! Уведи одного."
       },
       "marked": {
         "ka": "#10-ს მცველი ახლოს უდგას! ჯერ ის სხვაგან წაიყვანე.",
-        "en": "A defender is close to #10! Lead him away first."
+        "en": "A defender is close to #10! Lead him away first.",
+        "ru": "Защитник рядом с #10! Сначала уведи его."
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! #6-ს ღია გზა სჭირდება.",
-        "en": "The lane is blocked! #6 needs a clear way."
+        "en": "The lane is blocked! #6 needs a clear way.",
+        "ru": "Линия перекрыта! #6 нужен свободный путь."
       }
     },
     "success": {
       "ka": "ჩემპიონური! მაღალი ხაზის წინ სივრცე შექმენი და გამოიყენე.",
-      "en": "Champion stuff! You made space in front of a high line."
+      "en": "Champion stuff! You made space in front of a high line.",
+      "ru": "Как чемпион! Ты создал место перед высокой линией."
     },
     "lessonLine": {
       "ka": "მაღალი ხაზი? სივრცე მის წინაც იქმნება",
-      "en": "High line? Make space in front of it too"
+      "en": "High line? Make space in front of it too",
+      "ru": "Высокая линия? Создай место и перед ней"
     }
   },
   "rewards": {
@@ -451,14 +459,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "#4 #9-ს მისდევს. #10-ს ოფსაიდის გარეშე სივრცე სჭირდება",
-        "en": "#4 follows #9. #10 needs space, onside"
+        "en": "#4 follows #9. #10 needs space, onside",
+        "ru": "#4 бежит за #9. #10 нужно место без офсайда"
       }
     },
     {
       "afterWrong": 5,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

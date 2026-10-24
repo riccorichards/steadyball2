@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "ხაზებს შორის",
-      "en": "Between the lines"
+      "en": "Between the lines",
+      "ru": "Между линиями"
     },
     "topic": "free-space",
     "level": "execute",
@@ -357,33 +358,40 @@
   "text": {
     "banner": {
       "ka": "იპოვე სივრცე ხაზებს შორის და შებრუნდი",
-      "en": "Find the space between the lines and turn"
+      "en": "Find the space between the lines and turn",
+      "ru": "Найди место между линиями и развернись"
     },
     "fail": {
       "zone": {
         "ka": "აქ სივრცე არ არის! ნახევარმცველების უკან, მარჯვნივ, ცარიელია.",
-        "en": "No space there! Behind their midfield, on the right, it's empty."
+        "en": "No space there! Behind their midfield, on the right, it's empty.",
+        "ru": "Там нет места! За их полузащитой, справа, пусто."
       },
       "marked": {
         "ka": "მეტოქე ძალიან ახლოსაა! დადექი მათ შორის, შორს.",
-        "en": "An opponent is too close! Stand between them, away."
+        "en": "An opponent is too close! Stand between them, away.",
+        "ru": "Соперник слишком близко! Встань между ними, подальше."
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! #6 ბურთს ჭრის.",
-        "en": "The lane is closed! #6 cuts the pass."
+        "en": "The lane is closed! #6 cuts the pass.",
+        "ru": "Линия закрыта! #6 перекрывает пас."
       },
       "body": {
         "ka": "ტანი დახურულია! შებრუნდი, რომ კარიც დაინახო.",
-        "en": "Closed body! Turn so you see the goal too."
+        "en": "Closed body! Turn so you see the goal too.",
+        "ru": "Корпус закрыт! Развернись, чтобы видеть и ворота."
       }
     },
     "success": {
       "ka": "კარგია! ხაზებს შორის მიიღე და შებრუნდი.",
-      "en": "Good! You received between the lines and turned."
+      "en": "Good! You received between the lines and turned.",
+      "ru": "Хорошо! Ты принял мяч между линиями и развернулся."
     },
     "lessonLine": {
       "ka": "ხაზებს შორის სივრცე: მიიღე და შებრუნდი",
-      "en": "Space between the lines: receive and turn"
+      "en": "Space between the lines: receive and turn",
+      "ru": "Место между линиями: прими и развернись"
     }
   },
   "rewards": {
@@ -394,14 +402,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "ნახევარმცველების ხაზის უკან ადგილია",
-        "en": "There is room behind their midfield line"
+        "en": "There is room behind their midfield line",
+        "ru": "За их линией полузащиты есть место"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე, სად და როგორ",
-        "en": "Watch where and how"
+        "en": "Watch where and how",
+        "ru": "Смотри, куда и как"
       },
       "ghost": true
     }
@@ -431,7 +441,8 @@
             "kind": "caption",
             "text": {
               "ka": "ვინ არის თავისუფალი?",
-              "en": "Who is free?"
+              "en": "Who is free?",
+              "ru": "Кто свободен?"
             },
             "ms": 1000
           }
@@ -511,17 +522,20 @@
       "text": {
         "banner": {
           "ka": "ვის მიაწოდოს #8-მა?",
-          "en": "Who should #8 pass to?"
+          "en": "Who should #8 pass to?",
+          "ru": "Кому отдать пас #8?"
         },
         "fail": {
           "order": {
             "ka": "#9-ს მცველი უდგას! #7 მარტოა მარჯვნივ.",
-            "en": "#9 is marked! #7 is alone on the right."
+            "en": "#9 is marked! #7 is alone on the right.",
+            "ru": "#9 под опекой! #7 один справа."
           }
         },
         "success": {
           "ka": "სწორია! #7 თავისუფალია.",
-          "en": "Right! #7 is free."
+          "en": "Right! #7 is free.",
+          "ru": "Верно! #7 свободен."
         }
       },
       "hints": [
@@ -529,7 +543,8 @@
           "afterWrong": 2,
           "text": {
             "ka": "მცველი ვის უდგას ახლოს?",
-            "en": "Who has a defender right on him?"
+            "en": "Who has a defender right on him?",
+            "ru": "У кого защитник прямо рядом?"
           }
         }
       ],

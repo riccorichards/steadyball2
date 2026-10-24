@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: გზა და პასი",
-      "en": "Puzzle: open the way, then through"
+      "en": "Puzzle: open the way, then through",
+      "ru": "Головоломка: открой путь, потом в щель"
     },
     "topic": "creating-space",
     "level": "game-speed",
@@ -265,21 +266,25 @@
   "text": {
     "banner": {
       "ka": "გაუხსენი გზა ბურთს #9-მდე. 1 სვლა",
-      "en": "Open the way for the ball to #9. 1 move"
+      "en": "Open the way for the ball to #9. 1 move",
+      "ru": "Открой мячу путь до #9. 1 ход"
     },
     "fail": {
       "lane": {
         "ka": "#6 ისევ ბურთის გზაზეა! ის ვის მისდევს?",
-        "en": "#6 is still in the ball's way! Whom does he follow?"
+        "en": "#6 is still in the ball's way! Whom does he follow?",
+        "ru": "#6 всё ещё на пути мяча! За кем он бежит?"
       }
     },
     "success": {
       "ka": "გზა ღიაა! ახლა მიაწოდე სივრცეში.",
-      "en": "The way is open! Now play it into space."
+      "en": "The way is open! Now play it into space.",
+      "ru": "Путь открыт! Теперь отдай в пространство."
     },
     "lessonLine": {
       "ka": "ჯერ გზა გახსენი, მერე პასი სივრცეში",
-      "en": "Open the way, then pass into space"
+      "en": "Open the way, then pass into space",
+      "ru": "Открой путь, потом пас в пространство"
     }
   },
   "rewards": {
@@ -290,14 +295,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "#6 #10-ს მისდევს. წაიყვანე ის გვერდზე",
-        "en": "#6 follows #10. Take him to the side"
+        "en": "#6 follows #10. Take him to the side",
+        "ru": "#6 бежит за #10. Уведи его в сторону"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }
@@ -333,7 +340,8 @@
             "kind": "caption",
             "text": {
               "ka": "ახლა გამოიყენე!",
-              "en": "Now use it!"
+              "en": "Now use it!",
+              "ru": "Теперь используй!"
             },
             "ms": 1000
           }
@@ -417,29 +425,35 @@
       "text": {
         "banner": {
           "ka": "მიაწოდე #9-ს სივრცეში, მცველების უკან",
-          "en": "Play #9 into the space behind"
+          "en": "Play #9 into the space behind",
+          "ru": "Отдай #9 в пространство за спину"
         },
         "fail": {
           "cut": {
             "ka": "პასი გადაჭრეს! ბურთი მცველებს გვერდით გაატარე.",
-            "en": "Cut out! Play it past the defenders, not at them."
+            "en": "Cut out! Play it past the defenders, not at them.",
+            "ru": "Перехват! Играй мимо защитников, а не в них."
           },
           "race": {
             "ka": "ვერ მიუსწრო! მიაწოდე იქ, სადაც ის პირველი იქნება.",
-            "en": "He didn't get there first! Play it where he arrives first."
+            "en": "He didn't get there first! Play it where he arrives first.",
+            "ru": "Он не успел первым! Отдай туда, где он будет первым."
           },
           "line": {
             "ka": "ეს მცველების წინაა! მიაწოდე შენ მიერ გახსნილ სივრცეში.",
-            "en": "That's in front of them! Play it into the space you opened."
+            "en": "That's in front of them! Play it into the space you opened.",
+            "ru": "Это перед ними! Отдай в пространство, которое ты открыл."
           },
           "offside": {
             "ka": "ოფსაიდი! გარბენა ხაზიდან უნდა დაიწყოს.",
-            "en": "Offside! The runner must start level with the line."
+            "en": "Offside! The runner must start level with the line.",
+            "ru": "Офсайд! Бегущий должен стартовать на уровне линии."
           }
         },
         "success": {
           "ka": "ზუსტი პასი! #6 წავიდა და ბურთი #9-მდე მივიდა.",
-          "en": "A perfect pass! #6 left and the ball reached #9."
+          "en": "A perfect pass! #6 left and the ball reached #9.",
+          "ru": "Идеальный пас! #6 ушёл, и мяч дошёл до #9."
         }
       },
       "hints": [
@@ -447,14 +461,16 @@
           "afterWrong": 2,
           "text": {
             "ka": "ბურთი მცველებს შორის, #9-ის წინ",
-            "en": "The ball goes between them, ahead of #9"
+            "en": "The ball goes between them, ahead of #9",
+            "ru": "Мяч идёт между ними, перед #9"
           }
         },
         {
           "afterWrong": 4,
           "text": {
             "ka": "ნახე ამოხსნა",
-            "en": "Watch the answer"
+            "en": "Watch the answer",
+            "ru": "Смотри ответ"
           },
           "ghost": true
         }

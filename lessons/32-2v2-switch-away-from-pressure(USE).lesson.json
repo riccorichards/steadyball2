@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "გადაიტანე თამაში პრესინგისგან შორს",
-      "en": "Switch away from pressure"
+      "en": "Switch away from pressure",
+      "ru": "Уходи от давления"
     },
     "topic": "two-v-two",
     "level": "decide",
@@ -217,29 +218,35 @@
   "text": {
     "banner": {
       "ka": "#8-ს პრესინგი აქვს მარჯვნიდან. გაიხსენი!",
-      "en": "#8 is pressed from the right. Get open!"
+      "en": "#8 is pressed from the right. Get open!",
+      "ru": "На #8 давят справа. Откройся!"
     },
     "fail": {
       "shadow": {
         "ka": "#6 გფარავს! პრესინგის მხარეს ნუ დარჩები.",
-        "en": "Their #6 hides you! Don't stay on the pressure side."
+        "en": "Their #6 hides you! Don't stay on the pressure side.",
+        "ru": "Их #6 закрывает тебя! Не стой на стороне давления."
       },
       "zone": {
         "ka": "ჯერ არა! გადი მეორე მხარეს, სადაც სივრცეა.",
-        "en": "Not there! Go to the other side, where the space is."
+        "en": "Not there! Go to the other side, where the space is.",
+        "ru": "Не туда! Иди на другую сторону, где есть место."
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! #8-მა უნდა დაგინახოს.",
-        "en": "The lane is closed! #8 must be able to find you."
+        "en": "The lane is closed! #8 must be able to find you.",
+        "ru": "Линия закрыта! #8 должен тебя найти."
       }
     },
     "success": {
       "ka": "ზუსტად! ბურთი პრესინგისგან შორს წავიდა.",
-      "en": "Spot on! The ball goes away from the pressure."
+      "en": "Spot on! The ball goes away from the pressure.",
+      "ru": "В точку! Мяч уходит от давления."
     },
     "lessonLine": {
       "ka": "პრესინგი ერთ მხარესაა? გადადი მეორეზე",
-      "en": "Pressure on one side? Switch to the other"
+      "en": "Pressure on one side? Switch to the other",
+      "ru": "Давят с одной стороны? Переводи на другую"
     }
   },
   "rewards": {
@@ -250,7 +257,8 @@
       "afterWrong": 2,
       "text": {
         "ka": "საიდან მოდის #6? სივრცე მეორე მხარესაა.",
-        "en": "Where is their #6 coming from? The space is on the other side."
+        "en": "Where is their #6 coming from? The space is on the other side.",
+        "ru": "Откуда идёт их #6? Место на другой стороне."
       }
     }
   ]

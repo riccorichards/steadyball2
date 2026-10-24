@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: წაიყვანე და შეავსე",
-      "en": "Puzzle: pull and fill"
+      "en": "Puzzle: pull and fill",
+      "ru": "Головоломка: уведи и займи"
     },
     "topic": "creating-space",
     "level": "decide",
@@ -297,29 +298,35 @@
   "text": {
     "banner": {
       "ka": "გაათავისუფლე #10 ცენტრში. გადაადგილე 2",
-      "en": "Free #10 in the middle. Move 2 players"
+      "en": "Free #10 in the middle. Move 2 players",
+      "ru": "Освободи #10 в центре. Передвинь 2 игроков"
     },
     "fail": {
       "zone": {
         "ka": "#10 სივრცეში არ არის! ის იქ უნდა იყოს, საიდანაც მცველი წავიდა.",
-        "en": "#10 isn't in the space! He goes where the defender left."
+        "en": "#10 isn't in the space! He goes where the defender left.",
+        "ru": "#10 не в пространстве! Он идёт туда, откуда ушёл защитник."
       },
       "marked": {
         "ka": "#10-ს ისევ მცველი უდგას! ჯერ ის სხვაგან წაიყვანე.",
-        "en": "#10 is still marked! Lead that defender away first."
+        "en": "#10 is still marked! Lead that defender away first.",
+        "ru": "#10 всё ещё под опекой! Сначала уведи того защитника."
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! ბურთს #10-მდე ღია გზა სჭირდება.",
-        "en": "The lane is blocked! The ball needs a clear way to #10."
+        "en": "The lane is blocked! The ball needs a clear way to #10.",
+        "ru": "Линия перекрыта! Мячу нужен свободный путь до #10."
       }
     },
     "success": {
       "ka": "ბრწყინვალეა! #9-მა მცველი წაიყვანა და #10 მის ადგილას შევიდა.",
-      "en": "Brilliant! #9 took the defender and #10 took his place."
+      "en": "Brilliant! #9 took the defender and #10 took his place.",
+      "ru": "Блестяще! #9 увёл защитника, а #10 занял его место."
     },
     "lessonLine": {
       "ka": "ერთი წაიყვანს, მეორე შევა",
-      "en": "One pulls, the other fills"
+      "en": "One pulls, the other fills",
+      "ru": "Один уводит, другой занимает"
     }
   },
   "rewards": {
@@ -330,14 +337,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "ვინ იცავს ცენტრს? ვის მისდევს ის?",
-        "en": "Who guards the middle? Whom does he follow?"
+        "en": "Who guards the middle? Whom does he follow?",
+        "ru": "Кто охраняет центр? За кем он бежит?"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

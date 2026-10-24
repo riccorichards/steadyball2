@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "საპასო სამკუთხედი",
-      "en": "Passing triangle"
+      "en": "Passing triangle",
+      "ru": "Треугольник для паса"
     },
     "topic": "support-angles",
     "level": "decide",
@@ -279,41 +280,50 @@
   "text": {
     "banner": {
       "ka": "შექმენით სამკუთხედი #6-ის დასახმარებლად",
-      "en": "Make a triangle to help #6"
+      "en": "Make a triangle to help #6",
+      "ru": "Построй треугольник, чтобы помочь #6"
     },
     "hint": {
       "ka": "ორივე მხარეს გაიხსენით, მეტოქეების ხაზს ქვემოთ",
-      "en": "Open up on both sides, below the pressing players"
+      "en": "Open up on both sides, below the pressing players",
+      "ru": "Откройтесь с обеих сторон, ниже прессингующих"
     },
     "fail": {
       "zone8": {
         "ka": "#8, ჩამოდი #6-ის მარჯვნივ",
-        "en": "#8, drop to #6's right"
+        "en": "#8, drop to #6's right",
+        "ru": "#8, опустись справа от #6"
       },
       "zone3": {
         "ka": "#3, შემოდი #6-ის მარცხნივ",
-        "en": "#3, come inside to #6's left"
+        "en": "#3, come inside to #6's left",
+        "ru": "#3, зайди внутрь, слева от #6"
       },
       "lane8": {
         "ka": "#11 ჭრის პასს #8-ისკენ",
-        "en": "#11 cuts the pass to #8"
+        "en": "#11 cuts the pass to #8",
+        "ru": "#11 перекрывает пас на #8"
       },
       "lane3": {
         "ka": "#7 ჭრის პასს #3-ისკენ",
-        "en": "#7 cuts the pass to #3"
+        "en": "#7 cuts the pass to #3",
+        "ru": "#7 перекрывает пас на #3"
       }
     },
     "almost": {
       "ka": "თითქმის! სამკუთხედი თითქმის მზადაა",
-      "en": "Almost! The triangle is nearly there"
+      "en": "Almost! The triangle is nearly there",
+      "ru": "Почти! Треугольник уже почти готов"
     },
     "success": {
       "ka": "სამკუთხედი მზადაა — #6-ს ორი პასი აქვს!",
-      "en": "Triangle ready: #6 has two passes!"
+      "en": "Triangle ready: #6 has two passes!",
+      "ru": "Треугольник готов: у #6 два паса!"
     },
     "lessonLine": {
       "ka": "დაეხმარე პარტნიორს: შექმენი ორი ღია პასი",
-      "en": "Help your teammate: make two open passes"
+      "en": "Help your teammate: make two open passes",
+      "ru": "Помоги партнёру: создай два открытых паса"
     }
   },
   "rewards": {

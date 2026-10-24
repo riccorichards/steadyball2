@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: გაყავი და გადააგდე",
-      "en": "Puzzle: split it, then chip it"
+      "en": "Puzzle: split it, then chip it",
+      "ru": "Головоломка: раздвинь и перебрось"
     },
     "topic": "creating-space",
     "level": "game-speed",
@@ -310,25 +311,30 @@
   "text": {
     "banner": {
       "ka": "გაყავი მათი მაღალი ხაზი შუაზე. 2 სვლა",
-      "en": "Split the middle of their high line. 2 moves"
+      "en": "Split the middle of their high line. 2 moves",
+      "ru": "Раздвинь центр их высокой линии. 2 хода"
     },
     "fail": {
       "gap": {
         "ka": "ცენტრალური მცველები ისევ ახლოს არიან! დაშორე ისინი.",
-        "en": "Their centre-backs are still close! Pull them apart."
+        "en": "Their centre-backs are still close! Pull them apart.",
+        "ru": "Их центральные защитники всё ещё рядом! Растащи их."
       },
       "middle": {
         "ka": "ცენტრში ისევ მცველია! ის ვიღაცას მისდევს.",
-        "en": "A defender is still in the middle! He follows one of ours."
+        "en": "A defender is still in the middle! He follows one of ours.",
+        "ru": "В центре всё ещё защитник! Он бежит за одним из наших."
       }
     },
     "success": {
       "ka": "ცენტრი ღიაა! ახლა გადააგდე ბურთი #7-ის გარბენაში.",
-      "en": "The middle is open! Now chip it into #7's run."
+      "en": "The middle is open! Now chip it into #7's run.",
+      "ru": "Центр открыт! Теперь перебрось на ход #7."
     },
     "lessonLine": {
       "ka": "გაყავი ხაზი, მერე გადააგდე მის უკან",
-      "en": "Split the line, then chip it behind"
+      "en": "Split the line, then chip it behind",
+      "ru": "Раздвинь линию, потом перебрось за спину"
     }
   },
   "rewards": {
@@ -339,14 +345,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "ორივე ცენტრალური მცველი ჩვენს თავდამსხმელებს მისდევს",
-        "en": "Both centre-backs follow our forwards"
+        "en": "Both centre-backs follow our forwards",
+        "ru": "Оба центральных защитника бегут за нашими нападающими"
       }
     },
     {
       "afterWrong": 5,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }
@@ -469,29 +477,35 @@
       "text": {
         "banner": {
           "ka": "გადააგდე ბურთი #7-ის წინ, ხაზის უკან",
-          "en": "Chip the ball ahead of #7, behind the line"
+          "en": "Chip the ball ahead of #7, behind the line",
+          "ru": "Перебрось мяч перед #7, за линию"
         },
         "fail": {
           "cut": {
             "ka": "პასი გადაჭრეს! ბურთი მცველებს გვერდით გაატარე.",
-            "en": "Cut out! Play it past the defenders, not at them."
+            "en": "Cut out! Play it past the defenders, not at them.",
+            "ru": "Перехват! Играй мимо защитников, а не в них."
           },
           "race": {
             "ka": "ვერ მიუსწრო! მიაწოდე იქ, სადაც ის პირველი იქნება.",
-            "en": "He didn't get there first! Play it where he arrives first."
+            "en": "He didn't get there first! Play it where he arrives first.",
+            "ru": "Он не успел первым! Отдай туда, где он будет первым."
           },
           "line": {
             "ka": "ეს მცველების წინაა! მიაწოდე შენ მიერ გახსნილ სივრცეში.",
-            "en": "That's in front of them! Play it into the space you opened."
+            "en": "That's in front of them! Play it into the space you opened.",
+            "ru": "Это перед ними! Отдай в пространство, которое ты открыл."
           },
           "offside": {
             "ka": "ოფსაიდი! გარბენა ხაზიდან უნდა დაიწყოს.",
-            "en": "Offside! The runner must start level with the line."
+            "en": "Offside! The runner must start level with the line.",
+            "ru": "Офсайд! Бегущий должен стартовать на уровне линии."
           }
         },
         "success": {
           "ka": "ზუსტი გადაგდება! #7 ცარიელ ცენტრში გაიჭრა.",
-          "en": "A perfect chip! #7 ran into the empty middle."
+          "en": "A perfect chip! #7 ran into the empty middle.",
+          "ru": "Идеальный заброс! #7 вбежал в пустой центр."
         }
       },
       "hints": [
@@ -499,14 +513,16 @@
           "afterWrong": 2,
           "text": {
             "ka": "#7 დიაგონალზე გარბის შიგნით. ბურთი მის წინ, მეკარის წინ",
-            "en": "#7 runs inside on a diagonal. Ahead of him, before the keeper"
+            "en": "#7 runs inside on a diagonal. Ahead of him, before the keeper",
+            "ru": "#7 бежит внутрь по диагонали. Перед ним, до вратаря"
           }
         },
         {
           "afterWrong": 4,
           "text": {
             "ka": "ნახე ამოხსნა",
-            "en": "Watch the answer"
+            "en": "Watch the answer",
+            "ru": "Смотри ответ"
           },
           "ghost": true
         }

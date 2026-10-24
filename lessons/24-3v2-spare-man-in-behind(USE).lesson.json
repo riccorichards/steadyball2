@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავისუფალი გაიჭრა",
-      "en": "The spare man runs in behind"
+      "en": "The spare man runs in behind",
+      "ru": "Лишний игрок убегает за спину"
     },
     "topic": "three-v-two",
     "level": "execute",
@@ -223,29 +224,35 @@
   "text": {
     "banner": {
       "ka": "ორი მცველი ორს იცავს. ვინაა თავისუფალი?",
-      "en": "Two defenders mark two. Who is free?"
+      "en": "Two defenders mark two. Who is free?",
+      "ru": "Двое защитников опекают двоих. Кто свободен?"
     },
     "fail": {
       "cut": {
         "ka": "პასი გადაჭრეს! ბურთი მცველებისგან შორს გაუშვი.",
-        "en": "Cut out! Send the ball away from the defenders."
+        "en": "Cut out! Send the ball away from the defenders.",
+        "ru": "Перехват! Отправь мяч подальше от защитников."
       },
       "race": {
         "ka": "ვერ მიუსწრო! მიაწოდე იქ, სადაც #7 პირველი მივა.",
-        "en": "Too late! Play it where #7 gets there first."
+        "en": "Too late! Play it where #7 gets there first.",
+        "ru": "Поздно! Отдай туда, где #7 будет первым."
       },
       "line": {
         "ka": "ეს მცველების წინაა! მიაწოდე მათ ზურგს უკან.",
-        "en": "That's in front of the defenders! Play it in behind."
+        "en": "That's in front of the defenders! Play it in behind.",
+        "ru": "Это перед защитниками! Отдай за спину."
       }
     },
     "success": {
       "ka": "ბრწყინვალე! #7 თავისუფალი იყო და გაიჭრა.",
-      "en": "Brilliant! #7 was the free man and got in behind."
+      "en": "Brilliant! #7 was the free man and got in behind.",
+      "ru": "Блестяще! #7 был свободен и убежал за спину."
     },
     "lessonLine": {
       "ka": "თავისუფალს — სივრცეში, მის წინ",
-      "en": "Find the spare man in front of him"
+      "en": "Find the spare man in front of him",
+      "ru": "Найди лишнего игрока перед ним"
     }
   },
   "rewards": {
@@ -256,7 +263,8 @@
       "afterWrong": 2,
       "text": {
         "ka": "#9-ს #4 უდგას. ფლანგზე კი?",
-        "en": "#4 is on #9. What about the wing?"
+        "en": "#4 is on #9. What about the wing?",
+        "ru": "#4 на #9. А что на фланге?"
       }
     },
     {

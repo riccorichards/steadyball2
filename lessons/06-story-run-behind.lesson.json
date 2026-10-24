@@ -2,120 +2,527 @@
   "schemaVersion": 1,
   "id": "story-run-behind",
   "meta": {
-    "title": { "ka": "გაიხსენი, მიაწოდე გაჭრილს", "en": "Get open, find the runner" },
+    "title": {
+      "ka": "გაიხსენი, მიაწოდე გაჭრილს",
+      "en": "Get open, find the runner",
+      "ru": "Откройся, найди того, кто бежит"
+    },
     "topic": "build-up-to-goal",
     "level": "execute",
     "difficulty": 26,
     "ageBand": "11-13",
-    "positions": ["MID", "ATT"],
-    "tags": ["fixture", "story", "cinematic"],
+    "positions": [
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "fixture",
+      "story",
+      "cinematic"
+    ],
     "status": "review",
     "source": "coach"
   },
   "scene": {
-    "camera": { "focus": { "x0": 34, "x1": 84, "y0": 24, "y1": 66 } },
+    "camera": {
+      "focus": {
+        "x0": 34,
+        "x1": 84,
+        "y0": 24,
+        "y1": 66
+      }
+    },
     "players": [
-      { "id": "h4", "team": "home", "number": 4, "role": "CB", "at": { "x": 40, "y": 30 }, "facing": 20 },
-      { "id": "h6", "team": "home", "number": 6, "role": "DM", "at": { "x": 50, "y": 42 }, "facing": 0 },
-      { "id": "h8", "team": "home", "number": 8, "role": "CM", "at": { "x": 56, "y": 60 }, "facing": 180, "highlight": true },
-      { "id": "h9", "team": "home", "number": 9, "role": "ST", "at": { "x": 55, "y": 74 }, "facing": 180 },
-      { "id": "a6", "team": "away", "number": 6, "role": "DM", "at": { "x": 52, "y": 52 }, "facing": -170 },
-      { "id": "a4", "team": "away", "number": 4, "role": "CB", "at": { "x": 50, "y": 80 }, "facing": 180, "behaviour": { "kind": "follow", "target": "h9", "gapM": 2, "speedMps": 4.5 } },
-      { "id": "a5", "team": "away", "number": 5, "role": "CB", "at": { "x": 62, "y": 81 }, "facing": 180 },
-      { "id": "a1", "team": "away", "number": 1, "role": "GK", "at": { "x": 50, "y": 97 }, "facing": 180, "isGK": true }
+      {
+        "id": "h4",
+        "team": "home",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 40,
+          "y": 30
+        },
+        "facing": 20
+      },
+      {
+        "id": "h6",
+        "team": "home",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 50,
+          "y": 42
+        },
+        "facing": 0
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 56,
+          "y": 60
+        },
+        "facing": 180,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 55,
+          "y": 74
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 52,
+          "y": 52
+        },
+        "facing": -170
+      },
+      {
+        "id": "a4",
+        "team": "away",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 50,
+          "y": 80
+        },
+        "facing": 180,
+        "behaviour": {
+          "kind": "follow",
+          "target": "h9",
+          "gapM": 2,
+          "speedMps": 4.5
+        }
+      },
+      {
+        "id": "a5",
+        "team": "away",
+        "number": 5,
+        "role": "CB",
+        "at": {
+          "x": 62,
+          "y": 81
+        },
+        "facing": 180
+      },
+      {
+        "id": "a1",
+        "team": "away",
+        "number": 1,
+        "role": "GK",
+        "at": {
+          "x": 50,
+          "y": 97
+        },
+        "facing": 180,
+        "isGK": true
+      }
     ],
-    "ball": { "holder": "h4" }
+    "ball": {
+      "holder": "h4"
+    }
   },
   "intro": {
     "mode": "sequential",
     "steps": [
-      { "kind": "camera", "to": { "x0": 10, "x1": 90, "y0": 20, "y1": 100 }, "ms": 0 },
-      { "kind": "pass", "from": "h4", "to": "h6", "ms": 700 },
-      { "kind": "pass", "from": "h6", "to": "h4", "ms": 700 },
-      { "kind": "camera", "to": { "preset": "focus" }, "ms": 900 },
-      { "kind": "spotlight", "on": { "zone": { "x0": 50, "x1": 84, "y0": 40, "y1": 66 } }, "dim": 0.5, "ms": 500 },
-      { "kind": "pulse", "who": ["h8", "a6"], "ms": 1200 }
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 10,
+          "x1": 90,
+          "y0": 20,
+          "y1": 100
+        },
+        "ms": 0
+      },
+      {
+        "kind": "pass",
+        "from": "h4",
+        "to": "h6",
+        "ms": 700
+      },
+      {
+        "kind": "pass",
+        "from": "h6",
+        "to": "h4",
+        "ms": 700
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "preset": "focus"
+        },
+        "ms": 900
+      },
+      {
+        "kind": "spotlight",
+        "on": {
+          "zone": {
+            "x0": 50,
+            "x1": 84,
+            "y0": 40,
+            "y1": 66
+          }
+        },
+        "dim": 0.5,
+        "ms": 500
+      },
+      {
+        "kind": "pulse",
+        "who": [
+          "h8",
+          "a6"
+        ],
+        "ms": 1200
+      }
     ]
   },
-  "interaction": { "type": "drag", "who": ["h8"], "bounds": { "x0": 50, "x1": 85, "y0": 35, "y1": 70 } },
+  "interaction": {
+    "type": "drag",
+    "who": [
+      "h8"
+    ],
+    "bounds": {
+      "x0": 50,
+      "x1": 85,
+      "y0": 35,
+      "y1": 70
+    }
+  },
   "rules": [
-    { "type": "out_of_shadow", "failKey": "shadow", "params": { "who": "h8", "presser": "a6" } },
-    { "type": "in_zone", "failKey": "zone", "params": { "who": "h8", "zone": { "x0": 64, "x1": 78, "y0": 44, "y1": 56 } } },
-    { "type": "lane_open", "failKey": "lane", "params": { "from": "h4", "to": "h8" } }
+    {
+      "type": "out_of_shadow",
+      "failKey": "shadow",
+      "params": {
+        "who": "h8",
+        "presser": "a6"
+      }
+    },
+    {
+      "type": "in_zone",
+      "failKey": "zone",
+      "params": {
+        "who": "h8",
+        "zone": {
+          "x0": 64,
+          "x1": 78,
+          "y0": 44,
+          "y1": 56
+        }
+      }
+    },
+    {
+      "type": "lane_open",
+      "failKey": "lane",
+      "params": {
+        "from": "h4",
+        "to": "h8"
+      }
+    }
   ],
-  "solution": { "moves": { "h8": { "at": { "x": 70, "y": 50 } } }, "tolerance": { "radiusM": 1.5 } },
+  "solution": {
+    "moves": {
+      "h8": {
+        "at": {
+          "x": 70,
+          "y": 50
+        }
+      }
+    },
+    "tolerance": {
+      "radiusM": 1.5
+    }
+  },
   "hints": [
-    { "afterWrong": 1, "text": { "ka": "გამოდი #6-ის ჩრდილიდან", "en": "Get out of #6's shadow" } },
-    { "afterWrong": 3, "showZones": true, "pulse": ["h8", "a6"], "spotlight": { "zone": { "x0": 52, "x1": 82, "y0": 40, "y1": 64 } } },
-    { "afterWrong": 5, "ghost": true, "text": { "ka": "ნახე, სად უნდა გახვიდე", "en": "Watch where to go" } }
+    {
+      "afterWrong": 1,
+      "text": {
+        "ka": "გამოდი #6-ის ჩრდილიდან",
+        "en": "Get out of #6's shadow",
+        "ru": "Выйди из тени #6"
+      }
+    },
+    {
+      "afterWrong": 3,
+      "showZones": true,
+      "pulse": [
+        "h8",
+        "a6"
+      ],
+      "spotlight": {
+        "zone": {
+          "x0": 52,
+          "x1": 82,
+          "y0": 40,
+          "y1": 64
+        }
+      }
+    },
+    {
+      "afterWrong": 5,
+      "ghost": true,
+      "text": {
+        "ka": "ნახე, სად უნდა გახვიდე",
+        "en": "Watch where to go",
+        "ru": "Смотри, куда идти"
+      }
+    }
   ],
   "outcomes": {
     "success": {
       "mode": "sequential",
       "steps": [
-        { "kind": "pass", "from": "h4", "to": "h8", "ms": 800 },
-        { "kind": "camera", "to": { "x0": 20, "x1": 90, "y0": 36, "y1": 100 }, "ms": 900 },
+        {
+          "kind": "pass",
+          "from": "h4",
+          "to": "h8",
+          "ms": 800
+        },
+        {
+          "kind": "camera",
+          "to": {
+            "x0": 20,
+            "x1": 90,
+            "y0": 36,
+            "y1": 100
+          },
+          "ms": 900
+        },
         {
           "kind": "run_path",
           "who": "h9",
           "path": [
-            { "x": 55, "y": 74 },
-            { "x": 52, "y": 76.5 },
-            { "x": 48, "y": 78.5 },
-            { "x": 44, "y": 80 }
+            {
+              "x": 55,
+              "y": 74
+            },
+            {
+              "x": 52,
+              "y": 76.5
+            },
+            {
+              "x": 48,
+              "y": 78.5
+            },
+            {
+              "x": 44,
+              "y": 80
+            }
           ],
           "ms": 2000
         }
       ]
     },
     "fail": {
-      "default": { "mode": "sequential", "steps": [{ "kind": "pass", "from": "h4", "to": "h8", "ms": 800, "interceptedBy": "a6" }] }
+      "default": {
+        "mode": "sequential",
+        "steps": [
+          {
+            "kind": "pass",
+            "from": "h4",
+            "to": "h8",
+            "ms": 800,
+            "interceptedBy": "a6"
+          }
+        ]
+      }
     }
   },
   "text": {
-    "banner": { "ka": "გაიხსენი, რომ #4-მა ბურთი მოგაწოდოს", "en": "Get open so #4 can pass to you" },
-    "fail": {
-      "shadow": { "ka": "#6 გფარავს — #4 ვერ მოგაწვდის", "en": "#6 is blocking you, so #4 can't pass" },
-      "zone": { "ka": "გადი უფრო ფართოდ, მარჯვნივ", "en": "Go wider, to the right" },
-      "lane": { "ka": "პასის ხაზი დაკეტილია", "en": "The passing lane is closed" }
+    "banner": {
+      "ka": "გაიხსენი, რომ #4-მა ბურთი მოგაწოდოს",
+      "en": "Get open so #4 can pass to you",
+      "ru": "Откройся, чтобы #4 мог дать тебе пас"
     },
-    "success": { "ka": "კარგია! ახლა უყურე #9-ს", "en": "Good! Now watch #9" },
-    "lessonLine": { "ka": "გაიხსენი, მიიღე, მიაწოდე გაჭრილს", "en": "Get open, receive, find the runner" }
+    "fail": {
+      "shadow": {
+        "ka": "#6 გფარავს — #4 ვერ მოგაწვდის",
+        "en": "#6 is blocking you, so #4 can't pass",
+        "ru": "#6 закрывает тебя, и #4 не может отдать пас"
+      },
+      "zone": {
+        "ka": "გადი უფრო ფართოდ, მარჯვნივ",
+        "en": "Go wider, to the right",
+        "ru": "Иди шире, вправо"
+      },
+      "lane": {
+        "ka": "პასის ხაზი დაკეტილია",
+        "en": "The passing lane is closed",
+        "ru": "Линия паса закрыта"
+      }
+    },
+    "success": {
+      "ka": "კარგია! ახლა უყურე #9-ს",
+      "en": "Good! Now watch #9",
+      "ru": "Хорошо! Теперь следи за #9"
+    },
+    "lessonLine": {
+      "ka": "გაიხსენი, მიიღე, მიაწოდე გაჭრილს",
+      "en": "Get open, receive, find the runner",
+      "ru": "Откройся, прими, найди того, кто бежит"
+    }
   },
   "stages": [
     {
       "id": "find-the-runner",
-      "camera": { "focus": { "x0": 36, "x1": 80, "y0": 40, "y1": 88 } },
+      "camera": {
+        "focus": {
+          "x0": 36,
+          "x1": 80,
+          "y0": 40,
+          "y1": 88
+        }
+      },
       "intro": {
         "mode": "sequential",
         "steps": [
-          { "kind": "camera", "to": { "preset": "focus" }, "ms": 700 },
-          { "kind": "pulse", "who": ["h9"], "ms": 1200 },
-          { "kind": "caption", "text": { "ka": "#9 გაიჭრა!", "en": "#9 is in behind!" }, "ms": 1200 }
+          {
+            "kind": "camera",
+            "to": {
+              "preset": "focus"
+            },
+            "ms": 700
+          },
+          {
+            "kind": "pulse",
+            "who": [
+              "h9"
+            ],
+            "ms": 1200
+          },
+          {
+            "kind": "caption",
+            "text": {
+              "ka": "#9 გაიჭრა!",
+              "en": "#9 is in behind!",
+              "ru": "#9 убежал за спину!"
+            },
+            "ms": 1200
+          }
         ]
       },
-      "interaction": { "type": "pass_sequence", "who": ["h9", "h6"] },
-      "rules": [{ "type": "sequence", "failKey": "order", "params": { "order": ["h8", "h9"] } }],
-      "solution": { "sequence": ["h8", "h9"], "tolerance": { "radiusM": 1.5 } },
-      "hints": [{ "afterWrong": 1, "pulse": ["h9"], "text": { "ka": "შეხედე, ვინ გაიჭრა", "en": "Look who ran in behind" } }],
+      "interaction": {
+        "type": "pass_sequence",
+        "who": [
+          "h9",
+          "h6"
+        ]
+      },
+      "rules": [
+        {
+          "type": "sequence",
+          "failKey": "order",
+          "params": {
+            "order": [
+              "h8",
+              "h9"
+            ]
+          }
+        }
+      ],
+      "solution": {
+        "sequence": [
+          "h8",
+          "h9"
+        ],
+        "tolerance": {
+          "radiusM": 1.5
+        }
+      },
+      "hints": [
+        {
+          "afterWrong": 1,
+          "pulse": [
+            "h9"
+          ],
+          "text": {
+            "ka": "შეხედე, ვინ გაიჭრა",
+            "en": "Look who ran in behind",
+            "ru": "Смотри, кто убежал за спину"
+          }
+        }
+      ],
       "outcomes": {
-        "success": { "mode": "sequential", "steps": [{ "kind": "play_answer" }] },
-        "fail": { "default": { "mode": "sequential", "steps": [{ "kind": "play_answer" }] } }
+        "success": {
+          "mode": "sequential",
+          "steps": [
+            {
+              "kind": "play_answer"
+            }
+          ]
+        },
+        "fail": {
+          "default": {
+            "mode": "sequential",
+            "steps": [
+              {
+                "kind": "play_answer"
+              }
+            ]
+          }
+        }
       },
       "text": {
-        "banner": { "ka": "ვის მივაწოდოთ ახლა?", "en": "Who do we pass to now?" },
-        "fail": { "order": { "ka": "#9 გაიჭრა მცველის ზურგს უკან — მას მიეცი", "en": "#9 got in behind the defender, pass to him" } },
-        "success": { "ka": "ზუსტი პასი!", "en": "Perfect pass!" }
+        "banner": {
+          "ka": "ვის მივაწოდოთ ახლა?",
+          "en": "Who do we pass to now?",
+          "ru": "Кому теперь отдаём пас?"
+        },
+        "fail": {
+          "order": {
+            "ka": "#9 გაიჭრა მცველის ზურგს უკან — მას მიეცი",
+            "en": "#9 got in behind the defender, pass to him",
+            "ru": "#9 убежал за спину защитнику, отдай ему"
+          }
+        },
+        "success": {
+          "ka": "ზუსტი პასი!",
+          "en": "Perfect pass!",
+          "ru": "Идеальный пас!"
+        }
       }
     }
   ],
   "finale": {
     "mode": "sequential",
     "steps": [
-      { "kind": "slowmo", "factor": 0.4, "ms": 1500 },
-      { "kind": "camera", "to": { "x0": 30, "x1": 70, "y0": 80, "y1": 100 }, "ms": 900 },
-      { "kind": "shoot", "from": "h9", "target": "goal", "ms": 800, "result": "goal" }
+      {
+        "kind": "slowmo",
+        "factor": 0.4,
+        "ms": 1500
+      },
+      {
+        "kind": "camera",
+        "to": {
+          "x0": 30,
+          "x1": 70,
+          "y0": 80,
+          "y1": 100
+        },
+        "ms": 900
+      },
+      {
+        "kind": "shoot",
+        "from": "h9",
+        "target": "goal",
+        "ms": 800,
+        "result": "goal"
+      }
     ]
   },
-  "rewards": { "xp": 50 }
+  "rewards": {
+    "xp": 50
+  }
 }

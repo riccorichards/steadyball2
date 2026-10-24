@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "გამოდი ჩრდილიდან",
-      "en": "Get out of the shadow"
+      "en": "Get out of the shadow",
+      "ru": "Выйди из тени"
     },
     "topic": "two-v-one",
     "level": "decide",
@@ -219,29 +220,35 @@
   "text": {
     "banner": {
       "ka": "გაიხსენი, რომ #10-მა პასი მოგცეს",
-      "en": "Get open so #10 can pass to you"
+      "en": "Get open so #10 can pass to you",
+      "ru": "Откройся, чтобы #10 мог дать тебе пас"
     },
     "fail": {
       "shadow": {
         "ka": "#5 გფარავს! გამოდი მისი ჩრდილიდან, გვერდზე.",
-        "en": "#5 is blocking you! Step out of his shadow, to the side."
+        "en": "#5 is blocking you! Step out of his shadow, to the side.",
+        "ru": "#5 закрывает тебя! Выйди из его тени в сторону."
       },
       "zone": {
         "ka": "ძალიან ახლოს ან ძალიან შორს ხარ! გადი ფართოდ, #10-ის დონეზე.",
-        "en": "Not there! Go wide, about level with #10."
+        "en": "Not there! Go wide, about level with #10.",
+        "ru": "Не туда! Иди в ширину, примерно на уровень #10."
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! დადექი ისე, რომ #5 შუაში არ იყოს.",
-        "en": "The lane is closed! Stand where #5 isn't in the way."
+        "en": "The lane is closed! Stand where #5 isn't in the way.",
+        "ru": "Линия закрыта! Встань там, где #5 не мешает."
       }
     },
     "success": {
       "ka": "ზუსტად! ახლა #10-ს ორი გზა აქვს: წაიღოს ან მოგცეს.",
-      "en": "Exactly! Now #10 has two choices: carry or pass."
+      "en": "Exactly! Now #10 has two choices: carry or pass.",
+      "ru": "Точно! Теперь у #10 два варианта: вести или пасовать."
     },
     "lessonLine": {
       "ka": "გამოდი ჩრდილიდან, მიეცი პასის გზა",
-      "en": "Leave the shadow, give a passing line"
+      "en": "Leave the shadow, give a passing line",
+      "ru": "Выйди из тени, дай линию для паса"
     }
   },
   "rewards": {
@@ -252,7 +259,8 @@
       "afterWrong": 1,
       "text": {
         "ka": "#5 დგას #10-სა და შენ შორის. გადი გვერდზე.",
-        "en": "#5 stands between #10 and you. Move to the side."
+        "en": "#5 stands between #10 and you. Move to the side.",
+        "ru": "#5 стоит между #10 и тобой. Сместись в сторону."
       }
     },
     {
@@ -267,7 +275,8 @@
       "afterWrong": 5,
       "text": {
         "ka": "ნახე, სად უნდა გახვიდე",
-        "en": "Watch where to go"
+        "en": "Watch where to go",
+        "ru": "Смотри, куда идти"
       },
       "ghost": true
     }

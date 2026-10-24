@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: ერთი მოძრაობა",
-      "en": "Puzzle: one move, two fixes"
+      "en": "Puzzle: one move, two fixes",
+      "ru": "Головоломка: один ход, две проблемы"
     },
     "topic": "free-space",
     "level": "decide",
@@ -301,33 +302,40 @@
   "text": {
     "banner": {
       "ka": "ერთი მოძრაობით გაასწორე ორი პრობლემა",
-      "en": "Fix two problems with 1 move"
+      "en": "Fix two problems with 1 move",
+      "ru": "Реши две проблемы за 1 ход"
     },
     "fail": {
       "hidden": {
         "ka": "ერთი ჯერ კიდევ ჩრდილშია! ვინ იმალება #6-ის უკან?",
-        "en": "Someone is still hidden! Who is behind #6?"
+        "en": "Someone is still hidden! Who is behind #6?",
+        "ru": "Кто-то всё ещё прячется! Кто за спиной #6?"
       },
       "crowded": {
         "ka": "იქ ისევ ორნი ხართ! ერთ-ერთი სხვაგან უნდა წავიდეს.",
-        "en": "Still two of you there! One must go somewhere else."
+        "en": "Still two of you there! One must go somewhere else.",
+        "ru": "Там вас всё ещё двое! Один должен уйти в другое место."
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! #4-ს ღია გზა სჭირდება.",
-        "en": "The lane is closed! #4 needs an open way."
+        "en": "The lane is closed! #4 needs an open way.",
+        "ru": "Линия закрыта! #4 нужен открытый путь."
       },
       "marked": {
         "ka": "მეტოქე ძალიან ახლოსაა! იპოვე ცარიელი ადგილი.",
-        "en": "An opponent is too close! Find an empty spot."
+        "en": "An opponent is too close! Find an empty spot.",
+        "ru": "Соперник слишком близко! Найди пустое место."
       }
     },
     "success": {
       "ka": "ბრწყინვალეა! ერთმა გადაადგილებამ ჩრდილიც მოაგვარა და სიმჭიდროვეც.",
-      "en": "Brilliant! One move fixed the shadow and the crowd."
+      "en": "Brilliant! One move fixed the shadow and the crowd.",
+      "ru": "Блестяще! Один ход убрал и тень, и тесноту."
     },
     "lessonLine": {
       "ka": "სწორი მოთამაშე, სწორი სივრცე",
-      "en": "The right player into the right space"
+      "en": "The right player into the right space",
+      "ru": "Нужный игрок — в нужное место"
     }
   },
   "rewards": {
@@ -338,14 +346,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "ერთი მოთამაშე ჩრდილშიცაა და მეგობართანაც ზედმეტად ახლოს",
-        "en": "One player is hidden AND too close to a teammate"
+        "en": "One player is hidden AND too close to a teammate",
+        "ru": "Один игрок спрятался И стоит слишком близко к партнёру"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

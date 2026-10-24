@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "რკალისებური გარბენა",
-      "en": "Bend the run, stay onside"
+      "en": "Bend the run, stay onside",
+      "ru": "Изогни рывок, останься в игре"
     },
     "topic": "runs-in-behind",
     "level": "execute",
@@ -287,37 +288,45 @@
   "text": {
     "banner": {
       "ka": "გაიქეცი რკალით, რომ ოფსაიდში არ აღმოჩნდე",
-      "en": "Bend your run to stay onside"
+      "en": "Bend your run to stay onside",
+      "ru": "Изогни рывок, чтобы не попасть в офсайд"
     },
     "hint": {
       "ka": "ჯერ ხაზის გასწვრივ, მერე — მცველების ზურგს უკან",
-      "en": "First along the line, then in behind"
+      "en": "First along the line, then in behind",
+      "ru": "Сначала вдоль линии, потом за спину"
     },
     "fail": {
       "offside": {
         "ka": "ოფსაიდი! ჯერ ხაზის გასწვრივ გაიქეცი",
-        "en": "Offside! Run along the line first"
+        "en": "Offside! Run along the line first",
+        "ru": "Офсайд! Сначала беги вдоль линии"
       },
       "blocked": {
         "ka": "მცველს ძალიან ახლოს ჩაურბინე",
-        "en": "You ran too close to a defender"
+        "en": "You ran too close to a defender",
+        "ru": "Ты пробежал слишком близко к защитнику"
       },
       "zone": {
         "ka": "გაიჭერი მცველების ზურგს უკან",
-        "en": "Break in behind the defenders"
+        "en": "Break in behind the defenders",
+        "ru": "Врывайся за спину защитникам"
       }
     },
     "almost": {
       "ka": "თითქმის! კარგი გარბენაა",
-      "en": "Almost! Good run"
+      "en": "Almost! Good run",
+      "ru": "Почти! Хороший рывок"
     },
     "success": {
       "ka": "ზუსტი გარბენა! ოფსაიდი არ არის",
-      "en": "Perfect run, no offside!"
+      "en": "Perfect run, no offside!",
+      "ru": "Идеальный рывок, без офсайда!"
     },
     "lessonLine": {
       "ka": "მოხარე გარბენა — დარჩი ხაზზე, სანამ პასი მოვა",
-      "en": "Bend the run: stay level until the pass comes"
+      "en": "Bend the run: stay level until the pass comes",
+      "ru": "Изогни рывок: держись на линии, пока не придёт пас"
     }
   },
   "rewards": {

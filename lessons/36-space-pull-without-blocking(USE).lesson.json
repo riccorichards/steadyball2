@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: წაიყვანე, ხაზი არ დაკეტო",
-      "en": "Puzzle: pull, don't block"
+      "en": "Puzzle: pull, don't block",
+      "ru": "Головоломка: уведи, но не перекрой"
     },
     "topic": "creating-space",
     "level": "execute",
@@ -335,33 +336,40 @@
   "text": {
     "banner": {
       "ka": "#10-ს ცენტრში სივრცე უნდა. გადაადგილე 2. ფრთხილად!",
-      "en": "#10 needs space in the middle. Move 2. Careful!"
+      "en": "#10 needs space in the middle. Move 2. Careful!",
+      "ru": "#10 нужно место в центре. Передвинь 2. Осторожно!"
     },
     "fail": {
       "zone": {
         "ka": "#10 სივრცეში არ არის! ის იქ უნდა იყოს, საიდანაც მცველი წავიდა.",
-        "en": "#10 isn't in the space! He goes where the defender left."
+        "en": "#10 isn't in the space! He goes where the defender left.",
+        "ru": "#10 не в пространстве! Он идёт туда, откуда ушёл защитник."
       },
       "marked": {
         "ka": "#10-ს ისევ მცველი უდგას! ჯერ ის სხვაგან წაიყვანე.",
-        "en": "#10 is still marked! Lead that defender away first."
+        "en": "#10 is still marked! Lead that defender away first.",
+        "ru": "#10 всё ещё под опекой! Сначала уведи того защитника."
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! ბურთს #10-მდე ღია გზა სჭირდება.",
-        "en": "The lane is blocked! The ball needs a clear way to #10."
+        "en": "The lane is blocked! The ball needs a clear way to #10.",
+        "ru": "Линия перекрыта! Мячу нужен свободный путь до #10."
       },
       "gap": {
         "ka": "მცველები ისევ ერთად დგანან! დაშორე ისინი ერთმანეთს.",
-        "en": "The defenders are still together! Pull them apart."
+        "en": "The defenders are still together! Pull them apart.",
+        "ru": "Защитники всё ещё вместе! Растащи их."
       }
     },
     "success": {
       "ka": "ზუსტია! მცველი გვერდზე წაიყვანე, ხაზი ღია დარჩა.",
-      "en": "Spot on! You took the defender wide and kept the lane open."
+      "en": "Spot on! You took the defender wide and kept the lane open.",
+      "ru": "В точку! Ты увёл защитника в ширину и не закрыл линию."
     },
     "lessonLine": {
       "ka": "მეტოქე სივრციდანაც წაიყვანე და ხაზიდანაც",
-      "en": "Pull them out of the space and the lane"
+      "en": "Pull them out of the space and the lane",
+      "ru": "Уведи их из пространства и с линии паса"
     }
   },
   "rewards": {
@@ -372,14 +380,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "ვინც გაჰყვება, ხაზზე არ უნდა გადაკვეთოს",
-        "en": "Whoever follows must not cross the passing lane"
+        "en": "Whoever follows must not cross the passing lane",
+        "ru": "Тот, кто бежит следом, не должен пересечь линию паса"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

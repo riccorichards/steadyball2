@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "გაუხსენი ფლანგი",
-      "en": "Open the wing"
+      "en": "Open the wing",
+      "ru": "Открой фланг"
     },
     "topic": "creating-space",
     "level": "decide",
@@ -287,21 +288,25 @@
   "text": {
     "banner": {
       "ka": "გაუხსენი ფლანგი #2-ს. წაიყვანე #7",
-      "en": "Open the wing for #2: move #7"
+      "en": "Open the wing for #2: move #7",
+      "ru": "Открой фланг для #2: передвинь #7"
     },
     "fail": {
       "wingFull": {
         "ka": "ფლანგზე ისევ მცველია! #7 შიგნით წაიყვანე, #3 გაჰყვება.",
-        "en": "There's still a defender on the wing! Take #7 inside, #3 will follow."
+        "en": "There's still a defender on the wing! Take #7 inside, #3 will follow.",
+        "ru": "На фланге всё ещё защитник! Уведи #7 внутрь, #3 пойдёт за ним."
       }
     },
     "success": {
       "ka": "შესანიშნავია! #3 შიგნით გაჰყვა და #2-ს მთელი ფლანგი დარჩა.",
-      "en": "Great! #3 went inside and #2 had the whole wing."
+      "en": "Great! #3 went inside and #2 had the whole wing.",
+      "ru": "Отлично! #3 ушёл внутрь, и у #2 весь фланг."
     },
     "lessonLine": {
       "ka": "შიგნით გაიქეცი, ფლანგი გაუხსენი",
-      "en": "Run inside to open the wing"
+      "en": "Run inside to open the wing",
+      "ru": "Беги внутрь, чтобы открыть фланг"
     }
   },
   "rewards": {
@@ -312,14 +317,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "#3 #7-ს მისდევს. თუ #7 შიგნით წავა?",
-        "en": "#3 follows #7. What if #7 goes inside?"
+        "en": "#3 follows #7. What if #7 goes inside?",
+        "ru": "#3 бежит за #7. А если #7 уйдёт внутрь?"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე, სად წაიყვანო",
-        "en": "Watch where to take him"
+        "en": "Watch where to take him",
+        "ru": "Смотри, куда его увести"
       },
       "ghost": true
     }

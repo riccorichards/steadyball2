@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: ვინ იმალება?",
-      "en": "Puzzle: who is hidden?"
+      "en": "Puzzle: who is hidden?",
+      "ru": "Головоломка: кто спрятался?"
     },
     "topic": "free-space",
     "level": "decide",
@@ -265,29 +266,35 @@
   "text": {
     "banner": {
       "ka": "#4-ს ორი თავისუფალი პასი უნდა. გადაადგილე 1",
-      "en": "Give #4 two free passes. Move 1 player"
+      "en": "Give #4 two free passes. Move 1 player",
+      "ru": "Дай #4 два свободных паса. Передвинь 1 игрока"
     },
     "fail": {
       "hidden": {
         "ka": "ერთი ჯერ კიდევ ჩრდილშია! ვინ იმალება #6-ის უკან?",
-        "en": "Someone is still hidden! Who is behind #6?"
+        "en": "Someone is still hidden! Who is behind #6?",
+        "ru": "Кто-то всё ещё прячется! Кто за спиной #6?"
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! ორივეს ღია ხაზი სჭირდება.",
-        "en": "A lane is closed! Both need an open line."
+        "en": "A lane is closed! Both need an open line.",
+        "ru": "Линия закрыта! Обоим нужна открытая линия."
       },
       "marked": {
         "ka": "მეტოქე ძალიან ახლოსაა! იპოვე ცარიელი ადგილი.",
-        "en": "An opponent is too close! Find an empty spot."
+        "en": "An opponent is too close! Find an empty spot.",
+        "ru": "Соперник слишком близко! Найди пустое место."
       }
     },
     "success": {
       "ka": "სწორი არჩევანი! ჩრდილიდან ის გამოვიდა, ვინც იქ იმალებოდა.",
-      "en": "Right choice! The hidden player stepped out."
+      "en": "Right choice! The hidden player stepped out.",
+      "ru": "Правильный выбор! Спрятавшийся игрок вышел."
     },
     "lessonLine": {
       "ka": "ჩრდილში მყოფი უნდა გამოვიდეს",
-      "en": "The hidden player must move"
+      "en": "The hidden player must move",
+      "ru": "Спрятавшийся игрок должен сдвинуться"
     }
   },
   "rewards": {
@@ -298,14 +305,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "გაავლე ხაზი ბურთიდან #6-ზე. ვინ დგას მის უკან?",
-        "en": "Draw a line from the ball through #6. Who is behind?"
+        "en": "Draw a line from the ball through #6. Who is behind?",
+        "ru": "Проведи линию от мяча через #6. Кто за ним?"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: ვინ არის დაფარული?",
-      "en": "Puzzle: who is marked?"
+      "en": "Puzzle: who is marked?",
+      "ru": "Головоломка: кто под опекой?"
     },
     "topic": "free-space",
     "level": "decide",
@@ -291,25 +292,30 @@
   "text": {
     "banner": {
       "ka": "სამივე თავისუფალი უნდა იყოს. გადაადგილე 1",
-      "en": "All three must be free. Move 1 player"
+      "en": "All three must be free. Move 1 player",
+      "ru": "Все трое должны быть свободны. Передвинь 1 игрока"
     },
     "fail": {
       "marked": {
         "ka": "ერთს ჯერ კიდევ მეტოქე უდგას! ვინ არის დაფარული?",
-        "en": "Someone is still marked! Who has a man on him?"
+        "en": "Someone is still marked! Who has a man on him?",
+        "ru": "Кто-то всё ещё под опекой! У кого соперник рядом?"
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! #6-ს ღია გზა სჭირდება.",
-        "en": "A lane is closed! #6 needs an open way."
+        "en": "A lane is closed! #6 needs an open way.",
+        "ru": "Линия закрыта! #6 нужен открытый путь."
       }
     },
     "success": {
       "ka": "სწორია! #10 მეტოქეს მოშორდა და სამივე თავისუფალია.",
-      "en": "Right! #10 lost his man and all three are free."
+      "en": "Right! #10 lost his man and all three are free.",
+      "ru": "Верно! #10 ушёл от опекуна, и все трое свободны."
     },
     "lessonLine": {
       "ka": "დაფარული მოთამაშე უნდა გაიხსნას",
-      "en": "The marked player must get open"
+      "en": "The marked player must get open",
+      "ru": "Игрок под опекой должен открыться"
     }
   },
   "rewards": {
@@ -320,14 +326,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "ვის უდგას მეტოქე ზურგთან ახლოს?",
-        "en": "Who has an opponent right at his back?"
+        "en": "Who has an opponent right at his back?",
+        "ru": "У кого соперник прямо за спиной?"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

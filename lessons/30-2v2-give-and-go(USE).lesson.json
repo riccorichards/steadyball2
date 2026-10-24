@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "მიეცი და გაიქეცი",
-      "en": "Give and go"
+      "en": "Give and go",
+      "ru": "Отдай и открывайся"
     },
     "topic": "two-v-two",
     "level": "execute",
@@ -238,33 +239,40 @@
   "text": {
     "banner": {
       "ka": "პასი #9-ს მიეცი. ახლა გაიქეცი #6-ის გვერდით!",
-      "en": "You passed to #9. Now run past #6!"
+      "en": "You passed to #9. Now run past #6!",
+      "ru": "Ты отдал на #9. Теперь беги мимо #6!"
     },
     "hint": {
       "ka": "#6 ბურთს უყურებს და შენ გავიწყდება.",
-      "en": "Their #6 watches the ball and forgets you."
+      "en": "Their #6 watches the ball and forgets you.",
+      "ru": "Их #6 смотрит на мяч и забывает о тебе."
     },
     "fail": {
       "offside": {
         "ka": "ოფსაიდი! #4-ზე წინ ნუ გაიქცევი, სანამ პასი მოვა.",
-        "en": "Offside! Don't get past #4 before the pass comes."
+        "en": "Offside! Don't get past #4 before the pass comes.",
+        "ru": "Офсайд! Не убегай дальше #4 до паса."
       },
       "blocked": {
         "ka": "#6-ს დაეჯახე! შემოურბინე გვერდიდან.",
-        "en": "You ran into #6! Go round him."
+        "en": "You ran into #6! Go round him.",
+        "ru": "Ты врезался в #6! Обеги его."
       },
       "zone": {
         "ka": "#6-ის უკან უნდა აღმოჩნდე! გაიქეცი წინ.",
-        "en": "You must end up behind #6! Keep running forward."
+        "en": "You must end up behind #6! Keep running forward.",
+        "ru": "Ты должен оказаться за спиной #6! Беги вперёд."
       }
     },
     "success": {
       "ka": "ყოჩაღ! მიეცი, გაიქეცი და ბურთი ისევ შენთანაა.",
-      "en": "Well done! Give, go, and the ball is back with you."
+      "en": "Well done! Give, go, and the ball is back with you.",
+      "ru": "Молодец! Отдал, открылся, и мяч снова у тебя."
     },
     "lessonLine": {
       "ka": "მიეცი და მაშინვე გაიქეცი",
-      "en": "Pass, then run straight away"
+      "en": "Pass, then run straight away",
+      "ru": "Отдай пас и сразу беги"
     }
   },
   "rewards": {
@@ -275,7 +283,8 @@
       "afterWrong": 1,
       "text": {
         "ka": "#6 პირდაპირ შენ წინაა. შემოუარე.",
-        "en": "#6 is right in front of you. Go round him."
+        "en": "#6 is right in front of you. Go round him.",
+        "ru": "#6 прямо перед тобой. Обеги его."
       }
     },
     {
@@ -289,7 +298,8 @@
       "afterWrong": 5,
       "text": {
         "ka": "ნახე გარბენა",
-        "en": "Watch the run"
+        "en": "Watch the run",
+        "ru": "Смотри на рывок"
       },
       "ghost": true
     }

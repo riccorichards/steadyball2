@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: წაიყვანე ნახევარმცველი",
-      "en": "Puzzle: pull the midfielder"
+      "en": "Puzzle: pull the midfielder",
+      "ru": "Головоломка: уведи полузащитника"
     },
     "topic": "creating-space",
     "level": "decide",
@@ -306,29 +307,35 @@
   "text": {
     "banner": {
       "ka": "გაათავისუფლე სივრცე #6-ის ადგილას. გადაადგილე 2",
-      "en": "Free the space where #6 stands. Move 2"
+      "en": "Free the space where #6 stands. Move 2",
+      "ru": "Освободи место, где стоит #6. 2 хода"
     },
     "fail": {
       "zone": {
         "ka": "#10 სივრცეში არ არის! ჩამოვიდეს იქ, სადაც #6 იდგა.",
-        "en": "#10 isn't in the space! He drops to where #6 stood."
+        "en": "#10 isn't in the space! He drops to where #6 stood.",
+        "ru": "#10 не в пространстве! Он опускается туда, где стоял #6."
       },
       "marked": {
         "ka": "#10-ს #6 უდგას! ჯერ #6 სხვაგან წაიყვანე.",
-        "en": "#6 is on #10! Lead #6 somewhere else first."
+        "en": "#6 is on #10! Lead #6 somewhere else first.",
+        "ru": "#6 на #10! Сначала уведи #6 в другое место."
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! #4-ს ღია გზა სჭირდება.",
-        "en": "The lane is blocked! #4 needs a clear way."
+        "en": "The lane is blocked! #4 needs a clear way.",
+        "ru": "Линия перекрыта! #4 нужен свободный путь."
       }
     },
     "success": {
       "ka": "შესანიშნავია! #8-მა #6 წაიყვანა და #10 ცარიელ ადგილას ჩამოვიდა.",
-      "en": "Great! #8 took #6 away and #10 dropped into the gap."
+      "en": "Great! #8 took #6 away and #10 dropped into the gap.",
+      "ru": "Отлично! #8 увёл #6, и #10 опустился в щель."
     },
     "lessonLine": {
       "ka": "ნახევარმცველიც შეიძლება წაიყვანო",
-      "en": "You can pull a midfielder too"
+      "en": "You can pull a midfielder too",
+      "ru": "Можно увести и полузащитника"
     }
   },
   "rewards": {
@@ -339,14 +346,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "#6 ვის მისდევს? სად წაიყვან მას?",
-        "en": "Whom does #6 follow? Where can you take him?"
+        "en": "Whom does #6 follow? Where can you take him?",
+        "ru": "За кем бежит #6? Куда ты его уведёшь?"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

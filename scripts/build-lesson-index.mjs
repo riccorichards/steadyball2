@@ -10,6 +10,7 @@ const files = readdirSync(dir).filter((f) => f.endsWith(".lesson.json")).sort();
 
 const ids = new Set();
 const meta = [];
+const missingRu = [];
 let broken = 0;
 for (const f of files) {
   let raw;
@@ -31,7 +32,15 @@ for (const f of files) {
     broken++;
   }
   ids.add(r.value.id);
-  meta.push({ id: r.value.id, title_ka: r.value.meta.title.ka ?? r.value.meta.title.en ?? r.value.id, title_en: r.value.meta.title.en ?? r.value.meta.title.ka ?? r.value.id });
+  const t = r.value.meta.title;
+  if (!t.ru) missingRu.push(f);
+  meta.push({
+    id: r.value.id,
+    title: { ka: t.ka ?? t.en ?? r.value.id, en: t.en ?? t.ka ?? r.value.id, ru: t.ru ?? t.en ?? t.ka ?? r.value.id },
+    topic: r.value.meta.topic,
+    level: r.value.meta.level,
+    difficulty: r.value.meta.difficulty,
+  });
 }
 if (broken) {
   console.error(`\n${broken} lesson file(s) need fixing (open them in the Studio, fix, export again).`);
@@ -44,8 +53,9 @@ writeFileSync(
   new URL("index.ts", dir),
   [
     ...head,
-    "/** Lessons in play order: id and titles. */",
-    `export const LESSON_META: { id: string; title_ka: string; title_en: string }[] = ${JSON.stringify(meta, null, 2)};`,
+    "/** Lessons in play order: id, titles (ka / en / ru), topic, level, difficulty. */",
+    "export interface LessonMeta { id: string; title: { ka: string; en: string; ru: string }; topic: string; level: string; difficulty: number }",
+    `export const LESSON_META: LessonMeta[] = ${JSON.stringify(meta, null, 2)};`,
     "",
   ].join("\n"),
 );
@@ -61,4 +71,7 @@ writeFileSync(
     "",
   ].join("\n"),
 );
+if (missingRu.length) {
+  console.warn(`! ${missingRu.length} lesson(s) have no Russian text yet; Russian players see English there:\n    ${missingRu.join("\n    ")}`);
+}
 console.log(`✓ ${files.length} lesson(s)`);
