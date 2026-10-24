@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "ფინალური თავსატეხი: პასი და გარბენა",
-      "en": "Final puzzle: pass and run"
+      "en": "Final puzzle: pass and run",
+      "ru": "Финальная головоломка: пас и рывок"
     },
     "topic": "combination",
     "level": "game-speed",
@@ -214,21 +215,25 @@
   "text": {
     "banner": {
       "ka": "მიიტანე ბურთი #10-მდე",
-      "en": "Get the ball to #10"
+      "en": "Get the ball to #10",
+      "ru": "Доставь мяч #10"
     },
     "fail": {
       "order": {
         "ka": "პასი გადაჭრეს! #6 პირდაპირ გზას კეტავს.",
-        "en": "Cut out! Their #6 blocks the direct way."
+        "en": "Cut out! Their #6 blocks the direct way.",
+        "ru": "Перехват! Их #6 закрывает прямой путь."
       }
     },
     "success": {
       "ka": "კარგია! #10 შემობრუნდა. ახლა #9...",
-      "en": "Good! #10 has turned. Now #9..."
+      "en": "Good! #10 has turned. Now #9...",
+      "ru": "Хорошо! #10 развернулся. Теперь #9..."
     },
     "lessonLine": {
       "ka": "ჯერ მესამე მოთამაშე, მერე გარბენა",
-      "en": "Third man first, then the run"
+      "en": "Third man first, then the run",
+      "ru": "Сначала третий игрок, потом рывок"
     }
   },
   "rewards": {
@@ -239,7 +244,8 @@
       "afterWrong": 2,
       "text": {
         "ka": "პირდაპირ ვერ გახვალ. ვინ დაგეხმარება?",
-        "en": "You can't go direct. Who can help?"
+        "en": "You can't go direct. Who can help?",
+        "ru": "Напрямую нельзя. Кто поможет?"
       }
     },
     {
@@ -247,7 +253,8 @@
       "ghost": true,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       }
     }
   ],
@@ -386,25 +393,30 @@
       "text": {
         "banner": {
           "ka": "დახატე #9-ის გარბენა კარისკენ",
-          "en": "Draw #9's run towards goal"
+          "en": "Draw #9's run towards goal",
+          "ru": "Нарисуй рывок #9 к воротам"
         },
         "fail": {
           "offside": {
             "ka": "ოფსაიდი! პასამდე #4-ის დონეზე დარჩი.",
-            "en": "Offside! Stay level with #4 until the pass."
+            "en": "Offside! Stay level with #4 until the pass.",
+            "ru": "Офсайд! Держись на уровне #4 до паса."
           },
           "blocked": {
             "ka": "#4-ს დაეჯახე! შემოუარე მას.",
-            "en": "You ran into #4! Go round him."
+            "en": "You ran into #4! Go round him.",
+            "ru": "Ты врезался в #4! Обеги его."
           },
           "zone": {
             "ka": "კარს ვერ მიუახლოვდი! დაასრულე საჯარიმოში.",
-            "en": "Not close enough! Finish inside the box."
+            "en": "Not close enough! Finish inside the box.",
+            "ru": "Недостаточно близко! Закончи в штрафной."
           }
         },
         "success": {
           "ka": "ზუსტად! #9 მარტოა მეკარესთან.",
-          "en": "Exactly! #9 is one-on-one with the keeper."
+          "en": "Exactly! #9 is one-on-one with the keeper.",
+          "ru": "Точно! #9 один на один с вратарём."
         }
       },
       "hints": [
@@ -412,7 +424,8 @@
           "afterWrong": 2,
           "text": {
             "ka": "#4 #9-ის ზურგს უკან დგას. შემოუარე მას შიგნიდან.",
-            "en": "#4 is right behind #9. Go round him on the inside."
+            "en": "#4 is right behind #9. Go round him on the inside.",
+            "ru": "#4 прямо за спиной #9. Обеги его изнутри."
           }
         },
         {
@@ -420,7 +433,8 @@
           "ghost": true,
           "text": {
             "ka": "ნახე გარბენა",
-            "en": "Watch the run"
+            "en": "Watch the run",
+            "ru": "Смотри на рывок"
           }
         }
       ]

@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "სად დავეხმაროთ?",
-      "en": "Where to support?"
+      "en": "Where to support?",
+      "ru": "Где помочь?"
     },
     "topic": "two-v-one",
     "level": "recognize",
@@ -134,7 +135,8 @@
         },
         "label": {
           "ka": "მცველის უკან",
-          "en": "Behind the defender"
+          "en": "Behind the defender",
+          "ru": "За защитником"
         }
       },
       {
@@ -145,7 +147,8 @@
         },
         "label": {
           "ka": "ფართოდ, ოდნავ წინ",
-          "en": "Wide, a bit ahead"
+          "en": "Wide, a bit ahead",
+          "ru": "Широко, чуть впереди"
         }
       },
       {
@@ -156,7 +159,8 @@
         },
         "label": {
           "ka": "#10-ის გვერდით",
-          "en": "Next to #10"
+          "en": "Next to #10",
+          "ru": "Рядом с #10"
         }
       }
     ]
@@ -267,25 +271,30 @@
   "text": {
     "banner": {
       "ka": "სად უნდა წავიდეს #9, რომ #10-ს დაეხმაროს?",
-      "en": "Where should #9 go to help #10?"
+      "en": "Where should #9 go to help #10?",
+      "ru": "Куда должен пойти #9, чтобы помочь #10?"
     },
     "hint": {
       "ka": "ერთ მცველს ერთდროულად ორი მოთამაშის დაფარვა უჭირს.",
-      "en": "One defender can't mark two players far apart."
+      "en": "One defender can't mark two players far apart.",
+      "ru": "Один защитник не может опекать двоих, если они далеко друг от друга."
     },
     "fail": {
       "pick": {
         "ka": "იქიდან ვერ დაეხმარები! გადი ფართოდ, #10-ზე ოდნავ წინ.",
-        "en": "#9 can't help from there! Go wide and a little ahead of #10."
+        "en": "#9 can't help from there! Go wide and a little ahead of #10.",
+        "ru": "Оттуда #9 не поможет! Уходи в ширину и чуть вперёд от #10."
       }
     },
     "success": {
       "ka": "ყოჩაღ! #9 ფართოდაა — ერთი მცველი ორს ვერ დაფარავს.",
-      "en": "Well done! #9 is wide, so one defender can't cover two."
+      "en": "Well done! #9 is wide, so one defender can't cover two.",
+      "ru": "Молодец! #9 широко, и один защитник не закроет двоих."
     },
     "lessonLine": {
       "ka": "დაეხმარე ფართოდ და ოდნავ წინ",
-      "en": "Support wide and a little ahead"
+      "en": "Support wide and a little ahead",
+      "ru": "Помогай в ширину и чуть впереди"
     }
   },
   "rewards": {
@@ -296,7 +305,8 @@
       "afterWrong": 1,
       "text": {
         "ka": "მცველი ერთია. სად ვერ მიგწვდება ის?",
-        "en": "There is only one defender. Where can't he reach you?"
+        "en": "There is only one defender. Where can't he reach you?",
+        "ru": "Защитник только один. Куда он не достанет?"
       }
     },
     {
@@ -317,7 +327,8 @@
       "afterWrong": 5,
       "text": {
         "ka": "ნახე, სად უნდა დადგეს #9",
-        "en": "Watch where #9 should stand"
+        "en": "Watch where #9 should stand",
+        "ru": "Смотри, где должен стоять #9"
       },
       "ghost": true
     }

@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: შემოუარე მცველს",
-      "en": "Puzzle: round the defender"
+      "en": "Puzzle: round the defender",
+      "ru": "Головоломка: обеги защитника"
     },
     "topic": "runs-in-behind",
     "level": "execute",
@@ -311,29 +312,35 @@
   "text": {
     "banner": {
       "ka": "გაიჭერი #4-სა და #5-ს შორის, ოფსაიდის გარეშე",
-      "en": "Run between #4 and #5, and stay onside"
+      "en": "Run between #4 and #5, and stay onside",
+      "ru": "Беги между #4 и #5 и не попади в офсайд"
     },
     "fail": {
       "offside": {
         "ka": "ოფსაიდი! სანამ პასი მოვა, დარჩი მცველების ხაზზე.",
-        "en": "Offside! Stay level with the line until the pass."
+        "en": "Offside! Stay level with the line until the pass.",
+        "ru": "Офсайд! Держись на уровне линии до паса."
       },
       "blocked": {
         "ka": "მცველს ძალიან ახლოს ჩაურბინე! შემოუარე მას.",
-        "en": "You ran too close to a defender! Go round him."
+        "en": "You ran too close to a defender! Go round him.",
+        "ru": "Ты пробежал слишком близко к защитнику! Обеги его."
       },
       "zone": {
         "ka": "ხვრელში ვერ მოხვდი! დაასრულე #4-სა და #5-ს შორის, მათ უკან.",
-        "en": "Not in the gap! Finish between #4 and #5, behind them."
+        "en": "Not in the gap! Finish between #4 and #5, behind them.",
+        "ru": "Не в щели! Закончи между #4 и #5, за их спиной."
       }
     },
     "success": {
       "ka": "შესანიშნავია! მცველს შემოუარე და ხვრელში გაიჭერი.",
-      "en": "Great! You went round the defender and into the gap."
+      "en": "Great! You went round the defender and into the gap.",
+      "ru": "Отлично! Ты обежал защитника и попал в щель."
     },
     "lessonLine": {
       "ka": "შემოუარე მცველს, გაიჭერი ხვრელში",
-      "en": "Go round the defender, into the gap"
+      "en": "Go round the defender, into the gap",
+      "ru": "Обеги защитника, в щель"
     }
   },
   "rewards": {
@@ -344,14 +351,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "#4 გზაზე დგას. ჯერ მის წინ გაიარე, მერე გაიჭერი",
-        "en": "#4 is in the way. Pass in front of him, then go"
+        "en": "#4 is in the way. Pass in front of him, then go",
+        "ru": "#4 мешает. Пробеги перед ним, потом вперёд"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

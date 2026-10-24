@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: მოხარე გარბენა",
-      "en": "Puzzle: bend the run"
+      "en": "Puzzle: bend the run",
+      "ru": "Головоломка: изогни рывок"
     },
     "topic": "two-v-one",
     "level": "execute",
@@ -224,29 +225,35 @@
   "text": {
     "banner": {
       "ka": "დახატე #9-ის გარბენა კარისკენ",
-      "en": "Draw #9's run to goal"
+      "en": "Draw #9's run to goal",
+      "ru": "Нарисуй рывок #9 к воротам"
     },
     "fail": {
       "offside": {
         "ka": "ოფსაიდი! პასამდე #5-ის დონეზე დარჩი.",
-        "en": "Offside! Stay level with #5 until the pass."
+        "en": "Offside! Stay level with #5 until the pass.",
+        "ru": "Офсайд! Держись на уровне #5 до паса."
       },
       "blocked": {
         "ka": "მცველს ძალიან ახლოს ჩაურბინე! შემოუარე.",
-        "en": "Too close to the defender! Run round him."
+        "en": "Too close to the defender! Run round him.",
+        "ru": "Слишком близко к защитнику! Обеги его."
       },
       "zone": {
         "ka": "კარს ვერ მიუახლოვდი! დაასრულე #5-ის უკან, ცენტრში.",
-        "en": "Not near goal! Finish behind #5, in the middle."
+        "en": "Not near goal! Finish behind #5, in the middle.",
+        "ru": "Не у ворот! Закончи за спиной #5, по центру."
       }
     },
     "success": {
       "ka": "ბრწყინვალე! ჯერ ხაზის გასწვრივ, მერე ზურგს უკან.",
-      "en": "Brilliant! Along the line first, then in behind."
+      "en": "Brilliant! Along the line first, then in behind.",
+      "ru": "Блестяще! Сначала вдоль линии, потом за спину."
     },
     "lessonLine": {
       "ka": "ჯერ ხაზზე, მერე ზურგს უკან",
-      "en": "First along the line, then in behind"
+      "en": "First along the line, then in behind",
+      "ru": "Сначала вдоль линии, потом за спину"
     }
   },
   "rewards": {
@@ -257,14 +264,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "თუ პირდაპირ გაიქცევი, ოფსაიდში აღმოჩნდები.",
-        "en": "Run straight and you'll be offside."
+        "en": "Run straight and you'll be offside.",
+        "ru": "Побежишь прямо — будет офсайд."
       }
     },
     {
       "afterWrong": 5,
       "text": {
         "ka": "ნახე გარბენა",
-        "en": "Watch the run"
+        "en": "Watch the run",
+        "ru": "Смотри на рывок"
       },
       "ghost": true
     }

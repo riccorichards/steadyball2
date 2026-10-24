@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "გაექეცი მეორე მხარეს",
-      "en": "Escape the other way"
+      "en": "Escape the other way",
+      "ru": "Уйди в другую сторону"
     },
     "topic": "beat-the-press",
     "level": "execute",
@@ -203,25 +204,30 @@
   "text": {
     "banner": {
       "ka": "ორი გიტევს. იპოვე გამოსავალი!",
-      "en": "Two are pressing. Find the way out!"
+      "en": "Two are pressing. Find the way out!",
+      "ru": "Прессингуют двое. Найди выход!"
     },
     "fail": {
       "tackled": {
         "ka": "ბურთი წაგართვეს! ნუ წახვალ მათკენ.",
-        "en": "Tackled! Don't carry it towards them."
+        "en": "Tackled! Don't carry it towards them.",
+        "ru": "Отобрали! Не веди мяч к ним."
       },
       "zone": {
         "ka": "ჯერ კიდევ პრესინგშია! სად არის ცარიელი მხარე?",
-        "en": "Still under pressure! Where is the empty side?"
+        "en": "Still under pressure! Where is the empty side?",
+        "ru": "Всё ещё под давлением! Где пустая сторона?"
       }
     },
     "success": {
       "ka": "მშვენიერია! თავისუფალი მხარე იპოვე.",
-      "en": "Lovely! You found the free side."
+      "en": "Lovely! You found the free side.",
+      "ru": "Здорово! Ты нашёл свободную сторону."
     },
     "lessonLine": {
       "ka": "ნახე, საიდან მოდიან, წადი მეორე მხარეს",
-      "en": "See where they come from, go the other way"
+      "en": "See where they come from, go the other way",
+      "ru": "Смотри, откуда идут, и уходи в другую сторону"
     }
   },
   "rewards": {
@@ -232,7 +238,8 @@
       "afterWrong": 2,
       "text": {
         "ka": "საიდან მოდიან მეტოქეები? წადი საპირისპიროდ.",
-        "en": "Where do they come from? Go the opposite way."
+        "en": "Where do they come from? Go the opposite way.",
+        "ru": "Откуда они идут? Иди в противоположную сторону."
       }
     }
   ]

@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "საპასუხო პასი სივრცეში",
-      "en": "Return pass into space"
+      "en": "Return pass into space",
+      "ru": "Ответный пас в пространство"
     },
     "topic": "two-v-two",
     "level": "execute",
@@ -190,25 +191,30 @@
   "text": {
     "banner": {
       "ka": "#8 მიეცი და გაიქცა. დაუბრუნე სივრცეში!",
-      "en": "#8 gave and went. Return it into space!"
+      "en": "#8 gave and went. Return it into space!",
+      "ru": "#8 отдал и побежал. Верни ему в пространство!"
     },
     "fail": {
       "cut": {
         "ka": "პასი გადაჭრეს! #4-ს ბურთი გვერდით გაუშვი.",
-        "en": "Cut out! Play it past #4, not near him."
+        "en": "Cut out! Play it past #4, not near him.",
+        "ru": "Перехват! Играй мимо #4, не рядом с ним."
       },
       "race": {
         "ka": "#8 ვერ მიუსწრო! მიაწოდე მის წინ, არა ფეხებში.",
-        "en": "#8 didn't get there! Play it ahead of him, not to his feet."
+        "en": "#8 didn't get there! Play it ahead of him, not to his feet.",
+        "ru": "#8 не успел! Отдай перед ним, а не в ноги."
       }
     },
     "success": {
       "ka": "იდეალურია! კედელი გამოვიდა და #8 კარისკენ გარბის.",
-      "en": "Perfect! The one-two worked and #8 is through."
+      "en": "Perfect! The one-two worked and #8 is through.",
+      "ru": "Идеально! Стенка сработала, и #8 вышел один."
     },
     "lessonLine": {
       "ka": "საპასუხო პასი — გამრბენის წინ",
-      "en": "Return pass goes ahead of the runner"
+      "en": "Return pass goes ahead of the runner",
+      "ru": "Ответный пас — перед бегущим"
     }
   },
   "rewards": {
@@ -219,7 +225,8 @@
       "afterWrong": 2,
       "text": {
         "ka": "#8 უკვე გარბის. სად იქნება ერთ წამში?",
-        "en": "#8 is already running. Where will he be in a second?"
+        "en": "#8 is already running. Where will he be in a second?",
+        "ru": "#8 уже бежит. Где он будет через секунду?"
       }
     }
   ]

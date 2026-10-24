@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: გაჭიმე სიგანეში",
-      "en": "Puzzle: stretch it wide"
+      "en": "Puzzle: stretch it wide",
+      "ru": "Головоломка: растяни в ширину"
     },
     "topic": "creating-space",
     "level": "decide",
@@ -286,25 +287,30 @@
   "text": {
     "banner": {
       "ka": "გაჭიმე მათი ხაზი სიგანეში, რომ ცენტრი გაიხსნას. 2",
-      "en": "Stretch their line wide to open the middle. 2"
+      "en": "Stretch their line wide to open the middle. 2",
+      "ru": "Растяни их линию в ширину, чтобы открыть центр. 2"
     },
     "fail": {
       "gap": {
         "ka": "მცველები ისევ ახლოს არიან! გაჭიმე მათი ხაზი.",
-        "en": "The defenders are still close! Stretch their line."
+        "en": "The defenders are still close! Stretch their line.",
+        "ru": "Защитники всё ещё рядом! Растяни их линию."
       },
       "middle": {
         "ka": "ცენტრში ისევ მცველია! ის იქიდან უნდა წაიყვანო.",
-        "en": "There's still a defender in the middle! Lead him out."
+        "en": "There's still a defender in the middle! Lead him out.",
+        "ru": "В центре всё ещё защитник! Уведи его оттуда."
       }
     },
     "success": {
       "ka": "ბრავო! ფლანგებზე გახვედით და ცენტრი ცარიელი დარჩა.",
-      "en": "Bravo! You went wide and the middle was empty."
+      "en": "Bravo! You went wide and the middle was empty.",
+      "ru": "Браво! Вы ушли в ширину, и центр опустел."
     },
     "lessonLine": {
       "ka": "სიგანე ცენტრს ხსნის",
-      "en": "Width opens the middle"
+      "en": "Width opens the middle",
+      "ru": "Ширина открывает центр"
     }
   },
   "rewards": {
@@ -315,14 +321,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "თითოეული მცველი ერთ ჩვენიანს მისდევს. წაიყვანე ფლანგებზე",
-        "en": "Each defender follows one of ours. Take them wide"
+        "en": "Each defender follows one of ours. Take them wide",
+        "ru": "Каждый защитник бежит за одним из наших. Уведи их в ширину"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

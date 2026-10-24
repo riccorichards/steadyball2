@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: გახსენი და გამოიყენე",
-      "en": "Puzzle: open it, use it"
+      "en": "Puzzle: open it, use it",
+      "ru": "Головоломка: открой и используй"
     },
     "topic": "creating-space",
     "level": "execute",
@@ -256,21 +257,25 @@
   "text": {
     "banner": {
       "ka": "ჯერ გახსენი ხვრელი #10-ის წინ. 1 სვლა",
-      "en": "First open a gap in front of #10. 1 move"
+      "en": "First open a gap in front of #10. 1 move",
+      "ru": "Сначала открой щель перед #10. 1 ход"
     },
     "fail": {
       "gap": {
         "ka": "მცველები ისევ ერთად არიან! ერთ-ერთი სხვაგან წაიყვანე.",
-        "en": "The defenders are still together! Lead one of them away."
+        "en": "The defenders are still together! Lead one of them away.",
+        "ru": "Защитники всё ещё вместе! Уведи одного из них."
       }
     },
     "success": {
       "ka": "ხვრელი გაიხსნა! ახლა ბურთი იქ მიაწოდე.",
-      "en": "The gap is open! Now play the ball into it."
+      "en": "The gap is open! Now play the ball into it.",
+      "ru": "Щель открыта! Теперь отдай мяч в неё."
     },
     "lessonLine": {
       "ka": "ჯერ შექმენი სივრცე, მერე გამოიყენე",
-      "en": "Create the space, then use it"
+      "en": "Create the space, then use it",
+      "ru": "Создай пространство, потом используй его"
     }
   },
   "rewards": {
@@ -281,14 +286,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "ვის მისდევს #4? სად წაიყვანო?",
-        "en": "Whom does #4 follow? Where could you lead him?"
+        "en": "Whom does #4 follow? Where could you lead him?",
+        "ru": "За кем бежит #4? Куда его можно увести?"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }
@@ -324,7 +331,8 @@
             "kind": "caption",
             "text": {
               "ka": "ახლა გამოიყენე!",
-              "en": "Now use it!"
+              "en": "Now use it!",
+              "ru": "Теперь используй!"
             },
             "ms": 1000
           }
@@ -409,29 +417,35 @@
       "text": {
         "banner": {
           "ka": "მიაწოდე #10-ს ხვრელში, მცველების უკან",
-          "en": "Play #10 into the gap behind them"
+          "en": "Play #10 into the gap behind them",
+          "ru": "Отдай #10 в щель за их спину"
         },
         "fail": {
           "cut": {
             "ka": "პასი გადაჭრეს! ბურთი მცველებს გვერდით გაატარე.",
-            "en": "Cut out! Play it past the defenders, not at them."
+            "en": "Cut out! Play it past the defenders, not at them.",
+            "ru": "Перехват! Играй мимо защитников, а не в них."
           },
           "race": {
             "ka": "ვერ მიუსწრო! მიაწოდე იქ, სადაც ის პირველი იქნება.",
-            "en": "He didn't get there first! Play it where he arrives first."
+            "en": "He didn't get there first! Play it where he arrives first.",
+            "ru": "Он не успел первым! Отдай туда, где он будет первым."
           },
           "line": {
             "ka": "ეს მცველების წინაა! მიაწოდე შენ მიერ გახსნილ სივრცეში.",
-            "en": "That's in front of them! Play it into the space you opened."
+            "en": "That's in front of them! Play it into the space you opened.",
+            "ru": "Это перед ними! Отдай в пространство, которое ты открыл."
           },
           "offside": {
             "ka": "ოფსაიდი! გარბენა ხაზიდან უნდა დაიწყოს.",
-            "en": "Offside! The runner must start level with the line."
+            "en": "Offside! The runner must start level with the line.",
+            "ru": "Офсайд! Бегущий должен стартовать на уровне линии."
           }
         },
         "success": {
           "ka": "ზუსტია! შექმენი სივრცე და გამოიყენე.",
-          "en": "Spot on! You made the space and used it."
+          "en": "Spot on! You made the space and used it.",
+          "ru": "В точку! Ты создал пространство и использовал его."
         }
       },
       "hints": [
@@ -439,14 +453,16 @@
           "afterWrong": 2,
           "text": {
             "ka": "ხვრელი #5-ის მარცხნივაა. #10 იქ პირველი მივა",
-            "en": "The gap is left of #5. #10 gets there first"
+            "en": "The gap is left of #5. #10 gets there first",
+            "ru": "Щель слева от #5. #10 будет там первым"
           }
         },
         {
           "afterWrong": 4,
           "text": {
             "ka": "ნახე ამოხსნა",
-            "en": "Watch the answer"
+            "en": "Watch the answer",
+            "ru": "Смотри ответ"
           },
           "ghost": true
         }

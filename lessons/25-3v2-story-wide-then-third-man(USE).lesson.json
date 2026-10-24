@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "გაფართოვდი, მერე მესამე",
-      "en": "Go wide, then the third man"
+      "en": "Go wide, then the third man",
+      "ru": "В ширину, потом третий игрок"
     },
     "topic": "three-v-two",
     "level": "execute",
@@ -271,29 +272,35 @@
   "text": {
     "banner": {
       "ka": "#7, გაიხსენი #8-ისთვის",
-      "en": "#7, get open for #8"
+      "en": "#7, get open for #8",
+      "ru": "#7, откройся для #8"
     },
     "fail": {
       "shadow": {
         "ka": "#6 გფარავს! გადი ფართოდ.",
-        "en": "Their #6 hides you! Go wide."
+        "en": "Their #6 hides you! Go wide.",
+        "ru": "Их #6 закрывает тебя! Уходи в ширину."
       },
       "zone": {
         "ka": "ჯერ არა! დადექი მარჯვნივ, ფართოდ.",
-        "en": "Not there! Stand wide on the right."
+        "en": "Not there! Stand wide on the right.",
+        "ru": "Не туда! Встань широко справа."
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! #8-ს გზა უნდა ჰქონდეს.",
-        "en": "The lane is closed! #8 needs a clear line."
+        "en": "The lane is closed! #8 needs a clear line.",
+        "ru": "Линия закрыта! #8 нужна свободная линия."
       }
     },
     "success": {
       "ka": "კარგია! ბურთი შენთანაა. #5 გიახლოვდება...",
-      "en": "Good! You have it. #5 is coming..."
+      "en": "Good! You have it. #5 is coming...",
+      "ru": "Хорошо! Мяч у тебя. #5 уже бежит..."
     },
     "lessonLine": {
       "ka": "სიგანე, მერე მესამე მოთამაშე",
-      "en": "Width first, then the third man"
+      "en": "Width first, then the third man",
+      "ru": "Сначала ширина, потом третий игрок"
     }
   },
   "rewards": {
@@ -304,7 +311,8 @@
       "afterWrong": 2,
       "text": {
         "ka": "#6-ის ჩრდილიდან გამოდი.",
-        "en": "Step out of their #6's shadow."
+        "en": "Step out of their #6's shadow.",
+        "ru": "Выйди из тени их #6."
       }
     },
     {
@@ -418,17 +426,20 @@
       "text": {
         "banner": {
           "ka": "#5 გიტევს. როგორ მივიდეს ბურთი #9-მდე?",
-          "en": "#5 presses you. How does the ball reach #9?"
+          "en": "#5 presses you. How does the ball reach #9?",
+          "ru": "#5 давит на тебя. Как мяч дойдёт до #9?"
         },
         "fail": {
           "order": {
             "ka": "პასი გადაჭრეს! #6 შუაშია. ჯერ #8-ს დაუბრუნე.",
-            "en": "Cut out! #6 is in the way. Play back to #8 first."
+            "en": "Cut out! #6 is in the way. Play back to #8 first.",
+            "ru": "Перехват! #6 мешает. Сначала назад на #8."
           }
         },
         "success": {
           "ka": "ზუსტად! #8 მესამე მოთამაშეს — #9-ს — პოულობს.",
-          "en": "Exactly! #8 finds the third man, #9."
+          "en": "Exactly! #8 finds the third man, #9.",
+          "ru": "Точно! #8 находит третьего — #9."
         }
       },
       "hints": [
@@ -436,7 +447,8 @@
           "afterWrong": 2,
           "text": {
             "ka": "პირდაპირ პასს #6 კეტავს.",
-            "en": "Their #6 blocks the direct pass."
+            "en": "Their #6 blocks the direct pass.",
+            "ru": "Их #6 закрывает прямой пас."
           }
         }
       ]

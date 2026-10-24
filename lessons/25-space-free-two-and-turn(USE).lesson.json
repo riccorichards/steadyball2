@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: ორი სივრცეში",
-      "en": "Puzzle: two into space"
+      "en": "Puzzle: two into space",
+      "ru": "Головоломка: двое в пространство"
     },
     "topic": "free-space",
     "level": "game-speed",
@@ -400,37 +401,45 @@
   "text": {
     "banner": {
       "ka": "გაათავისუფლე ორი, ერთი კარისკენ შებრუნდეს. 2 სვლა",
-      "en": "Free two, one facing goal. 2 moves"
+      "en": "Free two, one facing goal. 2 moves",
+      "ru": "Освободи двоих, один лицом к воротам. 2 хода"
     },
     "fail": {
       "hidden": {
         "ka": "ერთი ჯერ კიდევ ჩრდილშია! ვინ იმალება #6-ის უკან?",
-        "en": "Someone is still hidden! Who is behind #6?"
+        "en": "Someone is still hidden! Who is behind #6?",
+        "ru": "Кто-то всё ещё прячется! Кто за спиной #6?"
       },
       "zone": {
         "ka": "ის გამოვიდა, მაგრამ სივრცეში არა! მარჯვენა ნახევარსივრცე ცარიელია.",
-        "en": "Out, but not in space! The right half-space is empty."
+        "en": "Out, but not in space! The right half-space is empty.",
+        "ru": "Вышел, но не в пространство! Правый полуфланг пуст."
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! #4-ს ღია გზა სჭირდება.",
-        "en": "A lane is closed! #4 needs an open way."
+        "en": "A lane is closed! #4 needs an open way.",
+        "ru": "Линия закрыта! #4 нужен открытый путь."
       },
       "body": {
         "ka": "ტანი დახურულია! შებრუნდი, რომ ბურთიც და კარიც დაინახო.",
-        "en": "Closed body! Turn so you see the ball and the goal."
+        "en": "Closed body! Turn so you see the ball and the goal.",
+        "ru": "Корпус закрыт! Развернись, чтобы видеть мяч и ворота."
       },
       "marked": {
         "ka": "ფლანგზე ერთს ისევ მეტოქე უდგას! მოაშორე.",
-        "en": "Someone on the wing is still marked! Get him free."
+        "en": "Someone on the wing is still marked! Get him free.",
+        "ru": "Кто-то на фланге всё ещё под опекой! Освободи его."
       }
     },
     "success": {
       "ka": "ჩემპიონის ამოხსნაა! ორივე თავისუფალია და #8 კარს ხედავს.",
-      "en": "A champion's answer! Both free, and #8 sees the goal."
+      "en": "A champion's answer! Both free, and #8 sees the goal.",
+      "ru": "Ответ чемпиона! Оба свободны, и #8 видит ворота."
     },
     "lessonLine": {
       "ka": "სივრცე + ღია ტანი = წინ თამაში",
-      "en": "Space plus an open body: play forward"
+      "en": "Space plus an open body: play forward",
+      "ru": "Пространство и открытый корпус: играй вперёд"
     }
   },
   "rewards": {
@@ -441,14 +450,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "ერთი ჩრდილშია, მეორე ფლანგზე დაფარულია",
-        "en": "One is in a shadow, one is marked on the wing"
+        "en": "One is in a shadow, one is marked on the wing",
+        "ru": "Один в тени, другого опекают на фланге"
       }
     },
     {
       "afterWrong": 5,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

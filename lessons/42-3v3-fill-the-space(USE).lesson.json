@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "შეავსე სივრცე",
-      "en": "Fill the space"
+      "en": "Fill the space",
+      "ru": "Займи пространство"
     },
     "topic": "rotation",
     "level": "decide",
@@ -174,7 +175,8 @@
         },
         "label": {
           "ka": "#9-ის ადგილზე",
-          "en": "Into #9's space"
+          "en": "Into #9's space",
+          "ru": "В зону #9"
         }
       },
       {
@@ -185,7 +187,8 @@
         },
         "label": {
           "ka": "#9-ის გვერდით",
-          "en": "Next to #9"
+          "en": "Next to #9",
+          "ru": "Рядом с #9"
         }
       },
       {
@@ -196,7 +199,8 @@
         },
         "label": {
           "ka": "ფლანგზე",
-          "en": "Out wide"
+          "en": "Out wide",
+          "ru": "В ширину"
         }
       }
     ]
@@ -271,25 +275,30 @@
   "text": {
     "banner": {
       "ka": "#9 ჩამოვიდა და #4 გაჰყვა. #10, საით?",
-      "en": "#9 dropped and #4 followed. #10, where now?"
+      "en": "#9 dropped and #4 followed. #10, where now?",
+      "ru": "#9 опустился, и #4 пошёл за ним. #10, куда теперь?"
     },
     "hint": {
       "ka": "როცა მცველი #9-ს გაჰყვება, მის უკან სივრცე იხსნება.",
-      "en": "When a defender follows #9, space opens behind him."
+      "en": "When a defender follows #9, space opens behind him.",
+      "ru": "Когда защитник идёт за #9, за его спиной открывается место."
     },
     "fail": {
       "pick": {
         "ka": "ის სივრცე ცარიელი დარჩა! #10 იქ უნდა გაიქცეს, სადაც #9 იყო.",
-        "en": "That space is left empty! #10 must run where #9 was."
+        "en": "That space is left empty! #10 must run where #9 was.",
+        "ru": "Это место осталось пустым! #10 должен бежать туда, где был #9."
       }
     },
     "success": {
       "ka": "ზუსტად! #9 ჩამოვიდა, #10 მის ადგილზე გაიქცა — ეს როტაციაა.",
-      "en": "Exactly! #9 dropped and #10 took his place: that's a rotation."
+      "en": "Exactly! #9 dropped and #10 took his place: that's a rotation.",
+      "ru": "Точно! #9 опустился, а #10 занял его место: это ротация."
     },
     "lessonLine": {
       "ka": "ერთი ჩამოდის, მეორე მის ადგილს იკავებს",
-      "en": "One drops, another takes his place"
+      "en": "One drops, another takes his place",
+      "ru": "Один опускается, другой занимает его место"
     }
   },
   "rewards": {
@@ -300,7 +309,8 @@
       "afterWrong": 1,
       "text": {
         "ka": "#4 #9-ს გაჰყვა. რა დარჩა მის უკან?",
-        "en": "#4 went with #9. What did he leave behind?"
+        "en": "#4 went with #9. What did he leave behind?",
+        "ru": "#4 ушёл с #9. Что он оставил за спиной?"
       }
     },
     {
@@ -321,7 +331,8 @@
       "afterWrong": 5,
       "text": {
         "ka": "ნახე სწორი გარბენა",
-        "en": "Watch the right run"
+        "en": "Watch the right run",
+        "ru": "Смотри правильный рывок"
       },
       "ghost": true
     }

@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "სივრცე და ღია ტანი",
-      "en": "Space and an open body"
+      "en": "Space and an open body",
+      "ru": "Пространство и открытый корпус"
     },
     "topic": "free-space",
     "level": "execute",
@@ -334,37 +335,45 @@
   "text": {
     "banner": {
       "ka": "გაიხსენი და შებრუნდი: ბურთიც დაინახე და კარიც",
-      "en": "Get open and turn: see the ball and the goal"
+      "en": "Get open and turn: see the ball and the goal",
+      "ru": "Откройся и развернись: видь мяч и ворота"
     },
     "fail": {
       "shadow": {
         "ka": "#6-ის ჩრდილში ხარ! გადი გვერდზე, მარჯვნივ.",
-        "en": "You're in #6's shadow! Step out to the right."
+        "en": "You're in #6's shadow! Step out to the right.",
+        "ru": "Ты в тени #6! Выйди вправо."
       },
       "zone": {
         "ka": "აქ სივრცე არ არის! მარჯვენა ნახევარსივრცე ცარიელია.",
-        "en": "No space there! The right half-space is empty."
+        "en": "No space there! The right half-space is empty.",
+        "ru": "Там нет места! Правый полуфланг свободен."
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! #10 ბურთს ჭრის.",
-        "en": "The lane is closed! #10 cuts the pass."
+        "en": "The lane is closed! #10 cuts the pass.",
+        "ru": "Линия закрыта! #10 перекрывает пас."
       },
       "marked": {
         "ka": "მეტოქე ძალიან ახლოსაა! მოშორდი მას.",
-        "en": "An opponent is too close! Move away from him."
+        "en": "An opponent is too close! Move away from him.",
+        "ru": "Соперник слишком близко! Отойди от него."
       },
       "body": {
         "ka": "ტანი დახურულია! შებრუნდი, რომ ბურთიც და კარიც დაინახო.",
-        "en": "Closed body! Turn so you see the ball and the goal."
+        "en": "Closed body! Turn so you see the ball and the goal.",
+        "ru": "Корпус закрыт! Развернись, чтобы видеть мяч и ворота."
       }
     },
     "success": {
       "ka": "შესანიშნავია! თავისუფალ სივრცეში ხარ და კარს ხედავ.",
-      "en": "Great! You're in free space and you can see the goal."
+      "en": "Great! You're in free space and you can see the goal.",
+      "ru": "Отлично! Ты в свободной зоне и видишь ворота."
     },
     "lessonLine": {
       "ka": "სივრცეში გადი, ტანი გახსენი",
-      "en": "Find the space, open your body"
+      "en": "Find the space, open your body",
+      "ru": "Найди место, раскрой корпус"
     }
   },
   "rewards": {
@@ -375,14 +384,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "ბურთი მარცხნივ უკანაა, კარი წინ. შებრუნდი მათ შორის",
-        "en": "Ball behind-left, goal ahead. Face between them"
+        "en": "Ball behind-left, goal ahead. Face between them",
+        "ru": "Мяч сзади слева, ворота впереди. Встань лицом между ними"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე, სად და როგორ",
-        "en": "Watch where and how"
+        "en": "Watch where and how",
+        "ru": "Смотри, куда и как"
       },
       "ghost": true
     }

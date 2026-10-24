@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: გადააგდე ხაზზე",
-      "en": "Puzzle: chip over the line"
+      "en": "Puzzle: chip over the line",
+      "ru": "Головоломка: перебрось через линию"
     },
     "topic": "through-ball",
     "level": "execute",
@@ -274,33 +275,40 @@
   "text": {
     "banner": {
       "ka": "მათი ხაზი მაღლაა. გადააგდე ბურთი მის უკან",
-      "en": "Their line is high. Chip it in behind"
+      "en": "Their line is high. Chip it in behind",
+      "ru": "Их линия высоко. Перебрось за спину"
     },
     "fail": {
       "cut": {
         "ka": "პასი გადაჭრეს! ბურთი მცველებს გვერდით გაატარე.",
-        "en": "Cut out! Play it past the defenders, not at them."
+        "en": "Cut out! Play it past the defenders, not at them.",
+        "ru": "Перехват! Играй мимо защитников, а не в них."
       },
       "race": {
         "ka": "ვერ მიუსწრო! ბურთი იქ ჩამოაგდე, სადაც #9 პირველი იქნება.",
-        "en": "He didn't get there first! Drop it where #9 wins."
+        "en": "He didn't get there first! Drop it where #9 wins.",
+        "ru": "Он не успел первым! Опусти мяч туда, где #9 будет первым."
       },
       "line": {
         "ka": "ეს მცველების წინაა! გადააგდე მათ თავზე, ზურგს უკან.",
-        "en": "That's in front of them! Chip it over, into the space behind."
+        "en": "That's in front of them! Chip it over, into the space behind.",
+        "ru": "Это перед ними! Перебрось через них, в пространство за спиной."
       },
       "offside": {
         "ka": "ოფსაიდი! გარბენა ხაზიდან უნდა დაიწყოს.",
-        "en": "Offside! The runner must start level with the line."
+        "en": "Offside! The runner must start level with the line.",
+        "ru": "Офсайд! Бегущий должен стартовать на уровне линии."
       }
     },
     "success": {
       "ka": "ზუსტი გადაგდება! #9 ზურგს უკან გაიჭრა.",
-      "en": "A perfect chip! #9 is in behind."
+      "en": "A perfect chip! #9 is in behind.",
+      "ru": "Идеальный заброс! #9 за спиной."
     },
     "lessonLine": {
       "ka": "მაღალი ხაზი? სივრცე მის ზურგს უკანაა",
-      "en": "High line? The space is behind it"
+      "en": "High line? The space is behind it",
+      "ru": "Высокая линия? Пространство за ней"
     }
   },
   "rewards": {
@@ -311,14 +319,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "სივრცე მცველებსა და მეკარეს შორისაა",
-        "en": "The space is between the defenders and the keeper"
+        "en": "The space is between the defenders and the keeper",
+        "ru": "Пространство между защитниками и вратарём"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

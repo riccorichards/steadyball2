@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "ნახევარსივრცეში",
-      "en": "Into the half-space"
+      "en": "Into the half-space",
+      "ru": "В полуфланг"
     },
     "topic": "free-space",
     "level": "decide",
@@ -294,29 +295,35 @@
   "text": {
     "banner": {
       "ka": "გადი მარჯვენა ნახევარსივრცეში",
-      "en": "Move into the right half-space"
+      "en": "Move into the right half-space",
+      "ru": "Перейди в правый полуфланг"
     },
     "fail": {
       "zone": {
         "ka": "ცენტრში ადგილი არ არის! გადი მარჯვენა ნახევარსივრცეში.",
-        "en": "No room in the middle! Move into the right half-space."
+        "en": "No room in the middle! Move into the right half-space.",
+        "ru": "В центре нет места! Перейди в правый полуфланг."
       },
       "marked": {
         "ka": "მეტოქე ახლოსაა! იპოვე ადგილი #6-სა და #7-ს შორის.",
-        "en": "An opponent is too close! Find the spot between #6 and #7."
+        "en": "An opponent is too close! Find the spot between #6 and #7.",
+        "ru": "Соперник слишком близко! Найди место между #6 и #7."
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! #10 ბურთს ჭრის.",
-        "en": "The lane is closed! #10 cuts the pass."
+        "en": "The lane is closed! #10 cuts the pass.",
+        "ru": "Линия закрыта! #10 перекрывает пас."
       }
     },
     "success": {
       "ka": "შესანიშნავია! ნახევარსივრცეში ბევრი ადგილია.",
-      "en": "Great! There is lots of room in the half-space."
+      "en": "Great! There is lots of room in the half-space.",
+      "ru": "Отлично! В полуфланге много места."
     },
     "lessonLine": {
       "ka": "ცენტრი სავსეა? გადი ნახევარსივრცეში",
-      "en": "Middle crowded? Go to the half-space"
+      "en": "Middle crowded? Go to the half-space",
+      "ru": "В центре тесно? Иди в полуфланг"
     }
   },
   "rewards": {
@@ -327,7 +334,8 @@
       "afterWrong": 1,
       "text": {
         "ka": "ცენტრში ორი მეტოქეა. მარჯვნივ კი?",
-        "en": "Two opponents in the middle. And to the right?"
+        "en": "Two opponents in the middle. And to the right?",
+        "ru": "В центре два соперника. А справа?"
       }
     },
     {
@@ -343,7 +351,8 @@
       "afterWrong": 5,
       "text": {
         "ka": "ნახე, სად უნდა გადახვიდე",
-        "en": "Watch where to go"
+        "en": "Watch where to go",
+        "ru": "Смотри, куда идти"
       },
       "ghost": true
     }

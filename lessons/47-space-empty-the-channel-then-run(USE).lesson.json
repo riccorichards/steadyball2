@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: გაათავისუფლე და გაიჭერი",
-      "en": "Puzzle: empty it, then run"
+      "en": "Puzzle: empty it, then run",
+      "ru": "Головоломка: освободи, потом беги"
     },
     "topic": "creating-space",
     "level": "game-speed",
@@ -305,21 +306,25 @@
   "text": {
     "banner": {
       "ka": "გაათავისუფლე მარჯვენა არხი #9-ის გარბენისთვის. 2",
-      "en": "Empty the right channel for #9's run. 2 moves"
+      "en": "Empty the right channel for #9's run. 2 moves",
+      "ru": "Освободи правый коридор для рывка #9. 2 хода"
     },
     "fail": {
       "occupied": {
         "ka": "არხში ისევ მცველია! ის, ვინც იქაა, ვიღაცას მისდევს.",
-        "en": "There's still a defender there! He follows one of ours."
+        "en": "There's still a defender there! He follows one of ours.",
+        "ru": "Там всё ещё защитник! Он бежит за одним из наших."
       }
     },
     "success": {
       "ka": "არხი ცარიელია! ახლა დახატე #9-ის გარბენა.",
-      "en": "The channel is empty! Now draw #9's run."
+      "en": "The channel is empty! Now draw #9's run.",
+      "ru": "Коридор пуст! Теперь нарисуй рывок #9."
     },
     "lessonLine": {
       "ka": "შექმენი სივრცე, მერე გაიჭერი შიგ",
-      "en": "Make the space, then run into it"
+      "en": "Make the space, then run into it",
+      "ru": "Создай место, потом беги в него"
     }
   },
   "rewards": {
@@ -330,14 +335,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "ორი მცველი იცავს არხს. ორივე ვიღაცას მისდევს",
-        "en": "Two defenders guard the channel. Both follow someone"
+        "en": "Two defenders guard the channel. Both follow someone",
+        "ru": "Коридор охраняют два защитника. Оба бегут за кем-то"
       }
     },
     {
       "afterWrong": 5,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }
@@ -373,7 +380,8 @@
             "kind": "caption",
             "text": {
               "ka": "ახლა გაიჭერი!",
-              "en": "Now run!"
+              "en": "Now run!",
+              "ru": "Теперь беги!"
             },
             "ms": 900
           }
@@ -491,25 +499,30 @@
       "text": {
         "banner": {
           "ka": "დახატე #9-ის გარბენა არხში. ოფსაიდი არა!",
-          "en": "Draw #9's run into the channel. No offside!"
+          "en": "Draw #9's run into the channel. No offside!",
+          "ru": "Нарисуй рывок #9 в коридор. Без офсайда!"
         },
         "fail": {
           "offside": {
             "ka": "ოფსაიდი! სანამ პასი მოვა, დარჩი მცველების ხაზზე.",
-            "en": "Offside! Stay level with the line until the pass."
+            "en": "Offside! Stay level with the line until the pass.",
+            "ru": "Офсайд! Держись на уровне линии до паса."
           },
           "blocked": {
             "ka": "მცველს ძალიან ახლოს ჩაურბინე! შემოუარე მას.",
-            "en": "You ran too close to a defender! Go round him."
+            "en": "You ran too close to a defender! Go round him.",
+            "ru": "Ты пробежал слишком близко к защитнику! Обеги его."
           },
           "zone": {
             "ka": "არხში ვერ გახვედი! დაასრულე შენ მიერ გახსნილ სივრცეში.",
-            "en": "Not in the channel! Finish in the space you opened."
+            "en": "Not in the channel! Finish in the space you opened.",
+            "ru": "Не в коридоре! Закончи в пространстве, которое ты открыл."
           }
         },
         "success": {
           "ka": "ზუსტია! სივრცე შექმენი და შიგ გაიჭერი.",
-          "en": "Spot on! You made the space and ran into it."
+          "en": "Spot on! You made the space and ran into it.",
+          "ru": "В точку! Ты создал место и вбежал в него."
         }
       },
       "hints": [
@@ -517,14 +530,16 @@
           "afterWrong": 2,
           "text": {
             "ka": "პასი 8 მეტრის შემდეგ მოდის. ჯერ ხაზის გასწვრივ",
-            "en": "The pass comes after 8 m. Run along the line first"
+            "en": "The pass comes after 8 m. Run along the line first",
+            "ru": "Пас придёт через 8 м. Сначала беги вдоль линии"
           }
         },
         {
           "afterWrong": 4,
           "text": {
             "ka": "ნახე ამოხსნა",
-            "en": "Watch the answer"
+            "en": "Watch the answer",
+            "ru": "Смотри ответ"
           },
           "ghost": true
         }

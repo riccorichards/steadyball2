@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: გაჭიმე და შეავსე",
-      "en": "Puzzle: stretch and fill"
+      "en": "Puzzle: stretch and fill",
+      "ru": "Головоломка: растяни и займи"
     },
     "topic": "creating-space",
     "level": "execute",
@@ -342,33 +343,40 @@
   "text": {
     "banner": {
       "ka": "გახსენი ხვრელი და შეიყვანე იქ #10. 3 სვლა",
-      "en": "Open a gap and get #10 into it. 3 moves"
+      "en": "Open a gap and get #10 into it. 3 moves",
+      "ru": "Открой щель и поставь в неё #10. 3 хода"
     },
     "fail": {
       "zone": {
         "ka": "#10 ხვრელში არ არის! ის მცველებს შორის უნდა იყოს.",
-        "en": "#10 isn't in the gap! He must be between the defenders."
+        "en": "#10 isn't in the gap! He must be between the defenders.",
+        "ru": "#10 не в щели! Он должен быть между защитниками."
       },
       "gap": {
         "ka": "მცველები ისევ ახლოს არიან! გაჭიმე მათი ხაზი.",
-        "en": "The defenders are still close! Stretch their line."
+        "en": "The defenders are still close! Stretch their line.",
+        "ru": "Защитники всё ещё рядом! Растяни их линию."
       },
       "marked": {
         "ka": "#10-ს მცველი ახლოს უდგას! მეტი სივრცე სჭირდება.",
-        "en": "A defender is close to #10! He needs more space."
+        "en": "A defender is close to #10! He needs more space.",
+        "ru": "Защитник рядом с #10! Ему нужно больше места."
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! ბურთს ღია გზა სჭირდება.",
-        "en": "The lane is blocked! The ball needs a clear way."
+        "en": "The lane is blocked! The ball needs a clear way.",
+        "ru": "Линия перекрыта! Мячу нужен свободный путь."
       }
     },
     "success": {
       "ka": "ჩინებულია! ორი გარბენა ფლანგებზე და #10 ხვრელშია.",
-      "en": "Superb! Two runs wide and #10 is in the gap."
+      "en": "Superb! Two runs wide and #10 is in the gap.",
+      "ru": "Превосходно! Два рывка в ширину, и #10 в щели."
     },
     "lessonLine": {
       "ka": "გაჭიმე, მერე შეავსე",
-      "en": "Stretch it, then fill it"
+      "en": "Stretch it, then fill it",
+      "ru": "Растяни, потом займи"
     }
   },
   "rewards": {
@@ -379,14 +387,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "ჯერ ორივე მცველი გვერდზე, მერე #10 შუაში",
-        "en": "First both defenders wide, then #10 in the middle"
+        "en": "First both defenders wide, then #10 in the middle",
+        "ru": "Сначала оба защитника в ширину, потом #10 в центр"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

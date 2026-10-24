@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "გაიყვანე და უსაფრთხო პასი",
-      "en": "Carry, then the safe pass"
+      "en": "Carry, then the safe pass",
+      "ru": "Веди, потом надёжный пас"
     },
     "topic": "outnumbered",
     "level": "execute",
@@ -226,29 +227,35 @@
   "text": {
     "banner": {
       "ka": "სამნი არიან. გაიყვანე ბურთი და მიაწოდე #4-ს",
-      "en": "They are three. Carry it, then pass to #4"
+      "en": "They are three. Carry it, then pass to #4",
+      "ru": "Их трое. Веди мяч, потом отдай на #4"
     },
     "fail": {
       "tackled": {
         "ka": "ბურთი წაგართვეს! ცოტა ადრე მიაწოდე.",
-        "en": "Tackled! Pass a bit earlier."
+        "en": "Tackled! Pass a bit earlier.",
+        "ru": "Отобрали! Отдай пас чуть раньше."
       },
       "lane": {
         "ka": "#10 პასის ხაზზე დგას! ჯერ გვერდზე გაიტანე ბურთი.",
-        "en": "Their #10 stands in the lane! Carry it to the side first."
+        "en": "Their #10 stands in the lane! Carry it to the side first.",
+        "ru": "Их #10 стоит на линии! Сначала веди мяч в сторону."
       },
       "cut": {
         "ka": "პასი გადაჭრეს! მიაწოდე, როცა ხაზი სუფთაა.",
-        "en": "Cut out! Pass when the line is clear."
+        "en": "Cut out! Pass when the line is clear.",
+        "ru": "Перехват! Пасуй, когда линия свободна."
       }
     },
     "success": {
       "ka": "ყოჩაღ! ნაკლებნი იყავით, მაგრამ ბურთი ისევ ჩვენთანაა.",
-      "en": "Well done! Outnumbered, but we still have the ball."
+      "en": "Well done! Outnumbered, but we still have the ball.",
+      "ru": "Молодец! Нас меньше, но мяч всё ещё у нас."
     },
     "lessonLine": {
       "ka": "ჯერ გახსენი ხაზი, მერე უსაფრთხო პასი",
-      "en": "Open the line, then play safe"
+      "en": "Open the line, then play safe",
+      "ru": "Открой линию, потом играй надёжно"
     }
   },
   "rewards": {
@@ -259,7 +266,8 @@
       "afterWrong": 2,
       "text": {
         "ka": "#10 კეტავს პირდაპირ პასს #4-ისკენ. გვერდზე გადი.",
-        "en": "Their #10 blocks the straight pass to #4. Move to the side."
+        "en": "Their #10 blocks the straight pass to #4. Move to the side.",
+        "ru": "Их #10 закрывает прямой пас на #4. Сместись в сторону."
       }
     }
   ]

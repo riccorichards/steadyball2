@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "გაჭიმე და მესამე მოთამაშე",
-      "en": "Stretch, then the third man"
+      "en": "Stretch, then the third man",
+      "ru": "Растяни, потом третий игрок"
     },
     "topic": "creating-space",
     "level": "execute",
@@ -318,25 +319,30 @@
   "text": {
     "banner": {
       "ka": "გაჭიმე მათი ხაზი, რომ ცენტრი გაიხსნას. 2 სვლა",
-      "en": "Stretch their line to open the middle. 2 moves"
+      "en": "Stretch their line to open the middle. 2 moves",
+      "ru": "Растяни их линию, чтобы открыть центр. 2 хода"
     },
     "fail": {
       "gap": {
         "ka": "მცველები ისევ ახლოს არიან! გაჭიმე მათი ხაზი.",
-        "en": "The defenders are still close! Stretch their line."
+        "en": "The defenders are still close! Stretch their line.",
+        "ru": "Защитники всё ещё рядом! Растяни их линию."
       },
       "middle": {
         "ka": "ცენტრში ისევ მცველია! ის იქიდან უნდა წაიყვანო.",
-        "en": "There's still a defender in the middle! Lead him out."
+        "en": "There's still a defender in the middle! Lead him out.",
+        "ru": "В центре всё ещё защитник! Уведи его оттуда."
       }
     },
     "success": {
       "ka": "ცენტრი ღიაა! #9 შიგ შევარდა.",
-      "en": "The middle is open! #9 is running into it."
+      "en": "The middle is open! #9 is running into it.",
+      "ru": "Центр открыт! #9 бежит туда."
     },
     "lessonLine": {
       "ka": "გაჭიმე, მერე მესამე მოთამაშე",
-      "en": "Stretch it, then the third man"
+      "en": "Stretch it, then the third man",
+      "ru": "Растяни, потом третий игрок"
     }
   },
   "rewards": {
@@ -347,14 +353,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "მცველებს ფლანგებზე წაყვანა უნდათ",
-        "en": "The centre-backs need to be pulled wide"
+        "en": "The centre-backs need to be pulled wide",
+        "ru": "Центральных защитников нужно увести в ширину"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }
@@ -384,7 +392,8 @@
             "kind": "caption",
             "text": {
               "ka": "პირდაპირ? თუ...",
-              "en": "Direct? Or..."
+              "en": "Direct? Or...",
+              "ru": "Напрямую? Или..."
             },
             "ms": 1000
           }
@@ -455,17 +464,20 @@
       "text": {
         "banner": {
           "ka": "მიიტანე ბურთი #9-მდე. პირდაპირი პასი დაკეტილია",
-          "en": "Get the ball to #9. The direct pass is blocked"
+          "en": "Get the ball to #9. The direct pass is blocked",
+          "ru": "Доставь мяч #9. Прямой пас закрыт"
         },
         "fail": {
           "order": {
             "ka": "#6 პირდაპირ პასს ჭრის! ჯერ #10-ს მიეცი, ის მიაწვდის #9-ს.",
-            "en": "#6 cuts the direct pass! Go via #10, he finds #9."
+            "en": "#6 cuts the direct pass! Go via #10, he finds #9.",
+            "ru": "#6 перехватывает прямой пас! Через #10, он найдёт #9."
           }
         },
         "success": {
           "ka": "მესამე მოთამაშე! #10-მა ბურთი #9-ს ხვრელში მიაწოდა.",
-          "en": "The third man! #10 played #9 into the gap."
+          "en": "The third man! #10 played #9 into the gap.",
+          "ru": "Третий игрок! #10 отдал #9 в щель."
         }
       },
       "hints": [
@@ -473,14 +485,16 @@
           "afterWrong": 2,
           "text": {
             "ka": "ვინ შეძლებს ბურთის #9-მდე მიტანას?",
-            "en": "Who could pass it on to #9?"
+            "en": "Who could pass it on to #9?",
+            "ru": "Кто может переадресовать мяч на #9?"
           }
         },
         {
           "afterWrong": 4,
           "text": {
             "ka": "ნახე ამოხსნა",
-            "en": "Watch the answer"
+            "en": "Watch the answer",
+            "ru": "Смотри ответ"
           },
           "ghost": true
         }

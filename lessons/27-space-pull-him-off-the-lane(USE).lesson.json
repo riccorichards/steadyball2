@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "გაუხსენი ხაზი",
-      "en": "Pull him off the lane"
+      "en": "Pull him off the lane",
+      "ru": "Уведи его с линии паса"
     },
     "topic": "creating-space",
     "level": "decide",
@@ -164,7 +165,8 @@
         "kind": "caption",
         "text": {
           "ka": "#6 დაჰყვება #8-ს",
-          "en": "#6 follows #8"
+          "en": "#6 follows #8",
+          "ru": "#6 бежит за #8"
         },
         "ms": 1200
       },
@@ -291,25 +293,30 @@
   "text": {
     "banner": {
       "ka": "წაიყვანე #6 პასის ხაზიდან. გადაადგილე #8",
-      "en": "Pull #6 off the passing lane: move #8"
+      "en": "Pull #6 off the passing lane: move #8",
+      "ru": "Уведи #6 с линии паса: передвинь #8"
     },
     "fail": {
       "lane": {
         "ka": "#6 ისევ ხაზზეა! #8 გვერდზე წაიყვანე, ხაზიდან შორს.",
-        "en": "#6 is still on the lane! Take #8 sideways, off the line."
+        "en": "#6 is still on the lane! Take #8 sideways, off the line.",
+        "ru": "#6 всё ещё на линии! Уведи #8 в сторону, с линии."
       },
       "marked": {
         "ka": "#6 #10-თან ახლოს დარჩა! სხვა მხარეს წაიყვანე.",
-        "en": "#6 stayed near #10! Take him the other way."
+        "en": "#6 stayed near #10! Take him the other way.",
+        "ru": "#6 остался рядом с #10! Уведи его в другую сторону."
       }
     },
     "success": {
       "ka": "ყოჩაღ! #6 #8-ს გაჰყვა და #4-ს #10-მდე გზა გაეხსნა.",
-      "en": "Well done! #6 went with #8 and #4 could find #10."
+      "en": "Well done! #6 went with #8 and #4 could find #10.",
+      "ru": "Молодец! #6 ушёл с #8, и #4 смог найти #10."
     },
     "lessonLine": {
       "ka": "წაიყვანე მეტოქე, გაუხსენი ხაზი",
-      "en": "Pull the opponent, open the lane"
+      "en": "Pull the opponent, open the lane",
+      "ru": "Уведи соперника, открой линию"
     }
   },
   "rewards": {
@@ -320,7 +327,8 @@
       "afterWrong": 1,
       "text": {
         "ka": "#6 #8-ს მისდევს. წაიყვანე იგი გვერდზე",
-        "en": "#6 follows #8. Lead him to the side"
+        "en": "#6 follows #8. Lead him to the side",
+        "ru": "#6 бежит за #8. Уведи его в сторону"
       }
     },
     {
@@ -342,7 +350,8 @@
       "afterWrong": 5,
       "text": {
         "ka": "ნახე, სად წაიყვანო",
-        "en": "Watch where to take him"
+        "en": "Watch where to take him",
+        "ru": "Смотри, куда его увести"
       },
       "ghost": true
     }

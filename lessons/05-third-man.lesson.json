@@ -2,65 +2,199 @@
   "schemaVersion": 1,
   "id": "third-man",
   "meta": {
-    "title": { "ka": "მესამე მოთამაშე", "en": "Find the third man" },
+    "title": {
+      "ka": "მესამე მოთამაშე",
+      "en": "Find the third man",
+      "ru": "Найди третьего"
+    },
     "topic": "third-man",
     "level": "decide",
     "difficulty": 14,
     "ageBand": "9-10",
-    "positions": ["DEF", "MID", "ATT"],
-    "tags": ["fixture", "combination", "passing"],
+    "positions": [
+      "DEF",
+      "MID",
+      "ATT"
+    ],
+    "tags": [
+      "fixture",
+      "combination",
+      "passing"
+    ],
     "status": "review",
     "source": "coach"
   },
   "scene": {
-    "camera": { "focus": { "x0": 35, "x1": 70, "y0": 30, "y1": 80 } },
+    "camera": {
+      "focus": {
+        "x0": 35,
+        "x1": 70,
+        "y0": 30,
+        "y1": 80
+      }
+    },
     "players": [
-      { "id": "h4", "team": "home", "number": 4, "role": "CB", "at": { "x": 44, "y": 35 }, "facing": 15, "highlight": true },
-      { "id": "h9", "team": "home", "number": 9, "role": "ST", "at": { "x": 60, "y": 50 }, "facing": -140 },
-      { "id": "h8", "team": "home", "number": 8, "role": "CM", "at": { "x": 49, "y": 58 }, "facing": 180 },
-      { "id": "a6", "team": "away", "number": 6, "role": "DM", "at": { "x": 47.3, "y": 50 }, "facing": 175 }
+      {
+        "id": "h4",
+        "team": "home",
+        "number": 4,
+        "role": "CB",
+        "at": {
+          "x": 44,
+          "y": 35
+        },
+        "facing": 15,
+        "highlight": true
+      },
+      {
+        "id": "h9",
+        "team": "home",
+        "number": 9,
+        "role": "ST",
+        "at": {
+          "x": 60,
+          "y": 50
+        },
+        "facing": -140
+      },
+      {
+        "id": "h8",
+        "team": "home",
+        "number": 8,
+        "role": "CM",
+        "at": {
+          "x": 49,
+          "y": 58
+        },
+        "facing": 180
+      },
+      {
+        "id": "a6",
+        "team": "away",
+        "number": 6,
+        "role": "DM",
+        "at": {
+          "x": 47.3,
+          "y": 50
+        },
+        "facing": 175
+      }
     ],
-    "ball": { "holder": "h4" }
+    "ball": {
+      "holder": "h4"
+    }
   },
   "intro": {
     "mode": "sequential",
     "steps": [
-      { "kind": "move", "who": "a6", "to": { "x": 47.3, "y": 50 }, "ms": 800, "face": 175 },
-      { "kind": "wait", "ms": 500 }
+      {
+        "kind": "move",
+        "who": "a6",
+        "to": {
+          "x": 47.3,
+          "y": 50
+        },
+        "ms": 800,
+        "face": 175
+      },
+      {
+        "kind": "wait",
+        "ms": 500
+      }
     ]
   },
   "interaction": {
     "type": "pass_sequence",
-    "who": ["h4", "h9", "h8"]
+    "who": [
+      "h4",
+      "h9",
+      "h8"
+    ]
   },
   "rules": [
-    { "type": "sequence", "failKey": "order", "params": { "order": ["h4", "h9", "h8"] } }
+    {
+      "type": "sequence",
+      "failKey": "order",
+      "params": {
+        "order": [
+          "h4",
+          "h9",
+          "h8"
+        ]
+      }
+    }
   ],
   "solution": {
-    "sequence": ["h4", "h9", "h8"],
-    "tolerance": { "radiusM": 1.5 }
+    "sequence": [
+      "h4",
+      "h9",
+      "h8"
+    ],
+    "tolerance": {
+      "radiusM": 1.5
+    }
   },
   "outcomes": {
     "success": {
       "mode": "sequential",
       "steps": [
-        { "kind": "play_answer" },
-        { "kind": "move", "who": "h8", "to": { "landmark": "zones.14" }, "ms": 900, "face": 0 }
+        {
+          "kind": "play_answer"
+        },
+        {
+          "kind": "move",
+          "who": "h8",
+          "to": {
+            "landmark": "zones.14"
+          },
+          "ms": 900,
+          "face": 0
+        }
       ]
     },
     "fail": {
       "mode": "sequential",
-      "steps": [{ "kind": "pass", "from": "h4", "to": "h8", "ms": 800, "interceptedBy": "a6" }]
+      "steps": [
+        {
+          "kind": "pass",
+          "from": "h4",
+          "to": "h8",
+          "ms": 800,
+          "interceptedBy": "a6"
+        }
+      ]
     }
   },
   "text": {
-    "banner": { "ka": "როგორ მივიტანოთ ბურთი #8-მდე?", "en": "How do we get the ball to #8?" },
-    "hint": { "ka": "პირდაპირ გზას #6 კეტავს. ვინ დაგეხმარება?", "en": "#6 blocks the direct way. Who can help?" },
-    "fail": {
-      "order": { "ka": "#6 ჭრის პასს — ბურთი ჯერ #9-ს მიეცი", "en": "#6 cuts the pass. Give it to #9 first" }
+    "banner": {
+      "ka": "როგორ მივიტანოთ ბურთი #8-მდე?",
+      "en": "How do we get the ball to #8?",
+      "ru": "Как доставить мяч до #8?"
     },
-    "success": { "ka": "ბრავო! #9-მა ბურთი #8-ს მიაწოდა", "en": "Bravo! #9 set it up for #8" },
-    "lessonLine": { "ka": "თუ პირდაპირ ვერ მიდიხარ, მესამე მოთამაშე მოძებნე", "en": "Can't go direct? Find the third player" }
+    "hint": {
+      "ka": "პირდაპირ გზას #6 კეტავს. ვინ დაგეხმარება?",
+      "en": "#6 blocks the direct way. Who can help?",
+      "ru": "#6 закрывает прямой путь. Кто поможет?"
+    },
+    "fail": {
+      "order": {
+        "ka": "#6 ჭრის პასს — ბურთი ჯერ #9-ს მიეცი",
+        "en": "#6 cuts the pass. Give it to #9 first",
+        "ru": "#6 перехватывает пас. Сначала отдай на #9"
+      }
+    },
+    "success": {
+      "ka": "ბრავო! #9-მა ბურთი #8-ს მიაწოდა",
+      "en": "Bravo! #9 set it up for #8",
+      "ru": "Браво! #9 подготовил мяч для #8"
+    },
+    "lessonLine": {
+      "ka": "თუ პირდაპირ ვერ მიდიხარ, მესამე მოთამაშე მოძებნე",
+      "en": "Can't go direct? Find the third player",
+      "ru": "Напрямую нельзя? Найди третьего игрока"
+    }
   },
-  "rewards": { "xp": 20 }
+  "rewards": {
+    "xp": 20
+  }
 }

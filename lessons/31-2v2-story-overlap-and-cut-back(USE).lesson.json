@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "შემორბენა და უკან ჩაწოდება",
-      "en": "Overlap, then the cut-back"
+      "en": "Overlap, then the cut-back",
+      "ru": "Обгон, потом пас назад"
     },
     "topic": "two-v-two",
     "level": "execute",
@@ -312,29 +313,35 @@
   "text": {
     "banner": {
       "ka": "#2, შემოურბინე #7-ს გარედან",
-      "en": "#2, overlap round the outside of #7"
+      "en": "#2, overlap round the outside of #7",
+      "ru": "#2, обгони #7 снаружи"
     },
     "fail": {
       "offside": {
         "ka": "ოფსაიდი! პასამდე #3-ის დონეზე დარჩი.",
-        "en": "Offside! Stay level with their #3 until the pass."
+        "en": "Offside! Stay level with their #3 until the pass.",
+        "ru": "Офсайд! Держись на уровне их #3 до паса."
       },
       "blocked": {
         "ka": "მეტოქეს დაეჯახე! გაიქეცი #7-ის უკნიდან, გარედან.",
-        "en": "You ran into an opponent! Go behind #7, then outside."
+        "en": "You ran into an opponent! Go behind #7, then outside.",
+        "ru": "Ты врезался в соперника! Беги за спиной #7, потом снаружи."
       },
       "zone": {
         "ka": "ჯერ არა! დაასრულე ფლანგზე, #3-ის ზურგს უკან.",
-        "en": "Not yet! Finish on the wing, behind their #3."
+        "en": "Not yet! Finish on the wing, behind their #3.",
+        "ru": "Ещё нет! Закончи на фланге, за спиной их #3."
       }
     },
     "success": {
       "ka": "კარგია! #2 ბურთით ბოლო ხაზთანაა.",
-      "en": "Good! #2 is at the byline with the ball."
+      "en": "Good! #2 is at the byline with the ball.",
+      "ru": "Хорошо! #2 у лицевой линии с мячом."
     },
     "lessonLine": {
       "ka": "შემოურბინე, მერე იპოვე თავისუფალი",
-      "en": "Overlap, then find the free man"
+      "en": "Overlap, then find the free man",
+      "ru": "Обгон, потом найди свободного"
     }
   },
   "rewards": {
@@ -345,7 +352,8 @@
       "afterWrong": 1,
       "text": {
         "ka": "ჯერ #7-ის უკან, მერე ხაზის გასწვრივ წინ.",
-        "en": "Behind #7 first, then up the line."
+        "en": "Behind #7 first, then up the line.",
+        "ru": "Сначала за спину #7, потом вперёд вдоль линии."
       }
     },
     {
@@ -360,7 +368,8 @@
       "ghost": true,
       "text": {
         "ka": "ნახე გარბენა",
-        "en": "Watch the run"
+        "en": "Watch the run",
+        "ru": "Смотри на рывок"
       }
     }
   ],
@@ -397,7 +406,8 @@
             "kind": "caption",
             "text": {
               "ka": "იპოვე სივრცე!",
-              "en": "Find the space!"
+              "en": "Find the space!",
+              "ru": "Найди пространство!"
             },
             "ms": 1100
           }
@@ -509,25 +519,30 @@
       "text": {
         "banner": {
           "ka": "#7, დადექი იქ, სადაც #2 უკან ჩაგიწოდებს",
-          "en": "#7, find the spot for #2's cut-back"
+          "en": "#7, find the spot for #2's cut-back",
+          "ru": "#7, найди место для паса назад от #2"
         },
         "fail": {
           "zone": {
             "ka": "ძალიან ახლოს ხარ კართან ან შორს! ჩამოდი პენალტის წერტილისკენ.",
-            "en": "Wrong spot! Drop towards the penalty spot."
+            "en": "Wrong spot! Drop towards the penalty spot.",
+            "ru": "Не то место! Отступи к точке пенальти."
           },
           "lane": {
             "ka": "პასის ხაზი დაკეტილია! #3 შუაშია.",
-            "en": "The lane is closed! Their #3 is in the way."
+            "en": "The lane is closed! Their #3 is in the way.",
+            "ru": "Линия закрыта! Их #3 мешает."
           },
           "marked": {
             "ka": "მეტოქე ძალიან ახლოსაა! მოძებნე თავისუფალი ადგილი.",
-            "en": "An opponent is too close! Find free space."
+            "en": "An opponent is too close! Find free space.",
+            "ru": "Соперник слишком близко! Найди свободное место."
           }
         },
         "success": {
           "ka": "ზუსტად! #7 თავისუფალია საჯარიმოში.",
-          "en": "Exactly! #7 is free in the box."
+          "en": "Exactly! #7 is free in the box.",
+          "ru": "Точно! #7 свободен в штрафной."
         }
       },
       "hints": [
@@ -535,7 +550,8 @@
           "afterWrong": 1,
           "text": {
             "ka": "როცა ყველა კარისკენ გარბის, ჩამოდი უკან.",
-            "en": "When everyone runs at goal, drop back."
+            "en": "When everyone runs at goal, drop back.",
+            "ru": "Когда все бегут к воротам, отступи назад."
           }
         },
         {
@@ -547,7 +563,8 @@
           "ghost": true,
           "text": {
             "ka": "ნახე, სად დადგე",
-            "en": "Watch where to stand"
+            "en": "Watch where to stand",
+            "ru": "Смотри, где встать"
           }
         }
       ]

@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: ორივე გაიხსენი",
-      "en": "Puzzle: get both free"
+      "en": "Puzzle: get both free",
+      "ru": "Головоломка: освободи обоих"
     },
     "topic": "free-space",
     "level": "execute",
@@ -325,29 +326,35 @@
   "text": {
     "banner": {
       "ka": "ორი ჯერ თავისუფალი არ არის. გადაადგილე 2",
-      "en": "Two of ours aren't free yet. Move 2 players"
+      "en": "Two of ours aren't free yet. Move 2 players",
+      "ru": "Двое наших ещё не свободны. Передвинь 2 игроков"
     },
     "fail": {
       "hidden": {
         "ka": "ერთი ჯერ კიდევ ჩრდილშია! ვინ იმალება #6-ის უკან?",
-        "en": "Someone is still hidden! Who is behind #6?"
+        "en": "Someone is still hidden! Who is behind #6?",
+        "ru": "Кто-то всё ещё прячется! Кто за спиной #6?"
       },
       "marked": {
         "ka": "ერთს ისევ მეტოქე უდგას! ვინ არის დაფარული?",
-        "en": "Someone is still marked! Who has a man on him?"
+        "en": "Someone is still marked! Who has a man on him?",
+        "ru": "Кто-то всё ещё под опекой! У кого соперник рядом?"
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! #4-ს ღია გზა სჭირდება.",
-        "en": "A lane is closed! #4 needs an open way."
+        "en": "A lane is closed! #4 needs an open way.",
+        "ru": "Линия закрыта! #4 нужен открытый путь."
       }
     },
     "success": {
       "ka": "ბრწყინვალეა! ორივე გაიხსნა და #4-ს ორი პასი აქვს.",
-      "en": "Brilliant! Both got free and #4 has two passes."
+      "en": "Brilliant! Both got free and #4 has two passes.",
+      "ru": "Блестяще! Оба освободились, и у #4 два паса."
     },
     "lessonLine": {
       "ka": "იპოვე, ვინ არ არის თავისუფალი",
-      "en": "Spot who isn't free, then fix it"
+      "en": "Spot who isn't free, then fix it",
+      "ru": "Пойми, кто не свободен, и исправь"
     }
   },
   "rewards": {
@@ -358,14 +365,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "ერთი ჩრდილშია, მეორეს მეტოქე ზურგთან უდგას",
-        "en": "One is in a shadow, one has a man at his back"
+        "en": "One is in a shadow, one has a man at his back",
+        "ru": "Один в тени, у другого соперник за спиной"
       }
     },
     {
       "afterWrong": 5,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

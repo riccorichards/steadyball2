@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: ორი მატყუარა გარბენა",
-      "en": "Puzzle: two decoys"
+      "en": "Puzzle: two decoys",
+      "ru": "Головоломка: два отвлекающих"
     },
     "topic": "creating-space",
     "level": "decide",
@@ -283,25 +284,30 @@
   "text": {
     "banner": {
       "ka": "#10 ადგილზე რჩება. გაათავისუფლე ის 2 სვლით",
-      "en": "#10 stays put. Free him with 2 moves"
+      "en": "#10 stays put. Free him with 2 moves",
+      "ru": "#10 стоит на месте. Освободи его за 2 хода"
     },
     "fail": {
       "marked": {
         "ka": "#10-ს ზურგთან ისევ მცველი უდგას! ის ვის მისდევს?",
-        "en": "A defender is still at #10's back! Whom does he follow?"
+        "en": "A defender is still at #10's back! Whom does he follow?",
+        "ru": "За спиной #10 всё ещё защитник! За кем он бежит?"
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! #6 ჯერ ისევ გზაზეა.",
-        "en": "The lane is blocked! #6 is still in the way."
+        "en": "The lane is blocked! #6 is still in the way.",
+        "ru": "Линия перекрыта! #6 всё ещё мешает."
       }
     },
     "success": {
       "ka": "ჩინებულია! ორი მატყუარა გარბენა და #10 თავისუფალია.",
-      "en": "Superb! Two decoy runs, and #10 is free."
+      "en": "Superb! Two decoy runs, and #10 is free.",
+      "ru": "Превосходно! Два отвлекающих рывка, и #10 свободен."
     },
     "lessonLine": {
       "ka": "ორი მატყუარა გარბენა, ერთი თავისუფალი",
-      "en": "Two decoys free one player"
+      "en": "Two decoys free one player",
+      "ru": "Два отвлекающих освобождают одного"
     }
   },
   "rewards": {
@@ -312,14 +318,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "ორი მეტოქე გიშლის ხელს. თითოეული ვის მისდევს?",
-        "en": "Two opponents are in the way. Whom does each follow?"
+        "en": "Two opponents are in the way. Whom does each follow?",
+        "ru": "На пути два соперника. За кем бежит каждый?"
       }
     },
     {
       "afterWrong": 4,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

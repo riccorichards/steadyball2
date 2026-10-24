@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "ნახევრად შემობრუნება",
-      "en": "Half-turn in the half-space"
+      "en": "Half-turn in the half-space",
+      "ru": "Полуоборот в полуфланге"
     },
     "topic": "half-turn",
     "level": "execute",
@@ -260,45 +261,55 @@
   "text": {
     "banner": {
       "ka": "გაიხსენი და მიიღე ბურთი ნახევრად შემობრუნებით",
-      "en": "Open up and receive on the half-turn"
+      "en": "Open up and receive on the half-turn",
+      "ru": "Откройся и прими мяч в полуоборот"
     },
     "hint": {
       "ka": "იპოვე ადგილი, საიდანაც ბურთიც ჩანს და კარიც",
-      "en": "Find a spot where you can see the ball and the goal"
+      "en": "Find a spot where you can see the ball and the goal",
+      "ru": "Найди место, откуда видно мяч и ворота"
     },
     "fail": {
       "shadow": {
         "ka": "#6 გფარავს — #4 ვერ მოგაწვდის ბურთს",
-        "en": "#6 is blocking you, so #4 can't pass to you"
+        "en": "#6 is blocking you, so #4 can't pass to you",
+        "ru": "#6 закрывает тебя, и #4 не может дать тебе пас"
       },
       "zone": {
         "ka": "გადი უფრო ფართოდ, მარჯვენა ნახევარსივრცეში",
-        "en": "Go wider, into the right half-space"
+        "en": "Go wider, into the right half-space",
+        "ru": "Иди шире, в правый полуфланг"
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია",
-        "en": "The passing lane is closed"
+        "en": "The passing lane is closed",
+        "ru": "Линия паса закрыта"
       },
       "tooClose": {
         "ka": "#6-თან ძალიან ახლოს ხარ",
-        "en": "You're too close to #6"
+        "en": "You're too close to #6",
+        "ru": "Ты слишком близко к #6"
       },
       "body": {
         "ka": "გახსენი ტანი: დაინახე ბურთიც და კარიც",
-        "en": "Open your body: see the ball and the goal"
+        "en": "Open your body: see the ball and the goal",
+        "ru": "Раскрой корпус: видь мяч и ворота"
       }
     },
     "almost": {
       "ka": "თითქმის! ცოტა უფრო ზუსტად",
-      "en": "Almost! A little more precise"
+      "en": "Almost! A little more precise",
+      "ru": "Почти! Чуть точнее"
     },
     "success": {
       "ka": "შესანიშნავია! შემობრუნდი და შეუტიე",
-      "en": "Great! Turn and attack"
+      "en": "Great! Turn and attack",
+      "ru": "Отлично! Разворачивайся и атакуй"
     },
     "lessonLine": {
       "ka": "ღია ტანი = ბურთიც ჩანს და კარიც",
-      "en": "Open body = you see the ball and the goal"
+      "en": "Open body = you see the ball and the goal",
+      "ru": "Открытый корпус = видишь мяч и ворота"
     }
   },
   "rewards": {

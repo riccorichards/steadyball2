@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "თავსატეხი: გაათავისუფლე #10",
-      "en": "Puzzle: free the #10"
+      "en": "Puzzle: free the #10",
+      "ru": "Головоломка: освободи #10"
     },
     "topic": "creating-space",
     "level": "decide",
@@ -283,29 +284,35 @@
   "text": {
     "banner": {
       "ka": "გაათავისუფლე #10 ცენტრში. გადაადგილე 2",
-      "en": "Free #10 in the middle. Move 2 players"
+      "en": "Free #10 in the middle. Move 2 players",
+      "ru": "Освободи #10 в центре. Передвинь 2 игроков"
     },
     "fail": {
       "zone": {
         "ka": "#10 ცენტრში არ არის! მას მცველების უკან ადგილი სჭირდება.",
-        "en": "#10 isn't in the middle! He needs space behind the defence."
+        "en": "#10 isn't in the middle! He needs space behind the defence.",
+        "ru": "#10 не в центре! Ему нужно место за спиной обороны."
       },
       "marked": {
         "ka": "#10-ს მცველი უდგას! ჯერ ის სადმე წაიყვანე.",
-        "en": "#10 is still marked! Lead that defender away first."
+        "en": "#10 is still marked! Lead that defender away first.",
+        "ru": "#10 всё ещё под опекой! Сначала уведи того защитника."
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! #8-ს გზა უნდა ჰქონდეს.",
-        "en": "The lane is blocked! #8 needs a clear line."
+        "en": "The lane is blocked! #8 needs a clear line.",
+        "ru": "Линия перекрыта! #8 нужна свободная линия."
       }
     },
     "success": {
       "ka": "ბრწყინვალე! ერთი გარბენა, ერთი შემოსვლა და #10 თავისუფალია.",
-      "en": "Brilliant! One decoy, one run in, and #10 is free."
+      "en": "Brilliant! One decoy, one run in, and #10 is free.",
+      "ru": "Блестяще! Один отвлёк, другой вбежал, и #10 свободен."
     },
     "lessonLine": {
       "ka": "ჯერ გაათავისუფლე სივრცე, მერე დაიკავე",
-      "en": "Empty the space first, then fill it"
+      "en": "Empty the space first, then fill it",
+      "ru": "Сначала освободи место, потом займи его"
     }
   },
   "rewards": {
@@ -316,14 +323,16 @@
       "afterWrong": 2,
       "text": {
         "ka": "ცენტრში ერთი მცველია. ვის მიჰყვება ის?",
-        "en": "One defender guards the middle. Who does he follow?"
+        "en": "One defender guards the middle. Who does he follow?",
+        "ru": "Центр охраняет один защитник. За кем он бежит?"
       }
     },
     {
       "afterWrong": 5,
       "text": {
         "ka": "ნახე ამოხსნა",
-        "en": "Watch the answer"
+        "en": "Watch the answer",
+        "ru": "Смотри ответ"
       },
       "ghost": true
     }

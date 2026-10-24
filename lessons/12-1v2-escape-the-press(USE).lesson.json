@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "გაექეცი პრესინგს",
-      "en": "Escape the press"
+      "en": "Escape the press",
+      "ru": "Уйди от прессинга"
     },
     "topic": "beat-the-press",
     "level": "execute",
@@ -203,25 +204,30 @@
   "text": {
     "banner": {
       "ka": "ორი გიტევს! წაიღე ბურთი თავისუფალ სივრცეში",
-      "en": "Two are pressing! Carry the ball into free space"
+      "en": "Two are pressing! Carry the ball into free space",
+      "ru": "Прессингуют двое! Веди мяч в свободную зону"
     },
     "fail": {
       "tackled": {
         "ka": "ბურთი წაგართვეს! გაიქეცი მათგან შორს, არა მათკენ.",
-        "en": "Tackled! Carry it away from them, not towards them."
+        "en": "Tackled! Carry it away from them, not towards them.",
+        "ru": "Отобрали! Уводи мяч от них, а не к ним."
       },
       "zone": {
         "ka": "ჯერ კიდევ პრესინგშია! წადი ცარიელ მხარეს, მარცხნივ.",
-        "en": "Still under pressure! Go to the empty side, on the left."
+        "en": "Still under pressure! Go to the empty side, on the left.",
+        "ru": "Всё ещё под давлением! Иди на пустую сторону, влево."
       }
     },
     "success": {
       "ka": "კარგია! პრესინგს გაექეცი და თამაში გააგრძელე.",
-      "en": "Well done! You escaped the press and the move goes on."
+      "en": "Well done! You escaped the press and the move goes on.",
+      "ru": "Молодец! Ты ушёл от прессинга, атака продолжается."
     },
     "lessonLine": {
       "ka": "ორი გიტევს — წადი თავისუფალ მხარეს",
-      "en": "Two press you: go to the free side"
+      "en": "Two press you: go to the free side",
+      "ru": "Тебя прессингуют двое: иди на свободную сторону"
     }
   },
   "rewards": {
@@ -232,7 +238,8 @@
       "afterWrong": 1,
       "text": {
         "ka": "ორივე მეტოქე მარჯვნიდან და წინიდან მოდის.",
-        "en": "Both opponents come from the front and the right."
+        "en": "Both opponents come from the front and the right.",
+        "ru": "Оба соперника идут спереди и справа."
       }
     },
     {
@@ -247,7 +254,8 @@
       "afterWrong": 5,
       "text": {
         "ka": "ნახე, საით წაიღო",
-        "en": "Watch where to carry it"
+        "en": "Watch where to carry it",
+        "ru": "Смотри, куда вести мяч"
       },
       "ghost": true
     }

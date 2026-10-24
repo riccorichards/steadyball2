@@ -4,7 +4,8 @@
   "meta": {
     "title": {
       "ka": "წაიყვანე მცველი",
-      "en": "Take the defender away"
+      "en": "Take the defender away",
+      "ru": "Уведи защитника"
     },
     "topic": "creating-space",
     "level": "decide",
@@ -164,7 +165,8 @@
         "kind": "caption",
         "text": {
           "ka": "#4 დაჰყვება #9-ს",
-          "en": "#4 follows #9"
+          "en": "#4 follows #9",
+          "ru": "#4 бежит за #9"
         },
         "ms": 1200
       },
@@ -282,25 +284,30 @@
   "text": {
     "banner": {
       "ka": "წაიყვანე #9 ისე, რომ #4 გაჰყვეს და #10 გათავისუფლდეს",
-      "en": "Take #9 away so #4 follows and #10 is free"
+      "en": "Take #9 away so #4 follows and #10 is free",
+      "ru": "Уведи #9, чтобы #4 пошёл за ним и #10 стал свободен"
     },
     "fail": {
       "marked": {
         "ka": "#4 ისევ #10-თან ახლოსაა! #9 მისგან შორს წაიყვანე.",
-        "en": "#4 is still near #10! Take #9 far away from him."
+        "en": "#4 is still near #10! Take #9 far away from him.",
+        "ru": "#4 всё ещё рядом с #10! Уведи #9 подальше от него."
       },
       "lane": {
         "ka": "პასის ხაზი დაკეტილია! #4 ბურთის გზაზე დადგა.",
-        "en": "The lane is closed! #4 ended up in the ball's way."
+        "en": "The lane is closed! #4 ended up in the ball's way.",
+        "ru": "Линия закрыта! #4 оказался на пути мяча."
       }
     },
     "success": {
       "ka": "ბრავო! #4 #9-ს გაჰყვა და #10-ს სივრცე დარჩა.",
-      "en": "Bravo! #4 went with #9 and #10 had the space."
+      "en": "Bravo! #4 went with #9 and #10 had the space.",
+      "ru": "Браво! #4 ушёл с #9, и у #10 появилось место."
     },
     "lessonLine": {
       "ka": "შენი გარბენა მეგობარს სივრცეს უხსნის",
-      "en": "Your run opens space for a teammate"
+      "en": "Your run opens space for a teammate",
+      "ru": "Твой рывок открывает место партнёру"
     }
   },
   "rewards": {
@@ -311,7 +318,8 @@
       "afterWrong": 1,
       "text": {
         "ka": "#4 ყველგან #9-ს მისდევს. სად წაიყვან მას?",
-        "en": "#4 follows #9 everywhere. Where will you take him?"
+        "en": "#4 follows #9 everywhere. Where will you take him?",
+        "ru": "#4 везде ходит за #9. Куда ты его уведёшь?"
       }
     },
     {
@@ -333,7 +341,8 @@
       "afterWrong": 5,
       "text": {
         "ka": "ნახე, სად წაიყვანო",
-        "en": "Watch where to take him"
+        "en": "Watch where to take him",
+        "ru": "Смотри, куда его увести"
       },
       "ghost": true
     }
